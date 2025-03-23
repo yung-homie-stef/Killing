@@ -1,0 +1,34 @@
+{
+    "name": "INPUT",
+    "maps": [
+        {
+            "name": "Gameplay",
+            "id": "a986ab10-d8a3-4b53-9538-379cb231066c",
+            "actions": [
+                {
+                    "name": "ToggleQuestLog",
+                    "type": "Button",
+                    "id": "f9d36f28-28a9-4777-94dd-b094d47e50ef",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "146a49ae-a5d6-42cd-b632-a2d708073516",
+                    "path": "<Keyboard>/q",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "ToggleQuestLog",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": []
+}
