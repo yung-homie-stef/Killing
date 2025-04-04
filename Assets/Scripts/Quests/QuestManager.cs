@@ -8,6 +8,7 @@ public class QuestManager : MonoBehaviour
     public static QuestManager instance;
     private Dictionary<string, Quest> _questMap;
     [SerializeField] private QuestLogUI _questLogUI;
+    [SerializeField] private QuestPopup _questPopup;
 
     private void Awake()
     {
@@ -83,6 +84,7 @@ public class QuestManager : MonoBehaviour
         quest.InstantiateCurrentQuestStep(this.transform);
         ChangeQuestState(quest.info.id, QuestState.IN_PROGRESS);
         _questLogUI._questLogScrollingList.CreateButtonIfItDoesntExist(quest);
+        _questPopup.Popup(quest.info.displayName, QuestState.IN_PROGRESS);
     }
 
     private void AdvanceQuest(string id)
@@ -102,6 +104,7 @@ public class QuestManager : MonoBehaviour
     {
         Quest quest = GetQuestByID(id);
         ChangeQuestState(quest.info.id, QuestState.FINISHED);
+        _questPopup.Popup(quest.info.displayName, QuestState.FINISHED);
 
         Debug.Log("Finished Quest: " + id);
     }

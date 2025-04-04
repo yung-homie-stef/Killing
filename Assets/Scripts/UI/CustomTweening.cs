@@ -15,8 +15,8 @@ public class CustomTweening : MonoBehaviour
     }
 
     [Header("UI Element Setup")]
-    [SerializeField] private GameObject _uiElement;
-    [SerializeField] private RectTransform _rectTransform;
+    [SerializeField] private GameObject _UIElement;
+
     [SerializeField] private CanvasGroup _canvasGroup;
 
     [Header("Animation Setup")]
@@ -43,11 +43,7 @@ public class CustomTweening : MonoBehaviour
 
     private void OnValidate()
     {
-        if (_uiElement != null)
-        {
-            _rectTransform = _uiElement.GetComponent<RectTransform>();
-            _canvasGroup = _uiElement.GetComponent<CanvasGroup>();
-        }
+         _canvasGroup = GetComponentInChildren<CanvasGroup>();
 
         _tweeningDistance.x = Mathf.Max(0, _tweeningDistance.x);
         _tweeningDistance.y = Mathf.Max(0, _tweeningDistance.y);
@@ -55,7 +51,7 @@ public class CustomTweening : MonoBehaviour
 
     private void Start()
     {
-        _initialPos = _uiElement.transform.position;
+        _initialPos = _UIElement.transform.position;
         InitializeOffsetPosition();
     }
 
@@ -124,9 +120,9 @@ public class CustomTweening : MonoBehaviour
     private IEnumerator TweenUIElement(bool open)
     {
         if (open)
-            _uiElement.gameObject.SetActive(true);
+            _UIElement.gameObject.SetActive(true);
 
-        _currentPos = _uiElement.transform.position;
+        _currentPos = _UIElement.transform.position;
         Vector2 _targetPos = _currentPos;
         float _elapsedTime = 0;
         float _animationTime = 0;
@@ -148,7 +144,7 @@ public class CustomTweening : MonoBehaviour
         while (_elapsedTime < _animationTime)
         {
             float _evaluationAtTime = _curve.Evaluate(_elapsedTime / _animationTime);
-            _uiElement.transform.position = Vector2.Lerp(_currentPos, _targetPos, _evaluationAtTime);
+            _UIElement.transform.position = Vector2.Lerp(_currentPos, _targetPos, _evaluationAtTime);
             _canvasGroup.alpha = open
                 ? Mathf.Lerp(0f, 1f, _evaluationAtTime)
                 : Mathf.Lerp(1f, 0f, _evaluationAtTime);
@@ -157,15 +153,15 @@ public class CustomTweening : MonoBehaviour
             yield return null;
         }
 
-        _uiElement.transform.position = _targetPos;
+        _UIElement.transform.position = _targetPos;
         _canvasGroup.alpha = open ? 1 : 0;
         _canvasGroup.interactable = open;
         _canvasGroup.blocksRaycasts = open;
 
         if (!open)
         {
-            _uiElement.gameObject.SetActive(false);
-            _uiElement.transform.position = _initialPos;
+            _UIElement.gameObject.SetActive(false);
+            _UIElement.transform.position = _initialPos;
         }
 
     }
