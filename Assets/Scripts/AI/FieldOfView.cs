@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class FieldOfView : MonoBehaviour
 {
@@ -11,6 +12,9 @@ public class FieldOfView : MonoBehaviour
     public LayerMask obstacleMask;
     public List<Transform> targetsInFOV = new List<Transform>();
 
+    public UnityEvent onEnterFOV;
+    private bool _hasAlreadyEntered = false;
+
     private void Start()
     {
         StartCoroutine("FindTargetsWithDelay", .2f);
@@ -19,7 +23,7 @@ public class FieldOfView : MonoBehaviour
 
     IEnumerator FindTargetsWithDelay(float delay)
     {
-        while (true)
+        while (!_hasAlreadyEntered)
         {
             yield return new WaitForSeconds(delay);
             FindVisibleTargets();
@@ -42,8 +46,11 @@ public class FieldOfView : MonoBehaviour
                 if (!Physics.Raycast(transform.position, directionTarget, distanceToTarget, obstacleMask))
                 {
                     // execute code for when target is seen HERE
+                    _hasAlreadyEntered = true;
+                    onEnterFOV.Invoke();
                     targetsInFOV.Add(target); // temp code
                 }
+
             }
         }
     }
