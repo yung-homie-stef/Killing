@@ -15,6 +15,7 @@ public abstract class ItemObject : ScriptableObject
 {
     public GameObject itemPrefab;
     public ItemType itemType;
+    public bool isKeyItem = false;
     public string itemName;
     [TextArea(15,20)]
     public string itemDescription;

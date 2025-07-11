@@ -9,6 +9,7 @@ public class UIManager : MonoBehaviour
     public Dialogue dialogue { get; private set; }
 
     public FirstPersonController player;
+    public InventoryUI inventoryUI;
     private bool _focusFlag = true;
 
 

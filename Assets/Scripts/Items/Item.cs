@@ -22,6 +22,7 @@ public class Item : Interactable
     {
         base.Interact();
         UIManager.instance.player.AddItemToInventory(this, 1);
+        UIManager.instance.inventoryUI.AddItemToInventoryUI(item);
         Destroy(gameObject);
     }
 }
