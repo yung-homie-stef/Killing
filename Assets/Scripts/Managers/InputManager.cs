@@ -13,4 +13,12 @@ public class InputManager : MonoBehaviour
         if (context.started)
             GameEventsManager.instance.inputEvents.QuestLogTogglePressed();
     }
+
+    public void InventoryTogglePressed(InputAction.CallbackContext context)
+    {
+        Debug.Log("I HAS BEEN PRESSED");
+
+        if (context.started)
+            GameEventsManager.instance.inputEvents.InventoryTogglePressed();
+    }
 }

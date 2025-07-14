@@ -23,7 +23,6 @@ public class FirstPersonController : MonoBehaviour
     [SerializeField] private KeyCode _sprintKeyCode = KeyCode.LeftShift;
     [SerializeField] private KeyCode _crouchKeyCode = KeyCode.LeftControl;
     [SerializeField] private KeyCode _interactKeyCode = KeyCode.E;
-    [SerializeField] private KeyCode _questLogKeyCode = KeyCode.Tab;
 
     [Header("Base Movement Parameters")]
     [SerializeField] private float _walkSpeed = 3.0f;

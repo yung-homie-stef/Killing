@@ -7,7 +7,7 @@ using UnityEngine.UI;
 using Unity.VisualScripting;
 using UnityEngine.Events;
 
-public class InventoryItemButton : MonoBehaviour
+public class InventoryItemButton : MonoBehaviour, ISelectHandler, IPointerEnterHandler
 {
     [SerializeField]
     private TextMeshProUGUI _itemName;
@@ -16,12 +16,23 @@ public class InventoryItemButton : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
+        
     }
 
     public void Initialize(ItemObject itemObj)
     {
         _itemObject = itemObj;
         _itemName.text = itemObj.itemName;
+    }
+
+    public void OnPointerEnter(PointerEventData eventData)
+    {
+        //UIManager.instance.inventoryUI.UpdateInventoryItemDisplay();
+        Debug.Log("selected " + _itemObject.itemName);
+    }
+
+    public void OnSelect(BaseEventData eventData)
+    {
+        
     }
 }

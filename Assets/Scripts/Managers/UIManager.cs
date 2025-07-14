@@ -29,11 +29,13 @@ public class UIManager : MonoBehaviour
     private void Awake()
     {
         GameEventsManager.instance.inputEvents.onQuestLogTogglePressed += EnableFocusUI;
+        GameEventsManager.instance.inputEvents.onInventoryToggledPressed += EnableFocusUI;
     }
 
     private void OnDisable()
     {
         GameEventsManager.instance.inputEvents.onQuestLogTogglePressed -= EnableFocusUI;
+        GameEventsManager.instance.inputEvents.onInventoryToggledPressed -= EnableFocusUI;
     }
 
     private void EnableFocusUI()
