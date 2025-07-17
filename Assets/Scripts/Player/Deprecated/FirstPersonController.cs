@@ -59,7 +59,6 @@ public class FirstPersonController : MonoBehaviour
     private Vector2 _currentMoveInput;
 
     private float _xRotation = 0;
-    public InventoryObject inventory;
 
     // Start is called before the first frame update
     void Awake()
@@ -224,11 +223,5 @@ public class FirstPersonController : MonoBehaviour
         _canMove = false;
         Cursor.lockState = CursorLockMode.Confined;
         Cursor.visible = true;
-    }
-
-    public void AddItemToInventory(Item item, int amount)
-    {
-        inventory.AddItem(item.item, amount);
-        Debug.Log("added " + item.item.itemName);
     }
 }

@@ -25,7 +25,7 @@ public class InventoryUI : MonoBehaviour
         GameEventsManager.instance.inputEvents.onInventoryToggledPressed -= InventoryButtonToggle;
     }
 
-    public void AddItemToInventoryUI(ItemObject itemObj)
+    public void AddItemToInventoryUI(ItemObject itemObj, InventorySlot slot)
     {
        VerticalLayoutGroup vlg;
 
@@ -36,10 +36,16 @@ public class InventoryUI : MonoBehaviour
 
 
         InventoryItemButton _inventoryItemButton = Instantiate(_inventoryItemButtonPrefab, vlg.transform).GetComponent<InventoryItemButton>();
-        _inventoryItemButton.Initialize(itemObj);
+        _inventoryItemButton.Initialize(itemObj, slot);
         _inventoryItemButton.transform.SetAsFirstSibling();
         _inventoryItemButton.name = itemObj.name;
         _inventoryItemButtonList.Add(_inventoryItemButton);
+    }
+
+    public void RemoveItemFromInventoryUI(InventoryItemButton itemButton)
+    {
+        _inventoryItemButtonList.Remove(itemButton);
+        Destroy(itemButton.gameObject);
     }
 
     private void InventoryButtonToggle()
