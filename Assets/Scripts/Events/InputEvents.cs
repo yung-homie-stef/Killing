@@ -6,7 +6,8 @@ using UnityEngine;
 public class InputEvents
 {
     public event Action onQuestLogTogglePressed;
-    public event Action onInventoryToggledPressed;
+    public event Action onInventoryTogglePressed;
+    public event Action onExitTogglePressed;
 
     public void QuestLogTogglePressed()
     {
@@ -16,7 +17,13 @@ public class InputEvents
 
     public void InventoryTogglePressed()
     {
-        if (onInventoryToggledPressed != null)
-            onInventoryToggledPressed();
+        if (onInventoryTogglePressed != null)
+            onInventoryTogglePressed();
+    }
+
+    public void ExitTogglePressed()
+    {
+        if (onExitTogglePressed != null)
+            onExitTogglePressed();
     }
 }

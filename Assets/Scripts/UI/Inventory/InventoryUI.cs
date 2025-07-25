@@ -12,17 +12,28 @@ public class InventoryUI : MonoBehaviour
     [SerializeField] private GameObject _contentParent;
     [SerializeField] private VerticalLayoutGroup _inventoryLayoutGroup;
     [SerializeField] private VerticalLayoutGroup _keyItemInventoryLayoutGroup;
+
     [SerializeField] private GameObject _inventoryItemButtonPrefab;
+    [SerializeField] private TextMeshProUGUI _itemDescriptionText;
+    [SerializeField] private CanvasGroup _canvasGroup;
+    [SerializeField] private UseDiscardPrompt _useDiscardPrompt;
+    [HideInInspector] public Interactable targetInteractable = null;
+
+    [Header("Item Display")]
+    [SerializeField] private MeshFilter _filter;
+    [SerializeField] private MeshRenderer _renderer;
+
+    [Header("Buttons")]
     [SerializeField] private List<InventoryItemButton> _inventoryItemButtonList = new List<InventoryItemButton>();
 
     private void OnEnable()
     {
-        GameEventsManager.instance.inputEvents.onInventoryToggledPressed += InventoryButtonToggle;
+        GameEventsManager.instance.inputEvents.onInventoryTogglePressed += InventoryButtonToggle;
     }
 
     private void OnDisable()
     {
-        GameEventsManager.instance.inputEvents.onInventoryToggledPressed -= InventoryButtonToggle;
+        GameEventsManager.instance.inputEvents.onInventoryTogglePressed -= InventoryButtonToggle;
     }
 
     public void AddItemToInventoryUI(ItemObject itemObj, InventorySlot slot)
@@ -40,6 +51,32 @@ public class InventoryUI : MonoBehaviour
         _inventoryItemButton.transform.SetAsFirstSibling();
         _inventoryItemButton.name = itemObj.name;
         _inventoryItemButtonList.Add(_inventoryItemButton);
+    }
+
+    public void UpdateInventoryItemDisplay(ItemObject itemObj)
+    {
+        _itemDescriptionText.text = itemObj.itemDescription;
+        _filter.sharedMesh = itemObj.itemMesh;
+        _renderer.material = itemObj.itemMaterial;
+
+    }
+
+    public void ResetInventoryItemDisplay()
+    {
+        _itemDescriptionText.text = string.Empty;
+    }
+
+    public void PromptItemUseOrDiscard(InventoryItemButton invButton, InventorySlot invSlot, bool isUsing)
+    {
+        _canvasGroup.interactable = false;
+        _canvasGroup.blocksRaycasts = false;
+        _useDiscardPrompt.InitializePrompt(invButton, invSlot, isUsing);
+    }
+
+    public void CloseItemUseOrDiscard()
+    {
+        _canvasGroup.interactable = true;
+        _canvasGroup.blocksRaycasts = true;
     }
 
     public void RemoveItemFromInventoryUI(InventoryItemButton itemButton)
@@ -69,10 +106,19 @@ public class InventoryUI : MonoBehaviour
         Cursor.visible = true;
     }
 
+    private void ShowInventoryUI(Interactable target)
+    {
+        _contentParent.SetActive(true);
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
+        targetInteractable = target;
+    }
+
     private void HideInventoryUI()
     {
         _contentParent.SetActive(false);
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
+        targetInteractable = null;
     }
 }

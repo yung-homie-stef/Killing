@@ -21,7 +21,12 @@ public class Item : Interactable
     public override void Interact()
     {
         base.Interact();
-        UIManager.instance.inventoryUI.AddItemToInventoryUI(item, InventoryManager.instance._itemInventory.AddItem(item));
+
+        if (!item.isKeyItem)
+            UIManager.instance.inventoryUI.AddItemToInventoryUI(item, InventoryManager.instance._itemInventory.AddItem(item));
+        else
+            UIManager.instance.inventoryUI.AddItemToInventoryUI(item, InventoryManager.instance._keyItemInventory.AddItem(item));
+
         Destroy(gameObject);
     }
 }

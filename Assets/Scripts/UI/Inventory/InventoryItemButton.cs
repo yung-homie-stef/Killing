@@ -7,20 +7,29 @@ using UnityEngine.UI;
 using Unity.VisualScripting;
 using UnityEngine.Events;
 
-public class InventoryItemButton : MonoBehaviour, IPointerClickHandler, IPointerEnterHandler
+public class InventoryItemButton : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 {
 
+    [HideInInspector] public ItemObject _itemObject;
     [SerializeField] private TextMeshProUGUI _itemName;
-    private ItemObject _itemObject;
-    private Button _button;
-    [SerializeField] private GameObject _usePrompt;
-    [SerializeField] private GameObject _discardPrompt;
+    [SerializeField] private Button _useButton;
+    [SerializeField] private Button _discardButton;
     [SerializeField] private InventorySlot _inventorySlot;
+
+    private Button _button;
+    private UIManager _UIManager = null;
+    private InventoryManager _inventoryManager = null;
 
     // Start is called before the first frame update
     void Start()
     {
         _button = GetComponent<Button>();
+
+        if (UIManager.instance != null ) 
+            _UIManager = UIManager.instance;
+
+        if (InventoryManager.instance != null )
+            _inventoryManager = InventoryManager.instance;
     }
 
     public void Initialize(ItemObject itemObj, InventorySlot slot)
@@ -32,39 +41,31 @@ public class InventoryItemButton : MonoBehaviour, IPointerClickHandler, IPointer
 
     public void OnPointerEnter(PointerEventData eventData)
     {
-        //UIManager.instance.inventoryUI.UpdateInventoryItemDisplay();
-        Debug.Log("selected " + _itemObject.itemName);
+        _UIManager.inventoryUI.UpdateInventoryItemDisplay(_itemObject);
+
+        if (_UIManager.inventoryUI.targetInteractable == null)
+        {
+            _useButton.gameObject.SetActive(true);
+            _discardButton.gameObject.SetActive(true);
+        }
     }
 
-    public void OnPointerClick(PointerEventData eventData)
+    public void OnPointerExit(PointerEventData eventData)
     {
-        if (eventData.button == PointerEventData.InputButton.Left)
-            PromptItemUse(_usePrompt);
-        else if (eventData.button == PointerEventData.InputButton.Right)
-            PromptItemUse(_discardPrompt);
-        
+        _useButton.gameObject.SetActive(false);
+        _discardButton.gameObject.SetActive(false);
     }
 
-    private void PromptItemUse(GameObject obj)
+    public void InventoryItemButtonPress(bool isUsing)
     {
-        _button.Select();
-        _button.interactable = false;
-        _itemName.gameObject.SetActive(false);
-        obj.SetActive(true);
-    }
-
-    public void ExitPrompt()
-    {
-        _button.interactable = true;
-        _usePrompt.gameObject.SetActive(false);
-        _discardPrompt.gameObject.SetActive(false);
-        _itemName.gameObject.SetActive(true);
+        if (_UIManager.inventoryUI.targetInteractable == null)
+            _UIManager.inventoryUI.PromptItemUseOrDiscard(this, _inventorySlot, isUsing);
     }
 
     public void DiscardItem()
     {
-        UIManager.instance.inventoryUI.RemoveItemFromInventoryUI(this);
-        InventoryManager.instance._itemInventory.RemoveItem(_inventorySlot);
+        _UIManager.inventoryUI.RemoveItemFromInventoryUI(this);
+        _inventoryManager._itemInventory.RemoveItem(_inventorySlot);
     }
 
 }

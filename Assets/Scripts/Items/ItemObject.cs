@@ -13,10 +13,11 @@ public enum ItemType
 
 public abstract class ItemObject : ScriptableObject
 {
-    public GameObject itemPrefab;
+    public Mesh itemMesh;
+    public Material itemMaterial;
     public ItemType itemType;
     public bool isKeyItem = false;
     public string itemName;
-    [TextArea(15,20)]
+    [TextArea(5,20)]
     public string itemDescription;
 }
