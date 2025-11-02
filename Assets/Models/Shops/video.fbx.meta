@@ -1,13 +1,23 @@
 fileFormatVersion: 2
-guid: 160dfb3778dd07546aad260e9221370c
+guid: 290bcb4a268641649b091c4b0c4070ad
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: video_1
+    second: {fileID: 2100000, guid: 865eeafccf057ed4aae3fcfe7486fa2e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: video_2
+    second: {fileID: 2100000, guid: 28476bffa134cbb4dab6305ec7153ea6, type: 2}
   materials:
     materialImportMode: 2
-    materialName: 0
-    materialSearch: 1
+    materialName: 1
+    materialSearch: 2
     materialLocation: 1
   animations:
     legacyGenerateAnimations: 4
