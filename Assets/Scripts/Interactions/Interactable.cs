@@ -12,15 +12,16 @@ public abstract class Interactable : MonoBehaviour
         PC,
         Item,
         Observation,
-        Shop
+        Door
     }
 
     private Sprite _sprite;
-    [SerializeField] private UnityEvent _onInteract;
 
     [Header("Base Parameters")]
     [SerializeField] private InteractableType _type;
     public string label;
+    [Space(15)]
+    [SerializeField] private UnityEvent _onInteract;
 
     public virtual void Awake()
     {

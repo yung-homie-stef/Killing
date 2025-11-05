@@ -50,6 +50,7 @@ public class FirstPersonController : MonoBehaviour
     [SerializeField] private float _interactionRayDistance = default;
     [SerializeField] private LayerMask _interactionLayer = default;
     [SerializeField] private Interactable _currentInteractable = null;
+    private bool _isInteracting = false;
 
     private Camera _cameraComponent;
     private CinemachineVirtualCamera _virtualCameraComponent;
@@ -136,9 +137,10 @@ public class FirstPersonController : MonoBehaviour
             if (hit.collider.gameObject.layer == 3 && (_currentInteractable == null || hit.collider.gameObject.GetInstanceID() != _currentInteractable.GetInstanceID()))
             {
                 hit.collider.gameObject.TryGetComponent(out _currentInteractable);
-                if (_currentInteractable != null)
+                if (_currentInteractable != null && !_isInteracting)
                 {
                     _currentInteractable.Focus();
+                    _isInteracting = true;
                 }
             }
         }
@@ -146,6 +148,7 @@ public class FirstPersonController : MonoBehaviour
         {
             _currentInteractable.LoseFocus();
             _currentInteractable = null;
+            _isInteracting = false;
         }
     }
 
