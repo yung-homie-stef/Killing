@@ -90,11 +90,13 @@ public class InventoryUI : MonoBehaviour
         if (_contentParent.activeInHierarchy)
         {
             HideInventoryUI();
+            Cursor.visible = false;
             GameEventsManager.instance.playerEvents.EnablePlayerMovement();
         }
         else
         {
             ShowInventoryUI();
+            Cursor.visible = true;
             GameEventsManager.instance.playerEvents.DisablePlayerMovement();
         }
     }

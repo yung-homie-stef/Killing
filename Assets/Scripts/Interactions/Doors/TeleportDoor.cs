@@ -7,6 +7,16 @@ public class TeleportDoor : Door
     public override void Interact()
     {
         base.Interact();
-        Debug.Log("teleporting to this zone");
+        GameEventsManager.instance.playerEvents.DisablePlayerMovement();
+        GameEventsManager.instance.playerEvents.BeginPlayerTeleportation();
+        StartCoroutine(PostTeleport());
+    }
+
+    private IEnumerator PostTeleport()
+    {
+        yield return new WaitForSeconds(1);
+        GameEventsManager.instance.playerEvents.EnablePlayerMovement();
+        GameEventsManager.instance.playerEvents.FinishPlayerTeleportation();
+        UIManager.instance.focusUI.SetCanFocus(true);
     }
 }

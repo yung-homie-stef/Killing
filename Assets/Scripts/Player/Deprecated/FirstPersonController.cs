@@ -219,12 +219,10 @@ public class FirstPersonController : MonoBehaviour
     {
         _canMove = true;
         Cursor.lockState = CursorLockMode.Locked;
-        Cursor.visible = false;
     }
     private void DisablePlayerMovement()
     {
         _canMove = false;
         Cursor.lockState = CursorLockMode.Confined;
-        Cursor.visible = true;
     }
 }

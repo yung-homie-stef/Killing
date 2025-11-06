@@ -1,16 +1,20 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using PrimeTween;
 
 public class UIManager : MonoBehaviour
 {
     public static UIManager instance { get; private set; }
     [SerializeField] public FocusUI focusUI;
+    [SerializeField] private Image _blackoutImage;
     public Dialogue dialogue { get; private set; }
 
     public FirstPersonController player;
     public InventoryUI inventoryUI;
     private bool _focusFlag = true;
+    private bool _blackoutFlag = false;
 
 
 
@@ -30,12 +34,16 @@ public class UIManager : MonoBehaviour
     {
         GameEventsManager.instance.inputEvents.onQuestLogTogglePressed += EnableFocusUI;
         GameEventsManager.instance.inputEvents.onInventoryTogglePressed += EnableFocusUI;
+        GameEventsManager.instance.playerEvents.onBeginPlayerTeleportation += TriggerBlackoutScreen;
+        GameEventsManager.instance.playerEvents.onFinishPlayerTeleportation += TriggerBlackoutScreen;
     }
 
     private void OnDisable()
     {
         GameEventsManager.instance.inputEvents.onQuestLogTogglePressed -= EnableFocusUI;
         GameEventsManager.instance.inputEvents.onInventoryTogglePressed -= EnableFocusUI;
+        GameEventsManager.instance.playerEvents.onBeginPlayerTeleportation -= TriggerBlackoutScreen;
+        GameEventsManager.instance.playerEvents.onFinishPlayerTeleportation -= TriggerBlackoutScreen;
     }
 
     private void EnableFocusUI()
@@ -43,6 +51,13 @@ public class UIManager : MonoBehaviour
         _focusFlag = !_focusFlag;
 
         focusUI.gameObject.SetActive(_focusFlag);
+    }
+
+    private void TriggerBlackoutScreen()
+    {
+        _blackoutFlag = !_blackoutFlag;
+
+        
     }
 
 }
