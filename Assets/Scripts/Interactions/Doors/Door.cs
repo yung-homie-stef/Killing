@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using PrimeTween;
 
-public class Door : Interactable
+public abstract class Door : Interactable
 {
     [Header("Tweening")]
     [SerializeField] TweenSettings<Vector3> doorTweenSettings;

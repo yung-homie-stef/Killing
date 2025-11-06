@@ -6,19 +6,10 @@ using UnityEngine.Events;
 
 public abstract class Interactable : MonoBehaviour
 {
-    public enum InteractableType
-    {
-        Character,
-        PC,
-        Item,
-        Observation,
-        Door
-    }
-
+  
     private Sprite _sprite;
 
     [Header("Base Parameters")]
-    [SerializeField] private InteractableType _type;
     public string label;
     [Space(15)]
     [SerializeField] private UnityEvent _onInteract;
@@ -27,25 +18,6 @@ public abstract class Interactable : MonoBehaviour
     {
         // 3 being the interactable layer
         gameObject.layer = 3;
-
-        switch (_type)
-        {
-            case InteractableType.Character:
-                //_sprite = ;
-                break;
-
-            case InteractableType.PC:
-                //_sprite = ;
-                break;
-
-            case InteractableType.Item:
-                //_sprite = ;
-                break;
-
-            case InteractableType.Observation:
-                //_sprite = ;
-                break;
-        }
     }
 
     // make these virtual methods in future
