@@ -8,7 +8,7 @@ public class PlayerEvents
     public event Action onDisablePlayerMovement;
     public event Action onEnablePlayerMovement;
     public event Action onBeginPlayerTeleportation;
-    public event Action onFinishPlayerTeleportation;
+    public event Action onPlayerTeleportation;
 
     public void DisablePlayerMovement()
     {
@@ -26,11 +26,13 @@ public class PlayerEvents
     {
         if (onBeginPlayerTeleportation != null)
             onBeginPlayerTeleportation();
+
+        DisablePlayerMovement();
     }
 
-    public void FinishPlayerTeleportation()
+    public void TeleportPlayer()
     {
-        if (onFinishPlayerTeleportation != null)
-            onFinishPlayerTeleportation();
+        if (onPlayerTeleportation != null)
+            onPlayerTeleportation();
     }
 }

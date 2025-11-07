@@ -6,9 +6,6 @@ using UnityEngine.Events;
 
 public abstract class Interactable : MonoBehaviour
 {
-  
-    private Sprite _sprite;
-
     [Header("Base Parameters")]
     public string label;
     [Space(15)]
@@ -19,8 +16,6 @@ public abstract class Interactable : MonoBehaviour
         // 3 being the interactable layer
         gameObject.layer = 3;
     }
-
-    // make these virtual methods in future
 
     public virtual void Interact()
     {
