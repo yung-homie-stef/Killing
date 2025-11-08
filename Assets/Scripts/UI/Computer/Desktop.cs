@@ -32,6 +32,6 @@ public class Desktop : MonoBehaviour
     {
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
-        StartCoroutine(UIManager.instance.player.SetPlayerControls(0.2f, true));
+        GameEventsManager.instance.playerEvents.EnablePlayerMovement();
     }
 }

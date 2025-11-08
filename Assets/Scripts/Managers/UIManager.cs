@@ -10,8 +10,7 @@ public class UIManager : MonoBehaviour
     public static UIManager instance { get; private set; }
     [SerializeField] public FocusUI focusUI;
     [SerializeField] private Image _blackoutImage;
-    
-    public FirstPersonController player;
+
     public InventoryUI inventoryUI;
     private Animator _blackoutAnimator = null;
     private bool _focusFlag = true;
@@ -30,7 +29,6 @@ public class UIManager : MonoBehaviour
 
     private void Awake()
     {
-        GameEventsManager.instance.inputEvents.onQuestLogTogglePressed += EnableFocusUI;
         GameEventsManager.instance.inputEvents.onInventoryTogglePressed += EnableFocusUI;
         GameEventsManager.instance.playerEvents.onBeginPlayerTeleportation += TriggerBlackoutScreen;
         GameEventsManager.instance.playerEvents.onPlayerTeleportation += TriggerBlackoutScreen;
@@ -40,7 +38,6 @@ public class UIManager : MonoBehaviour
 
     private void OnDisable()
     {
-        GameEventsManager.instance.inputEvents.onQuestLogTogglePressed -= EnableFocusUI;
         GameEventsManager.instance.inputEvents.onInventoryTogglePressed -= EnableFocusUI;
         GameEventsManager.instance.playerEvents.onBeginPlayerTeleportation -= TriggerBlackoutScreen;
         GameEventsManager.instance.playerEvents.onPlayerTeleportation -= TriggerBlackoutScreen;

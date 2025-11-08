@@ -15,12 +15,6 @@ public class FocusUI : MonoBehaviour
         _focusLabel.text = "";
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     public void UpdateFocusUI(Interactable interactable)
     {
         if (_canFocus)

@@ -13,7 +13,7 @@ public class ComputerInteractable : Interactable
         Cursor.lockState = CursorLockMode.Confined;
         Cursor.visible = true;
 
-        UIManager.instance.player.SetPlayerControls(false);
+        GameEventsManager.instance.playerEvents.DisablePlayerMovement();
         Instantiate(_desktopVisuals, UIManager.instance.transform);
     }
 

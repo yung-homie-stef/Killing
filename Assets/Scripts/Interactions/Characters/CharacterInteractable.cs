@@ -25,7 +25,7 @@ public class CharacterInteractable : Interactable
     {
         UIManager.instance.focusUI.SetCanFocus(true);
         _cinemachineVirtualCamera.Priority = 0;
-        StartCoroutine(UIManager.instance.player.SetPlayerControls(0.2f, true));
+        GameEventsManager.instance.playerEvents.DisablePlayerMovement();
     }
 
     public virtual void IncreaseConversationIndex()
@@ -40,6 +40,6 @@ public class CharacterInteractable : Interactable
     {
         _cinemachineVirtualCamera.Priority = 1;
         UIManager.instance.dialogue.StartDialogue(this);
-        UIManager.instance.player.SetPlayerControls(false);
+        GameEventsManager.instance.playerEvents.DisablePlayerMovement();
     }
 }

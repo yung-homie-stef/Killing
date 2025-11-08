@@ -15,7 +15,7 @@ public class File : MonoBehaviour, IPointerClickHandler
     public string _fileName;
     [SerializeField] private FileType _fileType;
     [SerializeField] private Image _fileIcon;
-    [SerializeField] private bool _isInFolder = true;
+    //[SerializeField] private bool _isInFolder = true;
 
     [Header("TextMeshProUGUI")]
     [SerializeField] private TextMeshProUGUI _fileNameText;

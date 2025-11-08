@@ -10,6 +10,7 @@ public class FirstPersonController : MonoBehaviour
     // variable initialization
     [SerializeField] private bool _canMove = true;
 
+    #region Variable Declarations
     // with this syntax _isXing is only true when _canX is true and the proper button is pressed
     private bool _isSprinting => _canSprint && Input.GetKey(_sprintKeyCode);
     private bool _shouldCrouch => Input.GetKeyDown(_crouchKeyCode) && !_isInCrouchAnimation && _characterControllerComponent.isGrounded;
@@ -60,6 +61,7 @@ public class FirstPersonController : MonoBehaviour
     private Vector2 _currentMoveInput;
 
     private float _xRotation = 0;
+    #endregion
 
     // Start is called before the first frame update
     void Awake()
@@ -73,6 +75,7 @@ public class FirstPersonController : MonoBehaviour
 
         GameEventsManager.instance.playerEvents.onEnablePlayerMovement += EnablePlayerMovement;
         GameEventsManager.instance.playerEvents.onDisablePlayerMovement += DisablePlayerMovement;
+        GameEventsManager.instance.playerEvents.onPlayerTeleportation += Teleport;
     }
 
     private void OnDisable()
@@ -198,31 +201,21 @@ public class FirstPersonController : MonoBehaviour
         _isInCrouchAnimation = false;
     }
 
-    public void SetPlayerControls(bool flag)
-    {
-        _canMove = flag;
-        _canSprint = flag;
-        _canCrouch = flag;
-        _canInteract = flag;
-    }
-
-    public IEnumerator SetPlayerControls(float waitTime, bool flag)
-    {
-        yield return new WaitForSeconds(waitTime);
-        _canMove = flag;
-        _canSprint = flag;
-        _canCrouch = flag;
-        _canInteract = flag;
-    }
-
     private void EnablePlayerMovement()
     {
         _canMove = true;
         Cursor.lockState = CursorLockMode.Locked;
     }
+
     private void DisablePlayerMovement()
     {
         _canMove = false;
         Cursor.lockState = CursorLockMode.Confined;
+    }
+
+    private void Teleport()
+    {
+        transform.position = PlayerWorldInfo.GetTeleportToLocation().position;
+        transform.rotation = PlayerWorldInfo.GetTeleportToLocation().rotation;
     }
 }

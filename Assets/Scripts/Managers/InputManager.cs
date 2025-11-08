@@ -6,14 +6,6 @@ using UnityEngine.InputSystem;
 [RequireComponent(typeof(PlayerInput))]
 public class InputManager : MonoBehaviour
 {
-    public void QuestLogTogglePressed(InputAction.CallbackContext context)
-    {
-        Debug.Log("Q HAS BEEN PRESSED");
-
-        if (context.started)
-            GameEventsManager.instance.inputEvents.QuestLogTogglePressed();
-    }
-
     public void InventoryTogglePressed(InputAction.CallbackContext context)
     {
         Debug.Log("I HAS BEEN PRESSED");
