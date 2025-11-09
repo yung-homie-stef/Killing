@@ -9,7 +9,7 @@ public class PlayerEvents
     public event Action onEnablePlayerMovement;
     public event Action onBeginPlayerTeleportation;
     public event Action onPlayerTeleportation;
-    public event Action<LocationTrigger> onPlayerEnterAreaBox;
+    public event Action<LocationTrigger, bool> onPlayerEnterAreaBox;
 
     public void DisablePlayerMovement()
     {
@@ -37,9 +37,10 @@ public class PlayerEvents
             onPlayerTeleportation();
     }
 
-    public void PlayerEnterAreaBox(LocationTrigger triggerArea)
+    public void PlayerEnterAreaBox(LocationTrigger triggerArea, bool flag)
     {
         if (onPlayerEnterAreaBox != null)
-            onPlayerEnterAreaBox(triggerArea);
+            onPlayerEnterAreaBox(triggerArea, flag);
     }
+
 }

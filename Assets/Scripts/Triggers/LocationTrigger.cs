@@ -16,14 +16,13 @@ public class LocationTrigger : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         PlayerWorldInfo.SetLocationName(this);
-        GameEventsManager.instance.playerEvents.PlayerEnterAreaBox(this);
+        GameEventsManager.instance.playerEvents.PlayerEnterAreaBox(this, true);
     }
 
     private void OnTriggerExit(Collider other)
     {
         if (_triggerType == LocationTriggerType.EstablishmentLocation)
-            Debug.Log("swag");
-            //
+        GameEventsManager.instance.playerEvents.PlayerEnterAreaBox(this, false);
     }
 
     public LocationTriggerType GetTriggerType()
