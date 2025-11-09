@@ -12,7 +12,7 @@ public class TeleportDoor : Door
     {
         base.Interact();
         GameEventsManager.instance.playerEvents.BeginPlayerTeleportation();
-        PlayerWorldInfo.SetWorldInfo(_teleportToLocation, _teleportLocationName);
+        PlayerWorldInfo.SetTeleportLocation(_teleportToLocation, _teleportLocationName);
         StartCoroutine(Teleport());
     }
 

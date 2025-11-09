@@ -7,28 +7,47 @@ using PrimeTween;
 
 public class HUD : MonoBehaviour
 {
-    [SerializeField] private TextMeshProUGUI _locationNameText;
-    [SerializeField] private RectTransform _locationBanner;
-    private CanvasGroup _locationBannerCanvasGroup = null;
+    // City Location Name is for parts of the city the player is in, or when they are inside an establishment
+    [SerializeField] private TextMeshProUGUI _cityLocationText;
+    [SerializeField] private RectTransform _cityLocationBanner;
+    // Exterior Location Name is for when the player is outside an establishment
+    [SerializeField] private TextMeshProUGUI _establishmentLocationText;
+    [SerializeField] private RectTransform _exteriorLocationBanner;
+
+    private CanvasGroup _cityLocationBannerCanvasGroup = null;
+    private CanvasGroup _exteriorLocationBannerCanvasGroup = null;
 
     private void Awake()
     {
-        _locationBannerCanvasGroup = _locationBanner.GetComponent<CanvasGroup>();
-        GameEventsManager.instance.playerEvents.onPlayerTeleportation += UpdateHUDLocationInfo;
+        _cityLocationBannerCanvasGroup = _cityLocationBanner.GetComponent<CanvasGroup>();
+        _exteriorLocationBannerCanvasGroup = _exteriorLocationBanner.GetComponent<CanvasGroup>();
+        GameEventsManager.instance.playerEvents.onPlayerTeleportation += UpdateHUDCityLocationInfo;
+        GameEventsManager.instance.playerEvents.onPlayerEnterAreaBox += UpdateHUDCityLocationInfo;
     }
 
     private void OnDisable()
     {
-        GameEventsManager.instance.playerEvents.onPlayerTeleportation -= UpdateHUDLocationInfo;
+        GameEventsManager.instance.playerEvents.onPlayerTeleportation -= UpdateHUDCityLocationInfo;
+        GameEventsManager.instance.playerEvents.onPlayerEnterAreaBox -= UpdateHUDCityLocationInfo;
     }
 
-    private void UpdateHUDLocationInfo()
+    private void UpdateHUDCityLocationInfo()
     {
-        _locationNameText.text = PlayerWorldInfo.GetLocationName();
+        _cityLocationText.text = PlayerWorldInfo.GetCityLocationName();
 
         Sequence.Create()
-            .Group(Tween.Custom(startValue: 0.0f, endValue: 1.0f, duration: 1.0f, onValueChange: newVal => _locationBannerCanvasGroup.alpha = newVal, startDelay: 1))
-            .Group(Tween.UIAnchoredPosition(target: _locationBanner, startValue: new Vector2(-660.0f, -392.0f), endValue: new Vector2(-622.0f, -392.0f), duration: 1.0f, startDelay: 1.0f)); 
-        
+            .Group(Tween.Custom(startValue: 0.0f, endValue: 1.0f, duration: 1.0f, onValueChange: newVal => _cityLocationBannerCanvasGroup.alpha = newVal, startDelay: 1))
+            .Group(Tween.UIAnchoredPosition(target: _cityLocationBanner, startValue: new Vector2(-690.0f, -392.0f), endValue: new Vector2(-622.0f, -392.0f), duration: 1.0f, startDelay: 1.0f));   
     }
+
+    private void UpdateHUDCityLocationInfo(LocationTrigger trigger)
+    {
+        // overloaded function for when City Location Name changes via entering a trigger, rather than teleporting
+
+        if (trigger.GetTriggerType() == LocationTrigger.LocationTriggerType.CityLocation)
+            _cityLocationText.text = PlayerWorldInfo.GetCityLocationName();
+        else if (trigger.GetTriggerType() == LocationTrigger.LocationTriggerType.EstablishmentLocation)
+            _establishmentLocationText.text = PlayerWorldInfo.GetEstablishmentLocationName();
+    }
+
 }

@@ -9,6 +9,7 @@ public class PlayerEvents
     public event Action onEnablePlayerMovement;
     public event Action onBeginPlayerTeleportation;
     public event Action onPlayerTeleportation;
+    public event Action<LocationTrigger> onPlayerEnterAreaBox;
 
     public void DisablePlayerMovement()
     {
@@ -34,5 +35,11 @@ public class PlayerEvents
     {
         if (onPlayerTeleportation != null)
             onPlayerTeleportation();
+    }
+
+    public void PlayerEnterAreaBox(LocationTrigger triggerArea)
+    {
+        if (onPlayerEnterAreaBox != null)
+            onPlayerEnterAreaBox(triggerArea);
     }
 }
