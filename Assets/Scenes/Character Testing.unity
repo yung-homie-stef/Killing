@@ -224,8 +224,8 @@ Canvas:
   m_OverrideSorting: 0
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
-  m_VertexColorAlwaysGammaSpace: 0
-  m_AdditionalShaderChannelsFlag: 25
+  m_VertexColorAlwaysGammaSpace: 1
+  m_AdditionalShaderChannelsFlag: 0
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
   m_SortingOrder: 0
@@ -371,7 +371,7 @@ Canvas:
   m_OverrideSorting: 0
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
-  m_VertexColorAlwaysGammaSpace: 0
+  m_VertexColorAlwaysGammaSpace: 1
   m_AdditionalShaderChannelsFlag: 25
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
@@ -1397,8 +1397,8 @@ Transform:
   - {fileID: 253593850}
   - {fileID: 1179727545}
   - {fileID: 108274103}
-  - {fileID: 1970888651}
   - {fileID: 1040354884}
+  - {fileID: 1606900025}
   m_Father: {fileID: 1058798645}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &884945622
@@ -1775,7 +1775,6 @@ GameObject:
   - component: {fileID: 1040354884}
   - component: {fileID: 1040354887}
   - component: {fileID: 1040354886}
-  - component: {fileID: 1040354885}
   - component: {fileID: 1040354888}
   m_Layer: 5
   m_Name: Blackout
@@ -1804,23 +1803,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
---- !u!114 &1040354885
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1040354883}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dc42784cf147c0c48a680349fa168899, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_IgnoreReversedGraphics: 1
-  m_BlockingObjects: 0
-  m_BlockingMask:
-    serializedVersion: 2
-    m_Bits: 4294967295
 --- !u!114 &1040354886
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1941,7 +1923,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 83b90cd3f2483d849b30b6a890330dba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  label: Perfume River
+  label: Enter
   _onInteract:
     m_PersistentCalls:
       m_Calls: []
@@ -2127,7 +2109,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1179727545
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2204,8 +2186,8 @@ Canvas:
   m_OverrideSorting: 0
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
-  m_VertexColorAlwaysGammaSpace: 0
-  m_AdditionalShaderChannelsFlag: 25
+  m_VertexColorAlwaysGammaSpace: 1
+  m_AdditionalShaderChannelsFlag: 0
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
   m_SortingOrder: 0
@@ -2896,6 +2878,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4636611496719166572, guid: 181b8b3539ee1ed46b71107b82b4208d, type: 3}
   m_PrefabInstance: {fileID: 506974961}
   m_PrefabAsset: {fileID: 0}
+--- !u!224 &1606900025 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 7633350805653926325, guid: 17c3e12a0001e3c4381529ddb01c6ef4, type: 3}
+  m_PrefabInstance: {fileID: 2547852681235267980}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1635568437 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 812300825037870525, guid: 181b8b3539ee1ed46b71107b82b4208d, type: 3}
@@ -3372,11 +3359,6 @@ Transform:
   - {fileID: 2071535470}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!224 &1970888651 stripped
-RectTransform:
-  m_CorrespondingSourceObject: {fileID: 7633350805653926325, guid: 17c3e12a0001e3c4381529ddb01c6ef4, type: 3}
-  m_PrefabInstance: {fileID: 5652533763286697858}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1986389275
 GameObject:
   m_ObjectHideFlags: 0
@@ -3778,6 +3760,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4797350621245432738, guid: da1cfab97b2395040aa8b061e8a5b844, type: 3}
+      propertyPath: m_ShowMaskGraphic
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6348266227354532874, guid: da1cfab97b2395040aa8b061e8a5b844, type: 3}
       propertyPath: m_AnchorMax.x
       value: 1
@@ -3886,7 +3872,7 @@ PrefabInstance:
       addedObject: {fileID: 1548815200}
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: da1cfab97b2395040aa8b061e8a5b844, type: 3}
---- !u!1001 &5652533763286697858
+--- !u!1001 &2547852681235267980
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -3897,6 +3883,10 @@ PrefabInstance:
     - target: {fileID: 631468939631792500, guid: 17c3e12a0001e3c4381529ddb01c6ef4, type: 3}
       propertyPath: m_Name
       value: HUD
+      objectReference: {fileID: 0}
+    - target: {fileID: 4849321651823444213, guid: 17c3e12a0001e3c4381529ddb01c6ef4, type: 3}
+      propertyPath: m_AdditionalShaderChannelsFlag
+      value: 25
       objectReference: {fileID: 0}
     - target: {fileID: 7633350805653926325, guid: 17c3e12a0001e3c4381529ddb01c6ef4, type: 3}
       propertyPath: m_Pivot.x

@@ -16,15 +16,12 @@ public class InventoryItemButton : MonoBehaviour, IPointerEnterHandler, IPointer
     [SerializeField] private Button _discardButton;
     [SerializeField] private InventorySlot _inventorySlot;
 
-    private Button _button;
     private UIManager _UIManager = null;
     private InventoryManager _inventoryManager = null;
 
     // Start is called before the first frame update
     void Start()
     {
-        _button = GetComponent<Button>();
-
         if (UIManager.instance != null ) 
             _UIManager = UIManager.instance;
 
