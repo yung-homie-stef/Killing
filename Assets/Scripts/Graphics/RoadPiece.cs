@@ -7,11 +7,12 @@ using UnityEngine;
 public class RoadPiece : MonoBehaviour
 {
     [SerializeField] private bool _isUsingManualOffset = false;
+    [Range(1, 4 )]
     [SerializeField] private float _offsetX = 0.0f;
+    [Range(1, 4)]
     [SerializeField] private float _offsetY = 0.0f;
 
     private Material _material = null;
-
 
     private void Start()
     {
@@ -27,7 +28,8 @@ public class RoadPiece : MonoBehaviour
         }
     }
 
-    private void Update()
+
+    private void OnValidate()
     {
         if (_material != null)
         {
@@ -36,4 +38,5 @@ public class RoadPiece : MonoBehaviour
             _material.SetFloat("_yOffset", _offsetY);
         }
     }
+    
 }
