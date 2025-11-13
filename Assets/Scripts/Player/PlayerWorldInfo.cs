@@ -14,6 +14,11 @@ public static class PlayerWorldInfo
         _cityLocationName = name;
     }
 
+    public static void SetTeleportLocation(Transform to)
+    {
+        _playerTeleportToLocation = to;
+    }
+
     public static void SetLocationName(LocationTrigger trigger)
     {
         if (trigger.GetTriggerType() == LocationTrigger.LocationTriggerType.CityLocation)

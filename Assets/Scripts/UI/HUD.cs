@@ -14,39 +14,45 @@ public class HUD : MonoBehaviour
     [SerializeField] private TextMeshProUGUI _establishmentLocationText;
     [SerializeField] private RectTransform _establishmentLocationBanner;
 
+    private CanvasGroup _HUD_CanvasGroup;
     private CanvasGroup _cityLocationBannerCanvasGroup = null;
-    private CanvasGroup _exteriorLocationBannerCanvasGroup = null;
 
     private void Awake()
     {
         _cityLocationBannerCanvasGroup = _cityLocationBanner.GetComponent<CanvasGroup>();
-        _exteriorLocationBannerCanvasGroup = _establishmentLocationBanner.GetComponent<CanvasGroup>();
+        _HUD_CanvasGroup = GetComponent<CanvasGroup>();
 
         GameEventsManager.instance.playerEvents.onPlayerTeleportation += HUDCityLocationTween;
         GameEventsManager.instance.playerEvents.onPlayerEnterAreaBox += UpdateHUDCityLocationInfo;
+        GameEventsManager.instance.playerEvents.onBeginPlayerTeleportation += FadeOutHUD;
     }
 
     private void OnDisable()
     {
         GameEventsManager.instance.playerEvents.onPlayerTeleportation -= HUDCityLocationTween;
         GameEventsManager.instance.playerEvents.onPlayerEnterAreaBox -= UpdateHUDCityLocationInfo;
+        GameEventsManager.instance.playerEvents.onBeginPlayerTeleportation -= FadeOutHUD;
     }
 
+    // for functionality relating to information about the player's current locaiton on the HUD
+    #region PLAYER LOCATION INFO METHODS
     private void HUDCityLocationTween()
     {
         // function for when City Location Name changes via teleporting into an establishment
-
         _cityLocationText.text = PlayerWorldInfo.GetCityLocationName();
 
-        Sequence.Create()
-            .Group(Tween.Custom(startValue: 0.0f, endValue: 1.0f, duration: 1.0f, onValueChange: newVal => _cityLocationBannerCanvasGroup.alpha = newVal, startDelay: 1))
-            .Group(Tween.UIAnchoredPosition(target: _cityLocationBanner, startValue: new Vector2(-690.0f, -392.0f), endValue: new Vector2(-622.0f, -392.0f), duration: 1.0f, startDelay: 1.0f));   
+        if (CityLoadManager.instance._cityLoadedIn == false)
+        {
+            Sequence.Create()
+                .Group(Tween.Custom(startValue: 0.0f, endValue: 1.0f, duration: 1.0f, onValueChange: newVal => _cityLocationBannerCanvasGroup.alpha = newVal, startDelay: 1))
+                .Group(Tween.UIAnchoredPosition(target: _cityLocationBanner, startValue: new Vector2(-690.0f, -392.0f), endValue: new Vector2(-622.0f, -392.0f), duration: 1.0f, startDelay: 1.0f));
+        }
+        else
+            _cityLocationBannerCanvasGroup.alpha = 1.0f;
     }
 
     private void UpdateHUDCityLocationInfo(LocationTrigger trigger, bool flag)
     {
-        // overloaded function for when City Location Name changes via entering a trigger, rather than teleporting
-
         if (trigger.GetTriggerType() == LocationTrigger.LocationTriggerType.CityLocation)
             _cityLocationText.text = PlayerWorldInfo.GetCityLocationName();
 
@@ -61,5 +67,11 @@ public class HUD : MonoBehaviour
     {
         Tween.UIAnchoredPosition(target: _establishmentLocationBanner, flag ? new Vector2(0.0f, -450.0f) : new Vector2(485.0f, -450.0f), duration: 0.25f);
     }
+    #endregion
 
+    private void FadeOutHUD()
+    {
+        Tween.Custom(startValue: 1.0f, endValue: 0.0f, duration: 1.0f, onValueChange: newVal => _cityLocationBannerCanvasGroup.alpha = newVal, startDelay: 1);
+    }
+   
 }
