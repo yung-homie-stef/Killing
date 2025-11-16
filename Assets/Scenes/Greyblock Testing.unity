@@ -697,98 +697,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 302c75e77ce6f1340addcb8e14859bfc, type: 3}
---- !u!21 &362049199
-Material:
-  serializedVersion: 8
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: Road (Instance) (Instance) (Instance) (Instance) (Instance)
-  m_Shader: {fileID: -6465566751694194690, guid: 07a0caefb67f4894082a16da8cf3584f, type: 3}
-  m_Parent: {fileID: 0}
-  m_ModifiedSerializedProperties: 0
-  m_ValidKeywords: []
-  m_InvalidKeywords: []
-  m_LightmapFlags: 4
-  m_EnableInstancingVariants: 0
-  m_DoubleSidedGI: 0
-  m_CustomRenderQueue: -1
-  stringTagMap: {}
-  disabledShaderPasses: []
-  m_LockedProperties: 
-  m_SavedProperties:
-    serializedVersion: 3
-    m_TexEnvs:
-    - _Asphalt_Texture:
-        m_Texture: {fileID: 2800000, guid: b8131036760c55b41a000c7a26895505, type: 3}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _Noise_Offset_Texture:
-        m_Texture: {fileID: 2800000, guid: 6900f3b45e7ee3c41a57ada35240ee81, type: 3}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _Road_Decal_Array:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _Road_Decal_Texture_Array:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _Road_Paint_Texture:
-        m_Texture: {fileID: 2800000, guid: f259fdf8a8b397042865e15ef1a9cd85, type: 3}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _SampleTexture2D_e5d420657f914087b05e8352457079d5_Texture_1_Texture2D:
-        m_Texture: {fileID: 2800000, guid: 5686727f66d4dd043845d7bd80c55cb0, type: 3}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - unity_Lightmaps:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - unity_LightmapsInd:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - unity_ShadowMasks:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    m_Ints: []
-    m_Floats:
-    - _Manual_Offset: 0
-    - _Noise_Scale: 5
-    - _QueueControl: 0
-    - _QueueOffset: 0
-    - _Road_Detail_Subdivision: 2
-    - _Road_Line_Subdivision: 4
-    - _Subdivision: 4
-    - _xOffset: 0
-    - _yOffset: 0
-    m_Colors: []
-  m_BuildTextureStacks: []
---- !u!1 &405696765 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: f3b0643f2e74eab49864427031f36867, type: 3}
-  m_PrefabInstance: {fileID: 522828763}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &405696766
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 405696765}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e0b996d1f28a47b4691e4cf2697e0539, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _isUsingManualOffset: 1
-  _offsetX: 2.59
-  _offsetY: 1.63
 --- !u!1 &407593387 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 02881d0272cdde2439e5104a6bac89ae, type: 3}
@@ -1102,90 +1010,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 13442fccb14bb854ca636ded1a1837ba, type: 3}
---- !u!1001 &522828763
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: -8679921383154817045, guid: f3b0643f2e74eab49864427031f36867, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -26.88
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: f3b0643f2e74eab49864427031f36867, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: f3b0643f2e74eab49864427031f36867, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 6.8100004
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: f3b0643f2e74eab49864427031f36867, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: f3b0643f2e74eab49864427031f36867, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: f3b0643f2e74eab49864427031f36867, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: f3b0643f2e74eab49864427031f36867, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: f3b0643f2e74eab49864427031f36867, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: f3b0643f2e74eab49864427031f36867, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: f3b0643f2e74eab49864427031f36867, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -7511558181221131132, guid: f3b0643f2e74eab49864427031f36867, type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 1663007163}
-    - target: {fileID: 919132149155446097, guid: f3b0643f2e74eab49864427031f36867, type: 3}
-      propertyPath: m_Name
-      value: road_piece (4)
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: f3b0643f2e74eab49864427031f36867, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 405696766}
-  m_SourcePrefab: {fileID: 100100000, guid: f3b0643f2e74eab49864427031f36867, type: 3}
---- !u!1 &545640559 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: f3b0643f2e74eab49864427031f36867, type: 3}
-  m_PrefabInstance: {fileID: 1383810142}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &545640560
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 545640559}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e0b996d1f28a47b4691e4cf2697e0539, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _isUsingManualOffset: 0
-  _offsetX: 0
-  _offsetY: 0
 --- !u!1 &599225683
 GameObject:
   m_ObjectHideFlags: 0
@@ -1277,70 +1101,6 @@ MonoBehaviour:
   m_DefaultActionMap: Gameplay
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
---- !u!1001 &624880729
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: -8679921383154817045, guid: f3b0643f2e74eab49864427031f36867, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -26.88
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: f3b0643f2e74eab49864427031f36867, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: f3b0643f2e74eab49864427031f36867, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -8.190001
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: f3b0643f2e74eab49864427031f36867, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: f3b0643f2e74eab49864427031f36867, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: f3b0643f2e74eab49864427031f36867, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: f3b0643f2e74eab49864427031f36867, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: f3b0643f2e74eab49864427031f36867, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: f3b0643f2e74eab49864427031f36867, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: f3b0643f2e74eab49864427031f36867, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -7511558181221131132, guid: f3b0643f2e74eab49864427031f36867, type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2022291742}
-    - target: {fileID: 919132149155446097, guid: f3b0643f2e74eab49864427031f36867, type: 3}
-      propertyPath: m_Name
-      value: road_piece (2)
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: f3b0643f2e74eab49864427031f36867, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 707231834}
-  m_SourcePrefab: {fileID: 100100000, guid: f3b0643f2e74eab49864427031f36867, type: 3}
 --- !u!1001 &643725089
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1438,26 +1198,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b2dd869e9590561439b1373743bb07f1, type: 3}
---- !u!1 &707231833 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: f3b0643f2e74eab49864427031f36867, type: 3}
-  m_PrefabInstance: {fileID: 624880729}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &707231834
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 707231833}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e0b996d1f28a47b4691e4cf2697e0539, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _isUsingManualOffset: 0
-  _offsetX: 0
-  _offsetY: 0
 --- !u!4 &722482162 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 88271cbc91bf29249a2b80d610cc405f, type: 3}
@@ -1603,26 +1343,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 5b2ef52a0ce824645a95304a3ca3c757, type: 3}
   m_PrefabInstance: {fileID: 761276903}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &795542345 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: f3b0643f2e74eab49864427031f36867, type: 3}
-  m_PrefabInstance: {fileID: 1672020915}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &795542349
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 795542345}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e0b996d1f28a47b4691e4cf2697e0539, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _isUsingManualOffset: 0
-  _offsetX: 0
-  _offsetY: 0
 --- !u!1 &800742824
 GameObject:
   m_ObjectHideFlags: 0
@@ -2190,6 +1910,90 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: e3b781e03395b9244b47952ca0de0422, type: 3}
   m_PrefabInstance: {fileID: 211207547}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &1044419018
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: -8679921383154817045, guid: f3b0643f2e74eab49864427031f36867, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -41
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: f3b0643f2e74eab49864427031f36867, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 11.472975
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: f3b0643f2e74eab49864427031f36867, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -22.37
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: f3b0643f2e74eab49864427031f36867, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: f3b0643f2e74eab49864427031f36867, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0.000000015454312
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: f3b0643f2e74eab49864427031f36867, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: f3b0643f2e74eab49864427031f36867, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0.000000015454312
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: f3b0643f2e74eab49864427031f36867, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: f3b0643f2e74eab49864427031f36867, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: f3b0643f2e74eab49864427031f36867, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: f3b0643f2e74eab49864427031f36867, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 1298132018}
+    - target: {fileID: 919132149155446097, guid: f3b0643f2e74eab49864427031f36867, type: 3}
+      propertyPath: m_Name
+      value: road_piece
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: f3b0643f2e74eab49864427031f36867, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1044419020}
+  m_SourcePrefab: {fileID: 100100000, guid: f3b0643f2e74eab49864427031f36867, type: 3}
+--- !u!1 &1044419019 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: f3b0643f2e74eab49864427031f36867, type: 3}
+  m_PrefabInstance: {fileID: 1044419018}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1044419020
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1044419019}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e0b996d1f28a47b4691e4cf2697e0539, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _isUsingManualOffset: 1
+  _offsetX: 1
+  _offsetY: 0
 --- !u!1001 &1050917706
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2300,79 +2104,6 @@ Transform:
   - {fileID: 1040935524}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!21 &1151876386
-Material:
-  serializedVersion: 8
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: Road (Instance) (Instance) (Instance) (Instance) (Instance) (Instance)
-    (Instance)
-  m_Shader: {fileID: -6465566751694194690, guid: 07a0caefb67f4894082a16da8cf3584f, type: 3}
-  m_Parent: {fileID: 0}
-  m_ModifiedSerializedProperties: 0
-  m_ValidKeywords: []
-  m_InvalidKeywords: []
-  m_LightmapFlags: 4
-  m_EnableInstancingVariants: 0
-  m_DoubleSidedGI: 0
-  m_CustomRenderQueue: -1
-  stringTagMap: {}
-  disabledShaderPasses: []
-  m_LockedProperties: 
-  m_SavedProperties:
-    serializedVersion: 3
-    m_TexEnvs:
-    - _Asphalt_Texture:
-        m_Texture: {fileID: 2800000, guid: b8131036760c55b41a000c7a26895505, type: 3}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _Noise_Offset_Texture:
-        m_Texture: {fileID: 2800000, guid: 6900f3b45e7ee3c41a57ada35240ee81, type: 3}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _Road_Decal_Array:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _Road_Decal_Texture_Array:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _Road_Paint_Texture:
-        m_Texture: {fileID: 2800000, guid: f259fdf8a8b397042865e15ef1a9cd85, type: 3}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _SampleTexture2D_e5d420657f914087b05e8352457079d5_Texture_1_Texture2D:
-        m_Texture: {fileID: 2800000, guid: 5686727f66d4dd043845d7bd80c55cb0, type: 3}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - unity_Lightmaps:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - unity_LightmapsInd:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - unity_ShadowMasks:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    m_Ints: []
-    m_Floats:
-    - _Manual_Offset: 0
-    - _Noise_Scale: 5
-    - _QueueControl: 0
-    - _QueueOffset: 0
-    - _Road_Detail_Subdivision: 2
-    - _Road_Line_Subdivision: 4
-    - _Subdivision: 4
-    - _xOffset: 0
-    - _yOffset: 0
-    m_Colors: []
-  m_BuildTextureStacks: []
 --- !u!1001 &1174906692
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2736,6 +2467,150 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 0fa5a60b9659a8d4b87535c647b26289, type: 3}
   m_PrefabInstance: {fileID: 1276278295}
   m_PrefabAsset: {fileID: 0}
+--- !u!21 &1298132018
+Material:
+  serializedVersion: 8
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: streets (Instance)
+  m_Shader: {fileID: -6465566751694194690, guid: 07a0caefb67f4894082a16da8cf3584f, type: 3}
+  m_Parent: {fileID: 0}
+  m_ModifiedSerializedProperties: 0
+  m_ValidKeywords: []
+  m_InvalidKeywords: []
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_LockedProperties: 
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _Asphalt_Texture:
+        m_Texture: {fileID: 2800000, guid: b8131036760c55b41a000c7a26895505, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _BaseMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _BumpMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _DetailAlbedoMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _DetailMask:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _DetailNormalMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _EmissionMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _MainTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _MetallicGlossMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _Noise_Offset_Texture:
+        m_Texture: {fileID: 2800000, guid: 6900f3b45e7ee3c41a57ada35240ee81, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _OcclusionMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _ParallaxMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _Road_Decal_Array:
+        m_Texture: {fileID: 18700000, guid: 4e51ef3842fb7ea4eac079d8fb52d5bf, type: 2}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _Road_Paint_Texture:
+        m_Texture: {fileID: 2800000, guid: f259fdf8a8b397042865e15ef1a9cd85, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _SampleTexture2D_e5d420657f914087b05e8352457079d5_Texture_1_Texture2D:
+        m_Texture: {fileID: 2800000, guid: 5686727f66d4dd043845d7bd80c55cb0, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _SpecGlossMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - unity_Lightmaps:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - unity_LightmapsInd:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - unity_ShadowMasks:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Ints: []
+    m_Floats:
+    - _AlphaClip: 0
+    - _AlphaToMask: 0
+    - _Blend: 0
+    - _BlendModePreserveSpecular: 1
+    - _BumpScale: 1
+    - _ClearCoatMask: 0
+    - _ClearCoatSmoothness: 0
+    - _Cull: 2
+    - _Cutoff: 0.5
+    - _DetailAlbedoMapScale: 1
+    - _DetailNormalMapScale: 1
+    - _DstBlend: 0
+    - _DstBlendAlpha: 0
+    - _EnvironmentReflections: 1
+    - _GlossMapScale: 0
+    - _Glossiness: 0
+    - _GlossyReflections: 0
+    - _Manual_Offset: 1
+    - _Metallic: 0
+    - _Noise_Scale: 5
+    - _OcclusionStrength: 1
+    - _Parallax: 0.005
+    - _QueueControl: 0
+    - _QueueOffset: 0
+    - _ReceiveShadows: 1
+    - _Road_Detail_Subdivision: 2
+    - _Road_Line_Subdivision: 4
+    - _Smoothness: 0.5
+    - _SmoothnessTextureChannel: 0
+    - _SpecularHighlights: 1
+    - _SrcBlend: 1
+    - _SrcBlendAlpha: 1
+    - _Surface: 0
+    - _WorkflowMode: 1
+    - _ZWrite: 1
+    - _xOffset: 1
+    - _yOffset: 0
+    m_Colors:
+    - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
+    - _Color: {r: 1, g: 1, b: 1, a: 1}
+    - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
+    - _SpecColor: {r: 0.19999996, g: 0.19999996, b: 0.19999996, a: 1}
+  m_BuildTextureStacks: []
 --- !u!1 &1319194177
 GameObject:
   m_ObjectHideFlags: 0
@@ -2895,70 +2770,6 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
---- !u!1001 &1383810142
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: -8679921383154817045, guid: f3b0643f2e74eab49864427031f36867, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -26.88
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: f3b0643f2e74eab49864427031f36867, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: f3b0643f2e74eab49864427031f36867, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -0.69
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: f3b0643f2e74eab49864427031f36867, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: f3b0643f2e74eab49864427031f36867, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: f3b0643f2e74eab49864427031f36867, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: f3b0643f2e74eab49864427031f36867, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: f3b0643f2e74eab49864427031f36867, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: f3b0643f2e74eab49864427031f36867, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: f3b0643f2e74eab49864427031f36867, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -7511558181221131132, guid: f3b0643f2e74eab49864427031f36867, type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 362049199}
-    - target: {fileID: 919132149155446097, guid: f3b0643f2e74eab49864427031f36867, type: 3}
-      propertyPath: m_Name
-      value: road_piece (3)
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: f3b0643f2e74eab49864427031f36867, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 545640560}
-  m_SourcePrefab: {fileID: 100100000, guid: f3b0643f2e74eab49864427031f36867, type: 3}
 --- !u!1001 &1394253618
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3386,142 +3197,6 @@ Transform:
   - {fileID: 599225684}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!21 &1663007163
-Material:
-  serializedVersion: 8
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: Road (Instance) (Instance) (Instance) (Instance) (Instance) (Instance)
-  m_Shader: {fileID: -6465566751694194690, guid: 07a0caefb67f4894082a16da8cf3584f, type: 3}
-  m_Parent: {fileID: 0}
-  m_ModifiedSerializedProperties: 0
-  m_ValidKeywords: []
-  m_InvalidKeywords: []
-  m_LightmapFlags: 4
-  m_EnableInstancingVariants: 0
-  m_DoubleSidedGI: 0
-  m_CustomRenderQueue: -1
-  stringTagMap: {}
-  disabledShaderPasses: []
-  m_LockedProperties: 
-  m_SavedProperties:
-    serializedVersion: 3
-    m_TexEnvs:
-    - _Asphalt_Texture:
-        m_Texture: {fileID: 2800000, guid: b8131036760c55b41a000c7a26895505, type: 3}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _Noise_Offset_Texture:
-        m_Texture: {fileID: 2800000, guid: 6900f3b45e7ee3c41a57ada35240ee81, type: 3}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _Road_Decal_Array:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _Road_Decal_Texture_Array:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _Road_Paint_Texture:
-        m_Texture: {fileID: 2800000, guid: f259fdf8a8b397042865e15ef1a9cd85, type: 3}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _SampleTexture2D_e5d420657f914087b05e8352457079d5_Texture_1_Texture2D:
-        m_Texture: {fileID: 2800000, guid: 5686727f66d4dd043845d7bd80c55cb0, type: 3}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - unity_Lightmaps:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - unity_LightmapsInd:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - unity_ShadowMasks:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    m_Ints: []
-    m_Floats:
-    - _Manual_Offset: 1
-    - _Noise_Scale: 5
-    - _QueueControl: 0
-    - _QueueOffset: 0
-    - _Road_Detail_Subdivision: 2
-    - _Road_Line_Subdivision: 4
-    - _Subdivision: 4
-    - _xOffset: 2.59
-    - _yOffset: 1.63
-    m_Colors: []
-  m_BuildTextureStacks: []
---- !u!1001 &1672020915
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: -8679921383154817045, guid: f3b0643f2e74eab49864427031f36867, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -26.88
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: f3b0643f2e74eab49864427031f36867, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: f3b0643f2e74eab49864427031f36867, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -15.690001
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: f3b0643f2e74eab49864427031f36867, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: f3b0643f2e74eab49864427031f36867, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: f3b0643f2e74eab49864427031f36867, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: f3b0643f2e74eab49864427031f36867, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: f3b0643f2e74eab49864427031f36867, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: f3b0643f2e74eab49864427031f36867, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: f3b0643f2e74eab49864427031f36867, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -7511558181221131132, guid: f3b0643f2e74eab49864427031f36867, type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2110638592}
-    - target: {fileID: 919132149155446097, guid: f3b0643f2e74eab49864427031f36867, type: 3}
-      propertyPath: m_Name
-      value: road_piece (1)
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: f3b0643f2e74eab49864427031f36867, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 795542349}
-  m_SourcePrefab: {fileID: 100100000, guid: f3b0643f2e74eab49864427031f36867, type: 3}
 --- !u!1 &1715350459
 GameObject:
   m_ObjectHideFlags: 0
@@ -3635,70 +3310,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: dd236e741961bc64ab85efe9ad54f30c, type: 3}
   m_PrefabInstance: {fileID: 1470043562}
   m_PrefabAsset: {fileID: 0}
---- !u!1001 &1816879566
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: -8679921383154817045, guid: f3b0643f2e74eab49864427031f36867, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -26.88
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: f3b0643f2e74eab49864427031f36867, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: f3b0643f2e74eab49864427031f36867, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 14.31
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: f3b0643f2e74eab49864427031f36867, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: f3b0643f2e74eab49864427031f36867, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: f3b0643f2e74eab49864427031f36867, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: f3b0643f2e74eab49864427031f36867, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: f3b0643f2e74eab49864427031f36867, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: f3b0643f2e74eab49864427031f36867, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: f3b0643f2e74eab49864427031f36867, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -7511558181221131132, guid: f3b0643f2e74eab49864427031f36867, type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 1151876386}
-    - target: {fileID: 919132149155446097, guid: f3b0643f2e74eab49864427031f36867, type: 3}
-      propertyPath: m_Name
-      value: road_piece (5)
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: f3b0643f2e74eab49864427031f36867, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 2113517173}
-  m_SourcePrefab: {fileID: 100100000, guid: f3b0643f2e74eab49864427031f36867, type: 3}
 --- !u!1001 &1890245836
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3878,170 +3489,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 10062f7f2a404c9438caf746f2310c7a, type: 3}
   m_PrefabInstance: {fileID: 1985242502}
   m_PrefabAsset: {fileID: 0}
---- !u!21 &2022291742
-Material:
-  serializedVersion: 8
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: Road (Instance) (Instance) (Instance) (Instance)
-  m_Shader: {fileID: -6465566751694194690, guid: 07a0caefb67f4894082a16da8cf3584f, type: 3}
-  m_Parent: {fileID: 0}
-  m_ModifiedSerializedProperties: 0
-  m_ValidKeywords: []
-  m_InvalidKeywords: []
-  m_LightmapFlags: 4
-  m_EnableInstancingVariants: 0
-  m_DoubleSidedGI: 0
-  m_CustomRenderQueue: -1
-  stringTagMap: {}
-  disabledShaderPasses: []
-  m_LockedProperties: 
-  m_SavedProperties:
-    serializedVersion: 3
-    m_TexEnvs:
-    - _Asphalt_Texture:
-        m_Texture: {fileID: 2800000, guid: b8131036760c55b41a000c7a26895505, type: 3}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _Noise_Offset_Texture:
-        m_Texture: {fileID: 2800000, guid: 6900f3b45e7ee3c41a57ada35240ee81, type: 3}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _Road_Decal_Array:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _Road_Decal_Texture_Array:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _Road_Paint_Texture:
-        m_Texture: {fileID: 2800000, guid: f259fdf8a8b397042865e15ef1a9cd85, type: 3}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _SampleTexture2D_e5d420657f914087b05e8352457079d5_Texture_1_Texture2D:
-        m_Texture: {fileID: 2800000, guid: 5686727f66d4dd043845d7bd80c55cb0, type: 3}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - unity_Lightmaps:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - unity_LightmapsInd:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - unity_ShadowMasks:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    m_Ints: []
-    m_Floats:
-    - _Manual_Offset: 0
-    - _Noise_Scale: 5
-    - _QueueControl: 0
-    - _QueueOffset: 0
-    - _Road_Detail_Subdivision: 2
-    - _Road_Line_Subdivision: 4
-    - _Subdivision: 4
-    - _xOffset: 0
-    - _yOffset: 0
-    m_Colors: []
-  m_BuildTextureStacks: []
---- !u!21 &2110638592
-Material:
-  serializedVersion: 8
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: Road (Instance) (Instance) (Instance)
-  m_Shader: {fileID: -6465566751694194690, guid: 07a0caefb67f4894082a16da8cf3584f, type: 3}
-  m_Parent: {fileID: 0}
-  m_ModifiedSerializedProperties: 0
-  m_ValidKeywords: []
-  m_InvalidKeywords: []
-  m_LightmapFlags: 4
-  m_EnableInstancingVariants: 0
-  m_DoubleSidedGI: 0
-  m_CustomRenderQueue: -1
-  stringTagMap: {}
-  disabledShaderPasses: []
-  m_LockedProperties: 
-  m_SavedProperties:
-    serializedVersion: 3
-    m_TexEnvs:
-    - _Asphalt_Texture:
-        m_Texture: {fileID: 2800000, guid: b8131036760c55b41a000c7a26895505, type: 3}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _Noise_Offset_Texture:
-        m_Texture: {fileID: 2800000, guid: 6900f3b45e7ee3c41a57ada35240ee81, type: 3}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _Road_Decal_Array:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _Road_Decal_Texture_Array:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _Road_Paint_Texture:
-        m_Texture: {fileID: 2800000, guid: f259fdf8a8b397042865e15ef1a9cd85, type: 3}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _SampleTexture2D_e5d420657f914087b05e8352457079d5_Texture_1_Texture2D:
-        m_Texture: {fileID: 2800000, guid: 5686727f66d4dd043845d7bd80c55cb0, type: 3}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - unity_Lightmaps:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - unity_LightmapsInd:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - unity_ShadowMasks:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    m_Ints: []
-    m_Floats:
-    - _Manual_Offset: 0
-    - _Noise_Scale: 5
-    - _QueueControl: 0
-    - _QueueOffset: 0
-    - _Road_Detail_Subdivision: 2
-    - _Road_Line_Subdivision: 4
-    - _Subdivision: 4
-    - _xOffset: 0
-    - _yOffset: 0
-    m_Colors: []
-  m_BuildTextureStacks: []
---- !u!1 &2113517172 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: f3b0643f2e74eab49864427031f36867, type: 3}
-  m_PrefabInstance: {fileID: 1816879566}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &2113517173
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2113517172}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e0b996d1f28a47b4691e4cf2697e0539, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _isUsingManualOffset: 0
-  _offsetX: 0
-  _offsetY: 0
 --- !u!1001 &2136134835
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4121,8 +3568,4 @@ SceneRoots:
   - {fileID: 466692797}
   - {fileID: 411754711}
   - {fileID: 354268990}
-  - {fileID: 1672020915}
-  - {fileID: 624880729}
-  - {fileID: 1383810142}
-  - {fileID: 522828763}
-  - {fileID: 1816879566}
+  - {fileID: 1044419018}
