@@ -1,11 +1,26 @@
+using PrimeTween;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
-public class PauseMenu : MonoBehaviour
+public class PauseUI : MonoBehaviour
 {
     [Header("Components")]
     [SerializeField] private GameObject _contentParent;
+    private CanvasGroup _buttonCanvasGroup = null;
+    private CanvasGroup _currentPauseMenuScreen = null;
+
+    [SerializeField] private PauseButton[] _pauseMenuButtons = new PauseButton[6];
+
+    private void Awake()
+    {
+        _buttonCanvasGroup = _contentParent.GetComponentInChildren<CanvasGroup>();
+
+        for (int i =0; i < _pauseMenuButtons.Length; i++)
+            _pauseMenuButtons[i] = _buttonCanvasGroup.transform.GetChild(i).GetComponent<PauseButton>();
+
+    }
 
     private void OnEnable()
     {
@@ -33,8 +48,28 @@ public class PauseMenu : MonoBehaviour
 
     private void ShowOrHidePauseUI(bool flag, CursorLockMode mode)
     {
-        _contentParent.SetActive(flag);
         Cursor.lockState = mode;
         Cursor.visible = flag;
+
+        for (int i = 0; i < _pauseMenuButtons.Length; i++)
+        {
+            Tween.Scale(target: _pauseMenuButtons[i].transform, endValue: flag ? 1 : 0, duration: 0.45f);
+            _pauseMenuButtons[i].enabled = flag;
+        }
+
+        _contentParent.SetActive(flag);
+    }
+
+    public void OpenPauseSubMenu(CanvasGroup group)
+    {
+        for (int i = 0; i < _pauseMenuButtons.Length; i++)
+        {
+            _pauseMenuButtons[i].enabled = false;
+            Tween.Scale(target: _pauseMenuButtons[i].transform, startValue: _pauseMenuButtons[i].transform.localScale, endValue: Vector2.zero, duration: 0.15f);
+        }
+
+        _currentPauseMenuScreen = group;
+        Tween.Scale(target: _currentPauseMenuScreen.transform, startValue: 0, endValue: 1, duration: 0.35f);
+        
     }
 }

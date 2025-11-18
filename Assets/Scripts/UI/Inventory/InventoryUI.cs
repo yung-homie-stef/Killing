@@ -102,7 +102,7 @@ public class InventoryUI : MonoBehaviour
     private void ShowOrHideInventoryUI(bool flag, CursorLockMode mode)
     {
         _contentParent.SetActive(flag);
-        Cursor.lockState = mode;
-        Cursor.visible = flag;
+        //Cursor.lockState = mode;
+        //Cursor.visible = flag;
     }
 }
