@@ -8,12 +8,14 @@ public class UIManager : MonoBehaviour
 {
     public Dialogue dialogue { get; private set; }
     public static UIManager instance { get; private set; }
-    [SerializeField] public FocusUI focusUI;
+
+    [HideInInspector] public FocusUI focusUI;
     [SerializeField] private Image _blackoutImage;
 
+    private PauseMenu _pauseMenu;
     public InventoryUI inventoryUI;
+
     private Animator _blackoutAnimator = null;
-    private bool _focusFlag = true;
     private bool _blackoutFlag = false;
 
     void Start()
@@ -25,6 +27,7 @@ public class UIManager : MonoBehaviour
 
         focusUI = GetComponentInChildren<FocusUI>();
         dialogue = GetComponentInChildren<Dialogue>(); 
+        _pauseMenu = GetComponentInChildren<PauseMenu>();
     }
 
     private void Awake()
@@ -43,11 +46,9 @@ public class UIManager : MonoBehaviour
         GameEventsManager.instance.playerEvents.onPlayerTeleportation -= TriggerBlackoutScreen;
     }
 
-    private void EnableFocusUI()
+    private void EnableFocusUI(bool flag)
     {
-        _focusFlag = !_focusFlag;
-
-        focusUI.gameObject.SetActive(_focusFlag);
+        focusUI.gameObject.SetActive(flag);
     }
 
     private void TriggerBlackoutScreen()

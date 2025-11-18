@@ -71,7 +71,7 @@ public class FirstPersonController : MonoBehaviour
         _characterControllerComponent = GetComponent<CharacterController>();
 
         Cursor.lockState = CursorLockMode.Locked;
-        Cursor.visible = false;
+        Cursor.visible = true;
 
         GameEventsManager.instance.playerEvents.onEnablePlayerMovement += EnablePlayerMovement;
         GameEventsManager.instance.playerEvents.onDisablePlayerMovement += DisablePlayerMovement;

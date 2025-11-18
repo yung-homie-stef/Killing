@@ -85,42 +85,24 @@ public class InventoryUI : MonoBehaviour
         Destroy(itemButton.gameObject);
     }
 
-    private void InventoryButtonToggle()
+    private void InventoryButtonToggle(bool flag)
     {
-        if (_contentParent.activeInHierarchy)
+        if (flag)
         {
-            HideInventoryUI();
-            Cursor.visible = false;
-            GameEventsManager.instance.playerEvents.EnablePlayerMovement();
+            ShowOrHideInventoryUI(flag, CursorLockMode.None);
+            GameEventsManager.instance.playerEvents.DisablePlayerMovement();
         }
         else
         {
-            ShowInventoryUI();
-            Cursor.visible = true;
-            GameEventsManager.instance.playerEvents.DisablePlayerMovement();
+            ShowOrHideInventoryUI(flag, CursorLockMode.Locked);
+            GameEventsManager.instance.playerEvents.EnablePlayerMovement();
         }
     }
 
-    private void ShowInventoryUI()
+    private void ShowOrHideInventoryUI(bool flag, CursorLockMode mode)
     {
-        _contentParent.SetActive(true);
-        Cursor.lockState = CursorLockMode.None;
-        Cursor.visible = true;
-    }
-
-    private void ShowInventoryUI(Interactable target)
-    {
-        _contentParent.SetActive(true);
-        Cursor.lockState = CursorLockMode.None;
-        Cursor.visible = true;
-        targetInteractable = target;
-    }
-
-    private void HideInventoryUI()
-    {
-        _contentParent.SetActive(false);
-        Cursor.lockState = CursorLockMode.Locked;
-        Cursor.visible = false;
-        targetInteractable = null;
+        _contentParent.SetActive(flag);
+        Cursor.lockState = mode;
+        Cursor.visible = flag;
     }
 }

@@ -6,18 +6,18 @@
             "id": "a986ab10-d8a3-4b53-9538-379cb231066c",
             "actions": [
                 {
-                    "name": "ToggleQuestLog",
+                    "name": "ToggleInventory",
                     "type": "Button",
-                    "id": "f9d36f28-28a9-4777-94dd-b094d47e50ef",
+                    "id": "beff2509-57ba-4d8e-b813-e1d1392459c4",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
                 },
                 {
-                    "name": "ToggleInventory",
+                    "name": "TogglePause",
                     "type": "Button",
-                    "id": "beff2509-57ba-4d8e-b813-e1d1392459c4",
+                    "id": "982ad2a7-6128-4d25-a66c-1c50405435ba",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
@@ -27,23 +27,23 @@
             "bindings": [
                 {
                     "name": "",
-                    "id": "146a49ae-a5d6-42cd-b632-a2d708073516",
-                    "path": "<Keyboard>/q",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "ToggleQuestLog",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
                     "id": "2c571694-83d4-4725-ac32-d5593e59306a",
                     "path": "<Keyboard>/i",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
                     "action": "ToggleInventory",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "06cac12a-e3d9-48f4-8955-a272cb3d00aa",
+                    "path": "<Keyboard>/tab",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "TogglePause",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

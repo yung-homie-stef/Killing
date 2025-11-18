@@ -13,4 +13,12 @@ public class InputManager : MonoBehaviour
         if (context.started)
             GameEventsManager.instance.inputEvents.InventoryTogglePressed();
     }
+
+    public void PauseTogglePressed(InputAction.CallbackContext context)
+    {
+        Debug.Log("TAB HAS BEEN PRESSED");
+
+        if (context.started)
+            GameEventsManager.instance.inputEvents.PauseTogglePressed();
+    }
 }
