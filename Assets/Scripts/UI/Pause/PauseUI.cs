@@ -7,7 +7,7 @@ using UnityEngine.UI;
 public class PauseUI : MonoBehaviour
 {
     [Header("Components")]
-    [SerializeField] private GameObject _contentParent;
+    [SerializeField] private GameObject _content;
     private CanvasGroup _buttonCanvasGroup = null;
     private CanvasGroup _currentPauseMenuScreen = null;
 
@@ -15,7 +15,7 @@ public class PauseUI : MonoBehaviour
 
     private void Awake()
     {
-        _buttonCanvasGroup = _contentParent.GetComponentInChildren<CanvasGroup>();
+        _buttonCanvasGroup = _content.GetComponentInChildren<CanvasGroup>();
 
         for (int i =0; i < _pauseMenuButtons.Length; i++)
             _pauseMenuButtons[i] = _buttonCanvasGroup.transform.GetChild(i).GetComponent<PauseButton>();
@@ -50,6 +50,7 @@ public class PauseUI : MonoBehaviour
     {
         Cursor.lockState = mode;
         Cursor.visible = flag;
+        _content.SetActive(flag);
 
         for (int i = 0; i < _pauseMenuButtons.Length; i++)
         {
@@ -57,19 +58,29 @@ public class PauseUI : MonoBehaviour
             _pauseMenuButtons[i].enabled = flag;
         }
 
-        _contentParent.SetActive(flag);
+        if (!flag)
+            RemovePauseSubMenu();
+
     }
 
     public void OpenPauseSubMenu(CanvasGroup group)
     {
+        _currentPauseMenuScreen = group;
+        _currentPauseMenuScreen.gameObject.SetActive(true);
+
+        Tween.Scale(target: _currentPauseMenuScreen.transform, startValue: 0, endValue: 1, duration: 0.35f, startDelay: 0.15f);
+
         for (int i = 0; i < _pauseMenuButtons.Length; i++)
         {
             _pauseMenuButtons[i].enabled = false;
             Tween.Scale(target: _pauseMenuButtons[i].transform, startValue: _pauseMenuButtons[i].transform.localScale, endValue: Vector2.zero, duration: 0.15f);
         }
+    }
 
-        _currentPauseMenuScreen = group;
-        Tween.Scale(target: _currentPauseMenuScreen.transform, startValue: 0, endValue: 1, duration: 0.35f);
-        
+    public void RemovePauseSubMenu()
+    {
+        _currentPauseMenuScreen.gameObject.SetActive(false);
+        _currentPauseMenuScreen.transform.localScale = Vector3.zero;
+        _currentPauseMenuScreen = null;
     }
 }

@@ -678,17 +678,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 001cb11a5b4de0a4c8ce08a926680485, type: 3}
---- !u!114 &416698089 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 6695774092565568900, guid: e1b8ecd22150b784cb4c2e91f1e4321a, type: 3}
-  m_PrefabInstance: {fileID: 491606697}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5c0b8d6fcaec2f3408c362ffed999bd2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!4 &446252736 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: c2747ae1def867949b11fcb0e82813aa, type: 3}
@@ -759,17 +748,21 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1617427168732924306, guid: e1b8ecd22150b784cb4c2e91f1e4321a, type: 3}
+      propertyPath: m_Value
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1982879460828623571, guid: e1b8ecd22150b784cb4c2e91f1e4321a, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1982879460828623571, guid: e1b8ecd22150b784cb4c2e91f1e4321a, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3431246067810487761, guid: e1b8ecd22150b784cb4c2e91f1e4321a, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
-      value: 
+    - target: {fileID: 1982879460828623571, guid: e1b8ecd22150b784cb4c2e91f1e4321a, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6447184812892475665, guid: e1b8ecd22150b784cb4c2e91f1e4321a, type: 3}
       propertyPath: m_LocalPosition.x
@@ -811,45 +804,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 6461817828635106440, guid: e1b8ecd22150b784cb4c2e91f1e4321a, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 6461817828635106440, guid: e1b8ecd22150b784cb4c2e91f1e4321a, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 416698089}
-    - target: {fileID: 6461817828635106440, guid: e1b8ecd22150b784cb4c2e91f1e4321a, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: OpenPauseSubMenu
-      objectReference: {fileID: 0}
-    - target: {fileID: 6461817828635106440, guid: e1b8ecd22150b784cb4c2e91f1e4321a, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: PauseUI, Assembly-CSharp
-      objectReference: {fileID: 0}
-    - target: {fileID: 6461817828635106440, guid: e1b8ecd22150b784cb4c2e91f1e4321a, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.CanvasGroup, UnityEngine
-      objectReference: {fileID: 0}
     - target: {fileID: 6506049582896378943, guid: e1b8ecd22150b784cb4c2e91f1e4321a, type: 3}
-      propertyPath: m_SizeDelta.y
-      value: 40
-      objectReference: {fileID: 0}
-    - target: {fileID: 6779155588571540694, guid: e1b8ecd22150b784cb4c2e91f1e4321a, type: 3}
-      propertyPath: m_IsActive
-      value: 1
+      propertyPath: m_AnchoredPosition.y
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8275809757775296216, guid: e1b8ecd22150b784cb4c2e91f1e4321a, type: 3}
       propertyPath: m_Name
       value: Game_Manager
       objectReference: {fileID: 0}
-    - target: {fileID: 8935133610388376922, guid: e1b8ecd22150b784cb4c2e91f1e4321a, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects:
-    - {fileID: 1043010836036871068, guid: e1b8ecd22150b784cb4c2e91f1e4321a, type: 3}
+    m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e1b8ecd22150b784cb4c2e91f1e4321a, type: 3}

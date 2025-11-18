@@ -302,7 +302,7 @@ GameObject:
   - component: {fileID: 6549846590168843517}
   - component: {fileID: 597598666896544355}
   m_Layer: 5
-  m_Name: Text (TMP)
+  m_Name: YesText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -473,6 +473,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fec885be5f1c1d14ab6d3f3d6089a263, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _content: {fileID: 8026269532302174995}
+  _yesButtonText: {fileID: 597598666896544355}
+  _promptText: {fileID: 3258346447942146404}
 --- !u!1 &7609902904812976633
 GameObject:
   m_ObjectHideFlags: 0
@@ -606,7 +609,7 @@ GameObject:
   - component: {fileID: 1233684450768800144}
   - component: {fileID: 3258346447942146404}
   m_Layer: 5
-  m_Name: Text (TMP)
+  m_Name: CancelText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -741,14 +744,13 @@ GameObject:
   - component: {fileID: 4040971296117582267}
   - component: {fileID: 3169333830554840012}
   - component: {fileID: 2529218270627679732}
-  - component: {fileID: 1324036325475316361}
   m_Layer: 5
   m_Name: Content
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &4040971296117582267
 RectTransform:
   m_ObjectHideFlags: 0
@@ -810,15 +812,3 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &1324036325475316361
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8026269532302174995}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fec885be5f1c1d14ab6d3f3d6089a263, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 

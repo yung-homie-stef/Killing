@@ -115,7 +115,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5c0b8d6fcaec2f3408c362ffed999bd2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _contentParent: {fileID: 2905942014858091418}
+  _content: {fileID: 2905942014858091418}
   _pauseMenuButtons:
   - {fileID: 0}
   - {fileID: 0}
@@ -266,12 +266,12 @@ GameObject:
   m_Component:
   - component: {fileID: 5376530976803505950}
   m_Layer: 5
-  m_Name: ContentParent
+  m_Name: Content
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &5376530976803505950
 RectTransform:
   m_ObjectHideFlags: 0
@@ -887,9 +887,29 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 5376530976803505950}
     m_Modifications:
+    - target: {fileID: 1862002613249456870, guid: da1cfab97b2395040aa8b061e8a5b844, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1862002613249456870, guid: da1cfab97b2395040aa8b061e8a5b844, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 330601.3
+      objectReference: {fileID: 0}
     - target: {fileID: 3525963460887189157, guid: da1cfab97b2395040aa8b061e8a5b844, type: 3}
       propertyPath: m_Name
       value: InventoryUI
+      objectReference: {fileID: 0}
+    - target: {fileID: 6348266227354532874, guid: da1cfab97b2395040aa8b061e8a5b844, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6348266227354532874, guid: da1cfab97b2395040aa8b061e8a5b844, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6348266227354532874, guid: da1cfab97b2395040aa8b061e8a5b844, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8684532881754164517, guid: da1cfab97b2395040aa8b061e8a5b844, type: 3}
       propertyPath: m_Pivot.x

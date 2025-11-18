@@ -9,7 +9,6 @@ using UnityEngine.EventSystems;
 public class InventoryUI : MonoBehaviour
 {
     [Header("Components")]
-    [SerializeField] private GameObject _contentParent;
     [SerializeField] private VerticalLayoutGroup _inventoryLayoutGroup;
     [SerializeField] private VerticalLayoutGroup _keyItemInventoryLayoutGroup;
 
@@ -25,16 +24,6 @@ public class InventoryUI : MonoBehaviour
 
     [Header("Buttons")]
     [SerializeField] private List<InventoryItemButton> _inventoryItemButtonList = new List<InventoryItemButton>();
-
-    private void OnEnable()
-    {
-        GameEventsManager.instance.inputEvents.onInventoryTogglePressed += InventoryButtonToggle;
-    }
-
-    private void OnDisable()
-    {
-        GameEventsManager.instance.inputEvents.onInventoryTogglePressed -= InventoryButtonToggle;
-    }
 
     public void AddItemToInventoryUI(ItemObject itemObj, InventorySlot slot)
     {
@@ -83,26 +72,5 @@ public class InventoryUI : MonoBehaviour
     {
         _inventoryItemButtonList.Remove(itemButton);
         Destroy(itemButton.gameObject);
-    }
-
-    private void InventoryButtonToggle(bool flag)
-    {
-        if (flag)
-        {
-            ShowOrHideInventoryUI(flag, CursorLockMode.None);
-            GameEventsManager.instance.playerEvents.DisablePlayerMovement();
-        }
-        else
-        {
-            ShowOrHideInventoryUI(flag, CursorLockMode.Locked);
-            GameEventsManager.instance.playerEvents.EnablePlayerMovement();
-        }
-    }
-
-    private void ShowOrHideInventoryUI(bool flag, CursorLockMode mode)
-    {
-        _contentParent.SetActive(flag);
-        //Cursor.lockState = mode;
-        //Cursor.visible = flag;
     }
 }

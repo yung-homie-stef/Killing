@@ -7,12 +7,17 @@ using TMPro;
 public class UseDiscardPrompt : MonoBehaviour
 {
     [Header("Components")]
-    [SerializeField] private GameObject _content;
+    private GameObject _content;
     [SerializeField] private TextMeshProUGUI _yesButtonText;
     [SerializeField] private TextMeshProUGUI _promptText;
     private InventorySlot _currentInventorySlot;
     private InventoryItemButton _currentInventoryButton;
     private Mode _itemMode = Mode.None;
+
+    private void Awake()
+    {
+        _content = transform.GetChild(0).gameObject;
+    }
 
     private enum Mode
     {
