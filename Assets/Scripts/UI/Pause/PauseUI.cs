@@ -79,10 +79,11 @@ public class PauseUI : MonoBehaviour
 
     public void RemovePauseSubMenu()
     {
-            _currentPauseMenuScreen.gameObject.SetActive(false);
-            _currentPauseMenuScreen.transform.localScale = Vector3.zero;
-            _backButton.gameObject.SetActive(false);
-            _currentPauseMenuScreen = null;
+        Tween.Scale(target: _currentPauseMenuScreen.transform, startValue: 1, endValue: 0, duration: 0.35f, startDelay: 0.15f)
+            .OnComplete(target: _currentPauseMenuScreen.gameObject, target => target.SetActive(false));
+
+        _backButton.gameObject.SetActive(false);
+        _currentPauseMenuScreen = null;
 
         TweenPauseMenuButtons();
     }
