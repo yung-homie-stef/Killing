@@ -9,6 +9,7 @@ public class PlayerEvents
     public event Action onEnablePlayerMovement;
     public event Action onBeginPlayerTeleportation;
     public event Action onPlayerTeleportation;
+
     public event Action<LocationTrigger, bool> onPlayerEnterAreaBox;
 
     public void DisablePlayerMovement()
@@ -41,6 +42,11 @@ public class PlayerEvents
     {
         if (onPlayerEnterAreaBox != null)
             onPlayerEnterAreaBox(triggerArea, flag);
+    }
+
+    public void PlayerFundsChange(int dollarAmount)
+    {
+
     }
 
 }

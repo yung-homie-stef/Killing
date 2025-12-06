@@ -13,6 +13,7 @@ public class UIManager : MonoBehaviour
     [SerializeField] private Image _blackoutImage;
 
     private PauseUI _pauseMenu;
+    [HideInInspector] public ShopUI _shopMenu;
     public InventoryUI inventoryUI;
 
     private Animator _blackoutAnimator = null;
@@ -28,6 +29,7 @@ public class UIManager : MonoBehaviour
         focusUI = GetComponentInChildren<FocusUI>();
         dialogue = GetComponentInChildren<Dialogue>(); 
         _pauseMenu = GetComponentInChildren<PauseUI>();
+        _shopMenu = GetComponentInChildren<ShopUI>();
     }
 
     private void Awake()
