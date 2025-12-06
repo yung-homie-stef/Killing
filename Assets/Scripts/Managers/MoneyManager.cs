@@ -25,7 +25,7 @@ public class MoneyManager : MonoBehaviour
     {
         _currentPlayerMoney += amount;
         PlayerPrefs.SetInt(_moneyVariableString, _currentPlayerMoney);
-        GameEventsManager.instance.moneyEvents.MoneyAmountChanged(amount);
+        GameEventsManager.instance.moneyEvents.MoneyAmountChanged(_currentPlayerMoney);
     }
 
     public int GetCurrentPlayerMoney()

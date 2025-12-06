@@ -32,7 +32,7 @@ public class ShopItemButton : MonoBehaviour, IPointerEnterHandler
     public void Purchase()
     {
         //if (MoneyManager.instance.GetCurrentPlayerMoney() < _price)
-        MoneyManager.instance.UpdatePlayerMoney(_price);
+        MoneyManager.instance.UpdatePlayerMoney(-_price);
         Debug.Log(MoneyManager.instance.GetCurrentPlayerMoney());
     }
 }

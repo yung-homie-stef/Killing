@@ -54,7 +54,7 @@ public class UseDiscardPrompt : MonoBehaviour
         _currentInventorySlot = null;
         _itemMode = Mode.None;
 
-        UIManager.instance.inventoryUI.CloseItemUseOrDiscard();
+        UIManager.instance._inventoryMenu.CloseItemUseOrDiscard();
         _content.SetActive(false);
     }
 
@@ -70,7 +70,7 @@ public class UseDiscardPrompt : MonoBehaviour
                 break;
         }
 
-        UIManager.instance.inventoryUI.CloseItemUseOrDiscard();
+        UIManager.instance._inventoryMenu.CloseItemUseOrDiscard();
         _content.SetActive(false);
     }
 }

@@ -38,9 +38,9 @@ public class InventoryItemButton : MonoBehaviour, IPointerEnterHandler, IPointer
 
     public void OnPointerEnter(PointerEventData eventData)
     {
-        _UIManager.inventoryUI.UpdateInventoryItemDisplay(_itemObject);
+        _UIManager._inventoryMenu.UpdateInventoryItemDisplay(_itemObject);
 
-        if (_UIManager.inventoryUI.targetInteractable == null)
+        if (_UIManager._inventoryMenu.targetInteractable == null)
         {
             _useButton.gameObject.SetActive(true);
             _discardButton.gameObject.SetActive(true);
@@ -55,13 +55,13 @@ public class InventoryItemButton : MonoBehaviour, IPointerEnterHandler, IPointer
 
     public void InventoryItemButtonPress(bool isUsing)
     {
-        if (_UIManager.inventoryUI.targetInteractable == null)
-            _UIManager.inventoryUI.PromptItemUseOrDiscard(this, _inventorySlot, isUsing);
+        if (_UIManager._inventoryMenu.targetInteractable == null)
+            _UIManager._inventoryMenu.PromptItemUseOrDiscard(this, _inventorySlot, isUsing);
     }
 
     public void DiscardItem()
     {
-        _UIManager.inventoryUI.RemoveItemFromInventoryUI(this);
+        _UIManager._inventoryMenu.RemoveItemFromInventoryUI(this);
         _inventoryManager._itemInventory.RemoveItem(_inventorySlot);
     }
 

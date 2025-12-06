@@ -23,9 +23,9 @@ public class ItemInteractable : Interactable
         base.Interact();
 
         if (!item.isKeyItem)
-            UIManager.instance.inventoryUI.AddItemToInventoryUI(item, InventoryManager.instance._itemInventory.AddItem(item));
+            UIManager.instance._inventoryMenu.AddItemToInventoryUI(item, InventoryManager.instance._itemInventory.AddItem(item));
         else
-            UIManager.instance.inventoryUI.AddItemToInventoryUI(item, InventoryManager.instance._keyItemInventory.AddItem(item));
+            UIManager.instance._inventoryMenu.AddItemToInventoryUI(item, InventoryManager.instance._keyItemInventory.AddItem(item));
 
         Destroy(gameObject);
     }

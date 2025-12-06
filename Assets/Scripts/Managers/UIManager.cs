@@ -12,9 +12,10 @@ public class UIManager : MonoBehaviour
     [HideInInspector] public FocusUI focusUI;
     [SerializeField] private Image _blackoutImage;
 
-    private PauseUI _pauseMenu;
+    [HideInInspector] public PauseUI _pauseMenu;
     [HideInInspector] public ShopUI _shopMenu;
-    public InventoryUI inventoryUI;
+    [HideInInspector] public InventoryUI _inventoryMenu;
+    [HideInInspector] public HUD _hudMenu;
 
     private Animator _blackoutAnimator = null;
     private bool _blackoutFlag = false;
@@ -25,20 +26,25 @@ public class UIManager : MonoBehaviour
             Destroy(this);
         else
             instance = this;
-
-        focusUI = GetComponentInChildren<FocusUI>();
-        dialogue = GetComponentInChildren<Dialogue>(); 
-        _pauseMenu = GetComponentInChildren<PauseUI>();
-        _shopMenu = GetComponentInChildren<ShopUI>();
     }
 
     private void Awake()
     {
+        focusUI = GetComponentInChildren<FocusUI>();
+        dialogue = GetComponentInChildren<Dialogue>();
+        _pauseMenu = GetComponentInChildren<PauseUI>();
+        _shopMenu = GetComponentInChildren<ShopUI>();
+        _inventoryMenu = GetComponentInChildren<InventoryUI>();
+        _hudMenu = GetComponentInChildren<HUD>();
+
+        _blackoutAnimator = _blackoutImage.GetComponentInParent<Animator>();
+    }
+
+    private void OnEnable()
+    {
         GameEventsManager.instance.inputEvents.onInventoryTogglePressed += EnableFocusUI;
         GameEventsManager.instance.playerEvents.onBeginPlayerTeleportation += TriggerBlackoutScreen;
         GameEventsManager.instance.playerEvents.onPlayerTeleportation += TriggerBlackoutScreen;
-
-        _blackoutAnimator = _blackoutImage.GetComponentInParent<Animator>();
     }
 
     private void OnDisable()
