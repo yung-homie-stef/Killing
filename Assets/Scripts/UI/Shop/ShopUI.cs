@@ -21,6 +21,7 @@ public class ShopUI : MonoBehaviour
     private void Awake()
     {
         InitializeShop(swag, "Fat Boy Dumplings");
+        _playerFunds.text = PlayerPrefs.GetInt("Player$$$").ToString();
     }
 
     public void InitializeShop(ShopItemObject[] stock, string shopName)

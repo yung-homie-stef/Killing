@@ -6,6 +6,7 @@ public class GameEventsManager : MonoBehaviour
     public static GameEventsManager instance;
     public PlayerEvents playerEvents;
     public InputEvents inputEvents;
+    public MoneyEvents moneyEvents;
 
     private void Awake()
     {
@@ -15,5 +16,6 @@ public class GameEventsManager : MonoBehaviour
 
         playerEvents = new PlayerEvents();
         inputEvents = new InputEvents();
+        moneyEvents = new MoneyEvents();
     }
 }

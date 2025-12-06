@@ -12,18 +12,27 @@ public class ShopItemButton : MonoBehaviour, IPointerEnterHandler
     [SerializeField] private Image _shopItemTypeIcon;
 
     private ItemObject _item;
+    private int _price;
 
     public void InitializeShopItemButton(ShopItemObject itemObj)
     {
         _item = itemObj._itemToReference;
+        _price = itemObj._itemPrice;
 
         _shopItemName.text = _item.itemName;
-        _shopItemPrice.text = itemObj._itemPrice.ToString();
+        _shopItemPrice.text = _price.ToString();
         //_shopItemTypeIcon.sprite = _item.icon;
     }
 
     public void OnPointerEnter(PointerEventData eventData)
     {
         UIManager.instance._shopMenu.UpdateShopItemDescription(_item.itemDescription);
+    }
+
+    public void Purchase()
+    {
+        //if (MoneyManager.instance.GetCurrentPlayerMoney() < _price)
+        MoneyManager.instance.UpdatePlayerMoney(_price);
+        Debug.Log(MoneyManager.instance.GetCurrentPlayerMoney());
     }
 }
