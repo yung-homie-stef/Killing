@@ -8,4 +8,5 @@ public class ShopItemObject : ScriptableObject
 {
     public ItemObject _itemToReference;
     public int _itemPrice;
+    public bool _canBuyMultiple = false;
 }
