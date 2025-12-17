@@ -201,13 +201,13 @@ public class FirstPersonController : MonoBehaviour
         _isInCrouchAnimation = false;
     }
 
-    private void EnablePlayerMovement()
+    public void EnablePlayerMovement()
     {
         _canMove = true;
         Cursor.lockState = CursorLockMode.Locked;
     }
 
-    private void DisablePlayerMovement()
+    public void DisablePlayerMovement()
     {
         _canMove = false;
         Cursor.lockState = CursorLockMode.Confined;
