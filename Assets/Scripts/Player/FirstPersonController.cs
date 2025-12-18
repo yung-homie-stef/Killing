@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Runtime.Remoting.Messaging;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using PixelCrushers.DialogueSystem;
 
 public class FirstPersonController : MonoBehaviour
 {
@@ -76,12 +77,15 @@ public class FirstPersonController : MonoBehaviour
         GameEventsManager.instance.playerEvents.onEnablePlayerMovement += EnablePlayerMovement;
         GameEventsManager.instance.playerEvents.onDisablePlayerMovement += DisablePlayerMovement;
         GameEventsManager.instance.playerEvents.onPlayerTeleportation += Teleport;
+        DialogueManager.instance.conversationEnded += OnConversationEnded;
     }
 
     private void OnDisable()
     {
         GameEventsManager.instance.playerEvents.onEnablePlayerMovement -= EnablePlayerMovement;
         GameEventsManager.instance.playerEvents.onDisablePlayerMovement -= DisablePlayerMovement;
+        GameEventsManager.instance.playerEvents.onPlayerTeleportation -= Teleport;
+        //DialogueManager.instance.conversationEnded -= OnConversationEnded;
     }
 
     // Update is called once per frame
@@ -217,5 +221,10 @@ public class FirstPersonController : MonoBehaviour
     {
         transform.position = PlayerWorldInfo.GetTeleportToLocation().position;
         transform.rotation = PlayerWorldInfo.GetTeleportToLocation().rotation;
+    }
+
+    private void OnConversationEnded(Transform t)
+    {
+        EnablePlayerMovement();
     }
 }
