@@ -226,5 +226,6 @@ public class FirstPersonController : MonoBehaviour
     private void OnConversationEnded(Transform t)
     {
         EnablePlayerMovement();
+        UIManager.instance.focusUI.SetCanFocus(true);
     }
 }

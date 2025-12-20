@@ -4,6 +4,8 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 using PrimeTween;
+using PixelCrushers.DialogueSystem;
+using System;
 
 public class HUD : MonoBehaviour
 {
@@ -24,11 +26,19 @@ public class HUD : MonoBehaviour
     private CanvasGroup _HUD_CanvasGroup;
     private CanvasGroup _cityLocationBannerCanvasGroup = null;
 
+    // UI Position Variables (to avoid magic numbers)
+    private Vector2 _establishmentPos = Vector2.zero;
+    private float locationWidth = 0.0f;
+    private float fundsWidth = 0.0f;
+
     private void Awake()
     {
         _cityLocationBannerCanvasGroup = _cityLocationBanner.GetComponent<CanvasGroup>();
         _HUD_CanvasGroup = GetComponent<CanvasGroup>();
         _playerFundsText.text = PlayerPrefs.GetInt("Player$$$").ToString();
+
+        locationWidth = _cityLocationBanner.rect.width;
+        fundsWidth = _playerFundsBanner.rect.width;
     }
 
     private void OnEnable()
@@ -37,6 +47,8 @@ public class HUD : MonoBehaviour
         GameEventsManager.instance.playerEvents.onPlayerEnterAreaBox += UpdateHUDCityLocationInfo;
         GameEventsManager.instance.playerEvents.onBeginPlayerTeleportation += FadeOutHUD;
         GameEventsManager.instance.moneyEvents.onMoneyAmountChanged += UpdateHUDPlayerFunds;
+        DialogueManager.instance.conversationStarted += TriggerHideHUDTween;
+        DialogueManager.instance.conversationEnded += TriggerShowHUDTween;
     }
 
     private void OnDisable()
@@ -45,6 +57,7 @@ public class HUD : MonoBehaviour
         GameEventsManager.instance.playerEvents.onPlayerEnterAreaBox -= UpdateHUDCityLocationInfo;
         GameEventsManager.instance.playerEvents.onBeginPlayerTeleportation -= FadeOutHUD;
         GameEventsManager.instance.moneyEvents.onMoneyAmountChanged -= UpdateHUDPlayerFunds;
+        //DialogueManager.instance.conversationStarted -= TriggerHideHUDTween;
     }
 
     // for functionality relating to information about the player's current locaiton on the HUD
@@ -90,14 +103,24 @@ public class HUD : MonoBehaviour
     public void HUDTween(bool flag)
     {
         Sequence.Create()
-            .Group(Tween.UIAnchoredPosition(target: _establishmentLocationBanner, flag ? new Vector2(0.0f, -450.0f) : new Vector2(485.0f, -450.0f), duration: 0.25f))
-            .Group(Tween.UIAnchoredPosition(target: _playerFundsBanner, flag ? new Vector2(0.0f, -326.0f) : new Vector2(-460.0f, -326.0f), duration: 0.25f))
-            .Group(Tween.UIAnchoredPosition(target: _cityLocationBanner, flag ? new Vector2(0.0f, -392.0f) : new Vector2(-460.0f, -392.0f), duration: 0.25f));
+            .Group(Tween.UIAnchoredPosition(target: _establishmentLocationBanner, flag ? new Vector2(_establishmentPos.x, _establishmentPos.y) : new Vector2(0, -430.0f), duration: 0.25f))
+            .Group(Tween.UIAnchoredPosition(target: _playerFundsBanner, flag ? new Vector2(60.0f, -120.0f) : new Vector2(-fundsWidth, -120.0f), duration: 0.25f))
+            .Group(Tween.UIAnchoredPosition(target: _cityLocationBanner, flag ? new Vector2(60.0f, -430.0f) : new Vector2(-locationWidth, -430.0f), duration: 0.25f));
     }
 
     private void UpdateHUDPlayerFunds(int amount)
     {
         _playerFundsText.text = amount.ToString();
     }
-   
+
+
+    private void TriggerHideHUDTween(Transform t)
+    {
+        _establishmentPos = _establishmentLocationBanner.anchoredPosition;
+        HUDTween(false);
+    }
+    private void TriggerShowHUDTween(Transform t)
+    {
+        HUDTween(true);
+    }
 }
