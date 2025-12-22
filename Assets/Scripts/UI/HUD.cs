@@ -30,6 +30,7 @@ public class HUD : MonoBehaviour
     private Vector2 _establishmentPos = Vector2.zero;
     private float locationWidth = 0.0f;
     private float fundsWidth = 0.0f;
+    private float establishmentWidth = 0.0f;
 
     private void Awake()
     {
@@ -39,6 +40,7 @@ public class HUD : MonoBehaviour
 
         locationWidth = _cityLocationBanner.rect.width;
         fundsWidth = _playerFundsBanner.rect.width;
+        establishmentWidth = _establishmentLocationBanner.rect.width;
     }
 
     private void OnEnable()
@@ -91,7 +93,7 @@ public class HUD : MonoBehaviour
 
     private void TriggerEstablishmentTween(bool flag)
     {
-        Tween.UIAnchoredPosition(target: _establishmentLocationBanner, flag ? new Vector2(0.0f, -450.0f) : new Vector2(485.0f, -450.0f), duration: 0.25f);
+        Tween.UIAnchoredPosition(target: _establishmentLocationBanner, flag ? new Vector2(-establishmentWidth, -430.0f) : new Vector2(0, -430.0f), duration: 0.25f);
     }
     #endregion
 
@@ -105,7 +107,7 @@ public class HUD : MonoBehaviour
         Sequence.Create()
             .Group(Tween.UIAnchoredPosition(target: _establishmentLocationBanner, flag ? new Vector2(_establishmentPos.x, _establishmentPos.y) : new Vector2(0, -430.0f), duration: 0.25f))
             .Group(Tween.UIAnchoredPosition(target: _playerFundsBanner, flag ? new Vector2(60.0f, -120.0f) : new Vector2(-fundsWidth, -120.0f), duration: 0.25f))
-            .Group(Tween.UIAnchoredPosition(target: _cityLocationBanner, flag ? new Vector2(60.0f, -430.0f) : new Vector2(-locationWidth, -430.0f), duration: 0.25f));
+            .Group(Tween.UIAnchoredPosition(target: _cityLocationBanner, flag ? new Vector2(60.0f, -950.0f) : new Vector2(-locationWidth, -950.0f), duration: 0.25f));
     }
 
     private void UpdateHUDPlayerFunds(int amount)
