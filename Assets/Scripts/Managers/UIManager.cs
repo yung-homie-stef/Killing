@@ -7,7 +7,6 @@ using PixelCrushers.DialogueSystem;
 
 public class UIManager : MonoBehaviour
 {
-    public Dialogue dialogue { get; private set; }
     public static UIManager instance { get; private set; }
 
     [HideInInspector] public FocusUI focusUI;
@@ -32,7 +31,6 @@ public class UIManager : MonoBehaviour
     private void Awake()
     {
         focusUI = GetComponentInChildren<FocusUI>();
-        dialogue = GetComponentInChildren<Dialogue>();
         _pauseMenu = GetComponentInChildren<PauseUI>();
         _shopMenu = GetComponentInChildren<ShopUI>();
         _inventoryMenu = GetComponentInChildren<InventoryUI>();
