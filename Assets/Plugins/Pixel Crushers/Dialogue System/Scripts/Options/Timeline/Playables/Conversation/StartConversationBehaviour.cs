@@ -1,4 +1,3 @@
-// Recompile at 2025-12-30 10:45:13 AM
 #if USE_TIMELINE
 #if UNITY_2017_1_OR_NEWER
 // Copyright (c) Pixel Crushers. All rights reserved.
@@ -35,7 +34,7 @@ namespace PixelCrushers.DialogueSystem
 
         public string GetEditorDialogueText()
         {
-            var dialogueText = PreviewUI.GetDialogueText(conversation, jumpToSpecificEntry ? entryID : -1);
+            var dialogueText = ConversationTimelineUtility.GetDialogueText(conversation, jumpToSpecificEntry ? entryID : -1);
             return "'" + dialogueText + "'";
         }
 

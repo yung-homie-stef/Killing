@@ -1,4 +1,3 @@
-// Recompile at 2025-12-30 10:45:13 AM
 #if USE_TIMELINE
 #if UNITY_2017_1_OR_NEWER
 using UnityEngine;
@@ -67,13 +66,10 @@ namespace PixelCrushers.DialogueSystem
 
         private void UpdateLength(string conversation, bool jumpToSpecificEntry, int entryID = -1)
         {
-            var duration = PreviewUI.GetSequenceDuration(conversation, jumpToSpecificEntry ? entryID : -1);
-            Debug.Log("Best estimate duration: " + duration + "sec");
-            var clip = TimelineEditor.selectedClip;
-            if (clip == null) return;
-            var startConversationClip = clip.asset as StartConversationClip;
-            if (startConversationClip == null) return;
-            startConversationClip.SetDuration(duration);
+            var duration = ConversationTimelineUtility.GetSequenceDuration(conversation, jumpToSpecificEntry ? entryID : -1);
+            Debug.Log("Best estimate duration: " + duration + " seconds");
+            if (TimelineEditor.selectedClip == null) return;
+            TimelineEditor.selectedClip.duration = duration;
         }
     }
 }

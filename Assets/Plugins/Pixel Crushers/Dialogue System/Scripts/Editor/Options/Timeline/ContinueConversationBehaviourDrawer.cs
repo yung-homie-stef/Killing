@@ -1,5 +1,4 @@
-// Recompile at 2025-12-30 10:45:13 AM
-#if USE_TIMELINE
+﻿#if USE_TIMELINE
 #if UNITY_2017_1_OR_NEWER
 using UnityEngine;
 using UnityEditor;
@@ -86,11 +85,10 @@ namespace PixelCrushers.DialogueSystem
                 }
             }
 
-            var duration = PreviewUI.GetSequenceDuration(conversationTitle, startingEntryID, numContinues);
-            Debug.Log("Best estimate duration: " + duration + "sec");
-            var continueConversationClip = TimelineEditor.selectedClip.asset as ContinueConversationClip;
-            if (continueConversationClip == null) return;
-            continueConversationClip.SetDuration(duration);
+            var duration = ConversationTimelineUtility.GetSequenceDuration(conversationTitle, startingEntryID, numContinues);
+            Debug.Log("Best estimate duration: " + duration + " sec");
+            if (TimelineEditor.selectedClip == null) return;
+            TimelineEditor.selectedClip.duration = duration;
         }
 
     }
