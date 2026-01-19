@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 935899b62f48ae5498594680ed17d133, type: 3}
-  m_Name: Prologue
+  m_Name: Prologue (Auto-Backup)
   m_EditorClassIdentifier: 
   version: .1
   author: Stef Pinto
@@ -2184,7 +2184,7 @@ MonoBehaviour:
         destinationDialogueID: 4
         isConnector: 0
         priority: 2
-      conditionsString: Variable["GirlfriendConvoIndex"] == 1
+      conditionsString: 
       userScript: 
       onExecute:
         m_PersistentCalls:
@@ -2222,7 +2222,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Sequence
-        value: CinemachineZoom(CAM_GF1, 35, 1)
+        value: 
         type: 0
         typeString: 
       conversationID: 3
@@ -2801,7 +2801,7 @@ MonoBehaviour:
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 0, y: 0}
+    canvasScrollPosition: {x: 0, y: 166.05765}
     canvasZoom: 0.85000014
   syncInfo:
     syncActors: 0
