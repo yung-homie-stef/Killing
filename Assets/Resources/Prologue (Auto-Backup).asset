@@ -239,11 +239,99 @@ MonoBehaviour:
     spritePortrait: {fileID: 0}
     alternatePortraits: []
     spritePortraits: []
-  items:
-  - id: 2
+  - id: 10
     fields:
     - title: Name
-      value: Black Xmas
+      value: Deliveryman
+      type: 0
+      typeString: CustomFieldType_Text
+    - title: Pictures
+      value: '[]'
+      type: 3
+      typeString: CustomFieldType_Files
+    - title: Description
+      value: Mysterious man who delivers take out to player.
+      type: 0
+      typeString: CustomFieldType_Text
+    - title: IsPlayer
+      value: False
+      type: 2
+      typeString: CustomFieldType_Boolean
+    portrait: {fileID: 0}
+    spritePortrait: {fileID: 0}
+    alternatePortraits: []
+    spritePortraits: []
+  items:
+  - id: 3
+    fields:
+    - title: Name
+      value: Long Day's Journey Into Night
+      type: 0
+      typeString: CustomFieldType_Text
+    - title: Pictures
+      value: '[]'
+      type: 3
+      typeString: CustomFieldType_Files
+    - title: Description
+      value: 
+      type: 0
+      typeString: CustomFieldType_Text
+    - title: Success Description
+      value: 
+      type: 0
+      typeString: CustomFieldType_Text
+    - title: Failure Description
+      value: 
+      type: 0
+      typeString: CustomFieldType_Text
+    - title: State
+      value: unassigned
+      type: 0
+      typeString: CustomFieldType_QuestState
+    - title: Is Item
+      value: False
+      type: 2
+      typeString: CustomFieldType_Boolean
+    - title: Entry Count
+      value: 4
+      type: 1
+      typeString: CustomFieldType_Number
+    - title: Entry 1 State
+      value: active
+      type: 0
+      typeString: CustomFieldType_QuestState
+    - title: Entry 1
+      value: Get back to my apartment.
+      type: 0
+      typeString: CustomFieldType_Text
+    - title: Entry 2 State
+      value: unassigned
+      type: 0
+      typeString: CustomFieldType_QuestState
+    - title: Entry 2
+      value: Go back to the alley to retrieve my wallet.
+      type: 0
+      typeString: CustomFieldType_Text
+    - title: Entry 3 State
+      value: unassigned
+      type: 0
+      typeString: CustomFieldType_QuestState
+    - title: Entry 3
+      value: Track down where my wallet could be.
+      type: 0
+      typeString: CustomFieldType_Text
+    - title: Entry 4 State
+      value: unassigned
+      type: 0
+      typeString: CustomFieldType_QuestState
+    - title: Entry 4
+      value: Go back home.
+      type: 0
+      typeString: CustomFieldType_Text
+  - id: 4
+    fields:
+    - title: Name
+      value: Take Out
       type: 0
       typeString: 
     - title: Pictures
@@ -263,18 +351,10 @@ MonoBehaviour:
       type: 0
       typeString: 
     - title: State
-      value: active
+      value: unassigned
       type: 0
       typeString: 
     - title: Is Item
-      value: False
-      type: 2
-      typeString: CustomFieldType_Boolean
-    - title: Trackable
-      value: False
-      type: 2
-      typeString: CustomFieldType_Boolean
-    - title: Track
       value: False
       type: 2
       typeString: CustomFieldType_Boolean
@@ -1048,7 +1128,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Sequence
-        value: required Timeline(speed, CutscenePlayer, 1)@Message(Continued)
+        value: required Timeline(speed, CutscenePlayer, 1)@Message(Continued);
         type: 0
         typeString: 
       conversationID: 1
@@ -1060,7 +1140,7 @@ MonoBehaviour:
       conditionPriority: 2
       outgoingLinks: []
       conditionsString: 
-      userScript: 
+      userScript: SetQuestState("Long Day's Journey Into Night", "active")
       onExecute:
         m_PersistentCalls:
           m_Calls: []
@@ -3718,7 +3798,8 @@ MonoBehaviour:
         destinationDialogueID: 8
         isConnector: 0
         priority: 2
-      conditionsString: Variable["GirlfriendConvoIndex"] == 2
+      conditionsString: CurrentQuestEntryState("Long Day's Journey Into Night", 2)
+        == "active"
       userScript: 
       onExecute:
         m_PersistentCalls:
@@ -3748,7 +3829,7 @@ MonoBehaviour:
         type: 5
         typeString: CustomFieldType_Actor
       - title: Menu Text
-        value: We got a call about an assault that occurred in this alley about half
+        value: We got a call about an assault that occurred in this alley 'bout half
           an hour ago. Witness says they saw two or three men drag somebody in here
           before engraving him into the concrete.
         type: 0
@@ -3864,7 +3945,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Dialogue Text
-        value: I'd like to help but nah, not aware of anything.
+        value: Uh, no, sorry.
         type: 0
         typeString: 
       - title: Sequence
@@ -3920,7 +4001,7 @@ MonoBehaviour:
         typeString: 
       - title: Dialogue Text
         value: Did you guys happen to see a wallet by chance? I ducked in here for
-          a smoke during my lunch and I think it fell outta my pocket...
+          a smoke during my lunch earlier and I think it fell outta my pocket...
         type: 0
         typeString: 
       - title: Sequence
@@ -4049,7 +4130,7 @@ MonoBehaviour:
       - originConversationID: 4
         originDialogueID: 7
         destinationConversationID: 4
-        destinationDialogueID: 9
+        destinationDialogueID: 10
         isConnector: 0
         priority: 2
       conditionsString: 
@@ -4060,7 +4141,7 @@ MonoBehaviour:
       canvasRect:
         serializedVersion: 2
         x: 158
-        y: 446
+        y: 447.1765
         width: 160
         height: 30
     - id: 8
@@ -4118,7 +4199,7 @@ MonoBehaviour:
         y: 140
         width: 160
         height: 30
-    - id: 9
+    - id: 10
       fields:
       - title: Title
         value: 
@@ -4129,11 +4210,11 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Actor
-        value: 1
+        value: 9
         type: 5
         typeString: CustomFieldType_Actor
       - title: Conversant
-        value: 9
+        value: 1
         type: 5
         typeString: CustomFieldType_Actor
       - title: Menu Text
@@ -4141,7 +4222,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Dialogue Text
-        value: Aight, well good luck with your case.
+        value: 'Probably just a bunch of fiends '
         type: 0
         typeString: 
       - title: Sequence
@@ -4163,13 +4244,113 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 158
-        y: 499
+        x: 159.17648
+        y: 503.05884
         width: 160
         height: 30
     entryGroups: []
     canvasScrollPosition: {x: 0, y: 0}
     canvasZoom: 0.85000014
+  - id: 5
+    fields:
+    - title: Title
+      value: Delivery
+      type: 0
+      typeString: 
+    - title: Description
+      value: 
+      type: 0
+      typeString: 
+    - title: Actor
+      value: 1
+      type: 5
+      typeString: CustomFieldType_Actor
+    - title: Conversant
+      value: 6
+      type: 5
+      typeString: CustomFieldType_Actor
+    overrideSettings:
+      useOverrides: 0
+      overrideSubtitleSettings: 0
+      showNPCSubtitlesDuringLine: 1
+      showNPCSubtitlesWithResponses: 1
+      showPCSubtitlesDuringLine: 0
+      skipPCSubtitleAfterResponseMenu: 0
+      subtitleCharsPerSecond: 30
+      minSubtitleSeconds: 2
+      continueButton: 0
+      overrideSequenceSettings: 0
+      defaultSequence: 
+      defaultPlayerSequence: 
+      defaultResponseMenuSequence: 
+      overrideInputSettings: 0
+      alwaysForceResponseMenu: 1
+      includeInvalidEntries: 0
+      responseTimeout: 0
+      emTagForOldResponses: 0
+      emTagForInvalidResponses: 0
+      cancelSubtitle:
+        key: 27
+        buttonName: 
+        inputAction: {fileID: 0}
+      cancelConversation:
+        key: 27
+        buttonName: 
+        inputAction: {fileID: 0}
+    nodeColor: 
+    dialogueEntries:
+    - id: 0
+      fields:
+      - title: Title
+        value: START
+        type: 0
+        typeString: 
+      - title: Description
+        value: 
+        type: 0
+        typeString: 
+      - title: Actor
+        value: 1
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Conversant
+        value: 6
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Menu Text
+        value: 
+        type: 0
+        typeString: 
+      - title: Dialogue Text
+        value: 
+        type: 0
+        typeString: 
+      - title: Sequence
+        value: None()
+        type: 0
+        typeString: 
+      conversationID: 0
+      isRoot: 1
+      isGroup: 0
+      nodeColor: 
+      delaySimStatus: 0
+      falseConditionAction: 
+      conditionPriority: 2
+      outgoingLinks: []
+      conditionsString: 
+      userScript: 
+      onExecute:
+        m_PersistentCalls:
+          m_Calls: []
+      canvasRect:
+        serializedVersion: 2
+        x: 160
+        y: 30
+        width: 160
+        height: 30
+    entryGroups: []
+    canvasScrollPosition: {x: 0, y: 0}
+    canvasZoom: 1
   syncInfo:
     syncActors: 0
     syncItems: 0

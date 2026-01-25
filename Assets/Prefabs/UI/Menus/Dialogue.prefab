@@ -1,5 +1,80 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &351899558796179366
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3942698348463693050}
+  - component: {fileID: 2437464269131615181}
+  - component: {fileID: 2760078275957545454}
+  m_Layer: 5
+  m_Name: Speech Icon
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &3942698348463693050
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 351899558796179366}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1093229065563093259}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 2, y: 1}
+  m_SizeDelta: {x: 20, y: 20}
+  m_Pivot: {x: 0, y: 1}
+--- !u!222 &2437464269131615181
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 351899558796179366}
+  m_CullTransparentMesh: 1
+--- !u!114 &2760078275957545454
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 351899558796179366}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 21300000, guid: 1e0fe93107de8cf4e9d62af3c564922e, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
 --- !u!1 &555040266248115160
 GameObject:
   m_ObjectHideFlags: 0
@@ -137,7 +212,7 @@ MonoBehaviour:
       m_textMeshProUGUI: {fileID: 403764615794304271}
     queueAlerts: 1
     dontQueueDuplicates: 0
-    waitForHideAnimation: 0
+    waitForHideAnimation: 1
     allowForceImmediate: 0
   conversationUIElements:
     mainPanel: {fileID: 7170031598980589957}
@@ -264,6 +339,7 @@ RectTransform:
   m_Children:
   - {fileID: 1599657104839124695}
   - {fileID: 7119413767318043568}
+  - {fileID: 3942698348463693050}
   m_Father: {fileID: 5323973399775611339}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
@@ -299,7 +375,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: e6a96237f60c3914bb1435e8f02611ac, type: 3}
+  m_Sprite: {fileID: 21300000, guid: a2ffdf510d004ef4ba2139d1f92dc681, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -343,7 +419,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 4.7, y: -20}
+  m_AnchoredPosition: {x: 4.699951, y: -20}
   m_SizeDelta: {x: 25, y: 25}
   m_Pivot: {x: 0, y: 1}
 --- !u!222 &1049968080356582954
@@ -569,7 +645,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 0, y: 0.5}
-  m_AnchoredPosition: {x: 30.6, y: -7}
+  m_AnchoredPosition: {x: 30.600098, y: -7}
   m_SizeDelta: {x: 120, y: 9}
   m_Pivot: {x: 0, y: 0.5}
 --- !u!222 &7481058100717252573
@@ -683,6 +759,7 @@ GameObject:
   - component: {fileID: 17307199861950082}
   - component: {fileID: 8499044597975000013}
   - component: {fileID: 2898809648333515432}
+  - component: {fileID: 7330250395834683341}
   m_Layer: 5
   m_Name: Alert Panel
   m_TagString: Untagged
@@ -700,18 +777,18 @@ RectTransform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 6987863724896987153}
   - {fileID: 200960739907776404}
   - {fileID: 840051819132787743}
   m_Father: {fileID: 6848377504685986174}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0.5}
-  m_AnchorMax: {x: 0, y: 0.5}
-  m_AnchoredPosition: {x: 433, y: 0}
+  m_AnchorMin: {x: 1, y: 0}
+  m_AnchorMax: {x: 1, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 175, y: 50}
-  m_Pivot: {x: 0, y: 0.5}
+  m_Pivot: {x: 1, y: 1}
 --- !u!222 &17307199861950082
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -783,6 +860,28 @@ MonoBehaviour:
   onBackButtonDown:
     m_PersistentCalls:
       m_Calls: []
+--- !u!95 &7330250395834683341
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5742090020497645619}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 985c37d48774c4f48a43ff71f79bec4c, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &6187272719090389056
 GameObject:
   m_ObjectHideFlags: 0
@@ -818,7 +917,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 25.08, y: 0}
-  m_SizeDelta: {x: -25.08, y: 0}
+  m_SizeDelta: {x: -25.08, y: -2.38}
   m_Pivot: {x: 0, y: 1}
 --- !u!222 &7018646224581524210
 CanvasRenderer:
@@ -883,7 +982,7 @@ MonoBehaviour:
   m_fontSizeMax: 72
   m_fontStyle: 0
   m_HorizontalAlignment: 1
-  m_VerticalAlignment: 4096
+  m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
@@ -1012,7 +1111,7 @@ MonoBehaviour:
   addSpeakerNameFormat: '{0}: {1}'
   accumulateText: 0
   maxLines: 100
-  delayTypewriterUntilOpen: 0
+  delayTypewriterUntilOpen: 1
   continueButton: {fileID: 1234775088923790899}
   blockInputDuration: 0
   visibility: 0
@@ -1024,7 +1123,7 @@ MonoBehaviour:
   waitForOpen: 1
   waitForClose: 0
   clearTextOnClose: 1
-  clearTextOnConversationStart: 0
+  clearTextOnConversationStart: 1
   scrollbarEnabler: {fileID: 0}
   onFocus:
     m_PersistentCalls:
@@ -1153,7 +1252,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: e6a96237f60c3914bb1435e8f02611ac, type: 3}
+  m_Sprite: {fileID: 21300000, guid: a2ffdf510d004ef4ba2139d1f92dc681, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1

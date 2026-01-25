@@ -1128,9 +1128,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Sequence
-        value: 'required Timeline(speed, CutscenePlayer, 1)@Message(Continued);
-
-          ShowAlert(Swag)@Message(Continued);'
+        value: required Timeline(speed, CutscenePlayer, 1)@Message(Continued);
         type: 0
         typeString: 
       conversationID: 1
@@ -2192,7 +2190,7 @@ MonoBehaviour:
         isConnector: 0
         priority: 2
       conditionsString: Variable["GirlfriendConvoIndex"] == 0
-      userScript: 
+      userScript: SetQuestEntryState("Long Day's Journey Into Night", 1, "success")
       onExecute:
         m_PersistentCalls:
           m_Calls: []
@@ -3639,8 +3637,10 @@ MonoBehaviour:
       conditionPriority: 2
       outgoingLinks: []
       conditionsString: 
-      userScript: Variable["GirlfriendConvoIndex"] = Variable["GirlfriendConvoIndex"]
-        + 1
+      userScript: 'Variable["GirlfriendConvoIndex"] = Variable["GirlfriendConvoIndex"]
+        + 1;
+
+        SetQuestEntryState("Long Day''s Journey Into Night", 2, "active")'
       onExecute:
         m_PersistentCalls:
           m_Calls: []
@@ -3651,8 +3651,8 @@ MonoBehaviour:
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 0, y: 0}
-    canvasZoom: 0.4600004
+    canvasScrollPosition: {x: 59.108276, y: 0}
+    canvasZoom: 0.76000017
   - id: 4
     fields:
     - title: Title

@@ -1374,6 +1374,7 @@ GameObject:
   - component: {fileID: 5384021103349804946}
   - component: {fileID: 7505498882770400060}
   - component: {fileID: 2777433276601751122}
+  - component: {fileID: 4303970390117796748}
   m_Layer: 5
   m_Name: QuestLog
   m_TagString: Untagged
@@ -1441,6 +1442,69 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &4303970390117796748
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6334779929310667594}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 27e68e079d48afa43b19c14dd2dbbeaf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  textTable: {fileID: 0}
+  noActiveQuestsText: No Active Quests
+  noCompletedQuestsText: No Completed Quests
+  checkVisibleField: 0
+  questHeadingSource: 0
+  abandonQuestState: 1
+  pauseWhileOpen: 1
+  unlockCursorWhileOpen: 1
+  useGroups: 0
+  newQuestText: 
+  trackOneQuestAtATime: 0
+  deselectQuestOnSecondClick: 1
+  mainPanel: {fileID: 0}
+  showingActiveQuestsHeading:
+    m_uiText: {fileID: 0}
+    m_textMeshProUGUI: {fileID: 0}
+  showingCompletedQuestHeading:
+    m_uiText: {fileID: 0}
+    m_textMeshProUGUI: {fileID: 0}
+  activeQuestsButton: {fileID: 0}
+  completedQuestsButton: {fileID: 0}
+  questSelectionContentContainer: {fileID: 0}
+  questGroupTemplate: {fileID: 0}
+  activeQuestHeadingTemplate: {fileID: 0}
+  selectedActiveQuestHeadingTemplate: {fileID: 0}
+  completedQuestHeadingTemplate: {fileID: 0}
+  selectedCompletedQuestHeadingTemplate: {fileID: 0}
+  showNoQuestsText: 0
+  selectFirstQuestOnOpen: 1
+  showDetailsOnSelect: 0
+  keepGroupsExpanded: 0
+  questDetailsContentContainer: {fileID: 0}
+  questHeadingTextTemplate: {fileID: 0}
+  questDescriptionTextTemplate: {fileID: 0}
+  questEntryActiveTextTemplate: {fileID: 0}
+  questEntrySuccessTextTemplate: {fileID: 0}
+  questEntryFailureTextTemplate: {fileID: 0}
+  abandonButtonTemplate: {fileID: 0}
+  abandonQuestPanel: {fileID: 0}
+  abandonQuestTitleText:
+    m_uiText: {fileID: 0}
+    m_textMeshProUGUI: {fileID: 0}
+  onOpen:
+    m_PersistentCalls:
+      m_Calls: []
+  onClose:
+    m_PersistentCalls:
+      m_Calls: []
+  addEventSystemIfNeeded: 1
+  foldoutToSelect: 
+  questTitleToSelect: 
 --- !u!1 &6413379764698389042
 GameObject:
   m_ObjectHideFlags: 0
@@ -1508,7 +1572,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: e6a96237f60c3914bb1435e8f02611ac, type: 3}
+  m_Sprite: {fileID: 21300000, guid: a2ffdf510d004ef4ba2139d1f92dc681, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -2007,7 +2071,7 @@ MonoBehaviour:
   m_text: 1 object(s) selected
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: aa81679b927bc1044bbd803bd3435f1f, type: 2}
-  m_sharedMaterial: {fileID: -2301497048076323581, guid: aa81679b927bc1044bbd803bd3435f1f, type: 2}
+  m_sharedMaterial: {fileID: -1341647542106565254, guid: aa81679b927bc1044bbd803bd3435f1f, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []

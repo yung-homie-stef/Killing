@@ -60,7 +60,7 @@ public class SequencerCommandCameraShake : SequencerCommand
                 noise.m_AmplitudeGain = amplitudeNew;
                 noise.m_FrequencyGain = frequencyNew;
                 elapsed += Time.deltaTime;
-                Debug.Log(elapsed);
+                //Debug.Log(elapsed);
             }
             else
             {
