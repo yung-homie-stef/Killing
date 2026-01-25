@@ -3831,7 +3831,7 @@ MonoBehaviour:
         type: 5
         typeString: CustomFieldType_Actor
       - title: Menu Text
-        value: We got a call about an assault that occurred in this alley about half
+        value: We got a call about an assault that occurred in this alley 'bout half
           an hour ago. Witness says they saw two or three men drag somebody in here
           before engraving him into the concrete.
         type: 0
@@ -3947,7 +3947,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Dialogue Text
-        value: I'd like to help but nah, not aware of anything.
+        value: Uh, no, sorry.
         type: 0
         typeString: 
       - title: Sequence
@@ -4003,7 +4003,7 @@ MonoBehaviour:
         typeString: 
       - title: Dialogue Text
         value: Did you guys happen to see a wallet by chance? I ducked in here for
-          a smoke during my lunch and I think it fell outta my pocket...
+          a smoke during my lunch earlier and I think it fell outta my pocket...
         type: 0
         typeString: 
       - title: Sequence
@@ -4132,7 +4132,7 @@ MonoBehaviour:
       - originConversationID: 4
         originDialogueID: 7
         destinationConversationID: 4
-        destinationDialogueID: 9
+        destinationDialogueID: 10
         isConnector: 0
         priority: 2
       conditionsString: 
@@ -4143,7 +4143,7 @@ MonoBehaviour:
       canvasRect:
         serializedVersion: 2
         x: 158
-        y: 446
+        y: 447.1765
         width: 160
         height: 30
     - id: 8
@@ -4201,7 +4201,7 @@ MonoBehaviour:
         y: 140
         width: 160
         height: 30
-    - id: 9
+    - id: 10
       fields:
       - title: Title
         value: 
@@ -4212,11 +4212,11 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Actor
-        value: 1
+        value: 9
         type: 5
         typeString: CustomFieldType_Actor
       - title: Conversant
-        value: 9
+        value: 1
         type: 5
         typeString: CustomFieldType_Actor
       - title: Menu Text
@@ -4224,7 +4224,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Dialogue Text
-        value: Aight, well good luck with your case.
+        value: 'Probably just a bunch of fiends '
         type: 0
         typeString: 
       - title: Sequence
@@ -4246,8 +4246,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 158
-        y: 499
+        x: 159.17648
+        y: 503.05884
         width: 160
         height: 30
     entryGroups: []

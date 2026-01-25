@@ -36,7 +36,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
   m_AnchoredPosition: {x: 0, y: 15}
-  m_SizeDelta: {x: 430, y: 116.9}
+  m_SizeDelta: {x: 430, y: 105}
   m_Pivot: {x: 0.5, y: 0}
 --- !u!222 &7385676295065002353
 CanvasRenderer:
@@ -191,8 +191,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
-  m_AnchoredPosition: {x: -3, y: 9}
-  m_SizeDelta: {x: 18, y: 18}
+  m_AnchoredPosition: {x: -3, y: 8}
+  m_SizeDelta: {x: 16, y: 16}
   m_Pivot: {x: 1, y: 1}
 --- !u!222 &1902595601622845599
 CanvasRenderer:
@@ -269,7 +269,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 5, y: -4.5}
-  m_SizeDelta: {x: -10, y: 25}
+  m_SizeDelta: {x: -10, y: 18.9}
   m_Pivot: {x: 0, y: 1}
 --- !u!222 &8987756646369348285
 CanvasRenderer:
@@ -815,10 +815,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 1093229065563093259}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 8.5, y: 0.2999878}
-  m_SizeDelta: {x: -9.5, y: 25}
+  m_AnchoredPosition: {x: 25.08, y: 0}
+  m_SizeDelta: {x: -25.08, y: 0}
   m_Pivot: {x: 0, y: 1}
 --- !u!222 &7018646224581524210
 CanvasRenderer:
@@ -848,7 +848,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Kerlew
+  m_text: Player
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 0c21b1a36adb6284385ee7bb2dfb1202, type: 2}
   m_sharedMaterial: {fileID: 2889639879709867915, guid: 0c21b1a36adb6284385ee7bb2dfb1202, type: 2}
@@ -883,7 +883,7 @@ MonoBehaviour:
   m_fontSizeMax: 72
   m_fontStyle: 0
   m_HorizontalAlignment: 1
-  m_VerticalAlignment: 512
+  m_VerticalAlignment: 4096
   m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
@@ -1467,8 +1467,8 @@ MonoBehaviour:
     tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
     quis nostrud exercitation ullamco.
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 0c21b1a36adb6284385ee7bb2dfb1202, type: 2}
-  m_sharedMaterial: {fileID: 2889639879709867915, guid: 0c21b1a36adb6284385ee7bb2dfb1202, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: aa81679b927bc1044bbd803bd3435f1f, type: 2}
+  m_sharedMaterial: {fileID: -1341647542106565254, guid: aa81679b927bc1044bbd803bd3435f1f, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1492,8 +1492,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 12
-  m_fontSizeBase: 12
+  m_fontSize: 13
+  m_fontSizeBase: 13
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -1504,7 +1504,7 @@ MonoBehaviour:
   m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
-  m_lineSpacing: 0
+  m_lineSpacing: -25
   m_lineSpacingMax: 0
   m_paragraphSpacing: 0
   m_charWidthMaxAdj: 0
