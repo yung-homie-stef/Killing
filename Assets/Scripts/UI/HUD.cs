@@ -106,7 +106,7 @@ public class HUD : MonoBehaviour
     {
         Sequence.Create()
             .Group(Tween.UIAnchoredPosition(target: _establishmentLocationBanner, flag ? new Vector2(_establishmentPos.x, _establishmentPos.y) : new Vector2(0, -430.0f), duration: 0.25f))
-            .Group(Tween.UIAnchoredPosition(target: _playerFundsBanner, flag ? new Vector2(60.0f, -120.0f) : new Vector2(-fundsWidth, -120.0f), duration: 0.25f))
+            .Group(Tween.UIAnchoredPosition(target: _playerFundsBanner, flag ? new Vector2(60.0f, -105.0f) : new Vector2(-fundsWidth, -105.0f), duration: 0.25f))
             .Group(Tween.UIAnchoredPosition(target: _cityLocationBanner, flag ? new Vector2(60.0f, -950.0f) : new Vector2(-locationWidth, -950.0f), duration: 0.25f));
     }
 
