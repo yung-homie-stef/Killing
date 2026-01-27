@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
+using UnityEditor.Rendering;
 using UnityEngine;
 
 [ExecuteInEditMode]
@@ -13,30 +14,26 @@ public class RoadPiece : MonoBehaviour
     [SerializeField] private float _offsetY = 0.0f;
 
     private Material _material = null;
+    private MaterialPropertyBlock _materialPropertyBlock = null;
 
     private void Start()
     {
-        MeshRenderer mr = GetComponent<MeshRenderer>();
-        if (mr != null)
-        {
-            Material m = mr.material;
-            if (m != null)
-            {
-                _material = new Material(m);
-                mr.material = _material;
-            }
-        }
+        
     }
 
 
     private void OnValidate()
     {
-        if (_material != null)
-        {
-            _material.SetFloat("_Manual_Offset", _isUsingManualOffset ? 1.0f : 0.0f);
-            _material.SetFloat("_xOffset", _offsetX);
-            _material.SetFloat("_yOffset", _offsetY);
-        }
+        if (_materialPropertyBlock == null)
+            _materialPropertyBlock = new MaterialPropertyBlock();
+
+        Renderer renderer = GetComponent<Renderer>();
+
+        _materialPropertyBlock.SetFloat("_Manual_Offset", _isUsingManualOffset ? 1.0f : 0.0f);
+        _materialPropertyBlock.SetFloat("_xOffset", _offsetX);
+        _materialPropertyBlock.SetFloat("_yOffset", _offsetY);
+
+        renderer.SetPropertyBlock( _materialPropertyBlock );
     }
     
 }
