@@ -273,7 +273,8 @@ MonoBehaviour:
       type: 3
       typeString: CustomFieldType_Files
     - title: Description
-      value: 
+      value: The intro quest that involves retrieving the wallet and establishing
+        player's relationship.
       type: 0
       typeString: CustomFieldType_Text
     - title: Success Description
@@ -309,7 +310,7 @@ MonoBehaviour:
       type: 0
       typeString: CustomFieldType_QuestState
     - title: Entry 2
-      value: Go back to the alley to retrieve my wallet.
+      value: Go back to the alley to look for my wallet.
       type: 0
       typeString: CustomFieldType_Text
     - title: Entry 3 State
@@ -333,13 +334,72 @@ MonoBehaviour:
     - title: Name
       value: Take Out
       type: 0
+      typeString: CustomFieldType_Text
+    - title: Pictures
+      value: '[]'
+      type: 3
+      typeString: CustomFieldType_Files
+    - title: Description
+      value: Going to Ruby Palace to take on a new job.
+      type: 0
+      typeString: CustomFieldType_Text
+    - title: Success Description
+      value: 
+      type: 0
+      typeString: CustomFieldType_Text
+    - title: Failure Description
+      value: 
+      type: 0
+      typeString: CustomFieldType_Text
+    - title: State
+      value: unassigned
+      type: 0
+      typeString: CustomFieldType_QuestState
+    - title: Is Item
+      value: False
+      type: 2
+      typeString: CustomFieldType_Boolean
+    - title: Entry Count
+      value: 3
+      type: 1
+      typeString: CustomFieldType_Number
+    - title: Entry 1 State
+      value: unassigned
+      type: 0
+      typeString: 
+    - title: Entry 1
+      value: Go to Ruby Palace.
+      type: 0
+      typeString: 
+    - title: Entry 2 State
+      value: unassigned
+      type: 0
+      typeString: 
+    - title: Entry 2
+      value: Discuss the contract work.
+      type: 0
+      typeString: 
+    - title: Entry 3 State
+      value: unassigned
+      type: 0
+      typeString: 
+    - title: Entry 3
+      value: Get some rest for the night.
+      type: 0
+      typeString: 
+  - id: 5
+    fields:
+    - title: Name
+      value: Delivery Fee
+      type: 0
       typeString: 
     - title: Pictures
       value: '[]'
       type: 3
       typeString: CustomFieldType_Files
     - title: Description
-      value: 
+      value: 'SQ: Help a food delivery worker drop off order whilst he is fatally
+        ill.'
       type: 0
       typeString: 
     - title: Success Description
@@ -3651,8 +3711,8 @@ MonoBehaviour:
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 59.108276, y: 0}
-    canvasZoom: 0.76000017
+    canvasScrollPosition: {x: 0, y: 1.1764526}
+    canvasZoom: 0.8500001
   - id: 4
     fields:
     - title: Title
