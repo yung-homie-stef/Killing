@@ -390,7 +390,7 @@ MonoBehaviour:
   - id: 5
     fields:
     - title: Name
-      value: Uber
+      value: Delivery Fee
       type: 0
       typeString: 
     - title: Pictures
@@ -398,7 +398,8 @@ MonoBehaviour:
       type: 3
       typeString: CustomFieldType_Files
     - title: Description
-      value: 
+      value: 'SQ: Help a food delivery worker drop off order whilst he is fatally
+        ill.'
       type: 0
       typeString: 
     - title: Success Description
@@ -3710,8 +3711,8 @@ MonoBehaviour:
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 118.3778, y: 895.9742}
-    canvasZoom: 0.67000026
+    canvasScrollPosition: {x: 0, y: 1.1764526}
+    canvasZoom: 0.8500001
   - id: 4
     fields:
     - title: Title
@@ -4035,7 +4036,7 @@ MonoBehaviour:
       canvasRect:
         serializedVersion: 2
         x: 158
-        y: 296
+        y: 294.82355
         width: 160
         height: 30
     - id: 5
@@ -4061,8 +4062,8 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Dialogue Text
-        value: Did you guys happen to see a wallet by chance? I ducked in here for
-          a smoke during my lunch earlier and I think it fell outta my pocket...
+        value: Hey, did you guys happen to see a wallet by chance? I ducked in here
+          for a smoke during my lunch earlier and I think it fell outta my pocket...
         type: 0
         typeString: 
       - title: Sequence
@@ -4172,8 +4173,8 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Dialogue Text
-        value: Not happening. Besides, we combed the scene already. Nothing but loose
-          change, congealed blood and a broken tooth.
+        value: Not happening. Besides, we've combed the scene already. Nothing but
+          loose change, congealed blood and a broken tooth.
         type: 0
         typeString: 
       - title: Sequence
@@ -4283,7 +4284,118 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Dialogue Text
-        value: 'Probably just a bunch of fiends '
+        value: 'Probably a pack of fiends going strong off some SG they smoked a
+          week ago. This new batch going ''round is '
+        type: 0
+        typeString: 
+      - title: Sequence
+        value: 
+        type: 0
+        typeString: 
+      conversationID: 4
+      isRoot: 0
+      isGroup: 0
+      nodeColor: 
+      delaySimStatus: 0
+      falseConditionAction: Block
+      conditionPriority: 2
+      outgoingLinks:
+      - originConversationID: 4
+        originDialogueID: 10
+        destinationConversationID: 4
+        destinationDialogueID: 11
+        isConnector: 0
+        priority: 2
+      conditionsString: 
+      userScript: 
+      onExecute:
+        m_PersistentCalls:
+          m_Calls: []
+      canvasRect:
+        serializedVersion: 2
+        x: 160.35295
+        y: 503.05884
+        width: 160
+        height: 30
+    - id: 11
+      fields:
+      - title: Title
+        value: 
+        type: 0
+        typeString: 
+      - title: Description
+        value: 
+        type: 0
+        typeString: 
+      - title: Actor
+        value: 9
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Conversant
+        value: 1
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Menu Text
+        value: 
+        type: 0
+        typeString: 
+      - title: Dialogue Text
+        value: 'Shit''ll '
+        type: 0
+        typeString: 
+      - title: Sequence
+        value: 
+        type: 0
+        typeString: 
+      conversationID: 4
+      isRoot: 0
+      isGroup: 0
+      nodeColor: 
+      delaySimStatus: 0
+      falseConditionAction: Block
+      conditionPriority: 2
+      outgoingLinks:
+      - originConversationID: 4
+        originDialogueID: 11
+        destinationConversationID: 4
+        destinationDialogueID: 12
+        isConnector: 0
+        priority: 2
+      conditionsString: 
+      userScript: 
+      onExecute:
+        m_PersistentCalls:
+          m_Calls: []
+      canvasRect:
+        serializedVersion: 2
+        x: 162.70587
+        y: 551.8824
+        width: 160
+        height: 30
+    - id: 12
+      fields:
+      - title: Title
+        value: 
+        type: 0
+        typeString: 
+      - title: Description
+        value: 
+        type: 0
+        typeString: 
+      - title: Actor
+        value: 9
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Conversant
+        value: 1
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Menu Text
+        value: 
+        type: 0
+        typeString: 
+      - title: Dialogue Text
+        value: 
         type: 0
         typeString: 
       - title: Sequence
@@ -4306,11 +4418,11 @@ MonoBehaviour:
       canvasRect:
         serializedVersion: 2
         x: 159.17648
-        y: 503.05884
+        y: 603.05884
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 0, y: 0}
+    canvasScrollPosition: {x: 0, y: 16.934637}
     canvasZoom: 0.85000014
   - id: 5
     fields:
@@ -4390,7 +4502,7 @@ MonoBehaviour:
         value: None()
         type: 0
         typeString: 
-      conversationID: 0
+      conversationID: 5
       isRoot: 1
       isGroup: 0
       nodeColor: 
