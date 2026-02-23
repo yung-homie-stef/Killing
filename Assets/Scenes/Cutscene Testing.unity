@@ -261,6 +261,23 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 2759011557943375845, guid: b2dd869e9590561439b1373743bb07f1, type: 3}
   m_PrefabInstance: {fileID: 643725089}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &130451440 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1135014810358686769, guid: e1b8ecd22150b784cb4c2e91f1e4321a, type: 3}
+  m_PrefabInstance: {fileID: 491606697}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &130451445
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 130451440}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7e2f00802a0bda649b0ac3d1267f6fc3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &158509830 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 822669dd4af221b419166aeabead21e2, type: 3}
@@ -1381,12 +1398,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1135014810364299131, guid: e1b8ecd22150b784cb4c2e91f1e4321a, type: 3}
       propertyPath: m_prefabs.Array.size
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1135014810364299131, guid: e1b8ecd22150b784cb4c2e91f1e4321a, type: 3}
       propertyPath: 'm_prefabs.Array.data[0]'
       value: 
-      objectReference: {fileID: 121952, guid: 720348da784b8fa49a7c48365da6f1b1, type: 3}
+      objectReference: {fileID: 162630, guid: f40d1072f56eeb04f9c104b7c4a8811f, type: 3}
     - target: {fileID: 1135014810364299131, guid: e1b8ecd22150b784cb4c2e91f1e4321a, type: 3}
       propertyPath: 'm_prefabs.Array.data[1]'
       value: 
@@ -2289,7 +2306,10 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 1135014810378534743, guid: e1b8ecd22150b784cb4c2e91f1e4321a, type: 3}
       insertIndex: -1
       addedObject: {fileID: 190882977}
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 1135014810358686769, guid: e1b8ecd22150b784cb4c2e91f1e4321a, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 130451445}
   m_SourcePrefab: {fileID: 100100000, guid: e1b8ecd22150b784cb4c2e91f1e4321a, type: 3}
 --- !u!1001 &503454231
 PrefabInstance:
@@ -2440,7 +2460,7 @@ MonoBehaviour:
   allowBarksDuringConversations: 0
   skipBarkIfNoValidEntries: 0
   cacheBarkLines: 0
-  conversation: Girlfriend's First Interaction
+  conversation: Talking with GF After Beatdown
   conversationConversant: {fileID: 1770621402}
   conversationActor: {fileID: 128033973}
   startConversationEntryID: -1
@@ -4518,51 +4538,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dd236e741961bc64ab85efe9ad54f30c, type: 3}
---- !u!1 &1495525966
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1495525968}
-  - component: {fileID: 1495525967}
-  m_Layer: 0
-  m_Name: Dialogue System Scene Events
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1495525967
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1495525966}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ca55201633b97d3408f439eb84ecb249, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  dialogueEntrySceneEvents: []
---- !u!4 &1495525968
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1495525966}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &1502200407 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 6f4fa053d62f23147b88dfda34c6784c, type: 3}
@@ -5761,7 +5736,7 @@ MonoBehaviour:
   allowBarksDuringConversations: 0
   skipBarkIfNoValidEntries: 0
   cacheBarkLines: 0
-  conversation: Girlfriend's First Interaction
+  conversation: Talking with GF After Beatdown
   conversationConversant: {fileID: 1770621402}
   conversationActor: {fileID: 128033973}
   startConversationEntryID: -1
@@ -6111,7 +6086,6 @@ SceneRoots:
   - {fileID: 1319194178}
   - {fileID: 1143386234}
   - {fileID: 252366508}
-  - {fileID: 1495525968}
   - {fileID: 1739230398}
   - {fileID: 218316680}
   - {fileID: 341002031}
