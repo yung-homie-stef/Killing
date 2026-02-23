@@ -1375,6 +1375,18 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1135014810364299131, guid: e1b8ecd22150b784cb4c2e91f1e4321a, type: 3}
+      propertyPath: m_prefabs.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1135014810364299131, guid: e1b8ecd22150b784cb4c2e91f1e4321a, type: 3}
+      propertyPath: 'm_prefabs.Array.data[0]'
+      value: 
+      objectReference: {fileID: 162630, guid: f40d1072f56eeb04f9c104b7c4a8811f, type: 3}
+    - target: {fileID: 1135014810364299131, guid: e1b8ecd22150b784cb4c2e91f1e4321a, type: 3}
+      propertyPath: 'm_prefabs.Array.data[1]'
+      value: 
+      objectReference: {fileID: 162630, guid: f40d1072f56eeb04f9c104b7c4a8811f, type: 3}
+    - target: {fileID: 1135014810364299131, guid: e1b8ecd22150b784cb4c2e91f1e4321a, type: 3}
       propertyPath: 'm_prefabs.Array.data[2]'
       value: 
       objectReference: {fileID: 162630, guid: f40d1072f56eeb04f9c104b7c4a8811f, type: 3}
@@ -1391,6 +1403,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1135014810364352181, guid: e1b8ecd22150b784cb4c2e91f1e4321a, type: 3}
+      propertyPath: displaySettings.cameraSettings.cameraEasing
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1135014810364352181, guid: e1b8ecd22150b784cb4c2e91f1e4321a, type: 3}
       propertyPath: displaySettings.alertSettings.minAlertSeconds
       value: 3
       objectReference: {fileID: 0}
@@ -1404,7 +1420,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1135014810364352181, guid: e1b8ecd22150b784cb4c2e91f1e4321a, type: 3}
       propertyPath: displaySettings.alertSettings.allowAlertsDuringConversations
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1135014810378430001, guid: e1b8ecd22150b784cb4c2e91f1e4321a, type: 3}
       propertyPath: m_PixelPerfect
