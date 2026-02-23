@@ -474,6 +474,7 @@ GameObject:
   - component: {fileID: 1234775088923790899}
   - component: {fileID: 8044677054431816842}
   - component: {fileID: 7637451965322144789}
+  - component: {fileID: 1208031067472912430}
   m_Layer: 5
   m_Name: Continue Button
   m_TagString: Untagged
@@ -611,6 +612,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 70840906a85a76545a2813c6f77825b9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1208031067472912430
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5059103765574052811}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b195132c72779d34cad25b507f064e2c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _UIPanel: {fileID: 2068105484050971153}
+  _textBox: {fileID: 7498510724950318383}
 --- !u!1 &5511697351651426905
 GameObject:
   m_ObjectHideFlags: 0
