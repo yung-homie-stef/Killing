@@ -20,13 +20,16 @@ public class UIResizing : MonoBehaviour, IPointerClickHandler
 
     public void OnPointerClick(PointerEventData eventData)
     {
+        // FIX SHOULD NOT BE EVERY SINGLE TIME I CLICK
        UpdateDimensionsManually();
     }
 
     public void UpdateDimensionsManually()
     {
-        _preferredSize = _textBox.GetPreferredValues().y;
-        Sequence.Create(Tween.UISizeDelta(target: _UIPanel, endValue: new(_UIPanel.sizeDelta.x, _preferredSize + _preferredHeightAddition), duration: 0.15f));
+        _preferredSize = _textBox.GetPreferredValues().y + _preferredHeightAddition;
+
+        if (_preferredSize != _textBox.GetPreferredValues().y)
+        Sequence.Create(Tween.UISizeDelta(target: _UIPanel, endValue: new(_UIPanel.sizeDelta.x, _preferredSize), duration: 0.15f));
     }
 
 

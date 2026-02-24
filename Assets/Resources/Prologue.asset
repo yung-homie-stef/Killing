@@ -427,20 +427,6 @@ MonoBehaviour:
       typeString: CustomFieldType_Boolean
   locations: []
   variables:
-  - id: 1
-    fields:
-    - title: Name
-      value: Alert
-      type: 0
-      typeString: CustomFieldType_Text
-    - title: Initial Value
-      value: False
-      type: 2
-      typeString: CustomFieldType_Boolean
-    - title: Description
-      value: 
-      type: 0
-      typeString: CustomFieldType_Text
   - id: 2
     fields:
     - title: Name
@@ -1207,7 +1193,7 @@ MonoBehaviour:
       conditionPriority: 2
       outgoingLinks: []
       conditionsString: 
-      userScript: SetQuestState("Long Day's Journey Into Night", "active");
+      userScript: SetQuestState("Long Day's Journey Into Night", "active")
       onExecute:
         m_PersistentCalls:
           m_Calls: []
@@ -3718,7 +3704,7 @@ MonoBehaviour:
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 11.842102, y: 968.4208}
+    canvasScrollPosition: {x: 68.42102, y: 0}
     canvasZoom: 0.76000017
   - id: 4
     fields:

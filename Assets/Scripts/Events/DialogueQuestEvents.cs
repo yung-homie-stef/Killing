@@ -7,11 +7,13 @@ public class DialogueQuestEvents : MonoBehaviour
 {
     void OnQuestStateChange(string questTitle)
     {
-        DialogueManager.instance.ShowAlert(questTitle);
+        if (QuestLog.IsQuestActive(questTitle))
+            DialogueManager.instance.ShowAlert(questTitle);
+        else if (QuestLog.IsQuestSuccessful(questTitle))
+            DialogueManager.instance.ShowAlert(questTitle + " is done.");
     }
-
-    void OnQuestSEntryStateChange(string questTitle)
+    void OnQuestEntryStateChange(QuestEntryArgs args)
     {
-
+        Debug.Log("swag");
     }
 }
