@@ -233,10 +233,10 @@ RectTransform:
   m_Father: {fileID: 3569074107989446365}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
+  m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
-  m_Pivot: {x: 0.5, y: 0.5}
+  m_SizeDelta: {x: 0, y: 40}
+  m_Pivot: {x: 0, y: 0}
 --- !u!222 &2988128548106705487
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -553,11 +553,11 @@ RectTransform:
   - {fileID: 6831031713441294137}
   m_Father: {fileID: 6848377504685986174}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 1, y: 0}
-  m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: -24, y: 732}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 40}
-  m_Pivot: {x: 1, y: 1}
+  m_Pivot: {x: 0, y: 0}
 --- !u!222 &17307199861950082
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -632,7 +632,6 @@ GameObject:
   - component: {fileID: 6831031713441294137}
   - component: {fileID: 657846013808556536}
   - component: {fileID: 7645411648094910070}
-  - component: {fileID: 5447770803396093149}
   m_Layer: 5
   m_Name: Task Name
   m_TagString: Untagged
@@ -654,11 +653,11 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 3569074107989446365}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 1, y: 0.5}
-  m_AnchorMax: {x: 1, y: 0.5}
-  m_AnchoredPosition: {x: -26, y: -59.674988}
-  m_SizeDelta: {x: 347.0496, y: 63.35}
-  m_Pivot: {x: 1, y: 0.5}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 0, y: -42}
+  m_SizeDelta: {x: 357.64, y: 26.8}
+  m_Pivot: {x: 0, y: 1}
 --- !u!222 &657846013808556536
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -687,7 +686,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 
+  m_text: A Long Day's Journey Into Night
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: a3a82c113b573b94e9174ea7f7323430, type: 2}
   m_sharedMaterial: {fileID: -8295073694903874356, guid: a3a82c113b573b94e9174ea7f7323430, type: 2}
@@ -721,8 +720,8 @@ MonoBehaviour:
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
-  m_HorizontalAlignment: 4
-  m_VerticalAlignment: 256
+  m_HorizontalAlignment: 1
+  m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
@@ -756,50 +755,6 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
---- !u!114 &5447770803396093149
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6151539839975554351}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cf59e9c601bf0354baa2d3daac7d491e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  rightToLeft: 0
-  charactersPerSecond: 50
-  audioClip: {fileID: 0}
-  alternateAudioClips: []
-  audioSource: {fileID: 0}
-  usePlayOneShot: 0
-  interruptAudioClip: 0
-  stopAudioOnSilentCharacters: 0
-  stopAudioOnPauseCodes: 0
-  silentCharacters: 
-  fullPauseCharacters: 
-  quarterPauseCharacters: 
-  fullPauseDuration: 1
-  quarterPauseDuration: 0.25
-  removeDuplicateTypewriterEffects: 1
-  playOnEnable: 1
-  waitOneFrameBeforeStarting: 1
-  stopOnConversationEnd: 0
-  autoScrollSettings:
-    autoScrollEnabled: 0
-    scrollRect: {fileID: 0}
-    scrollbarEnabler: {fileID: 0}
-    sizerText: {fileID: 0}
-  onBegin:
-    m_PersistentCalls:
-      m_Calls: []
-  onCharacter:
-    m_PersistentCalls:
-      m_Calls: []
-  onEnd:
-    m_PersistentCalls:
-      m_Calls: []
 --- !u!1 &6152782947614262269
 GameObject:
   m_ObjectHideFlags: 0
@@ -811,7 +766,6 @@ GameObject:
   - component: {fileID: 5730001340569543577}
   - component: {fileID: 1017224703458127023}
   - component: {fileID: 1536753135037688269}
-  - component: {fileID: 8536423119413555296}
   m_Layer: 5
   m_Name: New Assignment Available
   m_TagString: Untagged
@@ -833,11 +787,11 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 3569074107989446365}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 1, y: 0.5}
-  m_AnchorMax: {x: 1, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 0.5}
+  m_AnchorMax: {x: 0, y: 0.5}
+  m_AnchoredPosition: {x: 7.160034, y: 0}
   m_SizeDelta: {x: 358.9, y: 50}
-  m_Pivot: {x: 1, y: 0.5}
+  m_Pivot: {x: 0, y: 0.5}
 --- !u!222 &1017224703458127023
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -900,7 +854,7 @@ MonoBehaviour:
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
-  m_HorizontalAlignment: 4
+  m_HorizontalAlignment: 1
   m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: 0
@@ -935,50 +889,6 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
---- !u!114 &8536423119413555296
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6152782947614262269}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cf59e9c601bf0354baa2d3daac7d491e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  rightToLeft: 0
-  charactersPerSecond: 50
-  audioClip: {fileID: 0}
-  alternateAudioClips: []
-  audioSource: {fileID: 0}
-  usePlayOneShot: 0
-  interruptAudioClip: 0
-  stopAudioOnSilentCharacters: 0
-  stopAudioOnPauseCodes: 0
-  silentCharacters: 
-  fullPauseCharacters: 
-  quarterPauseCharacters: 
-  fullPauseDuration: 1
-  quarterPauseDuration: 0.25
-  removeDuplicateTypewriterEffects: 1
-  playOnEnable: 1
-  waitOneFrameBeforeStarting: 0
-  stopOnConversationEnd: 0
-  autoScrollSettings:
-    autoScrollEnabled: 0
-    scrollRect: {fileID: 0}
-    scrollbarEnabler: {fileID: 0}
-    sizerText: {fileID: 0}
-  onBegin:
-    m_PersistentCalls:
-      m_Calls: []
-  onCharacter:
-    m_PersistentCalls:
-      m_Calls: []
-  onEnd:
-    m_PersistentCalls:
-      m_Calls: []
 --- !u!1 &8006352543000897228
 GameObject:
   m_ObjectHideFlags: 0
@@ -1137,10 +1047,10 @@ MonoBehaviour:
   stopAudioOnSilentCharacters: 0
   stopAudioOnPauseCodes: 0
   silentCharacters: 
-  fullPauseCharacters: '?'
+  fullPauseCharacters: ?!.
   quarterPauseCharacters: ','
-  fullPauseDuration: 0.75
-  quarterPauseDuration: 0.45
+  fullPauseDuration: 0.9
+  quarterPauseDuration: 0.65
   removeDuplicateTypewriterEffects: 1
   playOnEnable: 1
   waitOneFrameBeforeStarting: 0

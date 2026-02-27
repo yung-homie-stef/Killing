@@ -14,6 +14,10 @@ public class DialogueQuestEvents : MonoBehaviour
     }
     void OnQuestEntryStateChange(QuestEntryArgs args)
     {
-        Debug.Log("swag");
+        var entryState = QuestLog.GetQuestEntryState(args.questName, args.entryNumber);
+
+        if (entryState == QuestState.Active)
+            ;
+
     }
 }
