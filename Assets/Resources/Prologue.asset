@@ -47,8 +47,8 @@ MonoBehaviour:
       type: 3
       typeString: CustomFieldType_Files
     - title: Description
-      value: 1
-      type: 5
+      value: Protagonist
+      type: 0
       typeString: CustomFieldType_Actor
     - title: IsPlayer
       value: True
@@ -3855,7 +3855,7 @@ MonoBehaviour:
         priority: 2
       conditionsString: CurrentQuestEntryState("Long Day's Journey Into Night", 2)
         == "success"
-      userScript: 
+      userScript: SetQuestEntryState("Long Day's Journey Into Night", 2, "active")
       onExecute:
         m_PersistentCalls:
           m_Calls: []
@@ -4532,7 +4532,7 @@ MonoBehaviour:
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 12.195099, y: 9.7561035}
+    canvasScrollPosition: {x: 0, y: 0}
     canvasZoom: 0.8200002
   - id: 5
     fields:
