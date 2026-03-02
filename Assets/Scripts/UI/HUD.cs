@@ -23,6 +23,9 @@ public class HUD : MonoBehaviour
     [SerializeField] private TextMeshProUGUI _playerFundsText;
     [SerializeField] private RectTransform _playerFundsBanner;
 
+    [Header("Player Funds")]
+    [SerializeField] private ItemCollectUIContainer _itemCollectUIContainer;
+
     private CanvasGroup _HUD_CanvasGroup;
     private CanvasGroup _cityLocationBannerCanvasGroup = null;
 
@@ -49,8 +52,8 @@ public class HUD : MonoBehaviour
         GameEventsManager.instance.playerEvents.onPlayerEnterAreaBox += UpdateHUDCityLocationInfo;
         GameEventsManager.instance.playerEvents.onBeginPlayerTeleportation += FadeOutHUD;
         GameEventsManager.instance.moneyEvents.onMoneyAmountChanged += UpdateHUDPlayerFunds;
-        DialogueManager.instance.conversationStarted += TriggerHideHUDTween;
-        DialogueManager.instance.conversationEnded += TriggerShowHUDTween;
+        //DialogueManager.instance.conversationStarted += TriggerHideHUDTween;
+        //DialogueManager.instance.conversationEnded += TriggerShowHUDTween;
     }
 
     private void OnDisable()
@@ -108,6 +111,11 @@ public class HUD : MonoBehaviour
             .Group(Tween.UIAnchoredPosition(target: _establishmentLocationBanner, flag ? new Vector2(_establishmentPos.x, _establishmentPos.y) : new Vector2(0, -430.0f), duration: 0.25f))
             .Group(Tween.UIAnchoredPosition(target: _playerFundsBanner, flag ? new Vector2(60.0f, -105.0f) : new Vector2(-fundsWidth, -105.0f), duration: 0.25f))
             .Group(Tween.UIAnchoredPosition(target: _cityLocationBanner, flag ? new Vector2(60.0f, -950.0f) : new Vector2(-locationWidth, -950.0f), duration: 0.25f));
+    }
+
+    public void TriggerItemCollectPopup(ItemObject itemObj)
+    {
+        _itemCollectUIContainer.ShowItemPickup(itemObj);
     }
 
     private void UpdateHUDPlayerFunds(int amount)

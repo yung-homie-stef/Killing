@@ -273,7 +273,7 @@ MonoBehaviour:
       type: 3
       typeString: CustomFieldType_Files
     - title: Description
-      value: 
+      value: swagger on lock
       type: 0
       typeString: CustomFieldType_Text
     - title: Success Description
@@ -329,6 +329,10 @@ MonoBehaviour:
       type: 0
       typeString: CustomFieldType_Text
     - title: Trackable
+      value: True
+      type: 2
+      typeString: CustomFieldType_Boolean
+    - title: Track
       value: True
       type: 2
       typeString: CustomFieldType_Boolean
@@ -423,20 +427,6 @@ MonoBehaviour:
       typeString: CustomFieldType_Boolean
   locations: []
   variables:
-  - id: 1
-    fields:
-    - title: Name
-      value: Alert
-      type: 0
-      typeString: CustomFieldType_Text
-    - title: Initial Value
-      value: False
-      type: 2
-      typeString: CustomFieldType_Boolean
-    - title: Description
-      value: 
-      type: 0
-      typeString: CustomFieldType_Text
   - id: 2
     fields:
     - title: Name
@@ -1203,7 +1193,7 @@ MonoBehaviour:
       conditionPriority: 2
       outgoingLinks: []
       conditionsString: 
-      userScript: SetQuestState("Long Day's Journey Into Night", "active");
+      userScript: SetQuestState("Long Day's Journey Into Night", "active")
       onExecute:
         m_PersistentCalls:
           m_Calls: []
@@ -1271,8 +1261,8 @@ MonoBehaviour:
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 0, y: 0}
-    canvasZoom: 0.73000026
+    canvasScrollPosition: {x: 49.19651, y: 441.19366}
+    canvasZoom: 0.9100001
   - id: 2
     fields:
     - title: Title
@@ -3714,7 +3704,7 @@ MonoBehaviour:
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 0, y: 2.6315308}
+    canvasScrollPosition: {x: 59.210495, y: 55.263153}
     canvasZoom: 0.76000017
   - id: 4
     fields:
@@ -3775,11 +3765,11 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Actor
-        value: 9
+        value: 1
         type: 5
         typeString: CustomFieldType_Actor
       - title: Conversant
-        value: 1
+        value: 9
         type: 5
         typeString: CustomFieldType_Actor
       - title: Menu Text
@@ -3854,7 +3844,7 @@ MonoBehaviour:
       isGroup: 0
       nodeColor: 
       delaySimStatus: 0
-      falseConditionAction: Block
+      falseConditionAction: Passthrough
       conditionPriority: 2
       outgoingLinks:
       - originConversationID: 4
@@ -4542,7 +4532,7 @@ MonoBehaviour:
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 13.414612, y: 0}
+    canvasScrollPosition: {x: 12.195099, y: 9.7561035}
     canvasZoom: 0.8200002
   - id: 5
     fields:
@@ -6399,8 +6389,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 442.48468
-        y: 931.22906
+        x: 445.93286
+        y: 941.5738
         width: 160
         height: 30
     - id: 23
@@ -6593,7 +6583,8 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Dialogue Text
-        value: Oh, and...Tomorrow I'll swing by, get myself checked out. Promise.
+        value: Oh, and...Tomorrow I'll swing by [doctor], get myself checked out.
+          Promise.
         type: 0
         typeString: 
       - title: Sequence
@@ -6786,8 +6777,8 @@ MonoBehaviour:
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 17.968094, y: 201.4925}
-    canvasZoom: 0.6700003
+    canvasScrollPosition: {x: 103.397644, y: 1.7241211}
+    canvasZoom: 0.5800004
   syncInfo:
     syncActors: 0
     syncItems: 0

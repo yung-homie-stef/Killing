@@ -237,7 +237,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 15, y: -69.3}
+  m_AnchoredPosition: {x: 43, y: -69.3}
   m_SizeDelta: {x: 550, y: 0}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &543733282440277659
@@ -388,7 +388,7 @@ GameObject:
   - component: {fileID: 4003835545515468104}
   - component: {fileID: 4686947365677765142}
   m_Layer: 5
-  m_Name: Image
+  m_Name: Square
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -408,11 +408,11 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 6204054991318699133}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 52.72, y: 0}
+  m_AnchorMin: {x: 0, y: 0.5}
+  m_AnchorMax: {x: 0, y: 0.5}
+  m_AnchoredPosition: {x: -10, y: 0}
   m_SizeDelta: {x: 15, y: 15}
-  m_Pivot: {x: 0.5, y: 0.5}
+  m_Pivot: {x: 1, y: 0.5}
 --- !u!222 &4003835545515468104
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -441,8 +441,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
-  m_Type: 0
+  m_Sprite: {fileID: 21300000, guid: d07fc279356ca2f4287eb5fa33d8407a, type: 3}
+  m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -450,7 +450,7 @@ MonoBehaviour:
   m_FillClockwise: 1
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 1
+  m_PixelsPerUnitMultiplier: 8
 --- !u!1 &7789896577754969775
 GameObject:
   m_ObjectHideFlags: 0
@@ -551,7 +551,7 @@ GameObject:
   - component: {fileID: 1839048465665474869}
   - component: {fileID: 7487240001839121464}
   m_Layer: 5
-  m_Name: Text (TMP)
+  m_Name: QuestEntryText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

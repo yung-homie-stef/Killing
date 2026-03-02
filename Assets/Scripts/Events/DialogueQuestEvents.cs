@@ -16,8 +16,8 @@ public class DialogueQuestEvents : MonoBehaviour
     {
         var entryState = QuestLog.GetQuestEntryState(args.questName, args.entryNumber);
 
-        if (entryState == QuestState.Active)
-            ;
+        //if (entryState == QuestState.Active)
+           // ;
 
     }
 }

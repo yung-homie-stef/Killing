@@ -20,7 +20,7 @@ public class UIResizing : MonoBehaviour, IPointerClickHandler
 
     public void OnPointerClick(PointerEventData eventData)
     {
-        // FIX SHOULD NOT BE EVERY SINGLE TIME I CLICK
+        // FIX! SHOULD NOT BE EVERY SINGLE TIME I CLICK
        UpdateDimensionsManually();
     }
 
