@@ -5,6 +5,7 @@ using UnityEngine;
 public class MoneyManager : MonoBehaviour
 {
     private int _currentPlayerMoney;
+    private int _previousPlayerMoney;
     private string _moneyVariableString = "Player$$$";
     public static MoneyManager instance { get; private set; }
 
@@ -23,9 +24,13 @@ public class MoneyManager : MonoBehaviour
 
     public void UpdatePlayerMoney(int amount)
     {
+        _previousPlayerMoney = _currentPlayerMoney;
         _currentPlayerMoney += amount;
+
+        Debug.Log("Had: " + _previousPlayerMoney);
+        Debug.Log("Have: " + _currentPlayerMoney);
         PlayerPrefs.SetInt(_moneyVariableString, _currentPlayerMoney);
-        GameEventsManager.instance.moneyEvents.MoneyAmountChanged(_currentPlayerMoney);
+        GameEventsManager.instance.moneyEvents.MoneyAmountChanged(_currentPlayerMoney, _previousPlayerMoney);
     }
 
     public int GetCurrentPlayerMoney()

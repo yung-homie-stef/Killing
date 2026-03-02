@@ -34,8 +34,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 49.4, y: 0}
-  m_SizeDelta: {x: -49.4, y: 0}
+  m_AnchoredPosition: {x: 50, y: 0}
+  m_SizeDelta: {x: -55, y: 0}
   m_Pivot: {x: 0, y: 0.5}
 --- !u!222 &4234408950432983937
 CanvasRenderer:
@@ -65,17 +65,17 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 0
+  m_text: 0000000000
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 0c21b1a36adb6284385ee7bb2dfb1202, type: 2}
-  m_sharedMaterial: {fileID: 2889639879709867915, guid: 0c21b1a36adb6284385ee7bb2dfb1202, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: a3a82c113b573b94e9174ea7f7323430, type: 2}
+  m_sharedMaterial: {fileID: -8295073694903874356, guid: a3a82c113b573b94e9174ea7f7323430, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4278190080
-  m_fontColor: {r: 0, g: 0, b: 0, a: 1}
+    rgba: 4294967295
+  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -99,7 +99,7 @@ MonoBehaviour:
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
-  m_HorizontalAlignment: 1
+  m_HorizontalAlignment: 4
   m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: 0
@@ -333,6 +333,7 @@ MonoBehaviour:
   _establishmentLocationBanner: {fileID: 3055639145358634405}
   _playerFundsText: {fileID: 1132240721571829732}
   _playerFundsBanner: {fileID: 8150613717871935899}
+  _moneyCounter: {fileID: 2169420840330673611}
   _itemCollectUIContainer: {fileID: 3385564078117491679}
 --- !u!1 &1626437455650375676
 GameObject:
@@ -1372,13 +1373,14 @@ GameObject:
   - component: {fileID: 2578100023349862290}
   - component: {fileID: 4676352356767141423}
   - component: {fileID: 3816368498505081518}
+  - component: {fileID: 2169420840330673611}
   m_Layer: 5
   m_Name: PlayerFundsBanner
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &8150613717871935899
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1437,7 +1439,7 @@ MonoBehaviour:
   m_FillClockwise: 1
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 14.55
+  m_PixelsPerUnitMultiplier: 5
 --- !u!225 &3816368498505081518
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -1450,6 +1452,23 @@ CanvasGroup:
   m_Interactable: 0
   m_BlocksRaycasts: 0
   m_IgnoreParentGroups: 0
+--- !u!114 &2169420840330673611
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7947379318388124076}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86cfdf7b60e41a84cb15b1c2bebfd534, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _playerFundsNumber: {fileID: 1132240721571829732}
+  _FPS: 30
+  _duration: 1
+  _value: 0
+  _numberFormat: N0
 --- !u!1 &8324150995422376779
 GameObject:
   m_ObjectHideFlags: 0

@@ -96,7 +96,7 @@ public class ShopUI : MonoBehaviour
         _shopItemDescription.text = string.Empty;
     }
 
-    private void UpdatePlayerFundsAmount(int amount)
+    private void UpdatePlayerFundsAmount(int previousAmount, int amount)
     {
         _playerFunds.text = amount.ToString();
     }

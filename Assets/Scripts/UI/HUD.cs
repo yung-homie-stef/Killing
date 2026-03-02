@@ -22,8 +22,9 @@ public class HUD : MonoBehaviour
     [Header("Player Funds")]
     [SerializeField] private TextMeshProUGUI _playerFundsText;
     [SerializeField] private RectTransform _playerFundsBanner;
+    [SerializeField] private MoneyCounter _moneyCounter;
 
-    [Header("Player Funds")]
+    [Header("Item Alerts")]
     [SerializeField] private ItemCollectUIContainer _itemCollectUIContainer;
 
     private CanvasGroup _HUD_CanvasGroup;
@@ -118,9 +119,10 @@ public class HUD : MonoBehaviour
         _itemCollectUIContainer.ShowItemPickup(itemObj);
     }
 
-    private void UpdateHUDPlayerFunds(int amount)
+    private void UpdateHUDPlayerFunds(int previousAmount, int amount)
     {
-        _playerFundsText.text = amount.ToString();
+        //_playerFundsText.text = amount.ToString();
+        _moneyCounter.UpdateBeforeCounting(previousAmount, amount);
     }
 
 
