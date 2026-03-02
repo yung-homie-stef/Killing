@@ -20,7 +20,7 @@ public class ShopItemButton : MonoBehaviour, IPointerEnterHandler
         _price = itemObj._itemPrice;
 
         _shopItemName.text = _item.itemName;
-        _shopItemPrice.text = _price.ToString();
+        _shopItemPrice.text = "$ " + _price.ToString();
         //_shopItemTypeIcon.sprite = _item.icon;
     }
 
