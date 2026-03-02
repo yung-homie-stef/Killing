@@ -301,7 +301,7 @@ MonoBehaviour:
       type: 0
       typeString: CustomFieldType_QuestState
     - title: Entry 1
-      value: Get back to my apartment.
+      value: Get back to my apartment
       type: 0
       typeString: CustomFieldType_Text
     - title: Entry 2 State
@@ -309,7 +309,7 @@ MonoBehaviour:
       type: 0
       typeString: CustomFieldType_QuestState
     - title: Entry 2
-      value: Go back to the alley to look for my wallet.
+      value: Go back to the alley to look for my wallet
       type: 0
       typeString: CustomFieldType_Text
     - title: Entry 3 State
@@ -317,7 +317,7 @@ MonoBehaviour:
       type: 0
       typeString: CustomFieldType_QuestState
     - title: Entry 3
-      value: Track down where my wallet could be.
+      value: Track down where my wallet could be
       type: 0
       typeString: CustomFieldType_Text
     - title: Entry 4 State
@@ -325,7 +325,7 @@ MonoBehaviour:
       type: 0
       typeString: CustomFieldType_QuestState
     - title: Entry 4
-      value: Go back home.
+      value: Go back home
       type: 0
       typeString: CustomFieldType_Text
     - title: Trackable
@@ -407,6 +407,36 @@ MonoBehaviour:
     - title: Description
       value: 'SQ: Help a food delivery worker drop off order whilst he is fatally
         ill.'
+      type: 0
+      typeString: 
+    - title: Success Description
+      value: 
+      type: 0
+      typeString: 
+    - title: Failure Description
+      value: 
+      type: 0
+      typeString: 
+    - title: State
+      value: unassigned
+      type: 0
+      typeString: 
+    - title: Is Item
+      value: False
+      type: 2
+      typeString: CustomFieldType_Boolean
+  - id: 6
+    fields:
+    - title: Name
+      value: White Whales
+      type: 0
+      typeString: 
+    - title: Pictures
+      value: '[]'
+      type: 3
+      typeString: CustomFieldType_Files
+    - title: Description
+      value: 
       type: 0
       typeString: 
     - title: Success Description
