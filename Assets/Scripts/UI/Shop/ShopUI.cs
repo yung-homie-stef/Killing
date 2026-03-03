@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using Unity.VisualScripting;
+using UnityEngine.UI;
 
 public class ShopUI : MonoBehaviour
 {
@@ -10,10 +11,12 @@ public class ShopUI : MonoBehaviour
     [SerializeField] private RectTransform _itemButtonContentParent;
     [SerializeField] private GameObject _itemButtonPrefab;
     [SerializeField] private GameObject _content;
+    [SerializeField] private Image _itemImage;
     [Header("Text")]
     [SerializeField] private TextMeshProUGUI _shopName;
     [SerializeField] private TextMeshProUGUI _playerFunds;
     [SerializeField] private TextMeshProUGUI _shopItemDescription;
+    [SerializeField] private TextMeshProUGUI _shopItemName;
     [Header("Stock")]
     [SerializeField] private List<ShopItemObject> _itemsAvailableInShop;
     [SerializeField] private List<ShopItemButton> _buttonsInShop;
@@ -73,14 +76,17 @@ public class ShopUI : MonoBehaviour
         }
 
         // set shop description to first item by default so shop doesn't open with empty text box
-        _shopItemDescription.text = "DESCRIPTION: " + _itemsAvailableInShop[0]._itemToReference.itemDescription;
+        _shopItemDescription.text =  _itemsAvailableInShop[0]._itemToReference.itemDescription;
+        _shopItemName.text = _itemsAvailableInShop[0]._itemToReference.itemName;
 
         ShowOrHideShopUI(true);
     }
 
-    public void UpdateShopItemDescription(string desc)
+    public void UpdateShopItemDescription(string desc, string name, Sprite _sprite)
     {
-        _shopItemDescription.text = "DESCRIPTION: " + desc;
+        _shopItemDescription.text =  desc;
+        _itemImage.sprite = _sprite;
+        _shopItemName.text = name;
     }
 
     private void ClearShop()
