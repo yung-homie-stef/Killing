@@ -18,10 +18,6 @@ public class InventoryUI : MonoBehaviour
     [SerializeField] private UseDiscardPrompt _useDiscardPrompt;
     [HideInInspector] public Interactable targetInteractable = null;
 
-    [Header("Item Display")]
-    [SerializeField] private MeshFilter _filter;
-    [SerializeField] private MeshRenderer _renderer;
-
     [Header("Buttons")]
     [SerializeField] private List<InventoryItemButton> _inventoryItemButtonList = new List<InventoryItemButton>();
 
@@ -45,9 +41,6 @@ public class InventoryUI : MonoBehaviour
     public void UpdateInventoryItemDisplay(ItemObject itemObj)
     {
         _itemDescriptionText.text = itemObj.itemDescription;
-        _filter.sharedMesh = itemObj.itemMesh;
-        _renderer.material = itemObj.itemMaterial;
-
     }
 
     public void ResetInventoryItemDisplay()
