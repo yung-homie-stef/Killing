@@ -22,10 +22,10 @@ public class ItemInteractable : Interactable
     {
         base.Interact();
 
-        //if (!item.isKeyItem)
-            //UIManager.instance._inventoryMenu.AddItemToInventoryUI(item, InventoryManager.instance._itemInventory.AddItem(item));
-        //else
-            //UIManager.instance._inventoryMenu.AddItemToInventoryUI(item, InventoryManager.instance._keyItemInventory.AddItem(item));
+        if (!item.isKeyItem)
+            UIManager.instance._inventoryMenu.AddItemToInventoryUI(item, InventoryManager.instance._itemInventory.AddItem(item));
+        else
+            UIManager.instance._inventoryMenu.AddItemToInventoryUI(item, InventoryManager.instance._keyItemInventory.AddItem(item));
         UIManager.instance._hudMenu.TriggerItemCollectPopup(item);
         Destroy(gameObject);
     }

@@ -19,8 +19,6 @@ public enum ItemType
 
 public abstract class ItemObject : ScriptableObject
 {
-    public Mesh itemMesh;
-    public Material itemMaterial;
     public ItemType itemType;
     public bool isKeyItem = false;
     public Sprite itemIcon;

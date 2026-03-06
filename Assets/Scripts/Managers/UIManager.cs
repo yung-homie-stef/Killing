@@ -12,10 +12,10 @@ public class UIManager : MonoBehaviour
     [HideInInspector] public FocusUI focusUI;
     [SerializeField] private Image _blackoutImage;
 
-    [HideInInspector] public PauseUI _pauseMenu;
-    [HideInInspector] public ShopUI _shopMenu;
-    [HideInInspector] public InventoryUI _inventoryMenu;
-    [HideInInspector] public HUD _hudMenu;
+    /*[HideInInspector]*/ public PauseUI _pauseMenu;
+    /*[HideInInspector]*/ public ShopUI _shopMenu;
+    /*[HideInInspector]*/ public InventoryUI _inventoryMenu;
+    /*[HideInInspector]*/ public HUD _hudMenu;
 
     private Animator _blackoutAnimator = null;
     private bool _blackoutFlag = false;

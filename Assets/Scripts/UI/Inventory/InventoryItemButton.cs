@@ -11,10 +11,8 @@ public class InventoryItemButton : MonoBehaviour, IPointerEnterHandler, IPointer
 {
 
     [HideInInspector] public ItemObject _itemObject;
-    [SerializeField] private TextMeshProUGUI _itemName;
-    [SerializeField] private Button _useButton;
-    [SerializeField] private Button _discardButton;
     [SerializeField] private InventorySlot _inventorySlot;
+    [SerializeField] private Image _itemImage;
 
     private UIManager _UIManager = null;
     private InventoryManager _inventoryManager = null;
@@ -32,31 +30,18 @@ public class InventoryItemButton : MonoBehaviour, IPointerEnterHandler, IPointer
     public void Initialize(ItemObject itemObj, InventorySlot slot)
     {
         _itemObject = itemObj;
-        _itemName.text = itemObj.itemName;
         _inventorySlot = slot;
+        _itemImage.sprite = itemObj.itemIcon;
     }
 
     public void OnPointerEnter(PointerEventData eventData)
     {
         _UIManager._inventoryMenu.UpdateInventoryItemDisplay(_itemObject);
-
-        if (_UIManager._inventoryMenu.targetInteractable == null)
-        {
-            _useButton.gameObject.SetActive(true);
-            _discardButton.gameObject.SetActive(true);
-        }
     }
 
     public void OnPointerExit(PointerEventData eventData)
     {
-        _useButton.gameObject.SetActive(false);
-        _discardButton.gameObject.SetActive(false);
-    }
 
-    public void InventoryItemButtonPress(bool isUsing)
-    {
-        if (_UIManager._inventoryMenu.targetInteractable == null)
-            _UIManager._inventoryMenu.PromptItemUseOrDiscard(this, _inventorySlot, isUsing);
     }
 
     public void DiscardItem()
