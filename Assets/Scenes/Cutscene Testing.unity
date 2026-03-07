@@ -805,7 +805,7 @@ GameObject:
   - component: {fileID: 341940537}
   - component: {fileID: 341940536}
   - component: {fileID: 341940535}
-  - component: {fileID: 341940534}
+  - component: {fileID: 341940540}
   m_Layer: 3
   m_Name: Shop Prompter
   m_TagString: Untagged
@@ -813,24 +813,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &341940534
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 341940533}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1310783cc19a6f9499067591d9ca8662, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  label: Test Shop Guy
-  _onInteract:
-    m_PersistentCalls:
-      m_Calls: []
-  _canSpeak: 1
-  _cinemachineVirtualCamera: {fileID: 494600135}
 --- !u!114 &341940535
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -998,6 +980,23 @@ Transform:
   - {fileID: 494600136}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &341940540
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 341940533}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0a3bf5d1a422b5146bf8a06aca2a7e44, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  label: SWAG
+  _onInteract:
+    m_PersistentCalls:
+      m_Calls: []
+  _DS_Trigger: {fileID: 341940535}
 --- !u!114 &349052747 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 2759011556925306939, guid: b2dd869e9590561439b1373743bb07f1, type: 3}
@@ -5462,8 +5461,10 @@ MonoBehaviour:
   _onInteract:
     m_PersistentCalls:
       m_Calls: []
+    m_CallsDirty: 1
   _canSpeak: 1
   _cinemachineVirtualCamera: {fileID: 0}
+  _DS_Trigger: {fileID: 0}
 --- !u!114 &1770621407
 MonoBehaviour:
   m_ObjectHideFlags: 0

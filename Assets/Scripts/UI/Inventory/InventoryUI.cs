@@ -95,7 +95,6 @@ public class InventoryUI : MonoBehaviour
             liib = _inventoryItemButtonList;
         }
 
-
         InventoryItemButton _inventoryItemButton = Instantiate(_inventoryItemButtonPrefab, glg.transform).GetComponent<InventoryItemButton>();
         _inventoryItemButton.Initialize(itemObj, slot);
         _inventoryItemButton.transform.SetAsFirstSibling();
@@ -121,6 +120,7 @@ public class InventoryUI : MonoBehaviour
         Destroy(itemButton.gameObject);
     }
 
+    // Done when inventory is first opened up so text box doesn't start off empty
     private void CheckIfThereAreAnyItemsToFillDescription(List<InventoryItemButton> list)
     {
         if (list.Count > 0)
@@ -132,6 +132,6 @@ public class InventoryUI : MonoBehaviour
     public void TestButton()
     {
         PixelCrushers.DialogueSystem.Sequencer.Message("ItemGiven");
-        InventoryToggle(false);
+        ShowOrHideInventoryUI(false, CursorLockMode.None);
     }
 }
