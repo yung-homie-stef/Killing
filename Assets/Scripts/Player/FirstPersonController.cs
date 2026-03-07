@@ -227,5 +227,6 @@ public class FirstPersonController : MonoBehaviour
     {
         EnablePlayerMovement();
         UIManager.instance.focusUI.SetCanFocus(true);
+        _canInteract = true;
     }
 }

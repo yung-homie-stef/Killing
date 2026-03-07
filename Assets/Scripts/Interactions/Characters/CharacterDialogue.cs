@@ -26,6 +26,7 @@ public class CharacterDialogue : Interactable
         {
             base.Interact();
             _DS_Trigger.OnUse();
+            GameEventsManager.instance.playerEvents.DisablePlayerMovement();
             _cinemachineVirtualCamera.Priority = 1;
         }
     }

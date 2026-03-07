@@ -5,6 +5,7 @@ using UnityEngine.UI;
 using TMPro;
 using System.Runtime.InteropServices;
 using UnityEngine.EventSystems;
+using PixelCrushers.DialogueSystem;
 
 public class InventoryUI : MonoBehaviour
 {
@@ -28,15 +29,16 @@ public class InventoryUI : MonoBehaviour
 
     private void OnEnable()
     {
-        GameEventsManager.instance.inputEvents.onInventoryTogglePressed += InventoryButtonToggle;
+        GameEventsManager.instance.inputEvents.onInventoryTogglePressed += InventoryToggle;
+        Lua.RegisterFunction("InventoryToggle", this, SymbolExtensions.GetMethodInfo(() => InventoryToggle(false)));
     }
 
     private void OnDisable()
     {
-        GameEventsManager.instance.inputEvents.onInventoryTogglePressed -= InventoryButtonToggle;
+        GameEventsManager.instance.inputEvents.onInventoryTogglePressed -= InventoryToggle;
     }
 
-    private void InventoryButtonToggle(bool flag)
+    private void InventoryToggle(bool flag)
     {
         if (flag)
         {
@@ -125,5 +127,11 @@ public class InventoryUI : MonoBehaviour
             UpdateInventoryItemDisplay(list[^1]._itemObject);
         else
             ResetInventoryItemDisplay();
+    }
+
+    public void TestButton()
+    {
+        PixelCrushers.DialogueSystem.Sequencer.Message("ItemGiven");
+        InventoryToggle(false);
     }
 }
