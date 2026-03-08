@@ -36,12 +36,13 @@ public class ShopItemButton : MonoBehaviour, IPointerEnterHandler, IPointerExitH
     public void OnPointerEnter(PointerEventData eventData)
     {
         UIManager.instance._shopMenu.UpdateShopItemDescription(_item.itemDescription, _item.itemName, _item.itemIcon);
-        Tween.UISizeDelta(target: _rectTransform, endValue: new(400.0f, _height), duration: 0.15f);
+        Tween.UISizeDelta(target: _rectTransform, endValue: new(475.0f, _height), duration: 0.15f);
+        Debug.Log("swag");
     }
 
     public void OnPointerExit(PointerEventData eventData)
     {
-        Tween.UISizeDelta(target: _rectTransform, startValue: _rectTransform.sizeDelta, endValue: new(350.0f, _height), duration: 0.15f);
+        Tween.UISizeDelta(target: _rectTransform, startValue: _rectTransform.sizeDelta, endValue: new(400.0f, _height), duration: 0.15f);
     }
 
 
