@@ -76,17 +76,16 @@ public class ShopUI : MonoBehaviour
         }
 
         // set shop description to first item by default so shop doesn't open with empty text box
-        _shopItemDescription.text =  _itemsAvailableInShop[0]._itemToReference.itemDescription;
-        _shopItemName.text = _itemsAvailableInShop[0]._itemToReference.itemName;
+        UpdateShopItemDescription(_itemsAvailableInShop[0]._itemToReference);
 
         ShowOrHideShopUI(true);
     }
 
-    public void UpdateShopItemDescription(string desc, string name, Sprite _sprite)
+    public void UpdateShopItemDescription(ItemObject itemObject)
     {
-        _shopItemDescription.text =  desc;
-        _itemImage.sprite = _sprite;
-        _shopItemName.text = name;
+        _shopItemDescription.text =  itemObject.itemDescription;
+        _itemImage.sprite = itemObject.itemIcon;
+        _shopItemName.text = " " + itemObject.itemName;
     }
 
     private void ClearShop()
