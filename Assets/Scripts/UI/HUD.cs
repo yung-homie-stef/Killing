@@ -24,10 +24,10 @@ public class HUD : MonoBehaviour
     [SerializeField] private RectTransform _playerFundsBanner;
     [SerializeField] private MoneyCounter _moneyCounter;
 
-    [Header("Item Alerts")]
+    [Header("Alerts")]
     [SerializeField] private ItemCollectUIContainer _itemCollectUIContainer;
+    [SerializeField] private Image _dialogueVisualPopupImage;
 
-    private CanvasGroup _HUD_CanvasGroup;
     private CanvasGroup _cityLocationBannerCanvasGroup = null;
 
     // UI Position Variables (to avoid magic numbers)
@@ -39,7 +39,6 @@ public class HUD : MonoBehaviour
     private void Awake()
     {
         _cityLocationBannerCanvasGroup = _cityLocationBanner.GetComponent<CanvasGroup>();
-        _HUD_CanvasGroup = GetComponent<CanvasGroup>();
         _playerFundsText.text = PlayerPrefs.GetInt("Player$$$").ToString();
 
         locationWidth = _cityLocationBanner.rect.width;
@@ -123,6 +122,20 @@ public class HUD : MonoBehaviour
     {
         //_playerFundsText.text = amount.ToString();
         _moneyCounter.UpdateBeforeCounting(previousAmount, amount);
+    }
+
+    public void ShowDialogueVisualPopup()
+    {
+        // TODO: set image to specified sprite in project
+        _dialogueVisualPopupImage.gameObject.SetActive(true);
+        _dialogueVisualPopupImage.SetNativeSize();
+        Tween.Scale(target: _dialogueVisualPopupImage.rectTransform, startValue: 0, endValue: 1, startDelay: 1, duration: .25f);
+    }
+
+    public void HideDialougeVisualPopup()
+    {
+        Tween.Scale(target: _dialogueVisualPopupImage.rectTransform, startValue: 1, endValue: 0, startDelay: 1, duration: .25f)
+            .OnComplete(() => _dialogueVisualPopupImage.gameObject.SetActive(false));
     }
 
 

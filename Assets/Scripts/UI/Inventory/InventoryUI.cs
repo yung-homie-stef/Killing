@@ -105,7 +105,7 @@ public class InventoryUI : MonoBehaviour
     public void UpdateInventoryItemDisplay(ItemObject itemObj)
     {
         _itemDescriptionText.text = itemObj.itemDescription;
-        _itemNameText.text = itemObj.itemName;
+        _itemNameText.text = " " + itemObj.itemName;
     }
 
     public void ResetInventoryItemDisplay()
