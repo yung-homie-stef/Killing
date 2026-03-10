@@ -47,6 +47,7 @@ public class ShopItemButton : MonoBehaviour, IPointerEnterHandler, IPointerExitH
 
     public void Purchase()
     {
+        // TODO: add this line back when i can test money again, right now im below zero
         //if (MoneyManager.instance.GetCurrentPlayerMoney() < _price)
         MoneyManager.instance.UpdatePlayerMoney(-_price);
         Debug.Log(MoneyManager.instance.GetCurrentPlayerMoney());

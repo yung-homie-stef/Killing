@@ -1,3 +1,4 @@
+using PixelCrushers.DialogueSystem;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -20,6 +21,8 @@ public class MoneyManager : MonoBehaviour
             _currentPlayerMoney = PlayerPrefs.GetInt(_moneyVariableString);
         else
             PlayerPrefs.SetInt(_moneyVariableString, 0);
+
+        Lua.RegisterFunction("UpdateMoneyFromDialogue", this, SymbolExtensions.GetMethodInfo(() => UpdateMoneyFromDialogue(0)));
     }
 
     public void UpdatePlayerMoney(int amount)
@@ -31,6 +34,11 @@ public class MoneyManager : MonoBehaviour
         Debug.Log("Have: " + _currentPlayerMoney);
         PlayerPrefs.SetInt(_moneyVariableString, _currentPlayerMoney);
         GameEventsManager.instance.moneyEvents.MoneyAmountChanged(_currentPlayerMoney, _previousPlayerMoney);
+    }
+
+    public void UpdateMoneyFromDialogue(double amount)
+    {
+        UpdatePlayerMoney((int)amount);
     }
 
     public int GetCurrentPlayerMoney()

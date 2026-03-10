@@ -336,7 +336,8 @@ MonoBehaviour:
   _playerFundsBanner: {fileID: 8150613717871935899}
   _moneyCounter: {fileID: 2169420840330673611}
   _itemCollectUIContainer: {fileID: 3385564078117491679}
-  _dialogueVisualPopupImage: {fileID: 0}
+  _dialogueVisualPopupImage: {fileID: 4307250566179151131}
+  _blackoutCanvasGroup: {fileID: 3895779011739476182}
 --- !u!1 &961629693790366515
 GameObject:
   m_ObjectHideFlags: 0
@@ -364,7 +365,7 @@ RectTransform:
   m_GameObject: {fileID: 961629693790366515}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0, y: 0, z: 0}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 7633350805653926325}
@@ -903,7 +904,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0, b: 0, a: 0}
+  m_Color: {r: 0, g: 0, b: 0, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -1342,7 +1343,7 @@ GameObject:
   - component: {fileID: 705341471089716820}
   - component: {fileID: 7078256492032925505}
   - component: {fileID: 4230018880894867214}
-  - component: {fileID: 1065145712150048110}
+  - component: {fileID: 3895779011739476182}
   m_Layer: 5
   m_Name: Blackout
   m_TagString: Untagged
@@ -1416,28 +1417,18 @@ MonoBehaviour:
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
   m_PresetInfoIsWorld: 0
---- !u!95 &1065145712150048110
-Animator:
-  serializedVersion: 7
+--- !u!225 &3895779011739476182
+CanvasGroup:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7941886360036754395}
   m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: fb471979c60cfa547a1702343115c4f7, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_AnimatePhysics: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
+  m_Alpha: 0
+  m_Interactable: 0
+  m_BlocksRaycasts: 0
+  m_IgnoreParentGroups: 0
 --- !u!1 &7947379318388124076
 GameObject:
   m_ObjectHideFlags: 0

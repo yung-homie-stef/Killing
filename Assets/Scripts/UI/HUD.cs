@@ -28,6 +28,9 @@ public class HUD : MonoBehaviour
     [SerializeField] private ItemCollectUIContainer _itemCollectUIContainer;
     [SerializeField] private Image _dialogueVisualPopupImage;
 
+    [Header("Blackout")]
+    [SerializeField] private CanvasGroup _blackoutCanvasGroup;
+
     private CanvasGroup _cityLocationBannerCanvasGroup = null;
 
     // UI Position Variables (to avoid magic numbers)
@@ -52,6 +55,9 @@ public class HUD : MonoBehaviour
         GameEventsManager.instance.playerEvents.onPlayerEnterAreaBox += UpdateHUDCityLocationInfo;
         GameEventsManager.instance.playerEvents.onBeginPlayerTeleportation += FadeOutHUD;
         GameEventsManager.instance.moneyEvents.onMoneyAmountChanged += UpdateHUDPlayerFunds;
+
+        Lua.RegisterFunction("ShowDialogueVisualPopup", this, SymbolExtensions.GetMethodInfo(() => ShowDialogueVisualPopup()));
+        Lua.RegisterFunction("HideDialogueVisualPopup", this, SymbolExtensions.GetMethodInfo(() => HideDialogueVisualPopup()));
         //DialogueManager.instance.conversationStarted += TriggerHideHUDTween;
         //DialogueManager.instance.conversationEnded += TriggerShowHUDTween;
     }
@@ -129,13 +135,19 @@ public class HUD : MonoBehaviour
         // TODO: set image to specified sprite in project
         _dialogueVisualPopupImage.gameObject.SetActive(true);
         _dialogueVisualPopupImage.SetNativeSize();
-        Tween.Scale(target: _dialogueVisualPopupImage.rectTransform, startValue: 0, endValue: 1, startDelay: 1, duration: .25f);
+
+        Sequence.Create()
+            .Group(Tween.Custom(startValue: 0.0f, endValue: 0.5f, duration: 0.35f, onValueChange: newVal => _blackoutCanvasGroup.alpha = newVal, startDelay: 1.0f))
+            .Chain(Tween.Scale(target: _dialogueVisualPopupImage.rectTransform, startValue: 0, endValue: 1, startDelay: 1, duration: .25f));
     }
 
-    public void HideDialougeVisualPopup()
+    public void HideDialogueVisualPopup()
     {
-        Tween.Scale(target: _dialogueVisualPopupImage.rectTransform, startValue: 1, endValue: 0, startDelay: 1, duration: .25f)
+        Sequence.Create()
+            .Group(Tween.Scale(target: _dialogueVisualPopupImage.rectTransform, startValue: 1, endValue: 0, startDelay: 1, duration: .25f))
+            .Chain(Tween.Custom(startValue: 0.5f, endValue: 0.0f, duration: 0.35f, onValueChange: newVal => _blackoutCanvasGroup.alpha = newVal, startDelay: 1.0f))
             .OnComplete(() => _dialogueVisualPopupImage.gameObject.SetActive(false));
+            
     }
 
 

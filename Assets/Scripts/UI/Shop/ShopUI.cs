@@ -1,8 +1,9 @@
+using PixelCrushers.DialogueSystem;
 using System.Collections;
 using System.Collections.Generic;
-using UnityEngine;
 using TMPro;
 using Unity.VisualScripting;
+using UnityEngine;
 using UnityEngine.UI;
 
 public class ShopUI : MonoBehaviour
@@ -29,6 +30,7 @@ public class ShopUI : MonoBehaviour
     private void OnEnable()
     {
         GameEventsManager.instance.moneyEvents.onMoneyAmountChanged += UpdatePlayerFundsAmount;
+        Lua.RegisterFunction("InitializeShopFromDialogue", this, SymbolExtensions.GetMethodInfo(() => InitializeShopFromDialogue(null)));
     }
 
     private void OnDisable()
@@ -36,7 +38,7 @@ public class ShopUI : MonoBehaviour
         GameEventsManager.instance.moneyEvents.onMoneyAmountChanged -= UpdatePlayerFundsAmount;
     }
 
-    public void ShowOrHideShopUI(bool flag)
+    public void ShopToggle(bool flag)
     {
         Cursor.visible = flag;
         _content.SetActive(flag);
@@ -56,13 +58,13 @@ public class ShopUI : MonoBehaviour
         }
     }
 
-    public void InitializeShop(ShopItemObject[] stock, string shopName)
+    public void InitializeShop(ShopData data)
     {
         ClearShop();
 
-        _shopName.text = shopName.ToUpper() + ".";
+        _shopName.text = data.shopName.ToUpper() + ".";
 
-        foreach (ShopItemObject item in stock)
+        foreach (ShopItemObject item in data.shopStock)
             _itemsAvailableInShop.Add(item);
 
         _itemsAvailableInShop.Sort((leftHandSide, rightHandSide) => leftHandSide.name.CompareTo(rightHandSide.name));
@@ -78,7 +80,7 @@ public class ShopUI : MonoBehaviour
         // set shop description to first item by default so shop doesn't open with empty text box
         UpdateShopItemDescription(_itemsAvailableInShop[0]._itemToReference);
 
-        ShowOrHideShopUI(true);
+        ShopToggle(true);
     }
 
     public void UpdateShopItemDescription(ItemObject itemObject)
@@ -86,6 +88,11 @@ public class ShopUI : MonoBehaviour
         _shopItemDescription.text =  itemObject.itemDescription;
         _itemImage.sprite = itemObject.itemIcon;
         _shopItemName.text = " " + itemObject.itemName;
+    }
+
+    public void InitializeShopFromDialogue(string shopDataName)
+    {
+        InitializeShop(Resources.Load<ShopData>("ShopData/" + shopDataName));
     }
 
     private void ClearShop()
