@@ -12,6 +12,6 @@ public class ItemCollectPopup : MonoBehaviour
     public void InitializePopup(ItemObject item)
     {
         _itemName.text = item.itemName;
-        //_itemIcon.sprite = item.itemIcon;
+        _itemIcon.sprite = item.itemIcon;
     }
 }

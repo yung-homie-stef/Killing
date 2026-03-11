@@ -21,18 +21,11 @@ public abstract class ItemObject : ScriptableObject
 {
     public ItemType itemType;
     public bool isKeyItem = false;
+    public Sprite itemThumbnail;
     public Sprite itemIcon;
     public string itemName;
     [TextArea(5,20)]
     public string itemDescription;
 
-    private void OnValidate()
-    {
-        switch (itemType)
-        {
-            case ItemType.Food:
-                break;
-        }
-    }
 }
 

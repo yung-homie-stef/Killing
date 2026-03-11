@@ -86,7 +86,7 @@ public class ShopUI : MonoBehaviour
     public void UpdateShopItemDescription(ItemObject itemObject)
     {
         _shopItemDescription.text =  itemObject.itemDescription;
-        _itemImage.sprite = itemObject.itemIcon;
+        _itemImage.sprite = itemObject.itemThumbnail;
         _shopItemName.text = " " + itemObject.itemName;
     }
 

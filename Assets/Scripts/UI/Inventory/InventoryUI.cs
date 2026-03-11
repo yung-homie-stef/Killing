@@ -22,6 +22,8 @@ public class InventoryUI : MonoBehaviour
     [SerializeField] private TextMeshProUGUI _itemNameText;
     //[SerializeField] private UseDiscardPrompt _useDiscardPrompt;
     [HideInInspector] public Interactable targetInteractable = null;
+    [SerializeField] private TextMeshProUGUI _keyItemButtonText;
+    [SerializeField] private TextMeshProUGUI _standardItemButtonText;
 
     [Header("Button Prefab Lists")]
     [SerializeField] private List<InventoryItemButton> _inventoryItemButtonList = new List<InventoryItemButton>();
@@ -31,6 +33,7 @@ public class InventoryUI : MonoBehaviour
     {
         GameEventsManager.instance.inputEvents.onInventoryTogglePressed += InventoryToggle;
         Lua.RegisterFunction("InventoryToggle", this, SymbolExtensions.GetMethodInfo(() => InventoryToggle(false)));
+        Lua.RegisterFunction("CheckForKeyItem", this, SymbolExtensions.GetMethodInfo(() => CheckForKeyItem(string.Empty, false)));
     }
 
     private void OnDisable()
@@ -69,12 +72,16 @@ public class InventoryUI : MonoBehaviour
             _keyItemHierarchy.SetActive(true);
             _standardItemHierarchy.SetActive(false);
             CheckIfThereAreAnyItemsToFillDescription(_keyItemButtonList);
+            _keyItemButtonText.color = Color.black;
+            _standardItemButtonText.color = Color.white;
         }
         else
         {
             _keyItemHierarchy.SetActive(false);
             _standardItemHierarchy.SetActive(true);
             CheckIfThereAreAnyItemsToFillDescription(_inventoryItemButtonList);
+            _keyItemButtonText.color = Color.white;
+            _standardItemButtonText.color = Color.black;
         }
     }
 
@@ -120,6 +127,12 @@ public class InventoryUI : MonoBehaviour
         Destroy(itemButton.gameObject);
     }
 
+    public void RemoveKeyItemFromInventoryUI(InventoryItemButton itemButton)
+    {
+        _keyItemButtonList.Remove(itemButton);
+        Destroy(itemButton.gameObject);
+    }
+
     // Done when inventory is first opened up so text box doesn't start off empty
     private void CheckIfThereAreAnyItemsToFillDescription(List<InventoryItemButton> list)
     {
@@ -127,6 +140,24 @@ public class InventoryUI : MonoBehaviour
             UpdateInventoryItemDisplay(list[^1]._itemObject);
         else
             ResetInventoryItemDisplay();
+    }
+
+    public bool CheckForKeyItem(string name, bool remove)
+    {
+        for (int i=0; i < _keyItemButtonList.Count; i++)
+        {
+            if (_keyItemButtonList[i]._itemObject.itemName == name)
+            {
+                if (remove)
+                {
+                    RemoveKeyItemFromInventoryUI(_keyItemButtonList[i]);
+                    //_keyItemButtonList.RemoveAt(i);
+                    return true;
+                }
+                return true;
+            }     
+        }
+        return false;
     }
 
     public void TestButton()

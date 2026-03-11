@@ -12,7 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1dbbc84c70300ba489dc1fe1961516ec, type: 3}
   m_Name: InventoryLuaFunctions
   m_EditorClassIdentifier: 
-  conditionFunctions: []
+  conditionFunctions:
+  - functionName: CheckForKeyItem
+    parameters: 0200000000000000
+    returnValue: 1
   scriptFunctions:
   - functionName: InventoryToggle
     parameters: 00000000

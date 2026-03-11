@@ -30,7 +30,7 @@ public class ShopItemButton : MonoBehaviour, IPointerEnterHandler, IPointerExitH
 
         _shopItemName.text = _item.itemName;
         _shopItemPrice.text = "$ " + _price.ToString();
-        //_shopItemTypeIcon.sprite = _item.icon;
+        _shopItemTypeIcon.sprite = _item.itemIcon;
     }
 
     public void OnPointerEnter(PointerEventData eventData)

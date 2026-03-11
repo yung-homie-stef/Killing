@@ -13,6 +13,7 @@ public class InventoryItemButton : MonoBehaviour, IPointerEnterHandler, IPointer
     [HideInInspector] public ItemObject _itemObject;
     [SerializeField] private InventorySlot _inventorySlot;
     [SerializeField] private Image _itemImage;
+    [SerializeField] private Image _itemIcon;
 
     private UIManager _UIManager = null;
     private InventoryManager _inventoryManager = null;
@@ -31,7 +32,8 @@ public class InventoryItemButton : MonoBehaviour, IPointerEnterHandler, IPointer
     {
         _itemObject = itemObj;
         _inventorySlot = slot;
-        _itemImage.sprite = itemObj.itemIcon;
+        _itemIcon.sprite = itemObj.itemIcon;
+        _itemImage.sprite = itemObj.itemThumbnail;
     }
 
     public void OnPointerEnter(PointerEventData eventData)
