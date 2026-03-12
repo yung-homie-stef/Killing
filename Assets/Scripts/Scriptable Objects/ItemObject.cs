@@ -8,11 +8,11 @@ using UnityEngine;
 
 public enum ItemType
 {
+    None,
     Food, 
     Beverage, 
     Drug, 
-    Quest,
-    Default
+    Quest
 }
 
 

@@ -29,11 +29,16 @@ public class InventoryUI : MonoBehaviour
     [SerializeField] private List<InventoryItemButton> _inventoryItemButtonList = new List<InventoryItemButton>();
     [SerializeField] private List<InventoryItemButton> _keyItemButtonList = new List<InventoryItemButton>();
 
+    [Header("Requested Item Type")]
+    [SerializeField] public ItemType _requestedItemType = ItemType.None;
+    [SerializeField] private bool _gaveCorrectItem = false;
+
     private void OnEnable()
     {
         GameEventsManager.instance.inputEvents.onInventoryTogglePressed += InventoryToggle;
-        Lua.RegisterFunction("InventoryToggle", this, SymbolExtensions.GetMethodInfo(() => InventoryToggle(false)));
+        Lua.RegisterFunction("InventoryToggleFromDialogue", this, SymbolExtensions.GetMethodInfo(() => InventoryToggleFromDialogue(string.Empty)));
         Lua.RegisterFunction("CheckForKeyItem", this, SymbolExtensions.GetMethodInfo(() => CheckForKeyItem(string.Empty, false)));
+        Lua.RegisterFunction("CheckIfCorrectItemWasGiven", this, SymbolExtensions.GetMethodInfo(() => CheckIfCorrectItemWasGiven()));
     }
 
     private void OnDisable()
@@ -123,13 +128,11 @@ public class InventoryUI : MonoBehaviour
 
     public void RemoveItemFromInventoryUI(InventoryItemButton itemButton)
     {
-        _inventoryItemButtonList.Remove(itemButton);
-        Destroy(itemButton.gameObject);
-    }
+        if (itemButton._itemObject.isKeyItem)
+            _keyItemButtonList.Remove(itemButton);
+        else
+            _inventoryItemButtonList.Remove(itemButton);
 
-    public void RemoveKeyItemFromInventoryUI(InventoryItemButton itemButton)
-    {
-        _keyItemButtonList.Remove(itemButton);
         Destroy(itemButton.gameObject);
     }
 
@@ -142,27 +145,57 @@ public class InventoryUI : MonoBehaviour
             ResetInventoryItemDisplay();
     }
 
-    public bool CheckForKeyItem(string name, bool remove)
-    {
-        for (int i=0; i < _keyItemButtonList.Count; i++)
-        {
-            if (_keyItemButtonList[i]._itemObject.itemName == name)
-            {
-                if (remove)
-                {
-                    RemoveKeyItemFromInventoryUI(_keyItemButtonList[i]);
-                    //_keyItemButtonList.RemoveAt(i);
-                    return true;
-                }
-                return true;
-            }     
-        }
-        return false;
-    }
-
     public void TestButton()
     {
         PixelCrushers.DialogueSystem.Sequencer.Message("ItemGiven");
         ShowOrHideInventoryUI(false, CursorLockMode.None);
     }
+
+    #region NPC Related Item Trade-offs
+
+    public void InventoryToggleFromDialogue(string type)
+    {
+        _requestedItemType = (ItemType)System.Enum.Parse(typeof(ItemType), type);
+        InventoryToggle(true);
+    }
+
+    public bool CheckForKeyItem(string name, bool remove)
+    {
+        for (int i = 0; i < _keyItemButtonList.Count; i++)
+        {
+            if (_keyItemButtonList[i]._itemObject.itemName == name)
+            {
+                if (remove)
+                {
+                    RemoveItemFromInventoryUI(_keyItemButtonList[i]);
+                    return true;
+                }
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public void CheckGivenItem(InventoryItemButton itemButton)
+    {
+        if (itemButton._itemObject.itemType == _requestedItemType)
+        {
+            _gaveCorrectItem = true;
+            RemoveItemFromInventoryUI(itemButton);
+        }
+        else if (itemButton._itemObject.itemType != _requestedItemType)
+            _gaveCorrectItem = false;
+
+        Debug.Log(itemButton._itemObject.itemType + " = " + _requestedItemType);
+
+        ShowOrHideInventoryUI(false, CursorLockMode.None);
+        PixelCrushers.DialogueSystem.Sequencer.Message("ItemSelected");
+    }
+
+    public bool CheckIfCorrectItemWasGiven()
+    {
+        Debug.Log(_gaveCorrectItem);
+        return _gaveCorrectItem;
+    }
+    #endregion
 }

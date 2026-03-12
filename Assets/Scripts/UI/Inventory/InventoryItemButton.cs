@@ -7,7 +7,7 @@ using UnityEngine.UI;
 using Unity.VisualScripting;
 using UnityEngine.Events;
 
-public class InventoryItemButton : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
+public class InventoryItemButton : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, IPointerClickHandler
 {
 
     [HideInInspector] public ItemObject _itemObject;
@@ -32,7 +32,7 @@ public class InventoryItemButton : MonoBehaviour, IPointerEnterHandler, IPointer
     {
         _itemObject = itemObj;
         _inventorySlot = slot;
-        _itemIcon.sprite = itemObj.itemIcon;
+        //_itemIcon.sprite = itemObj.itemIcon;
         _itemImage.sprite = itemObj.itemThumbnail;
     }
 
@@ -45,6 +45,20 @@ public class InventoryItemButton : MonoBehaviour, IPointerEnterHandler, IPointer
     {
 
     }
+
+
+    public void OnPointerClick(PointerEventData eventData)
+    {
+        if (UIManager.instance._inventoryMenu._requestedItemType == ItemType.None)
+        {
+            // Do Something
+            Debug.Log("wagwan");
+        }
+        else
+            UIManager.instance._inventoryMenu.CheckGivenItem(this);
+
+    }
+
 
     public void DiscardItem()
     {
