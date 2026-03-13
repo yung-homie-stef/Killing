@@ -23,7 +23,7 @@ public class ShopUI : MonoBehaviour
     [Header("Stock")]
     [SerializeField] private List<ShopItemObject> _itemsAvailableInShop;
     [SerializeField] private List<ShopItemButton> _buttonsInShop;
-    private ShopItemButton _itemNeededToBuy = null;
+    [SerializeField] private ItemObject _itemNeededToBuy = null;
 
     private void Awake()
     {
@@ -43,22 +43,26 @@ public class ShopUI : MonoBehaviour
 
     public void ShopToggle(bool flag)
     {
-        Cursor.visible = flag;
-        _content.SetActive(flag);
 
         if (flag)
         {
+            ShowOrHideShopUI(true, CursorLockMode.None);
             GameEventsManager.instance.playerEvents.DisablePlayerMovement();
-            UIManager.instance._hudMenu.HUDTween(false);
-            Cursor.lockState = CursorLockMode.None;
+            //UIManager.instance._hudMenu.HUDTween(false);
         }
         else
         {
+            ShowOrHideShopUI(true, CursorLockMode.Locked);
             GameEventsManager.instance.playerEvents.EnablePlayerMovement();
-            UIManager.instance._hudMenu.HUDTween(true);
-            Cursor.lockState = CursorLockMode.Locked;
-            UIManager.instance.focusUI.SetCanFocus(true);
+            //UIManager.instance._hudMenu.HUDTween(true);
         }
+    }
+
+    private void ShowOrHideShopUI(bool flag, CursorLockMode mode)
+    {
+        Cursor.lockState = mode;
+        Cursor.visible = flag;
+        _content.SetActive(flag);
     }
 
     public void InitializeShop(ShopData data)
@@ -75,6 +79,7 @@ public class ShopUI : MonoBehaviour
         for (int i =0; i <  _itemsAvailableInShop.Count; i++)
         {
             var shopItem = Instantiate(_itemButtonPrefab, _itemButtonContentParent.transform);
+            shopItem.name = _itemsAvailableInShop[i]._itemToReference.itemName;
             ShopItemButton shopItemButton = shopItem.GetComponent<ShopItemButton>();
             shopItemButton.InitializeShopItemButton(_itemsAvailableInShop[i]);
             _buttonsInShop.Add(shopItemButton);
@@ -93,42 +98,6 @@ public class ShopUI : MonoBehaviour
         _shopItemName.text = " " + itemObject.itemName;
     }
 
-    public void InitializeShopFromDialogue(string shopDataName, string itemToBuy)
-    {
-        InitializeShop(Resources.Load<ShopData>("ShopData/" + shopDataName));
-
-        for (int i =0; i < _itemsAvailableInShop.Count; i++)
-        {
-            if (_buttonsInShop[i]._item.itemName == itemToBuy)
-            {
-                _buttonsInShop[i].gameObject.SetActive(true);
-                break;
-            }
-            else
-                Debug.Log("Specified item could not be found in the shop.");
-        }
-       
-    }
-
-    public void PurchaseFromShop(ShopItemButton itemButton, int price)
-    {
-        // TODO: add this line back when i can test money again, right now im below zero
-        //if (MoneyManager.instance.GetCurrentPlayerMoney() < _price)
-
-        if (itemButton == _itemNeededToBuy)
-        {
-            MoneyManager.instance.UpdatePlayerMoney(-price);
-            if (itemButton._canRemove)
-            {
-                _buttonsInShop.Remove(itemButton);
-                PixelCrushers.DialogueSystem.Sequencer.Message("ItemBought");
-            }
-            // Debug.Log(MoneyManager.instance.GetCurrentPlayerMoney());
-        }
-    }
-
-
-
     private void ClearShop()
     {
         if (_buttonsInShop.Count != 0)
@@ -146,4 +115,50 @@ public class ShopUI : MonoBehaviour
     {
         _playerFunds.text = amount.ToString();
     }
+
+    #region NPC Related Shopping
+
+    public void InitializeShopFromDialogue(string shopDataName, string itemToBuy)
+    {
+        InitializeShop(Resources.Load<ShopData>("ShopData/" + shopDataName));
+
+        for (int i = 0; i < _itemsAvailableInShop.Count; i++)
+        {
+            if (_buttonsInShop[i]._item.itemName == itemToBuy)
+            {
+                _itemNeededToBuy = _buttonsInShop[i]._item;
+                break;
+            }
+            else
+                Debug.Log("Specified item could not be found in the shop.");
+        }
+
+    }
+
+    public void PurchaseFromShop(ShopItemButton itemButton, int price)
+    {
+        // TODO: add this line back when i can test money again, right now im below zero
+        //if (MoneyManager.instance.GetCurrentPlayerMoney() < _price)
+        if (itemButton._item == _itemNeededToBuy)
+        {
+            if (!_itemNeededToBuy.isKeyItem)
+                UIManager.instance._inventoryMenu.AddItemToInventoryUI(_itemNeededToBuy, InventoryManager.instance._keyItemInventory.AddItem(_itemNeededToBuy));
+            else
+                UIManager.instance._inventoryMenu.AddItemToInventoryUI(_itemNeededToBuy, InventoryManager.instance._itemInventory.AddItem(_itemNeededToBuy));
+
+            UIManager.instance._hudMenu.TriggerItemCollectPopup(_itemNeededToBuy);
+            PixelCrushers.DialogueSystem.Sequencer.Message("ItemBought");
+            ShowOrHideShopUI(false, CursorLockMode.None);
+            MoneyManager.instance.UpdatePlayerMoney(-price);
+
+            if (itemButton._canRemove)
+            {
+                // remove item if it shouldn't stay in the store
+                _buttonsInShop.Remove(itemButton);
+                Destroy(itemButton.gameObject);
+            }
+        }
+    }
+
+    #endregion
 }

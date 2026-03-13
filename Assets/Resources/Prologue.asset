@@ -261,6 +261,28 @@ MonoBehaviour:
     spritePortrait: {fileID: 0}
     alternatePortraits: []
     spritePortraits: []
+  - id: 11
+    fields:
+    - title: Name
+      value: Glue Trap
+      type: 0
+      typeString: CustomFieldType_Text
+    - title: Pictures
+      value: '[]'
+      type: 3
+      typeString: CustomFieldType_Files
+    - title: Description
+      value: 'Drug addict and friend of target Player is tasked to kill. '
+      type: 0
+      typeString: CustomFieldType_Text
+    - title: IsPlayer
+      value: False
+      type: 2
+      typeString: CustomFieldType_Boolean
+    portrait: {fileID: 0}
+    spritePortrait: {fileID: 0}
+    alternatePortraits: []
+    spritePortraits: []
   items:
   - id: 3
     fields:
@@ -6990,7 +7012,7 @@ MonoBehaviour:
       - originConversationID: 7
         originDialogueID: 1
         destinationConversationID: 7
-        destinationDialogueID: 2
+        destinationDialogueID: 20
         isConnector: 0
         priority: 2
       conditionsString: 
@@ -7055,8 +7077,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 160
-        y: 130
+        x: 161.81818
+        y: 251.8181
         width: 160
         height: 30
     - id: 3
@@ -7110,8 +7132,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 160
-        y: 180
+        x: 161.81818
+        y: 301.8181
         width: 160
         height: 30
     - id: 4
@@ -7165,8 +7187,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 160
-        y: 229
+        x: 161.81818
+        y: 350.8181
         width: 160
         height: 30
     - id: 5
@@ -7220,8 +7242,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 160
-        y: 281.49255
+        x: 161.81818
+        y: 403.31067
         width: 160
         height: 30
     - id: 6
@@ -7280,8 +7302,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 160
-        y: 330
+        x: 161.81818
+        y: 451.8181
         width: 160
         height: 30
     - id: 7
@@ -7335,8 +7357,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 160
-        y: 380
+        x: 161.81818
+        y: 501.8181
         width: 160
         height: 30
     - id: 8
@@ -7390,8 +7412,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 160.34912
-        y: 771.22845
+        x: 162.1673
+        y: 893.0466
         width: 160
         height: 30
     - id: 9
@@ -7445,8 +7467,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 162.34912
-        y: 828.5012
+        x: 164.1673
+        y: 950.3193
         width: 160
         height: 30
     - id: 10
@@ -7500,8 +7522,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 160
-        y: 430
+        x: 161.81818
+        y: 551.8181
         width: 160
         height: 30
     - id: 11
@@ -7555,8 +7577,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 160
-        y: 480
+        x: 161.81818
+        y: 601.81805
         width: 160
         height: 30
     - id: 12
@@ -7611,8 +7633,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 161.69089
-        y: 705.37366
+        x: 163.50906
+        y: 827.1917
         width: 160
         height: 30
     - id: 13
@@ -7652,13 +7674,7 @@ MonoBehaviour:
       delaySimStatus: 0
       falseConditionAction: Block
       conditionPriority: 2
-      outgoingLinks:
-      - originConversationID: 7
-        originDialogueID: 13
-        destinationConversationID: 7
-        destinationDialogueID: 20
-        isConnector: 0
-        priority: 2
+      outgoingLinks: []
       conditionsString: 
       userScript: 
       onExecute:
@@ -7666,8 +7682,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 162.34912
-        y: 887.5921
+        x: 164.1673
+        y: 1009.4102
         width: 160
         height: 30
     - id: 14
@@ -7722,8 +7738,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 160
-        y: 530
+        x: 161.81818
+        y: 651.81805
         width: 160
         height: 30
     - id: 15
@@ -7777,8 +7793,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 157.21005
-        y: 648.405
+        x: 159.02823
+        y: 770.2231
         width: 160
         height: 30
     - id: 16
@@ -7832,8 +7848,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 424.3941
-        y: 75.714294
+        x: 616.9313
+        y: 256.31125
         width: 160
         height: 30
     - id: 17
@@ -7887,8 +7903,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 422.6977
-        y: 176.60715
+        x: 614.86694
+        y: 377.752
         width: 160
         height: 30
     - id: 18
@@ -7942,8 +7958,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 422.6977
-        y: 239.10712
+        x: 614.86694
+        y: 440.25198
         width: 160
         height: 30
     - id: 19
@@ -7994,8 +8010,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 424.2602
-        y: 295.35712
+        x: 616.42944
+        y: 496.502
         width: 160
         height: 30
     - id: 20
@@ -8025,7 +8041,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Sequence
-        value: 
+        value: Continue()@Message(ItemBought)
         type: 0
         typeString: 
       conversationID: 7
@@ -8035,7 +8051,13 @@ MonoBehaviour:
       delaySimStatus: 0
       falseConditionAction: Block
       conditionPriority: 2
-      outgoingLinks: []
+      outgoingLinks:
+      - originConversationID: 7
+        originDialogueID: 20
+        destinationConversationID: 7
+        destinationDialogueID: 23
+        isConnector: 0
+        priority: 2
       conditionsString: 
       userScript: InitializeShopFromDialogue("StreetPeddler", "My Wallet")
       onExecute:
@@ -8043,8 +8065,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 162.34912
-        y: 950.0921
+        x: 162.39893
+        y: 149.49416
         width: 160
         height: 30
     - id: 21
@@ -8098,8 +8120,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 427.51907
-        y: 122.58931
+        x: 619.6883
+        y: 316.8849
         width: 160
         height: 30
     - id: 22
@@ -8154,13 +8176,68 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 160
-        y: 590
+        x: 161.81818
+        y: 711.81805
+        width: 160
+        height: 30
+    - id: 23
+      fields:
+      - title: Title
+        value: Evaluate the condition
+        type: 0
+        typeString: 
+      - title: Description
+        value: 
+        type: 0
+        typeString: 
+      - title: Actor
+        value: 1
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Conversant
+        value: 7
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Menu Text
+        value: 
+        type: 0
+        typeString: 
+      - title: Dialogue Text
+        value: 
+        type: 0
+        typeString: 
+      - title: Sequence
+        value: Continue()
+        type: 0
+        typeString: 
+      conversationID: 7
+      isRoot: 0
+      isGroup: 0
+      nodeColor: 
+      delaySimStatus: 0
+      falseConditionAction: Block
+      conditionPriority: 2
+      outgoingLinks:
+      - originConversationID: 7
+        originDialogueID: 23
+        destinationConversationID: 7
+        destinationDialogueID: 16
+        isConnector: 0
+        priority: 2
+      conditionsString: 
+      userScript: 
+      onExecute:
+        m_PersistentCalls:
+          m_Calls: []
+      canvasRect:
+        serializedVersion: 2
+        x: 395.27554
+        y: 143.32979
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 0, y: 216.41788}
-    canvasZoom: 0.6700003
+    canvasScrollPosition: {x: 36.986298, y: 1.369873}
+    canvasZoom: 0.73000026
   - id: 8
     fields:
     - title: Title

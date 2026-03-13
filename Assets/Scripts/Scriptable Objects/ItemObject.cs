@@ -4,7 +4,6 @@ using System.Drawing.Text;
 using UnityEditor.TerrainTools;
 using UnityEngine;
 
-[ExecuteInEditMode]
 
 public enum ItemType
 {
@@ -14,8 +13,6 @@ public enum ItemType
     Drug, 
     Quest
 }
-
-
 
 public abstract class ItemObject : ScriptableObject
 {
