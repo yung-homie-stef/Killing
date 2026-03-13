@@ -13,16 +13,16 @@ MonoBehaviour:
   m_Name: InventoryLuaFunctions
   m_EditorClassIdentifier: 
   conditionFunctions:
-  - functionName: CheckForKeyItem
+  - functionName: Inventory/CheckForKeyItem
     parameters: 0200000000000000
     returnValue: 1
-  - functionName: CheckIfCorrectItemWasGiven
+  - functionName: Inventory/CheckIfCorrectItemWasGiven
     parameters: 
     returnValue: 1
-  - functionName: CheckIfInventoryPromptWasExited
+  - functionName: Inventory/CheckIfInventoryPromptWasExited
     parameters: 
     returnValue: 1
   scriptFunctions:
-  - functionName: InventoryToggleFromDialogue
+  - functionName: Inventory/InventoryToggleFromDialogue
     parameters: 02000000
     returnValue: 0

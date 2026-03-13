@@ -24,6 +24,8 @@ public class ShopUI : MonoBehaviour
     [SerializeField] private List<ShopItemObject> _itemsAvailableInShop;
     [SerializeField] private List<ShopItemButton> _buttonsInShop;
     [SerializeField] private ItemObject _itemNeededToBuy = null;
+    private bool _exitedShopPrompt = false;
+    private bool _boughtCorrectItem = false;
 
     private void Awake()
     {
@@ -34,6 +36,8 @@ public class ShopUI : MonoBehaviour
     {
         GameEventsManager.instance.moneyEvents.onMoneyAmountChanged += UpdatePlayerFundsAmount;
         Lua.RegisterFunction("InitializeShopFromDialogue", this, SymbolExtensions.GetMethodInfo(() => InitializeShopFromDialogue(string.Empty, string.Empty)));
+        Lua.RegisterFunction("CheckIfCorrectItemWasBought", this, SymbolExtensions.GetMethodInfo(() => CheckIfCorrectItemWasBought()));
+        Lua.RegisterFunction("CheckIfShopPromptWasExited", this, SymbolExtensions.GetMethodInfo(() => CheckIfShopPromptWasExited()));
     }
 
     private void OnDisable()
@@ -88,6 +92,8 @@ public class ShopUI : MonoBehaviour
         // set shop description to first item by default so shop doesn't open with empty text box
         UpdateShopItemDescription(_itemsAvailableInShop[0]._itemToReference);
 
+        _exitedShopPrompt = false;
+        _boughtCorrectItem = false;
         ShopToggle(true);
     }
 
@@ -111,6 +117,15 @@ public class ShopUI : MonoBehaviour
         _shopItemDescription.text = string.Empty;
     }
 
+    public void CloseShop()
+    {
+        if (_itemNeededToBuy != null)
+            _exitedShopPrompt = true;
+
+        ShowOrHideShopUI(false, CursorLockMode.None);
+        PixelCrushers.DialogueSystem.Sequencer.Message("ShopFlag");
+    }
+
     private void UpdatePlayerFundsAmount(int previousAmount, int amount)
     {
         _playerFunds.text = amount.ToString();
@@ -132,7 +147,6 @@ public class ShopUI : MonoBehaviour
             else
                 Debug.Log("Specified item could not be found in the shop.");
         }
-
     }
 
     public void PurchaseFromShop(ShopItemButton itemButton, int price)
@@ -146,8 +160,8 @@ public class ShopUI : MonoBehaviour
             else
                 UIManager.instance._inventoryMenu.AddItemToInventoryUI(_itemNeededToBuy, InventoryManager.instance._itemInventory.AddItem(_itemNeededToBuy));
 
+            _boughtCorrectItem = true;
             UIManager.instance._hudMenu.TriggerItemCollectPopup(_itemNeededToBuy);
-            PixelCrushers.DialogueSystem.Sequencer.Message("ItemBought");
             ShowOrHideShopUI(false, CursorLockMode.None);
             MoneyManager.instance.UpdatePlayerMoney(-price);
 
@@ -157,7 +171,18 @@ public class ShopUI : MonoBehaviour
                 _buttonsInShop.Remove(itemButton);
                 Destroy(itemButton.gameObject);
             }
+
+            PixelCrushers.DialogueSystem.Sequencer.Message("ShopFlag");
         }
+    }
+    public bool CheckIfCorrectItemWasBought()
+    {
+        return _boughtCorrectItem;
+    }
+
+    public bool CheckIfShopPromptWasExited()
+    {
+        return _exitedShopPrompt;
     }
 
     #endregion

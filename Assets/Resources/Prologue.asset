@@ -7841,7 +7841,7 @@ MonoBehaviour:
         destinationDialogueID: 21
         isConnector: 0
         priority: 2
-      conditionsString: 
+      conditionsString: CheckIfCorrectItemWasBought()  == true
       userScript: 
       onExecute:
         m_PersistentCalls:
@@ -8041,7 +8041,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Sequence
-        value: Continue()@Message(ItemBought)
+        value: Continue()@Message(ShopFlag)
         type: 0
         typeString: 
       conversationID: 7
@@ -8221,6 +8221,12 @@ MonoBehaviour:
       - originConversationID: 7
         originDialogueID: 23
         destinationConversationID: 7
+        destinationDialogueID: 24
+        isConnector: 0
+        priority: 2
+      - originConversationID: 7
+        originDialogueID: 23
+        destinationConversationID: 7
         destinationDialogueID: 16
         isConnector: 0
         priority: 2
@@ -8235,8 +8241,112 @@ MonoBehaviour:
         y: 143.32979
         width: 160
         height: 30
+    - id: 24
+      fields:
+      - title: Title
+        value: 
+        type: 0
+        typeString: 
+      - title: Description
+        value: 
+        type: 0
+        typeString: 
+      - title: Actor
+        value: 7
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Conversant
+        value: 1
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Menu Text
+        value: 
+        type: 0
+        typeString: 
+      - title: Dialogue Text
+        value: Backing out? I'm telling ya, get it 'fore it's gone.
+        type: 0
+        typeString: 
+      - title: Sequence
+        value: 
+        type: 0
+        typeString: 
+      conversationID: 7
+      isRoot: 0
+      isGroup: 0
+      nodeColor: 
+      delaySimStatus: 0
+      falseConditionAction: Block
+      conditionPriority: 2
+      outgoingLinks:
+      - originConversationID: 7
+        originDialogueID: 24
+        destinationConversationID: 7
+        destinationDialogueID: 25
+        isConnector: 0
+        priority: 2
+      conditionsString: CheckIfShopPromptWasExited()  == true
+      userScript: 
+      onExecute:
+        m_PersistentCalls:
+          m_Calls: []
+      canvasRect:
+        serializedVersion: 2
+        x: 861.0288
+        y: 142.64484
+        width: 160
+        height: 30
+    - id: 25
+      fields:
+      - title: Title
+        value: 
+        type: 0
+        typeString: 
+      - title: Description
+        value: 
+        type: 0
+        typeString: 
+      - title: Actor
+        value: 7
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Conversant
+        value: 1
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Menu Text
+        value: 
+        type: 0
+        typeString: 
+      - title: Dialogue Text
+        value: The next guy you try to buy this off of won't be as nice.
+        type: 0
+        typeString: 
+      - title: Sequence
+        value: 
+        type: 0
+        typeString: 
+      conversationID: 7
+      isRoot: 0
+      isGroup: 0
+      nodeColor: 
+      delaySimStatus: 0
+      falseConditionAction: Block
+      conditionPriority: 2
+      outgoingLinks: []
+      conditionsString: 
+      userScript: 
+      onExecute:
+        m_PersistentCalls:
+          m_Calls: []
+      canvasRect:
+        serializedVersion: 2
+        x: 861.0288
+        y: 192.64484
+        width: 160
+        height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 36.986298, y: 1.369873}
+    canvasScrollPosition: {x: 64.383545, y: 0}
     canvasZoom: 0.73000026
   - id: 8
     fields:

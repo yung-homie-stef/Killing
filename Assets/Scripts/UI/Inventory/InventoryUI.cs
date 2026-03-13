@@ -190,7 +190,6 @@ public class InventoryUI : MonoBehaviour
             GameEventsManager.instance.inputEvents.SetInventoryFlag(false);
         }
     }
-
     public void CheckGivenItem(InventoryItemButton itemButton)
     {
         if (itemButton._itemObject.itemType == _requestedItemType)
@@ -214,7 +213,6 @@ public class InventoryUI : MonoBehaviour
 
     public bool CheckIfInventoryPromptWasExited()
     {
-        Debug.Log(_exitedInventoryPrompt);
         return _exitedInventoryPrompt;
     }
     #endregion
