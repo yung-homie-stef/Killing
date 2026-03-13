@@ -25,13 +25,15 @@ public class InventoryUI : MonoBehaviour
     [SerializeField] private TextMeshProUGUI _keyItemButtonText;
     [SerializeField] private TextMeshProUGUI _standardItemButtonText;
 
-    [Header("Button Prefab Lists")]
+    [Header("Buttons Lists")]
     [SerializeField] private List<InventoryItemButton> _inventoryItemButtonList = new List<InventoryItemButton>();
     [SerializeField] private List<InventoryItemButton> _keyItemButtonList = new List<InventoryItemButton>();
+    [SerializeField] private Button _closeButton;
 
     [Header("Requested Item Type")]
     [SerializeField] public ItemType _requestedItemType = ItemType.None;
-    [SerializeField] private bool _gaveCorrectItem = false;
+    private bool _gaveCorrectItem = false;
+    private bool _exitedInventoryPrompt = false;
 
     private void OnEnable()
     {
@@ -39,6 +41,7 @@ public class InventoryUI : MonoBehaviour
         Lua.RegisterFunction("InventoryToggleFromDialogue", this, SymbolExtensions.GetMethodInfo(() => InventoryToggleFromDialogue(string.Empty)));
         Lua.RegisterFunction("CheckForKeyItem", this, SymbolExtensions.GetMethodInfo(() => CheckForKeyItem(string.Empty, false)));
         Lua.RegisterFunction("CheckIfCorrectItemWasGiven", this, SymbolExtensions.GetMethodInfo(() => CheckIfCorrectItemWasGiven()));
+        Lua.RegisterFunction("CheckIfInventoryPromptWasExited", this, SymbolExtensions.GetMethodInfo(() => CheckIfInventoryPromptWasExited()));
     }
 
     private void OnDisable()
@@ -65,6 +68,7 @@ public class InventoryUI : MonoBehaviour
         Cursor.lockState = mode;
         Cursor.visible = flag;
         _content.SetActive(flag);
+
 
         if (flag)
             CheckIfThereAreAnyItemsToFillDescription(_inventoryItemButtonList);
@@ -145,18 +149,15 @@ public class InventoryUI : MonoBehaviour
             ResetInventoryItemDisplay();
     }
 
-    public void TestButton()
-    {
-        PixelCrushers.DialogueSystem.Sequencer.Message("ItemGiven");
-        ShowOrHideInventoryUI(false, CursorLockMode.None);
-    }
-
     #region NPC Related Item Trade-offs
 
     public void InventoryToggleFromDialogue(string type)
     {
         _requestedItemType = (ItemType)System.Enum.Parse(typeof(ItemType), type);
+        _gaveCorrectItem = false;
+        GameEventsManager.instance.inputEvents.SetInventoryFlag(true);
         InventoryToggle(true);
+        _exitedInventoryPrompt = false;
     }
 
     public bool CheckForKeyItem(string name, bool remove)
@@ -176,6 +177,20 @@ public class InventoryUI : MonoBehaviour
         return false;
     }
 
+    public void CloseInventory()
+    {
+        if (_requestedItemType == ItemType.None)
+            InventoryToggle(false);
+        else
+        {
+            ShowOrHideInventoryUI(false, CursorLockMode.None);
+            _exitedInventoryPrompt = true;
+            // item is not selected however this signal is just used to continue the conversation
+            PixelCrushers.DialogueSystem.Sequencer.Message("ItemSelected");
+            GameEventsManager.instance.inputEvents.SetInventoryFlag(false);
+        }
+    }
+
     public void CheckGivenItem(InventoryItemButton itemButton)
     {
         if (itemButton._itemObject.itemType == _requestedItemType)
@@ -186,16 +201,21 @@ public class InventoryUI : MonoBehaviour
         else if (itemButton._itemObject.itemType != _requestedItemType)
             _gaveCorrectItem = false;
 
-        Debug.Log(itemButton._itemObject.itemType + " = " + _requestedItemType);
 
+        _requestedItemType = ItemType.None;
         ShowOrHideInventoryUI(false, CursorLockMode.None);
         PixelCrushers.DialogueSystem.Sequencer.Message("ItemSelected");
     }
 
     public bool CheckIfCorrectItemWasGiven()
     {
-        Debug.Log(_gaveCorrectItem);
         return _gaveCorrectItem;
+    }
+
+    public bool CheckIfInventoryPromptWasExited()
+    {
+        Debug.Log(_exitedInventoryPrompt);
+        return _exitedInventoryPrompt;
     }
     #endregion
 }

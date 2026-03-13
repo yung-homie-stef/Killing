@@ -33,4 +33,9 @@ public class InputEvents
 
             onPauseTogglePressed(_pauseFlag);
     }
+
+    public void SetInventoryFlag(bool flag)
+    {
+        _inventoryFlag = flag;
+    }
 }

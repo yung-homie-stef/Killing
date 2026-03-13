@@ -8802,8 +8802,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 160
-        y: 30
+        x: 520.43964
+        y: 27.802193
         width: 160
         height: 30
     - id: 1
@@ -8857,8 +8857,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 161
-        y: 99
+        x: 521.4396
+        y: 96.80219
         width: 160
         height: 30
     - id: 2
@@ -8912,8 +8912,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 160
-        y: 170
+        x: 520.4396
+        y: 167.80219
         width: 160
         height: 30
     - id: 3
@@ -8957,6 +8957,12 @@ MonoBehaviour:
       - originConversationID: 9
         originDialogueID: 3
         destinationConversationID: 9
+        destinationDialogueID: 6
+        isConnector: 0
+        priority: 2
+      - originConversationID: 9
+        originDialogueID: 3
+        destinationConversationID: 9
         destinationDialogueID: 4
         isConnector: 0
         priority: 2
@@ -8973,8 +8979,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 475.34952
-        y: 175.51788
+        x: 520.4045
+        y: 266.72668
         width: 160
         height: 30
     - id: 4
@@ -9028,8 +9034,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 1
-        y: 309.36172
+        x: 236.16486
+        y: 169.80133
         width: 160
         height: 30
     - id: 5
@@ -9077,12 +9083,61 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 479.92053
-        y: 291.7559
+        x: 524.9756
+        y: 375.27237
+        width: 160
+        height: 30
+    - id: 6
+      fields:
+      - title: Title
+        value: 
+        type: 0
+        typeString: 
+      - title: Description
+        value: 
+        type: 0
+        typeString: 
+      - title: Actor
+        value: 10
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Conversant
+        value: 1
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Menu Text
+        value: 
+        type: 0
+        typeString: 
+      - title: Dialogue Text
+        value: Aight, come back when you got a burger to give me.
+        type: 0
+        typeString: 
+      - title: Sequence
+        value: 
+        type: 0
+        typeString: 
+      conversationID: 9
+      isRoot: 0
+      isGroup: 0
+      nodeColor: 
+      delaySimStatus: 0
+      falseConditionAction: Block
+      conditionPriority: 2
+      outgoingLinks: []
+      conditionsString: CheckIfInventoryPromptWasExited()  == true
+      userScript: 
+      onExecute:
+        m_PersistentCalls:
+          m_Calls: []
+      canvasRect:
+        serializedVersion: 2
+        x: 728.0968
+        y: 369.47394
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 0, y: 0}
+    canvasScrollPosition: {x: 227.91208, y: 0}
     canvasZoom: 0.91
   syncInfo:
     syncActors: 0
