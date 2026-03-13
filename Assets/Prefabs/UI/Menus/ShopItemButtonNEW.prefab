@@ -383,6 +383,8 @@ MonoBehaviour:
   _shopItemName: {fileID: 531106164050679814}
   _shopItemPrice: {fileID: 3498904087459305508}
   _shopItemTypeIcon: {fileID: 8917809477595986907}
+  _item: {fileID: 0}
+  _canRemove: 0
 --- !u!114 &5736619559531035043
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -429,7 +431,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 7258324053438124494}
         m_TargetAssemblyTypeName: ShopItemButton, Assembly-CSharp
-        m_MethodName: Purchase
+        m_MethodName: TryPurchasing
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

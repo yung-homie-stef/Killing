@@ -13,14 +13,17 @@ public class ShopUI : MonoBehaviour
     [SerializeField] private GameObject _itemButtonPrefab;
     [SerializeField] private GameObject _content;
     [SerializeField] private Image _itemImage;
+
     [Header("Text")]
     [SerializeField] private TextMeshProUGUI _shopName;
     [SerializeField] private TextMeshProUGUI _playerFunds;
     [SerializeField] private TextMeshProUGUI _shopItemDescription;
     [SerializeField] private TextMeshProUGUI _shopItemName;
+
     [Header("Stock")]
     [SerializeField] private List<ShopItemObject> _itemsAvailableInShop;
     [SerializeField] private List<ShopItemButton> _buttonsInShop;
+    private ShopItemButton _itemNeededToBuy = null;
 
     private void Awake()
     {
@@ -30,7 +33,7 @@ public class ShopUI : MonoBehaviour
     private void OnEnable()
     {
         GameEventsManager.instance.moneyEvents.onMoneyAmountChanged += UpdatePlayerFundsAmount;
-        Lua.RegisterFunction("InitializeShopFromDialogue", this, SymbolExtensions.GetMethodInfo(() => InitializeShopFromDialogue(null)));
+        Lua.RegisterFunction("InitializeShopFromDialogue", this, SymbolExtensions.GetMethodInfo(() => InitializeShopFromDialogue(string.Empty, string.Empty)));
     }
 
     private void OnDisable()
@@ -90,10 +93,41 @@ public class ShopUI : MonoBehaviour
         _shopItemName.text = " " + itemObject.itemName;
     }
 
-    public void InitializeShopFromDialogue(string shopDataName)
+    public void InitializeShopFromDialogue(string shopDataName, string itemToBuy)
     {
         InitializeShop(Resources.Load<ShopData>("ShopData/" + shopDataName));
+
+        for (int i =0; i < _itemsAvailableInShop.Count; i++)
+        {
+            if (_buttonsInShop[i]._item.itemName == itemToBuy)
+            {
+                _buttonsInShop[i].gameObject.SetActive(true);
+                break;
+            }
+            else
+                Debug.Log("Specified item could not be found in the shop.");
+        }
+       
     }
+
+    public void PurchaseFromShop(ShopItemButton itemButton, int price)
+    {
+        // TODO: add this line back when i can test money again, right now im below zero
+        //if (MoneyManager.instance.GetCurrentPlayerMoney() < _price)
+
+        if (itemButton == _itemNeededToBuy)
+        {
+            MoneyManager.instance.UpdatePlayerMoney(-price);
+            if (itemButton._canRemove)
+            {
+                _buttonsInShop.Remove(itemButton);
+                PixelCrushers.DialogueSystem.Sequencer.Message("ItemBought");
+            }
+            // Debug.Log(MoneyManager.instance.GetCurrentPlayerMoney());
+        }
+    }
+
+
 
     private void ClearShop()
     {

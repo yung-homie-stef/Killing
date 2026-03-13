@@ -14,7 +14,8 @@ public class ShopItemButton : MonoBehaviour, IPointerEnterHandler, IPointerExitH
 
     private RectTransform _rectTransform;
     private float _height;
-    private ItemObject _item;
+    [HideInInspector] public ItemObject _item;
+    [HideInInspector] public bool _canRemove = false;
     private int _price;
 
     void Start()
@@ -27,6 +28,7 @@ public class ShopItemButton : MonoBehaviour, IPointerEnterHandler, IPointerExitH
     {
         _item = itemObj._itemToReference;
         _price = itemObj._itemPrice;
+        _canRemove = itemObj._removeUponBuying;
 
         _shopItemName.text = _item.itemName;
         _shopItemPrice.text = "$ " + _price.ToString();
@@ -45,12 +47,9 @@ public class ShopItemButton : MonoBehaviour, IPointerEnterHandler, IPointerExitH
     }
 
 
-    public void Purchase()
+    public void TryPurchasing()
     {
-        // TODO: add this line back when i can test money again, right now im below zero
-        //if (MoneyManager.instance.GetCurrentPlayerMoney() < _price)
-        MoneyManager.instance.UpdatePlayerMoney(-_price);
-        Debug.Log(MoneyManager.instance.GetCurrentPlayerMoney());
+        UIManager.instance._shopMenu.PurchaseFromShop(this, _price);
     }
 
 }
