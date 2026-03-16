@@ -6,7 +6,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-public class UIResizing : MonoBehaviour, IPointerClickHandler
+public class DialogueBoxResizing : MonoBehaviour, IPointerClickHandler
 {
     [SerializeField] private RectTransform _UIPanel;
     private float _preferredSize;
@@ -20,7 +20,7 @@ public class UIResizing : MonoBehaviour, IPointerClickHandler
 
     public void OnPointerClick(PointerEventData eventData)
     {
-        // FIX! SHOULD NOT BE EVERY SINGLE TIME I CLICK
+        // TODO: FIX! SHOULD NOT BE EVERY SINGLE TIME I CLICK
        UpdateDimensionsManually();
     }
 

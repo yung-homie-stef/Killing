@@ -264,13 +264,14 @@ GameObject:
   - component: {fileID: 2931692849135728054}
   - component: {fileID: 5327418111316380725}
   - component: {fileID: 2593975652608466781}
+  - component: {fileID: 5565616024680696109}
   m_Layer: 5
   m_Name: Active Quest Button Template
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &8365996699704265324
 RectTransform:
   m_ObjectHideFlags: 0
@@ -352,7 +353,7 @@ MonoBehaviour:
   m_Transition: 1
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_HighlightedColor: {r: 0.5960784, g: 1, b: 0, a: 1}
     m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
     m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
@@ -411,6 +412,19 @@ MonoBehaviour:
   m_FlexibleWidth: -1
   m_FlexibleHeight: -1
   m_LayoutPriority: 1
+--- !u!114 &5565616024680696109
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8280527012300659491}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aeee3e6e4229c114fa44090bc79bcba3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _expandedWidth: 340
 --- !u!1 &8482479137867405215
 GameObject:
   m_ObjectHideFlags: 0

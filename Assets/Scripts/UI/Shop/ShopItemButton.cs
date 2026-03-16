@@ -6,7 +6,7 @@ using UnityEngine.EventSystems;
 using UnityEngine.UI;
 using PrimeTween;
 
-public class ShopItemButton : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
+public class ShopItemButton : MonoBehaviour, IPointerEnterHandler
 {
     [SerializeField] private TextMeshProUGUI _shopItemName;
     [SerializeField] private TextMeshProUGUI _shopItemPrice;
@@ -38,14 +38,7 @@ public class ShopItemButton : MonoBehaviour, IPointerEnterHandler, IPointerExitH
     public void OnPointerEnter(PointerEventData eventData)
     {
         UIManager.instance._shopMenu.UpdateShopItemDescription(_item);
-        Tween.UISizeDelta(target: _rectTransform, endValue: new(475.0f, _height), duration: 0.15f);
     }
-
-    public void OnPointerExit(PointerEventData eventData)
-    {
-        Tween.UISizeDelta(target: _rectTransform, startValue: _rectTransform.sizeDelta, endValue: new(400.0f, _height), duration: 0.15f);
-    }
-
 
     public void TryPurchasing()
     {
