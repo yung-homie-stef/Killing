@@ -119,7 +119,7 @@ namespace PixelCrushers.DialogueSystem
 
         public override void Awake()
         {
-            GameEventsManager.instance.inputEvents.onInventoryTogglePressed += JournalToggle;
+            GameEventsManager.instance.inputEvents.onJournalTogglePressed += JournalToggle;
 
             m_isAwake = true;
             base.Awake();
@@ -130,7 +130,7 @@ namespace PixelCrushers.DialogueSystem
         protected override void OnDisable()
         {
             base.OnDisable();
-            GameEventsManager.instance.inputEvents.onInventoryTogglePressed += JournalToggle;
+            GameEventsManager.instance.inputEvents.onJournalTogglePressed += JournalToggle;
         }
 
         protected virtual void InitializeTemplates()
@@ -536,9 +536,18 @@ namespace PixelCrushers.DialogueSystem
         private void JournalToggle(bool flag)
         {
             if (flag)
+            {
+                GameEventsManager.instance.playerEvents.DisablePlayerMovement();
+                Cursor.lockState = CursorLockMode.None;
                 Open();
+            }
             else
+            {
+                GameEventsManager.instance.playerEvents.EnablePlayerMovement();
                 Close();
+            }
+
+            Cursor.visible = flag;
         }
     }
 

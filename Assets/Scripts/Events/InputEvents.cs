@@ -6,9 +6,9 @@ using UnityEngine;
 public class InputEvents
 {
     public event Action<bool> onInventoryTogglePressed;
-    public event Action<bool> onJournalTogglePressed;
     public event Action onExitTogglePressed;
     public event Action<bool> onPauseTogglePressed;
+    public event Action<bool> onJournalTogglePressed;
 
     private bool _inventoryFlag = false;
     private bool _journalFlag = false;

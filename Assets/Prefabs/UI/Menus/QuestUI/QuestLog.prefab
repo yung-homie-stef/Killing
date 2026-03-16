@@ -490,7 +490,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 11400838}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: 
         m_MethodName: AbandonQuestConfirmed
         m_Mode: 1
@@ -2267,7 +2267,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 275, y: 0}
   m_SizeDelta: {x: 1100, y: 850}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &22264180
@@ -2360,7 +2360,7 @@ MonoBehaviour:
   selectPreviousOnDisable: 0
   showAnimationTrigger: Show
   hideAnimationTrigger: Hide
-  startState: 2
+  startState: 1
   waitForShowAnimationToSetOpen: 0
   m_deactivateOnHidden: 1
   onOpen:
@@ -2770,7 +2770,6 @@ GameObject:
   m_Component:
   - component: {fileID: 22410808}
   - component: {fileID: 22221378}
-  - component: {fileID: 11400838}
   - component: {fileID: 1760676559170158628}
   m_Layer: 5
   m_Name: QuestLog
@@ -2807,69 +2806,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 162630}
   m_CullTransparentMesh: 0
---- !u!114 &11400838
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 162630}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 27e68e079d48afa43b19c14dd2dbbeaf, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  textTable: {fileID: 0}
-  noActiveQuestsText: No Active Quests
-  noCompletedQuestsText: No Completed Quests
-  checkVisibleField: 0
-  questHeadingSource: 0
-  abandonQuestState: 1
-  pauseWhileOpen: 1
-  unlockCursorWhileOpen: 1
-  useGroups: 1
-  newQuestText: 
-  trackOneQuestAtATime: 0
-  deselectQuestOnSecondClick: 1
-  mainPanel: {fileID: 11452756}
-  showingActiveQuestsHeading:
-    m_uiText: {fileID: 0}
-    m_textMeshProUGUI: {fileID: 0}
-  showingCompletedQuestHeading:
-    m_uiText: {fileID: 0}
-    m_textMeshProUGUI: {fileID: 0}
-  activeQuestsButton: {fileID: 0}
-  completedQuestsButton: {fileID: 0}
-  questSelectionContentContainer: {fileID: 22451830}
-  questGroupTemplate: {fileID: 11462688}
-  activeQuestHeadingTemplate: {fileID: 6797541081678235593, guid: a6432a5bf05211143b0ee68bf9ffeedf, type: 3}
-  selectedActiveQuestHeadingTemplate: {fileID: 0}
-  completedQuestHeadingTemplate: {fileID: 7621608506035509674, guid: ddf2dc11a575bb64381cb074c2f3d330, type: 3}
-  selectedCompletedQuestHeadingTemplate: {fileID: 0}
-  showNoQuestsText: 1
-  selectFirstQuestOnOpen: 1
-  showDetailsOnSelect: 1
-  keepGroupsExpanded: 1
-  questDetailsContentContainer: {fileID: 22469798}
-  questHeadingTextTemplate: {fileID: 11484122}
-  questDescriptionTextTemplate: {fileID: 11421068}
-  questEntryActiveTextTemplate: {fileID: 0}
-  questEntrySuccessTextTemplate: {fileID: 11473988}
-  questEntryFailureTextTemplate: {fileID: 11493954}
-  abandonButtonTemplate: {fileID: 0}
-  abandonQuestPanel: {fileID: 11436604}
-  abandonQuestTitleText:
-    m_uiText: {fileID: 11485500}
-    m_textMeshProUGUI: {fileID: 0}
-  onOpen:
-    m_PersistentCalls:
-      m_Calls: []
-  onClose:
-    m_PersistentCalls:
-      m_Calls: []
-  addEventSystemIfNeeded: 1
-  foldoutToSelect: 
-  questTitleToSelect: 
 --- !u!114 &1760676559170158628
 MonoBehaviour:
   m_ObjectHideFlags: 0
