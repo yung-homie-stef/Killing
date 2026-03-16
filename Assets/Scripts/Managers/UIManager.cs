@@ -16,6 +16,7 @@ public class UIManager : MonoBehaviour
     /*[HideInInspector]*/ public ShopUI _shopMenu;
     /*[HideInInspector]*/ public InventoryUI _inventoryMenu;
     /*[HideInInspector]*/ public HUD _hudMenu;
+    public CustomUIQuestLogWindow _questLogMenu;
 
     private Animator _blackoutAnimator = null;
     private bool _blackoutFlag = false;
@@ -35,6 +36,7 @@ public class UIManager : MonoBehaviour
         _shopMenu = GetComponentInChildren<ShopUI>();
         _inventoryMenu = GetComponentInChildren<InventoryUI>();
         _hudMenu = GetComponentInChildren<HUD>();
+        _questLogMenu = (CustomUIQuestLogWindow)PixelCrushers.GameObjectUtility.FindFirstObjectByType<QuestLogWindow>();
 
         _blackoutAnimator = _blackoutImage.GetComponentInParent<Animator>();
     }

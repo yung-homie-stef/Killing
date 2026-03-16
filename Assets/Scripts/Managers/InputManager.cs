@@ -21,4 +21,12 @@ public class InputManager : MonoBehaviour
         if (context.started)
             GameEventsManager.instance.inputEvents.PauseTogglePressed();
     }
+
+    public void JournalTogglePressed(InputAction.CallbackContext context)
+    {
+        Debug.Log("J HAS BEEN PRESSED");
+
+        if (context.started)
+            GameEventsManager.instance.inputEvents.JournalTogglePressed();
+    }
 }

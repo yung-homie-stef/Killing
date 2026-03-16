@@ -119,10 +119,18 @@ namespace PixelCrushers.DialogueSystem
 
         public override void Awake()
         {
+            GameEventsManager.instance.inputEvents.onInventoryTogglePressed += JournalToggle;
+
             m_isAwake = true;
             base.Awake();
             if (addEventSystemIfNeeded) UITools.RequireEventSystem();
             InitializeTemplates();
+        }
+
+        protected override void OnDisable()
+        {
+            base.OnDisable();
+            GameEventsManager.instance.inputEvents.onInventoryTogglePressed += JournalToggle;
         }
 
         protected virtual void InitializeTemplates()
@@ -524,6 +532,14 @@ namespace PixelCrushers.DialogueSystem
 
         #endregion
 
+
+        private void JournalToggle(bool flag)
+        {
+            if (flag)
+                Open();
+            else
+                Close();
+        }
     }
 
 }

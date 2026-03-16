@@ -945,6 +945,17 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: -6430823161342096004, guid: 896c73f0a2239934c8bc0a5dab2f2ede, type: 3}
+--- !u!114 &306420073 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2744845825326666035, guid: e1b8ecd22150b784cb4c2e91f1e4321a, type: 3}
+  m_PrefabInstance: {fileID: 491606697}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 91b17b71d8ded8d4e9b75deaa8ec443d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &341002030
 GameObject:
   m_ObjectHideFlags: 0
@@ -1744,6 +1755,46 @@ PrefabInstance:
     - target: {fileID: 4387701304998877275, guid: e1b8ecd22150b784cb4c2e91f1e4321a, type: 3}
       propertyPath: m_SizeDelta.y
       value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 4638925199238307723, guid: e1b8ecd22150b784cb4c2e91f1e4321a, type: 3}
+      propertyPath: m_ActionEvents.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4638925199238307723, guid: e1b8ecd22150b784cb4c2e91f1e4321a, type: 3}
+      propertyPath: m_ActionEvents.Array.data[2].m_ActionId
+      value: 06f9f156-f555-4020-8b8c-c8528f120adb
+      objectReference: {fileID: 0}
+    - target: {fileID: 4638925199238307723, guid: e1b8ecd22150b784cb4c2e91f1e4321a, type: 3}
+      propertyPath: m_ActionEvents.Array.data[2].m_ActionName
+      value: 'Gameplay/ToggleJournal[/Keyboard/0]'
+      objectReference: {fileID: 0}
+    - target: {fileID: 4638925199238307723, guid: e1b8ecd22150b784cb4c2e91f1e4321a, type: 3}
+      propertyPath: m_ActionEvents.Array.data[2].m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4638925199238307723, guid: e1b8ecd22150b784cb4c2e91f1e4321a, type: 3}
+      propertyPath: m_ActionEvents.Array.data[2].m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4638925199238307723, guid: e1b8ecd22150b784cb4c2e91f1e4321a, type: 3}
+      propertyPath: m_ActionEvents.Array.data[2].m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 306420073}
+    - target: {fileID: 4638925199238307723, guid: e1b8ecd22150b784cb4c2e91f1e4321a, type: 3}
+      propertyPath: m_ActionEvents.Array.data[2].m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4638925199238307723, guid: e1b8ecd22150b784cb4c2e91f1e4321a, type: 3}
+      propertyPath: m_ActionEvents.Array.data[2].m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: JournalTogglePressed
+      objectReference: {fileID: 0}
+    - target: {fileID: 4638925199238307723, guid: e1b8ecd22150b784cb4c2e91f1e4321a, type: 3}
+      propertyPath: m_ActionEvents.Array.data[2].m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: InputManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 4638925199238307723, guid: e1b8ecd22150b784cb4c2e91f1e4321a, type: 3}
+      propertyPath: m_ActionEvents.Array.data[2].m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 4706429486695980450, guid: e1b8ecd22150b784cb4c2e91f1e4321a, type: 3}
       propertyPath: m_Enabled
