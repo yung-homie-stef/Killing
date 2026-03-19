@@ -39,7 +39,7 @@ MonoBehaviour:
   - id: 1
     fields:
     - title: Name
-      value: Curry
+      value: Player
       type: 0
       typeString: CustomFieldType_Text
     - title: Pictures
@@ -295,7 +295,10 @@ MonoBehaviour:
       type: 3
       typeString: CustomFieldType_Files
     - title: Description
-      value: 'The fucking day I''ve had... before GF starts to worry. '
+      value: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam vestibulum
+        orci elementum, faucibus tortor id, interdum turpis. Quisque quis convallis
+        elit. Aenean ac metus vestibulum, fringilla erat et, laoreet ante. Suspendisse
+        ultrices vestibulum nunc a aliquet. '
       type: 0
       typeString: CustomFieldType_Text
     - title: Success Description
@@ -385,11 +388,7 @@ MonoBehaviour:
       type: 3
       typeString: CustomFieldType_Files
     - title: Description
-      value: "Somebody wants something from me. \n\nWho, or what, remains to be seen,
-        but I'm hardly in a position to turn down work. In any case, if I want answers
-        my only lead is Ruby Palace, the Chinese take out joint. To-go menu said
-        it was somewhere on <i>[Street]</i> and <i>[Street]</i>. Time to scope it
-        out."
+      value: Going to Ruby Palace to take on a new job.
       type: 0
       typeString: CustomFieldType_Text
     - title: Success Description
@@ -729,7 +728,10 @@ MonoBehaviour:
         isConnector: 0
         priority: 2
       conditionsString: 
-      userScript: 
+      userScript: 'SetQuestState("Long Day''s Journey Into Night", "active");
+
+        SetQuestEntryState("Long
+        Day''s Journey Into Night", 1, "active")'
       onExecute:
         m_PersistentCalls:
           m_Calls: []
@@ -1277,10 +1279,7 @@ MonoBehaviour:
       conditionPriority: 2
       outgoingLinks: []
       conditionsString: 
-      userScript: 'SetQuestState("Long Day''s Journey Into Night", "active");
-
-        SetQuestEntryState("Long
-        Day''s Journey Into Night", 1, "active")'
+      userScript: 
       onExecute:
         m_PersistentCalls:
           m_Calls: []
@@ -1348,7 +1347,7 @@ MonoBehaviour:
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 0, y: 0}
+    canvasScrollPosition: {x: 3.2786865, y: 4.91803}
     canvasZoom: 0.6100004
   - id: 2
     fields:
@@ -1480,7 +1479,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Sequence
-        value: Timeline(speed, CutscenePlayer2, 0)
+        value: 
         type: 0
         typeString: 
       conversationID: 2
@@ -1752,7 +1751,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Dialogue Text
-        value: That's a lot of cash Curry, a lotta cash that ain't mine no more.
+        value: That's a lot of cash [name], a lotta cash that ain't mine no more.
           Do you think that's funny? You the only one that's allowed to get paid
           here?
         type: 0
@@ -1919,7 +1918,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Dialogue Text
-        value: Shut the fuck up.
+        value: Shut up. Here. Looks like that's all of it.
         type: 0
         typeString: 
       - title: Sequence
@@ -1937,7 +1936,7 @@ MonoBehaviour:
       - originConversationID: 2
         originDialogueID: 9
         destinationConversationID: 2
-        destinationDialogueID: 14
+        destinationDialogueID: 10
         isConnector: 0
         priority: 2
       conditionsString: 
@@ -1975,7 +1974,7 @@ MonoBehaviour:
         typeString: 
       - title: Dialogue Text
         value: '[amount]? You fucked me out of [payout amount] for [amount?] Tell
-          me Curry, was it worth it? You''re on your ass, sitting in garbage, pissing
+          me [name], was it worth it? You''re on your ass, sitting in garbage, pissing
           blood all over your cheap denim. This what you wanted? '
         type: 0
         typeString: 
@@ -2005,7 +2004,7 @@ MonoBehaviour:
       canvasRect:
         serializedVersion: 2
         x: 161.03094
-        y: 585.9633
+        y: 530
         width: 160
         height: 30
     - id: 11
@@ -2019,11 +2018,11 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Actor
-        value: 3
+        value: 4
         type: 5
         typeString: CustomFieldType_Actor
       - title: Conversant
-        value: 4
+        value: 3
         type: 5
         typeString: CustomFieldType_Actor
       - title: Menu Text
@@ -2031,8 +2030,9 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Dialogue Text
-        value: You know what you are Curry? A waste. A waste of time. Waste of skin.
-          A waste ______. I wouldn't piss in your mouth if you were dying of thirst.
+        value: You know what you are [Player]? A waste. A waste of time. Waste of
+          skin. A waste ______. I wouldn't piss in your mouth if you were dying of
+          thirst.
         type: 0
         typeString: 
       - title: Sequence
@@ -2061,7 +2061,7 @@ MonoBehaviour:
       canvasRect:
         serializedVersion: 2
         x: 160
-        y: 635.9633
+        y: 580
         width: 160
         height: 30
     - id: 12
@@ -2116,7 +2116,7 @@ MonoBehaviour:
       canvasRect:
         serializedVersion: 2
         x: 160
-        y: 685.9633
+        y: 630
         width: 160
         height: 30
     - id: 13
@@ -2169,67 +2169,12 @@ MonoBehaviour:
       canvasRect:
         serializedVersion: 2
         x: 160.86957
-        y: 735.9633
-        width: 160
-        height: 30
-    - id: 14
-      fields:
-      - title: Title
-        value: 
-        type: 0
-        typeString: 
-      - title: Description
-        value: 
-        type: 0
-        typeString: 
-      - title: Actor
-        value: 4
-        type: 5
-        typeString: CustomFieldType_Actor
-      - title: Conversant
-        value: 3
-        type: 5
-        typeString: CustomFieldType_Actor
-      - title: Menu Text
-        value: 
-        type: 0
-        typeString: 
-      - title: Dialogue Text
-        value: Here. Looks like that's all of it.
-        type: 0
-        typeString: 
-      - title: Sequence
-        value: 
-        type: 0
-        typeString: 
-      conversationID: 2
-      isRoot: 0
-      isGroup: 0
-      nodeColor: 
-      delaySimStatus: 0
-      falseConditionAction: Block
-      conditionPriority: 2
-      outgoingLinks:
-      - originConversationID: 2
-        originDialogueID: 14
-        destinationConversationID: 2
-        destinationDialogueID: 10
-        isConnector: 0
-        priority: 2
-      conditionsString: 
-      userScript: 
-      onExecute:
-        m_PersistentCalls:
-          m_Calls: []
-      canvasRect:
-        serializedVersion: 2
-        x: 160
-        y: 530
+        y: 680
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 22.340424, y: 0}
-    canvasZoom: 0.94000006
+    canvasScrollPosition: {x: 13.761475, y: 139.44974}
+    canvasZoom: 1.0899999
   - id: 3
     fields:
     - title: Title
@@ -2433,17 +2378,19 @@ MonoBehaviour:
       conditionPriority: 2
       outgoingLinks: []
       conditionsString: 
-      userScript: 'SetQuestEntryState("Long Day''s Journey Into Night", 1, "success");
+      userScript: 'Variable["GirlfriendConvoIndex"] = Variable["GirlfriendConvoIndex"]
+        + 1;
 
-        Variable["GirlfriendConvoIndex"]
-        = Variable["GirlfriendConvoIndex"] + 1'
+        te("Long Day''s Journey Into Night", 1, "success")", 1, "success");
+
+'
       onExecute:
         m_PersistentCalls:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
         x: 161
-        y: 210.68423
+        y: 212
         width: 160
         height: 30
     - id: 3
@@ -3847,8 +3794,8 @@ MonoBehaviour:
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 42.088913, y: 0}
-    canvasZoom: 0.7000002
+    canvasScrollPosition: {x: 175.00005, y: 542.1037}
+    canvasZoom: 0.76000017
   - id: 4
     fields:
     - title: Title
@@ -4538,7 +4485,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Sequence
-        value: CinemachinePriority(except:Player Virtual Camera, 0, cut)
+        value: 
         type: 0
         typeString: 
       conversationID: 4
@@ -4589,7 +4536,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Sequence
-        value: CinemachinePriority(cum, 1, cut)
+        value: 
         type: 0
         typeString: 
       conversationID: 4
@@ -4675,7 +4622,7 @@ MonoBehaviour:
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 0, y: 157.53418}
+    canvasScrollPosition: {x: 0, y: 0}
     canvasZoom: 0.73000026
   - id: 5
     fields:
@@ -4803,7 +4750,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Dialogue Text
-        value: Got a delivery for here 428 Escher, Curry [lastname]. That you?
+        value: Got a delivery for here 428 Escher, [name]. That you?
         type: 0
         typeString: 
       - title: Sequence
@@ -4859,7 +4806,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Dialogue Text
-        value: Yeah, that's me. Lemme get that.
+        value: Yeah, that's us.
         type: 0
         typeString: 
       - title: Sequence
@@ -5183,7 +5130,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Dialogue Text
-        value: Um... I'll be back with the tip in a second, think I've got some spare
+        value: Um, I'll be back with the tip in a second, think I've got some spare
           change ins-
         type: 0
         typeString: 
@@ -5470,7 +5417,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Dialogue Text
-        value: Yeah... right where I left it, thank god.
+        value: Yeah... it was right where I left it, thank god.
         type: 0
         typeString: 
       - title: Sequence
@@ -5577,8 +5524,8 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Dialogue Text
-        value: Good choice, been meaning to try this place. Was pretty disappointed
-          with the food at Cheong's when we went for your birthday.
+        value: 'Good choice, been meaning to try this place. Heard they''ve got the
+          best egg rolls on the East Side. '
         type: 0
         typeString: 
       - title: Sequence
@@ -5596,7 +5543,7 @@ MonoBehaviour:
       - originConversationID: 6
         originDialogueID: 5
         destinationConversationID: 6
-        destinationDialogueID: 30
+        destinationDialogueID: 6
         isConnector: 0
         priority: 2
       conditionsString: Variable["GirlfriendConvoIndex"] == 3
@@ -5661,8 +5608,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 443.89148
-        y: 160.61423
+        x: 446
+        y: 80
         width: 160
         height: 30
     - id: 7
@@ -5716,8 +5663,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 443.89148
-        y: 210.61423
+        x: 446
+        y: 130
         width: 160
         height: 30
     - id: 8
@@ -5771,8 +5718,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 443.89148
-        y: 260.6142
+        x: 446
+        y: 180
         width: 160
         height: 30
     - id: 9
@@ -5827,8 +5774,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 443.89148
-        y: 310.6142
+        x: 446
+        y: 230
         width: 160
         height: 30
     - id: 10
@@ -5882,8 +5829,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 443.89148
-        y: 360.6142
+        x: 446
+        y: 280
         width: 160
         height: 30
     - id: 11
@@ -5937,8 +5884,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 443.89148
-        y: 410.6142
+        x: 446
+        y: 330
         width: 160
         height: 30
     - id: 12
@@ -5992,8 +5939,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 443.89148
-        y: 460.6142
+        x: 446
+        y: 380
         width: 160
         height: 30
     - id: 13
@@ -6047,8 +5994,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 443.89148
-        y: 510.61426
+        x: 446
+        y: 430
         width: 160
         height: 30
     - id: 14
@@ -6102,8 +6049,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 443.89148
-        y: 560.61426
+        x: 446
+        y: 480
         width: 160
         height: 30
     - id: 15
@@ -6158,8 +6105,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 443.89148
-        y: 610.61426
+        x: 446
+        y: 530
         width: 160
         height: 30
     - id: 16
@@ -6213,8 +6160,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 443.89148
-        y: 660.61426
+        x: 446
+        y: 580
         width: 160
         height: 30
     - id: 17
@@ -6268,8 +6215,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 443.89148
-        y: 710.61426
+        x: 446
+        y: 630
         width: 160
         height: 30
     - id: 18
@@ -6325,8 +6272,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 443.89148
-        y: 760.61426
+        x: 446
+        y: 680
         width: 160
         height: 30
     - id: 19
@@ -6380,8 +6327,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 443.89148
-        y: 817.19324
+        x: 446
+        y: 736.579
         width: 160
         height: 30
     - id: 20
@@ -6429,8 +6376,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 443.8916
-        y: 934.29846
+        x: 446.00012
+        y: 853.6842
         width: 160
         height: 30
     - id: 21
@@ -6484,8 +6431,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 443.89148
-        y: 872.4564
+        x: 446
+        y: 791.8422
         width: 160
         height: 30
     - id: 22
@@ -6534,8 +6481,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 445.46368
-        y: 982.8436
+        x: 445.93286
+        y: 941.5738
         width: 160
         height: 30
     - id: 23
@@ -6589,8 +6536,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 920.9574
-        y: 113.08885
+        x: 752.10504
+        y: 72.10527
         width: 160
         height: 30
     - id: 24
@@ -6645,8 +6592,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 920.9574
-        y: 163.08885
+        x: 752.10504
+        y: 122.10527
         width: 160
         height: 30
     - id: 25
@@ -6701,8 +6648,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 920.9574
-        y: 213.08885
+        x: 752.10504
+        y: 172.10527
         width: 160
         height: 30
     - id: 26
@@ -6757,8 +6704,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 920.9574
-        y: 263.08887
+        x: 752.10504
+        y: 222.10527
         width: 160
         height: 30
     - id: 27
@@ -6813,8 +6760,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 920.9574
-        y: 313.08887
+        x: 752.10504
+        y: 272.1053
         width: 160
         height: 30
     - id: 28
@@ -6868,8 +6815,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 920.9574
-        y: 363.08887
+        x: 752.10504
+        y: 322.1053
         width: 160
         height: 30
     - id: 29
@@ -6917,68 +6864,13 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 920.9574
-        y: 413.08887
-        width: 160
-        height: 30
-    - id: 30
-      fields:
-      - title: Title
-        value: 
-        type: 0
-        typeString: 
-      - title: Description
-        value: 
-        type: 0
-        typeString: 
-      - title: Actor
-        value: 1
-        type: 5
-        typeString: CustomFieldType_Actor
-      - title: Conversant
-        value: 2
-        type: 5
-        typeString: CustomFieldType_Actor
-      - title: Menu Text
-        value: 
-        type: 0
-        typeString: 
-      - title: Dialogue Text
-        value: _____ told me these guys got the best egg rolls on the East Side.
-        type: 0
-        typeString: 
-      - title: Sequence
-        value: 
-        type: 0
-        typeString: 
-      conversationID: 6
-      isRoot: 0
-      isGroup: 0
-      nodeColor: 
-      delaySimStatus: 0
-      falseConditionAction: Block
-      conditionPriority: 2
-      outgoingLinks:
-      - originConversationID: 6
-        originDialogueID: 30
-        destinationConversationID: 6
-        destinationDialogueID: 6
-        isConnector: 0
-        priority: 2
-      conditionsString: 
-      userScript: 
-      onExecute:
-        m_PersistentCalls:
-          m_Calls: []
-      canvasRect:
-        serializedVersion: 2
-        x: 443.4002
-        y: 95.78668
+        x: 752.10504
+        y: 372.1053
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 198.19264, y: 0}
-    canvasZoom: 1.1499999
+    canvasScrollPosition: {x: 129.16888, y: 0}
+    canvasZoom: 0.7600002
   - id: 7
     fields:
     - title: Title
@@ -7127,7 +7019,7 @@ MonoBehaviour:
         isConnector: 0
         priority: 2
       conditionsString: 
-      userScript: SetQuestEntryState("Long Day's Journey Into Night", 3, "success")
+      userScript: 
       onExecute:
         m_PersistentCalls:
           m_Calls: []
@@ -7953,7 +7845,7 @@ MonoBehaviour:
         isConnector: 0
         priority: 2
       conditionsString: CheckIfCorrectItemWasBought()  == true
-      userScript: SetQuestEntryState("Long Day's Journey Into Night", 4, "success")
+      userScript: 
       onExecute:
         m_PersistentCalls:
           m_Calls: []
@@ -8457,7 +8349,7 @@ MonoBehaviour:
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 0, y: 0}
+    canvasScrollPosition: {x: 64.383545, y: 0}
     canvasZoom: 0.73000026
   - id: 8
     fields:
