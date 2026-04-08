@@ -12232,13 +12232,7 @@ MonoBehaviour:
       delaySimStatus: 0
       falseConditionAction: Block
       conditionPriority: 2
-      outgoingLinks:
-      - originConversationID: 10
-        originDialogueID: 16
-        destinationConversationID: 10
-        destinationDialogueID: 18
-        isConnector: 0
-        priority: 2
+      outgoingLinks: []
       conditionsString: 
       userScript: 
       onExecute:
@@ -12328,7 +12322,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Dialogue Text
-        value: 
+        value: This job... is it inside or out?
         type: 0
         typeString: 
       - title: Sequence
@@ -12346,7 +12340,7 @@ MonoBehaviour:
       - originConversationID: 10
         originDialogueID: 18
         destinationConversationID: 10
-        destinationDialogueID: 21
+        destinationDialogueID: 19
         isConnector: 0
         priority: 2
       conditionsString: 
@@ -12356,11 +12350,66 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 606.34143
-        y: 300.73178
+        x: 613.6583
+        y: 443.41473
         width: 160
         height: 30
     - id: 19
+      fields:
+      - title: Title
+        value: 
+        type: 0
+        typeString: 
+      - title: Description
+        value: 
+        type: 0
+        typeString: 
+      - title: Actor
+        value: 8
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Conversant
+        value: 1
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Menu Text
+        value: 
+        type: 0
+        typeString: 
+      - title: Dialogue Text
+        value: ...
+        type: 0
+        typeString: 
+      - title: Sequence
+        value: 
+        type: 0
+        typeString: 
+      conversationID: 10
+      isRoot: 0
+      isGroup: 0
+      nodeColor: 
+      delaySimStatus: 0
+      falseConditionAction: Block
+      conditionPriority: 2
+      outgoingLinks:
+      - originConversationID: 10
+        originDialogueID: 19
+        destinationConversationID: 10
+        destinationDialogueID: 20
+        isConnector: 0
+        priority: 2
+      conditionsString: 
+      userScript: 
+      onExecute:
+        m_PersistentCalls:
+          m_Calls: []
+      canvasRect:
+        serializedVersion: 2
+        x: 613.6583
+        y: 493.41473
+        width: 160
+        height: 30
+    - id: 20
       fields:
       - title: Title
         value: 
@@ -12383,56 +12432,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Dialogue Text
-        value: 'I work in distribution, the way you work in probability.  '
-        type: 0
-        typeString: 
-      - title: Sequence
-        value: 
-        type: 0
-        typeString: 
-      conversationID: 10
-      isRoot: 0
-      isGroup: 0
-      nodeColor: 
-      delaySimStatus: 0
-      falseConditionAction: Block
-      conditionPriority: 2
-      outgoingLinks: []
-      conditionsString: 
-      userScript: 
-      onExecute:
-        m_PersistentCalls:
-          m_Calls: []
-      canvasRect:
-        serializedVersion: 2
-        x: 606.34143
-        y: 508.04886
-        width: 160
-        height: 30
-    - id: 20
-      fields:
-      - title: Title
-        value: 
-        type: 0
-        typeString: 
-      - title: Description
-        value: 
-        type: 0
-        typeString: 
-      - title: Actor
-        value: 6
-        type: 5
-        typeString: CustomFieldType_Actor
-      - title: Conversant
-        value: 1
-        type: 5
-        typeString: CustomFieldType_Actor
-      - title: Menu Text
-        value: 
-        type: 0
-        typeString: 
-      - title: Dialogue Text
-        value: 
+        value: 'Will we be working with a market of your own making, or someone else''s? '
         type: 0
         typeString: 
       - title: Sequence
@@ -12450,7 +12450,7 @@ MonoBehaviour:
       - originConversationID: 10
         originDialogueID: 20
         destinationConversationID: 10
-        destinationDialogueID: 19
+        destinationDialogueID: 21
         isConnector: 0
         priority: 2
       conditionsString: 
@@ -12460,8 +12460,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 605.1219
-        y: 454.3902
+        x: 613.6583
+        y: 543.41473
         width: 160
         height: 30
     - id: 21
@@ -12475,19 +12475,20 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Actor
+        value: 1
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Conversant
         value: 8
         type: 5
         typeString: CustomFieldType_Actor
-      - title: Conversant
-        value: 1
-        type: 5
-        typeString: CustomFieldType_Actor
       - title: Menu Text
         value: 
         type: 0
         typeString: 
       - title: Dialogue Text
-        value: <i>Distribution</i>.
+        value: 'If I''m fixing an outcome for your own market, there''s an added
+          fee, since you''re still the vig on each bet placed. '
         type: 0
         typeString: 
       - title: Sequence
@@ -12509,61 +12510,12 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 606.34143
-        y: 350.73178
-        width: 160
-        height: 30
-    - id: 22
-      fields:
-      - title: Title
-        value: 
-        type: 0
-        typeString: 
-      - title: Description
-        value: 
-        type: 0
-        typeString: 
-      - title: Actor
-        value: 6
-        type: 5
-        typeString: CustomFieldType_Actor
-      - title: Conversant
-        value: 1
-        type: 5
-        typeString: CustomFieldType_Actor
-      - title: Menu Text
-        value: 
-        type: 0
-        typeString: 
-      - title: Dialogue Text
-        value: 
-        type: 0
-        typeString: 
-      - title: Sequence
-        value: 
-        type: 0
-        typeString: 
-      conversationID: 10
-      isRoot: 0
-      isGroup: 0
-      nodeColor: 
-      delaySimStatus: 0
-      falseConditionAction: Block
-      conditionPriority: 2
-      outgoingLinks: []
-      conditionsString: 
-      userScript: 
-      onExecute:
-        m_PersistentCalls:
-          m_Calls: []
-      canvasRect:
-        serializedVersion: 2
-        x: 531.9512
-        y: 659.26825
+        x: 613.6583
+        y: 593.41473
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 84.14636, y: 0}
+    canvasScrollPosition: {x: 28.048767, y: 0}
     canvasZoom: 0.8200002
   - id: 11
     fields:
