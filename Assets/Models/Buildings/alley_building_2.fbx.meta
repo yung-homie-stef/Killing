@@ -1,13 +1,23 @@
 fileFormatVersion: 2
-guid: cbaed32fd3e80b34cab8eb5639f77fcf
+guid: b06dfc20194264d40b14a6fabbe91c29
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: acs_2
+    second: {fileID: 2100000, guid: f5dbc29f831385244b028db7d3e3a3e8, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: building_2a
+    second: {fileID: 2100000, guid: fc7d47e43c926724e9d6dc4e1940d2b0, type: 2}
   materials:
     materialImportMode: 2
-    materialName: 0
-    materialSearch: 1
+    materialName: 1
+    materialSearch: 2
     materialLocation: 1
   animations:
     legacyGenerateAnimations: 4
@@ -16,8 +26,6 @@ ModelImporter:
     optimizeGameObjects: 0
     removeConstantScaleCurves: 0
     motionNodeName: 
-    rigImportErrors: 
-    rigImportWarnings: 
     animationImportErrors: 
     animationImportWarnings: 
     animationRetargetingWarnings: 
