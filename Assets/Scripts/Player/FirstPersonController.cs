@@ -172,6 +172,7 @@ public class FirstPersonController : MonoBehaviour
         if (!_characterControllerComponent.isGrounded)
             _moveDirection.y -= _gravity * Time.deltaTime;
 
+        if (_characterControllerComponent.enabled)
         _characterControllerComponent.Move(_moveDirection * Time.deltaTime);
     }
 
@@ -209,18 +210,20 @@ public class FirstPersonController : MonoBehaviour
     {
         _canMove = true;
         Cursor.lockState = CursorLockMode.Locked;
+        _characterControllerComponent.enabled = true;
     }
 
     public void DisablePlayerMovement()
     {
         _canMove = false;
         Cursor.lockState = CursorLockMode.Confined;
+        _characterControllerComponent.enabled = false;
     }
 
     private void Teleport()
     {
-        transform.position = PlayerWorldInfo.GetTeleportToLocation().position;
-        transform.rotation = PlayerWorldInfo.GetTeleportToLocation().rotation;
+       transform.position = CityLoadManager.instance.GetTeleportLocation().position;
+       transform.rotation = CityLoadManager.instance.GetTeleportLocation().rotation;
     }
 
     private void OnConversationEnded(Transform t)

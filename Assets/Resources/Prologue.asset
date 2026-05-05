@@ -291,7 +291,7 @@ MonoBehaviour:
   - id: 12
     fields:
     - title: Name
-      value: Mr. Hsu
+      value: Mr. Tsui
       type: 0
       typeString: CustomFieldType_Text
     - title: Pictures
@@ -307,7 +307,7 @@ MonoBehaviour:
       type: 2
       typeString: CustomFieldType_Boolean
     - title: Display Name
-      value: Ruby Palace Cashier
+      value: Ruby Palace Worker
       type: 0
       typeString: 
     portrait: {fileID: 0}
@@ -431,7 +431,7 @@ MonoBehaviour:
       type: 0
       typeString: CustomFieldType_Text
     - title: State
-      value: unassigned
+      value: active
       type: 0
       typeString: CustomFieldType_QuestState
     - title: Is Item
@@ -443,7 +443,7 @@ MonoBehaviour:
       type: 1
       typeString: CustomFieldType_Number
     - title: Entry 1 State
-      value: unassigned
+      value: active
       type: 0
       typeString: 
     - title: Entry 1
@@ -6250,7 +6250,10 @@ MonoBehaviour:
       conditionPriority: 2
       outgoingLinks: []
       conditionsString: 
-      userScript: SetQuestEntryState("Long Day's Journey Into Night", 3, "active")
+      userScript: 'SetQuestEntryState("Long Day''s Journey Into Night", 3, "active");
+
+        SetQuestEntryState("Long
+        Day''s Journey Into Night", 2, "success")'
       onExecute:
         m_PersistentCalls:
           m_Calls: []
@@ -6374,7 +6377,7 @@ MonoBehaviour:
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 28.72342, y: 470.21283}
+    canvasScrollPosition: {x: 82.97873, y: 797.8724}
     canvasZoom: 0.94000006
   - id: 5
     fields:
@@ -8715,12 +8718,6 @@ MonoBehaviour:
         destinationDialogueID: 1
         isConnector: 0
         priority: 2
-      - originConversationID: 7
-        originDialogueID: 0
-        destinationConversationID: 7
-        destinationDialogueID: 23
-        isConnector: 0
-        priority: 2
       conditionsString: 
       userScript: 
       onExecute:
@@ -10224,8 +10221,8 @@ MonoBehaviour:
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 0, y: 14.754089}
-    canvasZoom: 0.6100004
+    canvasScrollPosition: {x: 0, y: 4.081665}
+    canvasZoom: 0.49000046
   - id: 8
     fields:
     - title: Title
@@ -11852,7 +11849,7 @@ MonoBehaviour:
       - originConversationID: 10
         originDialogueID: 8
         destinationConversationID: 10
-        destinationDialogueID: 11
+        destinationDialogueID: 12
         isConnector: 0
         priority: 2
       conditionsString: 
@@ -11863,7 +11860,7 @@ MonoBehaviour:
       canvasRect:
         serializedVersion: 2
         x: 99.51218
-        y: 518.7804
+        y: 576.0975
         width: 160
         height: 30
     - id: 9
@@ -11889,8 +11886,8 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Dialogue Text
-        value: Another one of these...What's the matter with him? I'm trying to manage
-          a restaurant here.
+        value: Another one of these...what's the matter with him? I'm trying to run
+          a goddamn business here.
         type: 0
         typeString: 
       - title: Sequence
@@ -11963,7 +11960,7 @@ MonoBehaviour:
       - originConversationID: 10
         originDialogueID: 10
         destinationConversationID: 10
-        destinationDialogueID: 8
+        destinationDialogueID: 11
         isConnector: 0
         priority: 2
       conditionsString: 
@@ -12000,7 +11997,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Dialogue Text
-        value: When you're done leave through the alley. Doors will be locked.
+        value: When you're done leave through the alley. The door will be locked.
         type: 0
         typeString: 
       - title: Sequence
@@ -12018,7 +12015,7 @@ MonoBehaviour:
       - originConversationID: 10
         originDialogueID: 11
         destinationConversationID: 10
-        destinationDialogueID: 12
+        destinationDialogueID: 8
         isConnector: 0
         priority: 2
       conditionsString: 
@@ -12028,8 +12025,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 99.51218
-        y: 568.7805
+        x: 100.73169
+        y: 524.8781
         width: 160
         height: 30
     - id: 12
@@ -12080,8 +12077,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 99.51218
-        y: 618.7805
+        x: 97.07315
+        y: 624.8781
         width: 160
         height: 30
     - id: 13
@@ -12291,7 +12288,7 @@ MonoBehaviour:
       conditionPriority: 2
       outgoingLinks: []
       conditionsString: 
-      userScript: 
+      userScript: Actor["Mr._Tsui"].Display_Name = "Mr. Tsui"
       onExecute:
         m_PersistentCalls:
           m_Calls: []
@@ -13575,8 +13572,8 @@ MonoBehaviour:
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 278.3153, y: 394.28558}
-    canvasZoom: 0.7000003
+    canvasScrollPosition: {x: 0, y: 0}
+    canvasZoom: 0.8200002
   - id: 11
     fields:
     - title: Title

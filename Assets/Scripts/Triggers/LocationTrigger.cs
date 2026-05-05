@@ -15,7 +15,7 @@ public class LocationTrigger : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        PlayerWorldInfo.SetLocationName(this);
+        //FIX: Set Establishment name maybe?
         GameEventsManager.instance.playerEvents.PlayerEnterAreaBox(this, true);
     }
 

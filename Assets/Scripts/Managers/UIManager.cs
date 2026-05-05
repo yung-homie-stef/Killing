@@ -9,7 +9,7 @@ public class UIManager : MonoBehaviour
 {
     public static UIManager instance { get; private set; }
 
-    [HideInInspector] public FocusUI focusUI;
+    public FocusUI focusUI;
     [SerializeField] private Image _blackoutImage;
 
     /*[HideInInspector]*/ public PauseUI _pauseMenu;
@@ -17,9 +17,6 @@ public class UIManager : MonoBehaviour
     /*[HideInInspector]*/ public InventoryUI _inventoryMenu;
     /*[HideInInspector]*/ public HUD _hudMenu;
     public CustomUIQuestLogWindow _questLogMenu;
-
-    private Animator _blackoutAnimator = null;
-    private bool _blackoutFlag = false;
 
     void Start()
     {
@@ -36,23 +33,19 @@ public class UIManager : MonoBehaviour
         _shopMenu = GetComponentInChildren<ShopUI>();
         _inventoryMenu = GetComponentInChildren<InventoryUI>();
         _hudMenu = GetComponentInChildren<HUD>();
-        _questLogMenu = (CustomUIQuestLogWindow)PixelCrushers.GameObjectUtility.FindFirstObjectByType<QuestLogWindow>();
-
-        _blackoutAnimator = _blackoutImage.GetComponentInParent<Animator>();
+        //_questLogMenu = (CustomUIQuestLogWindow)PixelCrushers.GameObjectUtility.FindFirstObjectByType<QuestLogWindow>();
     }
 
     private void OnEnable()
     {
         GameEventsManager.instance.inputEvents.onInventoryTogglePressed += EnableFocusUI;
-        GameEventsManager.instance.playerEvents.onBeginPlayerTeleportation += TriggerBlackoutScreen;
-        GameEventsManager.instance.playerEvents.onPlayerTeleportation += TriggerBlackoutScreen;
+
     }
 
     private void OnDisable()
     {
         GameEventsManager.instance.inputEvents.onInventoryTogglePressed -= EnableFocusUI;
-        GameEventsManager.instance.playerEvents.onBeginPlayerTeleportation -= TriggerBlackoutScreen;
-        GameEventsManager.instance.playerEvents.onPlayerTeleportation -= TriggerBlackoutScreen;
+
     }
 
     private void EnableFocusUI(bool flag)
@@ -60,10 +53,5 @@ public class UIManager : MonoBehaviour
         focusUI.gameObject.SetActive(flag);
     }
 
-    private void TriggerBlackoutScreen()
-    {
-        _blackoutFlag = !_blackoutFlag;
-        _blackoutAnimator.SetBool("ToBlack", _blackoutFlag);
-    }
 
 }

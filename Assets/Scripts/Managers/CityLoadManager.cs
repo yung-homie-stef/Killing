@@ -6,8 +6,9 @@ public class CityLoadManager : MonoBehaviour
 {
     public static CityLoadManager instance;
     public bool _cityLoadedIn = true;
-    private GameObject _establishmentInteriorPrefab = null;
+    [SerializeField] private GameObject _establishmentInteriorPrefab = null;
     [SerializeField] private GameObject _cityContents = null;
+    [SerializeField] private Transform _teleportLocation = null;
 
     private void Awake()
     {
@@ -18,9 +19,15 @@ public class CityLoadManager : MonoBehaviour
         GameEventsManager.instance.playerEvents.onPlayerTeleportation += LoadUnloadCity;
     }
 
-    public void SetEstablishmentPrefab(GameObject prefab)
+    public void PrepareTeleportation(GameObject prefab, Transform tPos)
     {
         _establishmentInteriorPrefab = prefab;
+        _teleportLocation = tPos;
+    }
+
+    public Transform GetTeleportLocation()
+    {
+        return _teleportLocation;
     }
 
     private void LoadUnloadCity()
@@ -30,8 +37,12 @@ public class CityLoadManager : MonoBehaviour
         if (_cityLoadedIn)
         {
             _cityContents.SetActive(true);
-            _establishmentInteriorPrefab.SetActive(false);
-            _establishmentInteriorPrefab = null;
+
+            if (_establishmentInteriorPrefab != null)
+            {
+                _establishmentInteriorPrefab.SetActive(false);
+                _establishmentInteriorPrefab = null;
+            }
         }
         else
         {
