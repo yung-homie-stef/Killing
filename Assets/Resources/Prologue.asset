@@ -12275,7 +12275,7 @@ MonoBehaviour:
         typeString: 
       - title: Dialogue Text
         value: 'Wouldn''t know, I''m just the proprietor. No late payments as of
-          yet, however. The Hsu family are, thankfully, very compliant. '
+          yet, however. The Tsui family are, thankfully, very compliant. '
         type: 0
         typeString: 
       - title: Sequence
@@ -12989,7 +12989,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Dialogue Text
-        value: I need some pressure applied. Somebody in particular. Are you willing?
+        value: I need some pressure applied. Somebody in particular. Are you capable?
         type: 0
         typeString: 
       - title: Sequence
@@ -13077,62 +13077,6 @@ MonoBehaviour:
         y: 496.24756
         width: 160
         height: 30
-    - id: 31
-      fields:
-      - title: Title
-        value: 
-        type: 0
-        typeString: 
-      - title: Description
-        value: 
-        type: 0
-        typeString: 
-      - title: Actor
-        value: 1
-        type: 5
-        typeString: CustomFieldType_Actor
-      - title: Conversant
-        value: 8
-        type: 5
-        typeString: CustomFieldType_Actor
-      - title: Menu Text
-        value: 
-        type: 0
-        typeString: 
-      - title: Dialogue Text
-        value: 'Could be blackmail, veiled threats, disinformation, on <i>or</i>
-          offline. '
-        type: 0
-        typeString: 
-      - title: Sequence
-        value: 
-        type: 0
-        typeString: 
-      conversationID: 10
-      isRoot: 0
-      isGroup: 0
-      nodeColor: 
-      delaySimStatus: 0
-      falseConditionAction: Block
-      conditionPriority: 2
-      outgoingLinks:
-      - originConversationID: 10
-        originDialogueID: 31
-        destinationConversationID: 10
-        destinationDialogueID: 35
-        isConnector: 0
-        priority: 2
-      conditionsString: 
-      userScript: 
-      onExecute:
-        m_PersistentCalls:
-          m_Calls: []
-      canvasRect:
-        serializedVersion: 2
-        x: 906.0876
-        y: 612.267
-        width: 160
-        height: 30
     - id: 32
       fields:
       - title: Title
@@ -13185,7 +13129,7 @@ MonoBehaviour:
       canvasRect:
         serializedVersion: 2
         x: 907.0585
-        y: 779.1745
+        y: 723.4602
         width: 160
         height: 30
     - id: 33
@@ -13241,7 +13185,7 @@ MonoBehaviour:
       canvasRect:
         serializedVersion: 2
         x: 907.0585
-        y: 828.9258
+        y: 773.2115
         width: 160
         height: 30
     - id: 34
@@ -13268,7 +13212,7 @@ MonoBehaviour:
         typeString: 
       - title: Dialogue Text
         value: Stringers mostly. Columnists, couple police reporters. If coverage
-          of any kind, or lack of tips a market's scales, it's always an option.
+          of any kind, or lack of, tips a market's scales, it's always an option.
           For a price.
         type: 0
         typeString: 
@@ -13287,7 +13231,7 @@ MonoBehaviour:
       - originConversationID: 10
         originDialogueID: 34
         destinationConversationID: 10
-        destinationDialogueID: 31
+        destinationDialogueID: 35
         isConnector: 0
         priority: 2
       conditionsString: 
@@ -13324,7 +13268,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Dialogue Text
-        value: 'Acts as a proxy for the dirty work so <i>your</i> hands stay clean.
+        value: 'A type of proxy for the dirty work so <i>your</i> hands stay clean.
           Much riskier for me but [penalty fee] ensures the burden''s mutual. '
         type: 0
         typeString: 
@@ -13353,8 +13297,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 906.0877
-        y: 669.0632
+        x: 904.6591
+        y: 607.63464
         width: 160
         height: 30
     - id: 36
@@ -13411,7 +13355,7 @@ MonoBehaviour:
       canvasRect:
         serializedVersion: 2
         x: 905.1169
-        y: 727.801
+        y: 669.22955
         width: 160
         height: 30
     - id: 37
@@ -13467,7 +13411,7 @@ MonoBehaviour:
       canvasRect:
         serializedVersion: 2
         x: 907.0585
-        y: 880.1453
+        y: 824.431
         width: 160
         height: 30
     - id: 38
@@ -13523,7 +13467,7 @@ MonoBehaviour:
       canvasRect:
         serializedVersion: 2
         x: 907.0585
-        y: 930.1453
+        y: 874.431
         width: 160
         height: 30
     - id: 39
@@ -13578,7 +13522,7 @@ MonoBehaviour:
       canvasRect:
         serializedVersion: 2
         x: 907.0585
-        y: 980.1453
+        y: 924.431
         width: 160
         height: 30
     - id: 40
@@ -13627,12 +13571,12 @@ MonoBehaviour:
       canvasRect:
         serializedVersion: 2
         x: 907.0585
-        y: 1030.1453
+        y: 974.431
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 63.013733, y: 0}
-    canvasZoom: 0.73000026
+    canvasScrollPosition: {x: 278.3153, y: 394.28558}
+    canvasZoom: 0.7000003
   - id: 11
     fields:
     - title: Title
@@ -15279,7 +15223,7 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 896.5457
+        x: 893.0975
         y: 623.1276
         width: 160
         height: 30
@@ -15858,7 +15802,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Dialogue Text
-        value: You're still not over that.
+        value: Still not over that.
         type: 0
         typeString: 
       - title: Sequence
@@ -16024,7 +15968,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Dialogue Text
-        value: Oh yeah that's coming up! Me and [Dmitri's GF] bought our tickets.
+        value: Oh yeah, that's coming up! Me and [Dmitri's GF] bought our tickets.
           Can't wait to see what your girl's been cooking up.
         type: 0
         typeString: 
@@ -16680,7 +16624,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Dialogue Text
-        value: No for real Dimmy, got a good feeling about this one.  . This is different.
+        value: No for real Dimmy, got a good feeling about this one. This is different.
         type: 0
         typeString: 
       - title: Sequence
@@ -16823,7 +16767,7 @@ MonoBehaviour:
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 22.413818, y: 0}
+    canvasScrollPosition: {x: 96.5517, y: 0}
     canvasZoom: 0.5800004
   - id: 12
     fields:
@@ -17453,8 +17397,8 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Dialogue Text
-        value: The look of a man weighing his options knowing full well there were
-          <i>none</i> to begin with.
+        value: The look of a man weighing his options knowing full well he had <i>none</i>
+          to begin with.
         type: 0
         typeString: 
       - title: Sequence
@@ -17564,7 +17508,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Dialogue Text
-        value: No.
+        value: 'No. No, I think there''s been a misunderstanding. '
         type: 0
         typeString: 
       - title: Sequence
@@ -17704,8 +17648,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 383.09888
-        y: 311.29675
+        x: 379.46252
+        y: 436.75122
         width: 160
         height: 30
     - id: 17
@@ -17759,8 +17703,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 383.09888
-        y: 361.29675
+        x: 379.46252
+        y: 486.75122
         width: 160
         height: 30
     - id: 18
@@ -17816,8 +17760,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 383.09888
-        y: 411.29675
+        x: 379.46252
+        y: 536.7512
         width: 160
         height: 30
     - id: 20
@@ -18054,11 +17998,11 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Actor
-        value: 8
+        value: 1
         type: 5
         typeString: CustomFieldType_Actor
       - title: Conversant
-        value: 1
+        value: 8
         type: 5
         typeString: CustomFieldType_Actor
       - title: Menu Text
@@ -18066,7 +18010,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Dialogue Text
-        value: What do you think that overtime is put towards?
+        value: So? What else they gonna use that overtime for?
         type: 0
         typeString: 
       - title: Sequence
@@ -18095,7 +18039,7 @@ MonoBehaviour:
       canvasRect:
         serializedVersion: 2
         x: 687.8479
-        y: 85.06327
+        y: 83.50077
         width: 160
         height: 30
     - id: 29
@@ -18121,8 +18065,8 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Dialogue Text
-        value: Bets placed on every market surrounding intelligence, trials, and
-          investigations, usually by the same cops working the case. They call them-
+        value: Bets placed on every market surrounding investigations, trials, and
+          intelligence, usually by the same cops working the case. They call them-
         type: 0
         typeString: 
       - title: Sequence
@@ -18177,7 +18121,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Dialogue Text
-        value: '"<i>Blue</i> chip bets". Yeah, what about ''em?'
+        value: '"<i>Blue</i> chip" bets. Yeah, what about ''em?'
         type: 0
         typeString: 
       - title: Sequence
@@ -18457,9 +18401,8 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Dialogue Text
-        value: Factor in good PR, promotions, and performance goals when its a high
-          profile arrest, and it's evident the police force of [city] has much to
-          gain in these endeavours.
+        value: 'Nevermind the good PR, promotions and performance goals that come
+          along with '
         type: 0
         typeString: 
       - title: Sequence
@@ -18569,7 +18512,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Dialogue Text
-        value: 
+        value: ...
         type: 0
         typeString: 
       - title: Sequence
@@ -18766,7 +18709,7 @@ MonoBehaviour:
       canvasRect:
         serializedVersion: 2
         x: 691.14886
-        y: 903.9739
+        y: 902.4114
         width: 160
         height: 30
     - id: 41
@@ -19180,7 +19123,7 @@ MonoBehaviour:
         typeString: 
       - title: Dialogue Text
         value: 'That means name, address, lucky numbers, friends, relatives. I''ll
-          even give them your blood type. '
+          give them your blood type if I have to. '
         type: 0
         typeString: 
       - title: Sequence
@@ -19650,8 +19593,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 383.09888
-        y: 461.29675
+        x: 379.46252
+        y: 586.7512
         width: 160
         height: 30
     - id: 57
@@ -19706,7 +19649,7 @@ MonoBehaviour:
       canvasRect:
         serializedVersion: 2
         x: 911.71124
-        y: 79.64137
+        y: 78.07887
         width: 160
         height: 30
     - id: 58
@@ -20066,7 +20009,7 @@ MonoBehaviour:
         typeString: 
       - title: Dialogue Text
         value: 'You''ve been fixated on it this entire conversation. Your eyes are
-          beginning to strain. '
+          starting to strain. '
         type: 0
         typeString: 
       - title: Sequence
@@ -20231,8 +20174,8 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Dialogue Text
-        value: 'You will, ideally, dispose of the gun in the manner I described.
-          However, should police notice it before that occurs... '
+        value: You will, ideally, dispose of the gun in the manner I described. However,
+          should police apprehend you...
         type: 0
         typeString: 
       - title: Sequence
@@ -20398,9 +20341,9 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Dialogue Text
-        value: He contacted you after hearing you were interested in purchasing a
-          modified firearm. He gave you the gun and bullets in exchange for $[price].
-          You then parted ways and have not been in contact since.
+        value: He contacted you on a gun owner's forum after you expressed interest
+          in purchasing a modified firearm. He gave you the gun and bullets in exchange
+          for $[price]. You then parted ways and have not been in contact since.
         type: 0
         typeString: 
       - title: Sequence
@@ -20455,9 +20398,9 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Dialogue Text
-        value: There is no need to elaborate further. If it means tracing black market
-          arms to the source, they'll have no reservations letting you walk free.
-          Standard-issue has its limits.
+        value: There is no need to elaborate further. If it means getting a foot
+          in the black market, they'll have no reservations letting you walk. Standard-issue
+          only gets you so far.
         type: 0
         typeString: 
       - title: Sequence
@@ -20512,7 +20455,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Dialogue Text
-        value: 'And then what? '
+        value: '...and then what? '
         type: 0
         typeString: 
       - title: Sequence
@@ -20567,8 +20510,8 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Dialogue Text
-        value: Once it's confirmed Tenant is out of the picture, you will receive
-          [amount] from [fake company name].
+        value: Once it's confirmed Tenant has been dealt with, you will receive [amount]
+          from [fake company name].
         type: 0
         typeString: 
       - title: Sequence
@@ -20644,8 +20587,8 @@ MonoBehaviour:
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 417.79404, y: 205.36887}
-    canvasZoom: 0.64000034
+    canvasScrollPosition: {x: 1.0184631, y: 0}
+    canvasZoom: 0.5500004
   syncInfo:
     syncActors: 0
     syncItems: 0
