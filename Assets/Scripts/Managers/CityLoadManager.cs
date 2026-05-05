@@ -35,8 +35,9 @@ public class CityLoadManager : MonoBehaviour
         }
         else
         {
-            _cityContents.SetActive(false);
             _establishmentInteriorPrefab.SetActive(true);
+            _cityContents.SetActive(false);
+            
         }
     }
 

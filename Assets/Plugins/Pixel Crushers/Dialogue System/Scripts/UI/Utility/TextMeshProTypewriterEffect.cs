@@ -1,5 +1,4 @@
-// Recompile at 2025-12-16 4:44:03 PM
-// Copyright (c) Pixel Crushers. All rights reserved.
+﻿// Copyright (c) Pixel Crushers. All rights reserved.
 
 using System.Collections;
 using System.Collections.Generic;
@@ -208,6 +207,7 @@ namespace PixelCrushers.DialogueSystem
             StopTypewriterCoroutine();
             textComponent.text = text;
             StartTypewriterCoroutine(fromIndex);
+            
         }
 
         public override void StopTyping()

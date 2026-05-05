@@ -7,14 +7,13 @@ using UnityEngine.UI;
 using Unity.VisualScripting;
 using UnityEngine.Events;
 
-public class InventoryItemButton : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
+public class InventoryItemButton : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, IPointerClickHandler
 {
 
     [HideInInspector] public ItemObject _itemObject;
-    [SerializeField] private TextMeshProUGUI _itemName;
-    [SerializeField] private Button _useButton;
-    [SerializeField] private Button _discardButton;
     [SerializeField] private InventorySlot _inventorySlot;
+    [SerializeField] private Image _itemImage;
+    [SerializeField] private Image _itemIcon;
 
     private UIManager _UIManager = null;
     private InventoryManager _inventoryManager = null;
@@ -32,32 +31,34 @@ public class InventoryItemButton : MonoBehaviour, IPointerEnterHandler, IPointer
     public void Initialize(ItemObject itemObj, InventorySlot slot)
     {
         _itemObject = itemObj;
-        _itemName.text = itemObj.itemName;
         _inventorySlot = slot;
+        //_itemIcon.sprite = itemObj.itemIcon;
+        _itemImage.sprite = itemObj.itemThumbnail;
     }
 
     public void OnPointerEnter(PointerEventData eventData)
     {
         _UIManager._inventoryMenu.UpdateInventoryItemDisplay(_itemObject);
-
-        if (_UIManager._inventoryMenu.targetInteractable == null)
-        {
-            _useButton.gameObject.SetActive(true);
-            _discardButton.gameObject.SetActive(true);
-        }
     }
 
     public void OnPointerExit(PointerEventData eventData)
     {
-        _useButton.gameObject.SetActive(false);
-        _discardButton.gameObject.SetActive(false);
+
     }
 
-    public void InventoryItemButtonPress(bool isUsing)
+
+    public void OnPointerClick(PointerEventData eventData)
     {
-        if (_UIManager._inventoryMenu.targetInteractable == null)
-            _UIManager._inventoryMenu.PromptItemUseOrDiscard(this, _inventorySlot, isUsing);
+        if (UIManager.instance._inventoryMenu._requestedItemType == ItemType.None)
+        {
+            // Do Something
+            Debug.Log("wagwan");
+        }
+        else
+            UIManager.instance._inventoryMenu.CheckGivenItem(this);
+
     }
+
 
     public void DiscardItem()
     {

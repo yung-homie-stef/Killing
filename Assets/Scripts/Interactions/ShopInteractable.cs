@@ -9,7 +9,7 @@ public class ShopInteractable : Interactable
     public override void Interact()
     {
         base.Interact();
-        UIManager.instance._shopMenu.InitializeShop(shopData.shopStock, shopData.name);
+        UIManager.instance._shopMenu.InitializeShop(shopData);
 
     }
 }

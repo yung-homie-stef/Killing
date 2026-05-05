@@ -1,8 +1,10 @@
+using PixelCrushers.DialogueSystem;
 using System.Collections;
 using System.Collections.Generic;
-using UnityEngine;
 using TMPro;
 using Unity.VisualScripting;
+using UnityEngine;
+using UnityEngine.UI;
 
 public class ShopUI : MonoBehaviour
 {
@@ -10,13 +12,20 @@ public class ShopUI : MonoBehaviour
     [SerializeField] private RectTransform _itemButtonContentParent;
     [SerializeField] private GameObject _itemButtonPrefab;
     [SerializeField] private GameObject _content;
+    [SerializeField] private Image _itemImage;
+
     [Header("Text")]
     [SerializeField] private TextMeshProUGUI _shopName;
     [SerializeField] private TextMeshProUGUI _playerFunds;
     [SerializeField] private TextMeshProUGUI _shopItemDescription;
+    [SerializeField] private TextMeshProUGUI _shopItemName;
+
     [Header("Stock")]
     [SerializeField] private List<ShopItemObject> _itemsAvailableInShop;
     [SerializeField] private List<ShopItemButton> _buttonsInShop;
+    [SerializeField] private ItemObject _itemNeededToBuy = null;
+    private bool _exitedShopPrompt = false;
+    private bool _boughtCorrectItem = false;
 
     private void Awake()
     {
@@ -26,6 +35,9 @@ public class ShopUI : MonoBehaviour
     private void OnEnable()
     {
         GameEventsManager.instance.moneyEvents.onMoneyAmountChanged += UpdatePlayerFundsAmount;
+        Lua.RegisterFunction("InitializeShopFromDialogue", this, SymbolExtensions.GetMethodInfo(() => InitializeShopFromDialogue(string.Empty, string.Empty)));
+        Lua.RegisterFunction("CheckIfCorrectItemWasBought", this, SymbolExtensions.GetMethodInfo(() => CheckIfCorrectItemWasBought()));
+        Lua.RegisterFunction("CheckIfShopPromptWasExited", this, SymbolExtensions.GetMethodInfo(() => CheckIfShopPromptWasExited()));
     }
 
     private void OnDisable()
@@ -33,33 +45,37 @@ public class ShopUI : MonoBehaviour
         GameEventsManager.instance.moneyEvents.onMoneyAmountChanged -= UpdatePlayerFundsAmount;
     }
 
-    public void ShowOrHideShopUI(bool flag)
+    public void ShopToggle(bool flag)
     {
-        Cursor.visible = flag;
-        _content.SetActive(flag);
 
         if (flag)
         {
+            ShowOrHideShopUI(true, CursorLockMode.None);
             GameEventsManager.instance.playerEvents.DisablePlayerMovement();
-            UIManager.instance._hudMenu.HUDTween(false);
-            Cursor.lockState = CursorLockMode.None;
+            //UIManager.instance._hudMenu.HUDTween(false);
         }
         else
         {
+            ShowOrHideShopUI(true, CursorLockMode.Locked);
             GameEventsManager.instance.playerEvents.EnablePlayerMovement();
-            UIManager.instance._hudMenu.HUDTween(true);
-            Cursor.lockState = CursorLockMode.Locked;
-            UIManager.instance.focusUI.SetCanFocus(true);
+            //UIManager.instance._hudMenu.HUDTween(true);
         }
     }
 
-    public void InitializeShop(ShopItemObject[] stock, string shopName)
+    private void ShowOrHideShopUI(bool flag, CursorLockMode mode)
+    {
+        Cursor.lockState = mode;
+        Cursor.visible = flag;
+        _content.SetActive(flag);
+    }
+
+    public void InitializeShop(ShopData data)
     {
         ClearShop();
 
-        _shopName.text = shopName.ToUpper() + ".";
+        _shopName.text = data.shopName.ToUpper() + ".";
 
-        foreach (ShopItemObject item in stock)
+        foreach (ShopItemObject item in data.shopStock)
             _itemsAvailableInShop.Add(item);
 
         _itemsAvailableInShop.Sort((leftHandSide, rightHandSide) => leftHandSide.name.CompareTo(rightHandSide.name));
@@ -67,20 +83,25 @@ public class ShopUI : MonoBehaviour
         for (int i =0; i <  _itemsAvailableInShop.Count; i++)
         {
             var shopItem = Instantiate(_itemButtonPrefab, _itemButtonContentParent.transform);
+            shopItem.name = _itemsAvailableInShop[i]._itemToReference.itemName;
             ShopItemButton shopItemButton = shopItem.GetComponent<ShopItemButton>();
             shopItemButton.InitializeShopItemButton(_itemsAvailableInShop[i]);
             _buttonsInShop.Add(shopItemButton);
         }
 
         // set shop description to first item by default so shop doesn't open with empty text box
-        _shopItemDescription.text = "DESCRIPTION: " + _itemsAvailableInShop[0]._itemToReference.itemDescription;
+        UpdateShopItemDescription(_itemsAvailableInShop[0]._itemToReference);
 
-        ShowOrHideShopUI(true);
+        _exitedShopPrompt = false;
+        _boughtCorrectItem = false;
+        ShopToggle(true);
     }
 
-    public void UpdateShopItemDescription(string desc)
+    public void UpdateShopItemDescription(ItemObject itemObject)
     {
-        _shopItemDescription.text = "DESCRIPTION: " + desc;
+        _shopItemDescription.text =  itemObject.itemDescription;
+        _itemImage.sprite = itemObject.itemThumbnail;
+        _shopItemName.text = " " + itemObject.itemName;
     }
 
     private void ClearShop()
@@ -96,8 +117,73 @@ public class ShopUI : MonoBehaviour
         _shopItemDescription.text = string.Empty;
     }
 
-    private void UpdatePlayerFundsAmount(int amount)
+    public void CloseShop()
+    {
+        if (_itemNeededToBuy != null)
+            _exitedShopPrompt = true;
+
+        ShowOrHideShopUI(false, CursorLockMode.None);
+        PixelCrushers.DialogueSystem.Sequencer.Message("ShopFlag");
+    }
+
+    private void UpdatePlayerFundsAmount(int previousAmount, int amount)
     {
         _playerFunds.text = amount.ToString();
     }
+
+    #region NPC Related Shopping
+
+    public void InitializeShopFromDialogue(string shopDataName, string itemToBuy)
+    {
+        InitializeShop(Resources.Load<ShopData>("ShopData/" + shopDataName));
+
+        for (int i = 0; i < _itemsAvailableInShop.Count; i++)
+        {
+            if (_buttonsInShop[i]._item.itemName == itemToBuy)
+            {
+                _itemNeededToBuy = _buttonsInShop[i]._item;
+                break;
+            }
+            else
+                Debug.Log("Specified item could not be found in the shop.");
+        }
+    }
+
+    public void PurchaseFromShop(ShopItemButton itemButton, int price)
+    {
+        // TODO: add this line back when i can test money again, right now im below zero
+        //if (MoneyManager.instance.GetCurrentPlayerMoney() < _price)
+        if (itemButton._item == _itemNeededToBuy)
+        {
+            if (!_itemNeededToBuy.isKeyItem)
+                UIManager.instance._inventoryMenu.AddItemToInventoryUI(_itemNeededToBuy, InventoryManager.instance._keyItemInventory.AddItem(_itemNeededToBuy));
+            else
+                UIManager.instance._inventoryMenu.AddItemToInventoryUI(_itemNeededToBuy, InventoryManager.instance._itemInventory.AddItem(_itemNeededToBuy));
+
+            _boughtCorrectItem = true;
+            UIManager.instance._hudMenu.TriggerItemCollectPopup(_itemNeededToBuy);
+            ShowOrHideShopUI(false, CursorLockMode.None);
+            MoneyManager.instance.UpdatePlayerMoney(-price);
+
+            if (itemButton._canRemove)
+            {
+                // remove item if it shouldn't stay in the store
+                _buttonsInShop.Remove(itemButton);
+                Destroy(itemButton.gameObject);
+            }
+
+            PixelCrushers.DialogueSystem.Sequencer.Message("ShopFlag");
+        }
+    }
+    public bool CheckIfCorrectItemWasBought()
+    {
+        return _boughtCorrectItem;
+    }
+
+    public bool CheckIfShopPromptWasExited()
+    {
+        return _exitedShopPrompt;
+    }
+
+    #endregion
 }

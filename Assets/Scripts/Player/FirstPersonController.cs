@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Runtime.Remoting.Messaging;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using PixelCrushers.DialogueSystem;
 
 public class FirstPersonController : MonoBehaviour
 {
@@ -71,17 +72,20 @@ public class FirstPersonController : MonoBehaviour
         _characterControllerComponent = GetComponent<CharacterController>();
 
         Cursor.lockState = CursorLockMode.Locked;
-        Cursor.visible = true;
+        Cursor.visible = false;
 
         GameEventsManager.instance.playerEvents.onEnablePlayerMovement += EnablePlayerMovement;
         GameEventsManager.instance.playerEvents.onDisablePlayerMovement += DisablePlayerMovement;
         GameEventsManager.instance.playerEvents.onPlayerTeleportation += Teleport;
+        DialogueManager.instance.conversationEnded += OnConversationEnded;
     }
 
     private void OnDisable()
     {
         GameEventsManager.instance.playerEvents.onEnablePlayerMovement -= EnablePlayerMovement;
         GameEventsManager.instance.playerEvents.onDisablePlayerMovement -= DisablePlayerMovement;
+        GameEventsManager.instance.playerEvents.onPlayerTeleportation -= Teleport;
+        //DialogueManager.instance.conversationEnded -= OnConversationEnded;
     }
 
     // Update is called once per frame
@@ -201,13 +205,13 @@ public class FirstPersonController : MonoBehaviour
         _isInCrouchAnimation = false;
     }
 
-    private void EnablePlayerMovement()
+    public void EnablePlayerMovement()
     {
         _canMove = true;
         Cursor.lockState = CursorLockMode.Locked;
     }
 
-    private void DisablePlayerMovement()
+    public void DisablePlayerMovement()
     {
         _canMove = false;
         Cursor.lockState = CursorLockMode.Confined;
@@ -217,5 +221,12 @@ public class FirstPersonController : MonoBehaviour
     {
         transform.position = PlayerWorldInfo.GetTeleportToLocation().position;
         transform.rotation = PlayerWorldInfo.GetTeleportToLocation().rotation;
+    }
+
+    private void OnConversationEnded(Transform t)
+    {
+        EnablePlayerMovement();
+        UIManager.instance.focusUI.SetCanFocus(true);
+        _canInteract = true;
     }
 }

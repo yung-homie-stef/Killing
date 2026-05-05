@@ -130,7 +130,7 @@ namespace PixelCrushers.DialogueSystem
                 if (questDetailsContentContainer == null) Debug.LogWarning("Dialogue System: Quest Details Content Container is unassigned.", this);
                 if (questHeadingTextTemplate == null) Debug.LogWarning("Dialogue System: Quest Heading Text Template is unassigned.", this);
                 if (questDescriptionTextTemplate == null) Debug.LogWarning("Dialogue System: Quest Body Text Template is unassigned.", this);
-                if (abandonQuestPanel == null) Debug.LogWarning("Dialogue System: Abandon Quest Panel is unassigned.", this);
+                //if (abandonQuestPanel == null) Debug.LogWarning("Dialogue System: Abandon Quest Panel is unassigned.", this);
                 if (abandonQuestTitleText == null) Debug.LogWarning("Dialogue System: Abandon Quest Title Text is unassigned.", this);
             }
             Tools.SetGameObjectActive(questGroupTemplate, false);

@@ -8,8 +8,10 @@ public class InputEvents
     public event Action<bool> onInventoryTogglePressed;
     public event Action onExitTogglePressed;
     public event Action<bool> onPauseTogglePressed;
+    public event Action<bool> onJournalTogglePressed;
 
     private bool _inventoryFlag = false;
+    private bool _journalFlag = false;
     private bool _pauseFlag = false;
 
     public void InventoryTogglePressed()
@@ -18,6 +20,14 @@ public class InputEvents
             _inventoryFlag = !_inventoryFlag;
 
         onInventoryTogglePressed(_inventoryFlag);
+    }
+
+    public void JournalTogglePressed()
+    {
+        if (onJournalTogglePressed != null)
+            _journalFlag = !_journalFlag;
+
+        onJournalTogglePressed(_journalFlag);
     }
 
     public void ExitTogglePressed()
@@ -32,5 +42,10 @@ public class InputEvents
             _pauseFlag = !_pauseFlag;
 
             onPauseTogglePressed(_pauseFlag);
+    }
+
+    public void SetInventoryFlag(bool flag)
+    {
+        _inventoryFlag = flag;
     }
 }

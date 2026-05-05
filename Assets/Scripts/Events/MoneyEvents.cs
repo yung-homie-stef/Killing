@@ -5,11 +5,11 @@ using UnityEngine;
 
 public class MoneyEvents
 {
-    public event Action<int> onMoneyAmountChanged;
+    public event Action<int,int> onMoneyAmountChanged;
 
-    public void MoneyAmountChanged(int amount)
+    public void MoneyAmountChanged(int previousAmount, int newAmount)
     {
         if (onMoneyAmountChanged != null)
-            onMoneyAmountChanged(amount);
+            onMoneyAmountChanged(previousAmount, newAmount);
     }
 }
