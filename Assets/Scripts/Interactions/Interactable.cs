@@ -8,8 +8,16 @@ public abstract class Interactable : MonoBehaviour
 {
     [Header("Base Parameters")]
     public string label;
+    public InteractableType type;
     [Space(15)]
     [SerializeField] private UnityEvent _onInteract;
+    public enum InteractableType
+    {
+        EntryDoor,
+        ExitDoor,
+        Character,
+        Item
+    }
 
     public virtual void Awake()
     {
