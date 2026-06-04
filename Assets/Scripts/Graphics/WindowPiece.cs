@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 [ExecuteInEditMode]
@@ -22,8 +23,11 @@ public class WindowPiece : MonoBehaviour
 
         Renderer renderer = GetComponent<Renderer>();
 
-        _materialPropertyBlock.SetTexture("_Main_Texture", _mainTexture);
-        _materialPropertyBlock.SetTexture("_Specular_Map", _specularMap);
+        if ((_mainTexture!=null) && (_specularMap!=null))
+                {
+          _materialPropertyBlock.SetTexture("_Main_Texture", _mainTexture);
+          _materialPropertyBlock.SetTexture("_Specular_Map", _specularMap);
+        }
 
         renderer.SetPropertyBlock(_materialPropertyBlock);
     }
