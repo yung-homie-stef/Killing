@@ -24,6 +24,7 @@ public class Minimap : MonoBehaviour
 
     private Vector2 mapSize = Vector2.zero;
     private Vector2 _playerRelativePos = Vector2.zero;
+    private Vector3 _playerRelativeRot = Vector3.zero;
     private Vector2 _playerMapPos = Vector2.zero;
 
     private RectTransform rt = null;
@@ -60,11 +61,17 @@ public class Minimap : MonoBehaviour
     {
         _playerRelativePos.x = _player.transform.position.x - _levelMin.x;
         _playerRelativePos.y = _player.transform.position.z - _levelMin.y;
+        _playerRelativeRot.z = _player.transform.localEulerAngles.y;
+
         _playerMapPos = (_playerRelativePos / _levelSize) * mapSize;
         _playerMapPos -= mapSize / 2;
         rt.localPosition = -_playerMapPos;
+        _playerToken.rectTransform.localEulerAngles = _playerRelativeRot * -1;
+
         //_playerToken.rectTransform.localPosition = _playerMapPos;
-        print(_playerMapPos);
+
+        //print(_playerMapPos);
+        //print(_player.transform.rotation.y);
     }
 
     private void SpawnStack(int count)

@@ -169,6 +169,7 @@ MonoBehaviour:
   _cityLoadedIn: 1
   _establishmentInteriorPrefab: {fileID: 0}
   _cityContents: {fileID: 0}
+  _teleportLocation: {fileID: 0}
 --- !u!1 &1435764344123735648
 GameObject:
   m_ObjectHideFlags: 0
@@ -405,7 +406,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 652b59c4dc5d6f34e9babc6bcd972a1e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _focusLabel: {fileID: 4237491632845742583}
+  _interactableTypeText: {fileID: 0}
+  _labelText: {fileID: 0}
+  _underline: {fileID: 0}
 --- !u!1 &8863316244127344548
 GameObject:
   m_ObjectHideFlags: 0
