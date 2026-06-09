@@ -13,6 +13,7 @@ public class Minimap : MonoBehaviour
 
 
     [SerializeField] private Texture2D _layerTexture = null;
+    [SerializeField] private Texture2D _topLayerTexture = null;
     [SerializeField] private float _stackOffset = 0.0f;
     [SerializeField] private int stackCount = 0;
     [SerializeField] private float _stackColourOffset = 0.0f;
@@ -76,13 +77,15 @@ public class Minimap : MonoBehaviour
 
     private void SpawnStack(int count)
     {
-        for (int i = 0; i < count; i++)
+        if (count <= 0) return;
+
+        for (int i = 0; i < (count+1); i++)
         {
             GameObject whatever = Instantiate(gameObject,transform.parent, true);
-            Minimap focus_M = whatever.GetComponent<Minimap>();
-            if (focus_M != null)
+            Minimap mm = whatever.GetComponent<Minimap>();
+            if (mm != null)
             {
-                focus_M.stackCount = 0;
+                mm.stackCount = 0;
                 RectTransform mrt = whatever.GetComponent<RectTransform>();
 
                 if (mrt != null)
@@ -93,7 +96,12 @@ public class Minimap : MonoBehaviour
                 RawImage rw = whatever.GetComponent<RawImage>();
                 if (rw != null)
                 {
-                    rw.texture = _layerTexture;
+                    //rw.texture = _layerTexture;
+
+                    if (i >= count || i == 0)
+                        rw.texture = _topLayerTexture;
+                    else
+                        rw.texture = _layerTexture;
 
                     if (_darkAtBottom)
                         rw.color *= 1 - (_stackColourOffset * ((count - i) + 1));
