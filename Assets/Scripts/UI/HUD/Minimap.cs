@@ -52,6 +52,8 @@ public class Minimap : MonoBehaviour
         _levelMin = new Vector2(_lowerBoundsObject.position.x, _lowerBoundsObject.position.z);
         _levelMax = new Vector2(_upperBoundsObject.position.x, _upperBoundsObject.position.z);
         _levelSize = _levelMax - _levelMin;
+        print(mapSize);
+        print(_levelSize);
 
         SpawnStack(stackCount);
     }

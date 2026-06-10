@@ -428,7 +428,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 25}
+  m_SizeDelta: {x: 600, y: 25}
   m_Pivot: {x: 0, y: 0}
 --- !u!222 &894836995092616988
 CanvasRenderer:
@@ -757,7 +757,6 @@ MonoBehaviour:
   _UIPanel: {fileID: 2068105484050971153}
   _textBox: {fileID: 7498510724950318383}
   _preferredHeightAddition: 50
-  _underlineImage: {fileID: 5834903963765507987}
 --- !u!114 &890495495995932307
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1388,9 +1387,9 @@ MonoBehaviour:
   stopAudioOnSilentCharacters: 0
   stopAudioOnPauseCodes: 0
   silentCharacters: 
-  fullPauseCharacters: ?!
-  quarterPauseCharacters: ',.'
-  fullPauseDuration: 0.85
+  fullPauseCharacters: ?!.
+  quarterPauseCharacters: ','
+  fullPauseDuration: 0.9
   quarterPauseDuration: 0.65
   removeDuplicateTypewriterEffects: 1
   playOnEnable: 1
@@ -1402,37 +1401,13 @@ MonoBehaviour:
     scrollbarEnabler: {fileID: 0}
   onBegin:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 2433379607075970188}
-        m_TargetAssemblyTypeName: DialogueBox, Assembly-CSharp
-        m_MethodName: UnderlineAnimation
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
   onCharacter:
     m_PersistentCalls:
       m_Calls: []
   onEnd:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 2433379607075970188}
-        m_TargetAssemblyTypeName: DialogueBox, Assembly-CSharp
-        m_MethodName: UnderlineAnimation
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
+      m_Calls: []
 --- !u!1 &8752460243559150089
 GameObject:
   m_ObjectHideFlags: 0
