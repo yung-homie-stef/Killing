@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.UI;
 
 public class DialogueBoxResizing : MonoBehaviour, IPointerClickHandler
 {
@@ -12,6 +13,7 @@ public class DialogueBoxResizing : MonoBehaviour, IPointerClickHandler
     private float _preferredSize;
     [SerializeField] private TextMeshProUGUI _textBox;
     [SerializeField] private float _preferredHeightAddition = 50.0f;
+    [SerializeField] private RectTransform _underlineImage = null;
 
     void OnEnable()
     {
@@ -30,6 +32,16 @@ public class DialogueBoxResizing : MonoBehaviour, IPointerClickHandler
 
         if (_preferredSize != _textBox.GetPreferredValues().y)
         Sequence.Create(Tween.UISizeDelta(target: _UIPanel, endValue: new(_UIPanel.sizeDelta.x, _preferredSize), duration: 0.15f));
+    }
+
+    public void OnSubtitleComplete()
+    {
+        Tween.UISizeDelta(target: _underlineImage, endValue: new(600.0f, 25.0f), duration: 0.25f);
+    }
+
+    public void OnSubtitleBegin()
+    {
+        _underlineImage.sizeDelta = new Vector2(0.0f, 25.0f);
     }
 
 
