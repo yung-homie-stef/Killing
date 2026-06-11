@@ -13,11 +13,11 @@ public class ItemCollectUIContainer : MonoBehaviour
 
     // Start is called before the first frame update
     
-    public void ShowItemPickup(ItemObject item)
+    public void ShowItemPickup(ItemObject item, bool acquired)
     {
         GameObject popup = Instantiate(_itemCollectPopupPrefab, transform);
         ItemCollectPopup _popupScript = popup.GetComponent<ItemCollectPopup>();
-        _popupScript.InitializePopup(item);
+        _popupScript.InitializePopup(item, acquired);
 
         _activePopups.Enqueue(popup);
         if (_activePopups.Count > _maxPopups)

@@ -161,7 +161,7 @@ public class ShopUI : MonoBehaviour
                 UIManager.instance._inventoryMenu.AddItemToInventoryUI(_itemNeededToBuy, InventoryManager.instance._itemInventory.AddItem(_itemNeededToBuy));
 
             _boughtCorrectItem = true;
-            UIManager.instance._hudMenu.TriggerItemCollectPopup(_itemNeededToBuy);
+            UIManager.instance._hudMenu.TriggerItemCollectPopup(_itemNeededToBuy, true);
             ShowOrHideShopUI(false, CursorLockMode.None);
             MoneyManager.instance.UpdatePlayerMoney(-price);
 

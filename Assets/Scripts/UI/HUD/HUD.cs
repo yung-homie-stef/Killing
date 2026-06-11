@@ -64,9 +64,9 @@ public class HUD : MonoBehaviour
         FadeToWhite();
     }
 
-    public void TriggerItemCollectPopup(ItemObject itemObj)
+    public void TriggerItemCollectPopup(ItemObject itemObj, bool acquired)
     {
-        _itemCollectUIContainer.ShowItemPickup(itemObj);
+        _itemCollectUIContainer.ShowItemPickup(itemObj, acquired);
     }
 
     private void UpdateHUDPlayerFunds(int previousAmount, int amount)
