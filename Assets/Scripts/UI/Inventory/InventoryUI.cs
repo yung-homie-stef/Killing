@@ -137,6 +137,7 @@ public class InventoryUI : MonoBehaviour
         else
             _inventoryItemButtonList.Remove(itemButton);
 
+        UIManager.instance._hudMenu.TriggerItemCollectPopup(itemButton._itemObject);
         Destroy(itemButton.gameObject);
     }
 

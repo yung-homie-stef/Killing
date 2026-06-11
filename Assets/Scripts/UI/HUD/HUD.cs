@@ -25,8 +25,6 @@ public class HUD : MonoBehaviour
 
     [Header("Blackout")]
     [SerializeField] private CanvasGroup _blackoutCanvasGroup;
-    private bool _hasFaded = false;
-
 
     // UI Position Variables (to avoid magic numbers)
     private Vector2 _establishmentPos = Vector2.zero;
