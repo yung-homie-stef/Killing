@@ -39,7 +39,7 @@ MonoBehaviour:
   - id: 1
     fields:
     - title: Name
-      value: Curry
+      value: _____ Baker
       type: 0
       typeString: CustomFieldType_Text
     - title: Pictures
@@ -101,29 +101,6 @@ MonoBehaviour:
     - title: Description
       value: Currys' friend and "nurse" at an underground medical facility serving
         the less fortunate residents of skid row.
-      type: 0
-      typeString: CustomFieldType_Text
-    - title: IsPlayer
-      value: False
-      type: 2
-      typeString: CustomFieldType_Boolean
-    portrait: {fileID: 0}
-    spritePortrait: {fileID: 0}
-    alternatePortraits: []
-    spritePortraits: []
-  - id: 3
-    fields:
-    - title: Name
-      value: Kerlew
-      type: 0
-      typeString: 
-    - title: Pictures
-      value: '[]'
-      type: 3
-      typeString: CustomFieldType_Files
-    - title: Description
-      value: Character in alley that jumps player for fixing a bet he had partaken
-        in.
       type: 0
       typeString: CustomFieldType_Text
     - title: IsPlayer
@@ -266,10 +243,37 @@ MonoBehaviour:
     spritePortrait: {fileID: 0}
     alternatePortraits: []
     spritePortraits: []
+  - id: 3
+    fields:
+    - title: Name
+      value: Russell Kerlew
+      type: 0
+      typeString: 
+    - title: Pictures
+      value: '[]'
+      type: 3
+      typeString: CustomFieldType_Files
+    - title: Description
+      value: Character in alley that jumps player for fixing a bet he had partaken
+        in.
+      type: 0
+      typeString: CustomFieldType_Text
+    - title: IsPlayer
+      value: False
+      type: 2
+      typeString: CustomFieldType_Boolean
+    - title: Display Name
+      value: Kerlew
+      type: 0
+      typeString: 
+    portrait: {fileID: 0}
+    spritePortrait: {fileID: 0}
+    alternatePortraits: []
+    spritePortraits: []
   - id: 11
     fields:
     - title: Name
-      value: Glue Trap
+      value: Pico "Glue Trap" Vallejo
       type: 0
       typeString: CustomFieldType_Text
     - title: Pictures
@@ -284,6 +288,10 @@ MonoBehaviour:
       value: False
       type: 2
       typeString: CustomFieldType_Boolean
+    - title: Display Name
+      value: Glue Trap
+      type: 0
+      typeString: 
     portrait: {fileID: 0}
     spritePortrait: {fileID: 0}
     alternatePortraits: []
@@ -291,7 +299,7 @@ MonoBehaviour:
   - id: 12
     fields:
     - title: Name
-      value: Mr. Tsui
+      value: Franklin Tsui
       type: 0
       typeString: CustomFieldType_Text
     - title: Pictures
@@ -11931,7 +11939,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Sequence
-        value: 
+        value: CinemachinePriority(BackdoorCam, 0)
         type: 0
         typeString: 
       conversationID: 10
@@ -12042,7 +12050,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Sequence
-        value: Camera(TEST1234)
+        value: CinemachinePriority(BackdoorCam)
         type: 0
         typeString: 
       conversationID: 10
@@ -13667,7 +13675,7 @@ MonoBehaviour:
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 135.2425, y: 344.70575}
+    canvasScrollPosition: {x: 40, y: 61.176483}
     canvasZoom: 0.85000014
   - id: 11
     fields:

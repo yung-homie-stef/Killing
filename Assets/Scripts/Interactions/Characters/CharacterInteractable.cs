@@ -7,11 +7,11 @@ using UnityEngine;
 public class CharacterInteractable : Interactable
 {
     [SerializeField] private DialogueSystemTrigger _DS_Trigger;
-    [SerializeField] private CinemachineVirtualCamera _characterVirtualCamera;
+    //[SerializeField] private CinemachineVirtualCamera _characterVirtualCamera;
 
     public override void Awake()
     {
-        DialogueManager.instance.conversationEnded += OnConversationEnded;
+        //DialogueManager.instance.conversationEnded += OnConversationEnded;
     }
 
     private void OnDisable()
@@ -23,12 +23,11 @@ public class CharacterInteractable : Interactable
     {
         base.Interact();
         _DS_Trigger.OnUse();
-        _characterVirtualCamera.Priority = 1;
         GameEventsManager.instance.playerEvents.DisablePlayerMovement();
     }
 
     private void OnConversationEnded(Transform t)
     {
-        _characterVirtualCamera.Priority = 0;
+        //_characterVirtualCamera.Priority = 0;
     }
 }
