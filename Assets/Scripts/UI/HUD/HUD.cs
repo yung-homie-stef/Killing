@@ -15,12 +15,17 @@ public class HUD : MonoBehaviour
     [SerializeField] private RectTransform _playerFundsBanner;
     [SerializeField] private MoneyCounter _moneyCounter;
 
+    [Header("Minimap")]
+    [SerializeField] private RectTransform _minimap;
+    
+
     [Header("Alerts")]
     [SerializeField] private ItemCollectUIContainer _itemCollectUIContainer;
     [SerializeField] private Image _dialogueVisualPopupImage;
 
     [Header("Blackout")]
     [SerializeField] private CanvasGroup _blackoutCanvasGroup;
+    private bool _hasFaded = false;
 
 
     // UI Position Variables (to avoid magic numbers)
@@ -37,31 +42,28 @@ public class HUD : MonoBehaviour
 
     private void OnEnable()
     {
-        GameEventsManager.instance.playerEvents.onBeginPlayerTeleportation += FadeOutHUD;
         GameEventsManager.instance.moneyEvents.onMoneyAmountChanged += UpdateHUDPlayerFunds;
+        GameEventsManager.instance.playerEvents.onBeginPlayerTeleportation += FadeToBlack;
+        GameEventsManager.instance.playerEvents.onPlayerTeleportation += HUDTween;
 
         Lua.RegisterFunction("ShowDialogueVisualPopup", this, SymbolExtensions.GetMethodInfo(() => ShowDialogueVisualPopup()));
         Lua.RegisterFunction("HideDialogueVisualPopup", this, SymbolExtensions.GetMethodInfo(() => HideDialogueVisualPopup()));
-        //DialogueManager.instance.conversationStarted += TriggerHideHUDTween;
-        //DialogueManager.instance.conversationEnded += TriggerShowHUDTween;
     }
 
     private void OnDisable()
     {
-        GameEventsManager.instance.playerEvents.onBeginPlayerTeleportation -= FadeOutHUD;
         GameEventsManager.instance.moneyEvents.onMoneyAmountChanged -= UpdateHUDPlayerFunds;
-        //DialogueManager.instance.conversationStarted -= TriggerHideHUDTween;
-    }
-
-    private void FadeOutHUD()
-    {
-        
+        GameEventsManager.instance.playerEvents.onBeginPlayerTeleportation -= FadeToBlack;
     }
 
     public void HUDTween(bool flag)
     {
-        Sequence.Create()
-            .Group(Tween.UIAnchoredPosition(target: _playerFundsBanner, flag ? new Vector2(60.0f, -105.0f) : new Vector2(-fundsWidth, -105.0f), duration: 0.25f));
+        if (flag)
+            _minimap.gameObject.SetActive(false);
+        else
+            _minimap.gameObject.SetActive(true);
+
+        FadeToWhite();
     }
 
     public void TriggerItemCollectPopup(ItemObject itemObj)
@@ -95,13 +97,14 @@ public class HUD : MonoBehaviour
             
     }
 
+    private void FadeToBlack()
+    {
+        Tween.Custom(startValue:  0.0f, endValue: 1.0f, duration: 0.35f, onValueChange: newVal => _blackoutCanvasGroup.alpha = newVal, startDelay: 0.25f);
+    }
 
-    private void TriggerHideHUDTween(Transform t)
+    private void FadeToWhite()
     {
-        HUDTween(false);
+        Tween.Custom(startValue: 1.0f, endValue: 0.0f, duration: 0.35f, onValueChange: newVal => _blackoutCanvasGroup.alpha = newVal, startDelay: 0.25f);
     }
-    private void TriggerShowHUDTween(Transform t)
-    {
-        HUDTween(true);
-    }
+
 }

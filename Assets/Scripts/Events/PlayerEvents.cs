@@ -8,9 +8,10 @@ public class PlayerEvents
     public event Action onDisablePlayerMovement;
     public event Action onEnablePlayerMovement;
     public event Action onBeginPlayerTeleportation;
-    public event Action onPlayerTeleportation;
+    public event Action<bool> onPlayerTeleportation;
 
     public event Action<LocationTrigger, bool> onPlayerEnterAreaBox;
+    private bool _isExterior = true;
 
     public void DisablePlayerMovement()
     {
@@ -24,18 +25,21 @@ public class PlayerEvents
             onEnablePlayerMovement();
     }
 
-    public void BeginPlayerTeleportation()
+    public void BeginPlayerTeleportation(bool isExterior)
     {
         if (onBeginPlayerTeleportation != null)
             onBeginPlayerTeleportation();
 
         DisablePlayerMovement();
+        _isExterior = isExterior;
+
+        Debug.Log(_isExterior); 
     }
 
     public void TeleportPlayer()
     {
         if (onPlayerTeleportation != null)
-            onPlayerTeleportation();
+            onPlayerTeleportation(_isExterior);
     }
 
     public void PlayerEnterAreaBox(LocationTrigger triggerArea, bool flag)

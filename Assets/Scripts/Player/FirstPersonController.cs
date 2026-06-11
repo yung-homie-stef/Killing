@@ -220,7 +220,7 @@ public class FirstPersonController : MonoBehaviour
         _characterControllerComponent.enabled = false;
     }
 
-    private void Teleport()
+    private void Teleport(bool exterior)
     {
        transform.position = CityLoadManager.instance.GetTeleportLocation().position;
        transform.rotation = CityLoadManager.instance.GetTeleportLocation().rotation;

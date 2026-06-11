@@ -7,13 +7,12 @@ public class TeleportDoor : Door
     [Header("Teleportation Variables")]
     [SerializeField] private bool _isExterior = true;
     [SerializeField] private Transform _teleportToLocation = null;
-    [SerializeField] private string _teleportLocationName = "";
     [SerializeField] private GameObject _teleportLocationPrefab = null;
 
     public override void Interact()
     {
         base.Interact();
-        GameEventsManager.instance.playerEvents.BeginPlayerTeleportation();
+        GameEventsManager.instance.playerEvents.BeginPlayerTeleportation(_isExterior);
         CityLoadManager.instance.PrepareTeleportation(_teleportLocationPrefab, _teleportToLocation);
         StartCoroutine(Teleport());
     }

@@ -5,7 +5,6 @@ using UnityEngine;
 public class CityLoadManager : MonoBehaviour
 {
     public static CityLoadManager instance;
-    public bool _cityLoadedIn = true;
     [SerializeField] private GameObject _establishmentInteriorPrefab = null;
     [SerializeField] private GameObject _cityContents = null;
     [SerializeField] private Transform _teleportLocation = null;
@@ -30,11 +29,10 @@ public class CityLoadManager : MonoBehaviour
         return _teleportLocation;
     }
 
-    private void LoadUnloadCity()
+    private void LoadUnloadCity(bool exterior)
     {
-        _cityLoadedIn = !_cityLoadedIn;
 
-        if (_cityLoadedIn)
+        if (!exterior)
         {
             _cityContents.SetActive(true);
 

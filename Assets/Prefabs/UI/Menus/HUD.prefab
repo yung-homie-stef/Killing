@@ -35,7 +35,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 50, y: 0}
-  m_SizeDelta: {x: -55, y: 0}
+  m_SizeDelta: {x: -100, y: 0}
   m_Pivot: {x: 0, y: 0.5}
 --- !u!222 &4234408950432983937
 CanvasRenderer:
@@ -480,6 +480,7 @@ MonoBehaviour:
   _playerFundsText: {fileID: 1132240721571829732}
   _playerFundsBanner: {fileID: 8150613717871935899}
   _moneyCounter: {fileID: 2169420840330673611}
+  _minimap: {fileID: 5029057226221007544}
   _itemCollectUIContainer: {fileID: 3385564078117491679}
   _dialogueVisualPopupImage: {fileID: 4307250566179151131}
   _blackoutCanvasGroup: {fileID: 3895779011739476182}
@@ -956,7 +957,7 @@ GameObject:
   - component: {fileID: 6124340786396311971}
   - component: {fileID: 4284648367506308518}
   m_Layer: 5
-  m_Name: Image
+  m_Name: LocationNameBanner
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1146,6 +1147,7 @@ MonoBehaviour:
   _lowerBoundsObject: {fileID: 0}
   _upperBoundsObject: {fileID: 0}
   _layerTexture: {fileID: 0}
+  _topLayerTexture: {fileID: 0}
   _stackOffset: 0
   stackCount: 0
   _stackColourOffset: 0
@@ -1179,16 +1181,16 @@ RectTransform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 8947472773090107376}
   m_Father: {fileID: 7633350805653926325}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 60, y: -923}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -725, y: -208}
   m_SizeDelta: {x: 350, y: 350}
-  m_Pivot: {x: 0, y: 0}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &5770891853714428190
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1552,7 +1554,7 @@ GameObject:
   - component: {fileID: 5563805257391546285}
   - component: {fileID: 4725848396930856381}
   m_Layer: 5
-  m_Name: Text (TMP)
+  m_Name: LocationName
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1885,8 +1887,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 0, y: 0.5}
-  m_AnchoredPosition: {x: 60, y: -8}
-  m_SizeDelta: {x: 142.83, y: 28}
+  m_AnchoredPosition: {x: 60, y: -10}
+  m_SizeDelta: {x: 170, y: 38}
   m_Pivot: {x: 0, y: 0.5}
 --- !u!222 &2578100023349862290
 CanvasRenderer:
@@ -1916,7 +1918,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: fa4adad11a0c86e46a833be445db790e, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 7e84850d798e4d64d86af405eececbb5, type: 3}
   m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1925,7 +1927,7 @@ MonoBehaviour:
   m_FillClockwise: 1
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 2
+  m_PixelsPerUnitMultiplier: 1
 --- !u!225 &3816368498505081518
 CanvasGroup:
   m_ObjectHideFlags: 0
