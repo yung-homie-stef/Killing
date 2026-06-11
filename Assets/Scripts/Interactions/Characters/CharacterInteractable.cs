@@ -16,7 +16,7 @@ public class CharacterInteractable : Interactable
 
     private void OnDisable()
     {
-        DialogueManager.instance.conversationEnded += OnConversationEnded;
+        //DialogueManager.instance.conversationEnded -= OnConversationEnded;
     }
 
     public override void Interact()
