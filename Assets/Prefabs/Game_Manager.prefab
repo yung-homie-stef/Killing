@@ -166,7 +166,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eacf651fb224c034a8bc2413b858f431, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _cityLoadedIn: 1
   _establishmentInteriorPrefab: {fileID: 0}
   _cityContents: {fileID: 0}
   _teleportLocation: {fileID: 0}
@@ -303,7 +302,6 @@ Transform:
   - {fileID: 6085477122311397596}
   - {fileID: 3446277319988901649}
   - {fileID: 4930418001356048621}
-  - {fileID: 5232623878204790104}
   - {fileID: 3875816097730887398}
   - {fileID: 3099731995828976674}
   - {fileID: 1135014810358591761}
@@ -650,52 +648,6 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
---- !u!1 &8919093789535468863
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 5232623878204790104}
-  - component: {fileID: 4895697036614553920}
-  m_Layer: 0
-  m_Name: InventoryManager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &5232623878204790104
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8919093789535468863}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 6447184812892475665}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &4895697036614553920
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8919093789535468863}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8120d02409085bb46808a1eda87c6d05, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _itemInventory: {fileID: 11400000, guid: 70fc9e911ed893549b65268b25e5d8a5, type: 2}
-  _keyItemInventory: {fileID: 11400000, guid: d21185c47ecb453439d759930467f96f, type: 2}
 --- !u!1001 &1135014810358730669
 PrefabInstance:
   m_ObjectHideFlags: 0

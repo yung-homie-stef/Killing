@@ -40,8 +40,10 @@ public class InventoryUI : MonoBehaviour
         GameEventsManager.instance.inputEvents.onInventoryTogglePressed += InventoryToggle;
         Lua.RegisterFunction("InventoryToggleFromDialogue", this, SymbolExtensions.GetMethodInfo(() => InventoryToggleFromDialogue(string.Empty)));
         Lua.RegisterFunction("CheckForKeyItem", this, SymbolExtensions.GetMethodInfo(() => CheckForKeyItem(string.Empty, false)));
+        Lua.RegisterFunction("CheckForStandardItem", this, SymbolExtensions.GetMethodInfo(() => CheckForStandardItem(string.Empty)));
         Lua.RegisterFunction("CheckIfCorrectItemWasGiven", this, SymbolExtensions.GetMethodInfo(() => CheckIfCorrectItemWasGiven()));
         Lua.RegisterFunction("CheckIfInventoryPromptWasExited", this, SymbolExtensions.GetMethodInfo(() => CheckIfInventoryPromptWasExited()));
+        Lua.RegisterFunction("AddItemToInventoryThroughDialogue", this, SymbolExtensions.GetMethodInfo(() => AddItemToInventoryThroughDialogue(string.Empty)));
     }
 
     private void OnDisable()
@@ -94,7 +96,7 @@ public class InventoryUI : MonoBehaviour
         }
     }
 
-    public void AddItemToInventoryUI(ItemObject itemObj, InventorySlot slot)
+    public void AddItemToInventoryUI(ItemObject itemObj)
     {
         GridLayoutGroup glg;
         List<InventoryItemButton> liib;
@@ -111,8 +113,10 @@ public class InventoryUI : MonoBehaviour
             liib = _inventoryItemButtonList;
         }
 
+        UIManager.instance._hudMenu.TriggerItemCollectPopup(itemObj, true);
+
         InventoryItemButton _inventoryItemButton = Instantiate(_inventoryItemButtonPrefab, glg.transform).GetComponent<InventoryItemButton>();
-        _inventoryItemButton.Initialize(itemObj, slot);
+        _inventoryItemButton.Initialize(itemObj);
         _inventoryItemButton.transform.SetAsFirstSibling();
         _inventoryItemButton.name = itemObj.name;
         liib.Add(_inventoryItemButton);
@@ -150,6 +154,16 @@ public class InventoryUI : MonoBehaviour
             ResetInventoryItemDisplay();
     }
 
+    public void AddItemToInventoryThroughDialogue(string itemName)
+    {
+        ItemObject addedItem = Resources.Load<ItemObject>("Items/Items/I_" + itemName);
+
+        if (addedItem == null)
+            Debug.Log("Couldn't find item");
+
+        AddItemToInventoryUI(addedItem);
+    }
+
     #region NPC Related Item Trade-offs
 
     public void InventoryToggleFromDialogue(string type)
@@ -178,6 +192,19 @@ public class InventoryUI : MonoBehaviour
         return false;
     }
 
+    public bool CheckForStandardItem(string name)
+    {
+        for (int i = 0; i < _inventoryItemButtonList.Count; i++)
+        {
+            if (_inventoryItemButtonList[i]._itemObject.itemName == name)
+            {
+                RemoveItemFromInventoryUI(_inventoryItemButtonList[i]);
+                return true;
+            }
+        }
+        return false;
+    }
+
     public void CloseInventory()
     {
         if (_requestedItemType == ItemType.None)
@@ -191,6 +218,7 @@ public class InventoryUI : MonoBehaviour
             GameEventsManager.instance.inputEvents.SetInventoryFlag(false);
         }
     }
+
     public void CheckGivenItem(InventoryItemButton itemButton)
     {
         if (itemButton._itemObject.itemType == _requestedItemType)

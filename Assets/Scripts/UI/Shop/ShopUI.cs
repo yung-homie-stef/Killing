@@ -155,10 +155,7 @@ public class ShopUI : MonoBehaviour
         //if (MoneyManager.instance.GetCurrentPlayerMoney() < _price)
         if (itemButton._item == _itemNeededToBuy)
         {
-            if (!_itemNeededToBuy.isKeyItem)
-                UIManager.instance._inventoryMenu.AddItemToInventoryUI(_itemNeededToBuy, InventoryManager.instance._keyItemInventory.AddItem(_itemNeededToBuy));
-            else
-                UIManager.instance._inventoryMenu.AddItemToInventoryUI(_itemNeededToBuy, InventoryManager.instance._itemInventory.AddItem(_itemNeededToBuy));
+            UIManager.instance._inventoryMenu.AddItemToInventoryUI(_itemNeededToBuy);
 
             _boughtCorrectItem = true;
             UIManager.instance._hudMenu.TriggerItemCollectPopup(_itemNeededToBuy, true);

@@ -22,7 +22,13 @@ MonoBehaviour:
   - functionName: Inventory/CheckIfInventoryPromptWasExited
     parameters: 
     returnValue: 1
+  - functionName: Inventory/CheckForStandardItem
+    parameters: 02000000
+    returnValue: 1
   scriptFunctions:
   - functionName: Inventory/InventoryToggleFromDialogue
+    parameters: 02000000
+    returnValue: 0
+  - functionName: Inventory/AddItemToInventoryThroughDialogue
     parameters: 02000000
     returnValue: 0

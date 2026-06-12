@@ -16,22 +16,17 @@ public class InventoryItemButton : MonoBehaviour, IPointerEnterHandler, IPointer
     [SerializeField] private Image _itemIcon;
 
     private UIManager _UIManager = null;
-    private InventoryManager _inventoryManager = null;
 
     // Start is called before the first frame update
     void Start()
     {
         if (UIManager.instance != null ) 
             _UIManager = UIManager.instance;
-
-        if (InventoryManager.instance != null )
-            _inventoryManager = InventoryManager.instance;
     }
 
-    public void Initialize(ItemObject itemObj, InventorySlot slot)
+    public void Initialize(ItemObject itemObj)
     {
         _itemObject = itemObj;
-        _inventorySlot = slot;
         //_itemIcon.sprite = itemObj.itemIcon;
         _itemImage.sprite = itemObj.itemThumbnail;
     }
@@ -63,7 +58,6 @@ public class InventoryItemButton : MonoBehaviour, IPointerEnterHandler, IPointer
     public void DiscardItem()
     {
         _UIManager._inventoryMenu.RemoveItemFromInventoryUI(this);
-        _inventoryManager._itemInventory.RemoveItem(_inventorySlot);
     }
 
 }
