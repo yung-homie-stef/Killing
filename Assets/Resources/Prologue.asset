@@ -416,7 +416,7 @@ MonoBehaviour:
   - id: 4
     fields:
     - title: Name
-      value: Take Out
+      value: Take-Out
       type: 0
       typeString: CustomFieldType_Text
     - title: Pictures
@@ -483,6 +483,56 @@ MonoBehaviour:
       value: True
       type: 2
       typeString: CustomFieldType_Boolean
+  - id: 9
+    fields:
+    - title: Name
+      value: New Quest 9
+      type: 0
+      typeString: CustomFieldType_Text
+    - title: Pictures
+      value: '[]'
+      type: 3
+      typeString: CustomFieldType_Files
+    - title: Description
+      value: 
+      type: 0
+      typeString: CustomFieldType_Text
+    - title: Success Description
+      value: 
+      type: 0
+      typeString: CustomFieldType_Text
+    - title: Failure Description
+      value: 
+      type: 0
+      typeString: CustomFieldType_Text
+    - title: State
+      value: unassigned
+      type: 0
+      typeString: CustomFieldType_QuestState
+    - title: Is Item
+      value: False
+      type: 2
+      typeString: CustomFieldType_Boolean
+    - title: Entry Count
+      value: 2
+      type: 1
+      typeString: CustomFieldType_Number
+    - title: Entry 1 State
+      value: unassigned
+      type: 0
+      typeString: 
+    - title: Entry 1
+      value: Pick up a coffee for Dmitri.
+      type: 0
+      typeString: 
+    - title: Entry 2 State
+      value: unassigned
+      type: 0
+      typeString: 
+    - title: Entry 2
+      value: Go to the street clinic
+      type: 0
+      typeString: 
   - id: 8
     fields:
     - title: Name
@@ -546,7 +596,7 @@ MonoBehaviour:
       type: 0
       typeString: 
     - title: Entry 2
-      value: 
+      value: Find another way to enter the building.
       type: 0
       typeString: 
     - title: Entry 2 State
@@ -586,7 +636,7 @@ MonoBehaviour:
   - id: 5
     fields:
     - title: Name
-      value: Delivery Fee
+      value: 'SQ: Delivery Fee'
       type: 0
       typeString: 
     - title: Pictures
@@ -621,7 +671,7 @@ MonoBehaviour:
   - id: 6
     fields:
     - title: Name
-      value: White Whales
+      value: 'SQ: White Whales'
       type: 0
       typeString: 
     - title: Pictures
@@ -9420,8 +9470,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Dialogue Text
-        value: You're asking for cash from a guy without his wallet man, the fuck
-          is this? I'm broke.
+        value: You're asking for cash from a guy who lost his wallet.
         type: 0
         typeString: 
       - title: Sequence
@@ -9476,9 +9525,9 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Dialogue Text
-        value: Just as well, won't be much longer before somebody comes aiming to
-          trade. Valid IDs are in high demand 'round these parts. I'm sitting on
-          a gold mine.
+        value: Just as well, won't be much longer before somebody comes willing to
+          pay. Valid IDs are in high demand 'round here. No chance anybody'll let
+          one go to waste. I'm sitting on a gold mine.
         type: 0
         typeString: 
       - title: Sequence
@@ -9507,7 +9556,7 @@ MonoBehaviour:
       canvasRect:
         serializedVersion: 2
         x: 162.33243
-        y: 995.0474
+        y: 996.54
         width: 160
         height: 30
     - id: 13
@@ -9555,7 +9604,7 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 162.99066
+        x: 161.49811
         y: 1177.2651
         width: 160
         height: 30
@@ -9639,8 +9688,8 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Dialogue Text
-        value: No, I'm telling you I've had shit evening and you're making it worse,
-          so hand over the wallet. This entrepreneurial shit isn't happening.
+        value: No, I'm telling you I've had shit evening and you've made it worse,
+          hand over the wallet. This entrepreneurial shit isn't happening.
         type: 0
         typeString: 
       - title: Sequence
@@ -10333,7 +10382,7 @@ MonoBehaviour:
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 0, y: 477.61176}
+    canvasScrollPosition: {x: 0, y: 394.02972}
     canvasZoom: 0.6700003
   - id: 8
     fields:
@@ -11472,7 +11521,7 @@ MonoBehaviour:
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 222.36763, y: 0}
+    canvasScrollPosition: {x: 250.77675, y: 0}
     canvasZoom: 0.88000005
   - id: 10
     fields:
@@ -11674,8 +11723,9 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Dialogue Text
-        value: 'Hey. Actually, I uh, placed an order earlier this evening, but you
-          guys forgot something. Still got charged for it. '
+        value: Hey. Actually, I uh, placed an order earlier this evening, but looking
+          over the bill the math's not adding up. There's about $30 not accounted
+          for on the receipt. Some kind of overcharge.
         type: 0
         typeString: 
       - title: Sequence
@@ -11785,7 +11835,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Dialogue Text
-        value: 'What are you missing? Let me see the receipt. '
+        value: 'Hand the receipt over, let me see. '
         type: 0
         typeString: 
       - title: Sequence
@@ -11954,8 +12004,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Dialogue Text
-        value: 'Get a move on, I don''t like you guys standing front of house. And
-          take the food with you. '
+        value: 'Get a move on, I don''t like you guys standing front of house. '
         type: 0
         typeString: 
       - title: Sequence
@@ -12256,8 +12305,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 535.74115
-        y: 37.066086
+        x: 629.1622
+        y: 105.48709
         width: 160
         height: 30
     - id: 14
@@ -12311,8 +12360,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 535.74115
-        y: 87.066086
+        x: 629.1622
+        y: 155.48709
         width: 160
         height: 30
     - id: 15
@@ -12366,8 +12415,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 535.74115
-        y: 137.06609
+        x: 629.1622
+        y: 205.48709
         width: 160
         height: 30
     - id: 16
@@ -12421,8 +12470,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 535.74115
-        y: 187.06609
+        x: 629.1622
+        y: 255.48709
         width: 160
         height: 30
     - id: 17
@@ -12476,8 +12525,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 535.74115
-        y: 237.06612
+        x: 629.1622
+        y: 305.48737
         width: 160
         height: 30
     - id: 18
@@ -12531,8 +12580,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 535.74115
-        y: 287.06628
+        x: 629.1622
+        y: 355.48755
         width: 160
         height: 30
     - id: 19
@@ -12586,8 +12635,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 535.74115
-        y: 337.06628
+        x: 629.1622
+        y: 405.48755
         width: 160
         height: 30
     - id: 20
@@ -12635,8 +12684,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 535.74115
-        y: 387.06628
+        x: 629.1622
+        y: 455.48755
         width: 160
         height: 30
     - id: 21
@@ -12827,7 +12876,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Dialogue Text
-        value: Just take 'em. I don't want your damn money.
+        value: Just take them. I don't want your damn money.
         type: 0
         typeString: 
       - title: Sequence
@@ -12904,7 +12953,7 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 408.91733
+        x: 410.23312
         y: 737.7447
         width: 160
         height: 30
@@ -13398,8 +13447,8 @@ MonoBehaviour:
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 570.7606, y: 0}
-    canvasZoom: 1.1199999
+    canvasScrollPosition: {x: 39.473694, y: 0}
+    canvasZoom: 0.7600002
   - id: 11
     fields:
     - title: Title
@@ -16193,7 +16242,7 @@ MonoBehaviour:
         isConnector: 0
         priority: 2
       conditionsString: 
-      userScript: 
+      userScript: AddItemToInventoryThroughDialogue("Ibuprofen")
       onExecute:
         m_PersistentCalls:
           m_Calls: []
@@ -16590,8 +16639,8 @@ MonoBehaviour:
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 14.557882, y: 138.95523}
-    canvasZoom: 0.6700003
+    canvasScrollPosition: {x: 0, y: 0}
+    canvasZoom: 0.49000046
   - id: 12
     fields:
     - title: Title
