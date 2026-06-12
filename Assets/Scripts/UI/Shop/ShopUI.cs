@@ -126,9 +126,9 @@ public class ShopUI : MonoBehaviour
         PixelCrushers.DialogueSystem.Sequencer.Message("ShopFlag");
     }
 
-    private void UpdatePlayerFundsAmount(int previousAmount, int amount)
+    private void UpdatePlayerFundsAmount(int previousBalance, int newBalance, int dollarAmount)
     {
-        _playerFunds.text = amount.ToString();
+        _playerFunds.text = newBalance.ToString();
     }
 
     #region NPC Related Shopping

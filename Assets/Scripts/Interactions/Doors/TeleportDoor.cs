@@ -8,6 +8,7 @@ public class TeleportDoor : Door
     [SerializeField] private bool _isExterior = true;
     [SerializeField] private Transform _teleportToLocation = null;
     [SerializeField] private GameObject _teleportLocationPrefab = null;
+    [SerializeField] private string _teleportName = string.Empty;
 
     public override void Interact()
     {

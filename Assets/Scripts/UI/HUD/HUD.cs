@@ -6,6 +6,7 @@ using TMPro;
 using PrimeTween;
 using PixelCrushers.DialogueSystem;
 using System;
+using System.Text.RegularExpressions;
 
 public class HUD : MonoBehaviour
 {
@@ -14,10 +15,14 @@ public class HUD : MonoBehaviour
     [SerializeField] private TextMeshProUGUI _playerFundsText;
     [SerializeField] private RectTransform _playerFundsBanner;
     [SerializeField] private MoneyCounter _moneyCounter;
+    [SerializeField] private TextMeshProUGUI _amountPopUp;
+    private CanvasGroup _amountPopUpCG;
 
     [Header("Minimap")]
     [SerializeField] private RectTransform _minimap;
-    
+
+    [Header("Location")]
+    [SerializeField] private TextMeshProUGUI _locationName;
 
     [Header("Alerts")]
     [SerializeField] private ItemCollectUIContainer _itemCollectUIContainer;
@@ -26,16 +31,10 @@ public class HUD : MonoBehaviour
     [Header("Blackout")]
     [SerializeField] private CanvasGroup _blackoutCanvasGroup;
 
-    // UI Position Variables (to avoid magic numbers)
-    private Vector2 _establishmentPos = Vector2.zero;
-    private float locationWidth = 0.0f;
-    private float fundsWidth = 0.0f;
-    private float establishmentWidth = 0.0f;
-
     private void Awake()
     {
         _playerFundsText.text = PlayerPrefs.GetInt("Player$$$").ToString();
-        fundsWidth = _playerFundsBanner.rect.width;
+        _amountPopUpCG = _amountPopUp.GetComponent<CanvasGroup>();
     }
 
     private void OnEnable()
@@ -52,14 +51,21 @@ public class HUD : MonoBehaviour
     {
         GameEventsManager.instance.moneyEvents.onMoneyAmountChanged -= UpdateHUDPlayerFunds;
         GameEventsManager.instance.playerEvents.onBeginPlayerTeleportation -= FadeToBlack;
+        GameEventsManager.instance.playerEvents.onPlayerTeleportation -= HUDTween;
     }
 
     public void HUDTween(bool flag)
     {
         if (flag)
+        {
+            _playerFundsBanner.anchoredPosition = new Vector2(60.0f, -365.0f);
             _minimap.gameObject.SetActive(false);
+        }
         else
+        {
+            _playerFundsBanner.anchoredPosition = new Vector2(60.0f, -10.0f); ;
             _minimap.gameObject.SetActive(true);
+        }
 
         FadeToWhite();
     }
@@ -69,10 +75,18 @@ public class HUD : MonoBehaviour
         _itemCollectUIContainer.ShowItemPickup(itemObj, acquired);
     }
 
-    private void UpdateHUDPlayerFunds(int previousAmount, int amount)
+    private void UpdateHUDPlayerFunds(int previousBalance, int newBalance, int dollarAmount)
     {
-        //_playerFundsText.text = amount.ToString();
-        _moneyCounter.UpdateBeforeCounting(previousAmount, amount);
+        if (dollarAmount > 0)
+            _amountPopUp.text = "+" + dollarAmount;
+        else
+            _amountPopUp.text = dollarAmount.ToString();
+
+            Sequence.Create().Group(Tween.TextFontSize(target: _amountPopUp, startValue: 20, endValue: 25, duration: 1.0f))
+                .Group(Tween.UIAnchoredPosition(target: _amountPopUp.rectTransform, startValue: new Vector2(0, 20), endValue: new Vector2(0, 45), duration: 2.0f)
+                .Group(Tween.Alpha(target: _amountPopUpCG, startValue: 1.0f, endValue: 0.0f, duration: 1.5f)));
+
+        _moneyCounter.UpdateBeforeCounting(previousBalance, newBalance);
     }
 
     public void ShowDialogueVisualPopup()
