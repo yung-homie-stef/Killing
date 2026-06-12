@@ -33,7 +33,7 @@ public class MoneyManager : MonoBehaviour
         Debug.Log("Had: " + _previousPlayerMoney);
         Debug.Log("Have: " + _currentPlayerMoney);
         PlayerPrefs.SetInt(_moneyVariableString, _currentPlayerMoney);
-        GameEventsManager.instance.moneyEvents.MoneyAmountChanged(_currentPlayerMoney, _previousPlayerMoney);
+        GameEventsManager.instance.moneyEvents.MoneyAmountChanged(_previousPlayerMoney, _currentPlayerMoney);
     }
 
     public void UpdateMoneyFromDialogue(double amount)
