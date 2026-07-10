@@ -110,32 +110,10 @@ MonoBehaviour:
     spritePortrait: {fileID: 0}
     alternatePortraits: []
     spritePortraits: []
-  - id: 4
-    fields:
-    - title: Name
-      value: Greene
-      type: 0
-      typeString: 
-    - title: Pictures
-      value: '[]'
-      type: 3
-      typeString: CustomFieldType_Files
-    - title: Description
-      value: Kerlew's muscle.
-      type: 0
-      typeString: CustomFieldType_Text
-    - title: IsPlayer
-      value: False
-      type: 2
-      typeString: CustomFieldType_Boolean
-    portrait: {fileID: 0}
-    spritePortrait: {fileID: 0}
-    alternatePortraits: []
-    spritePortraits: []
   - id: 7
     fields:
     - title: Name
-      value: Wallet Merchant
+      value: 'Wendell "Bugs"  '
       type: 0
       typeString: 
     - title: Pictures
@@ -270,6 +248,50 @@ MonoBehaviour:
     spritePortrait: {fileID: 0}
     alternatePortraits: []
     spritePortraits: []
+  - id: 4
+    fields:
+    - title: Name
+      value: _____ Greene
+      type: 0
+      typeString: 
+    - title: Pictures
+      value: '[]'
+      type: 3
+      typeString: CustomFieldType_Files
+    - title: Description
+      value: 'Kerlew''s muscle. '
+      type: 0
+      typeString: CustomFieldType_Text
+    - title: IsPlayer
+      value: False
+      type: 2
+      typeString: CustomFieldType_Boolean
+    portrait: {fileID: 0}
+    spritePortrait: {fileID: 0}
+    alternatePortraits: []
+    spritePortraits: []
+  - id: 16
+    fields:
+    - title: Name
+      value: Sean "Shamrock" Mc
+      type: 0
+      typeString: CustomFieldType_Text
+    - title: Pictures
+      value: '[]'
+      type: 3
+      typeString: CustomFieldType_Files
+    - title: Description
+      value: 
+      type: 0
+      typeString: CustomFieldType_Text
+    - title: IsPlayer
+      value: False
+      type: 2
+      typeString: CustomFieldType_Boolean
+    portrait: {fileID: 0}
+    spritePortrait: {fileID: 0}
+    alternatePortraits: []
+    spritePortraits: []
   - id: 11
     fields:
     - title: Name
@@ -322,6 +344,50 @@ MonoBehaviour:
     spritePortrait: {fileID: 0}
     alternatePortraits: []
     spritePortraits: []
+  - id: 14
+    fields:
+    - title: Name
+      value: Ajai "AJ" Velupillai
+      type: 0
+      typeString: CustomFieldType_Text
+    - title: Pictures
+      value: '[]'
+      type: 3
+      typeString: CustomFieldType_Files
+    - title: Description
+      value: 
+      type: 0
+      typeString: CustomFieldType_Text
+    - title: IsPlayer
+      value: False
+      type: 2
+      typeString: CustomFieldType_Boolean
+    portrait: {fileID: 0}
+    spritePortrait: {fileID: 0}
+    alternatePortraits: []
+    spritePortraits: []
+  - id: 15
+    fields:
+    - title: Name
+      value: Sharif Ashour
+      type: 0
+      typeString: CustomFieldType_Text
+    - title: Pictures
+      value: '[]'
+      type: 3
+      typeString: CustomFieldType_Files
+    - title: Description
+      value: 
+      type: 0
+      typeString: CustomFieldType_Text
+    - title: IsPlayer
+      value: False
+      type: 2
+      typeString: CustomFieldType_Boolean
+    portrait: {fileID: 0}
+    spritePortrait: {fileID: 0}
+    alternatePortraits: []
+    spritePortraits: []
   items:
   - id: 3
     fields:
@@ -362,7 +428,7 @@ MonoBehaviour:
       type: 0
       typeString: CustomFieldType_QuestState
     - title: Entry 1
-      value: Get back to my apartment
+      value: Get back to my apartment.
       type: 0
       typeString: CustomFieldType_Text
     - title: Entry 2 State
@@ -370,7 +436,7 @@ MonoBehaviour:
       type: 0
       typeString: CustomFieldType_QuestState
     - title: Entry 2
-      value: Go back to the alley to look for my wallet
+      value: Go back to the alley to look for my wallet.
       type: 0
       typeString: CustomFieldType_Text
     - title: Entry 3 State
@@ -378,7 +444,7 @@ MonoBehaviour:
       type: 0
       typeString: CustomFieldType_QuestState
     - title: Entry 3
-      value: Track down where my wallet could be
+      value: Track down where my wallet could be.
       type: 0
       typeString: CustomFieldType_Text
     - title: Entry 5 State
@@ -386,7 +452,7 @@ MonoBehaviour:
       type: 0
       typeString: CustomFieldType_QuestState
     - title: Entry 5
-      value: Go back home
+      value: Go back home.
       type: 0
       typeString: CustomFieldType_Text
     - title: Trackable
@@ -402,7 +468,7 @@ MonoBehaviour:
       type: 0
       typeString: CustomFieldType_Text
     - title: Entry 4
-      value: Buy back my wallet
+      value: Buy back my wallet.
       type: 0
       typeString: CustomFieldType_Text
     - title: Entry 4 State
@@ -416,7 +482,7 @@ MonoBehaviour:
   - id: 4
     fields:
     - title: Name
-      value: Take Out
+      value: Take-Out
       type: 0
       typeString: CustomFieldType_Text
     - title: Pictures
@@ -483,6 +549,56 @@ MonoBehaviour:
       value: True
       type: 2
       typeString: CustomFieldType_Boolean
+  - id: 9
+    fields:
+    - title: Name
+      value: New Quest 9
+      type: 0
+      typeString: CustomFieldType_Text
+    - title: Pictures
+      value: '[]'
+      type: 3
+      typeString: CustomFieldType_Files
+    - title: Description
+      value: 
+      type: 0
+      typeString: CustomFieldType_Text
+    - title: Success Description
+      value: 
+      type: 0
+      typeString: CustomFieldType_Text
+    - title: Failure Description
+      value: 
+      type: 0
+      typeString: CustomFieldType_Text
+    - title: State
+      value: unassigned
+      type: 0
+      typeString: CustomFieldType_QuestState
+    - title: Is Item
+      value: False
+      type: 2
+      typeString: CustomFieldType_Boolean
+    - title: Entry Count
+      value: 2
+      type: 1
+      typeString: CustomFieldType_Number
+    - title: Entry 1 State
+      value: unassigned
+      type: 0
+      typeString: 
+    - title: Entry 1
+      value: Pick up a coffee for Dmitri.
+      type: 0
+      typeString: 
+    - title: Entry 2 State
+      value: unassigned
+      type: 0
+      typeString: 
+    - title: Entry 2
+      value: Go to the street clinic
+      type: 0
+      typeString: 
   - id: 8
     fields:
     - title: Name
@@ -514,7 +630,7 @@ MonoBehaviour:
       type: 2
       typeString: CustomFieldType_Boolean
     - title: Entry Count
-      value: 3
+      value: 4
       type: 1
       typeString: CustomFieldType_Number
     - title: Entry 1 State
@@ -522,14 +638,14 @@ MonoBehaviour:
       type: 0
       typeString: CustomFieldType_QuestState
     - title: Entry 1
-      value: Find a way into the SRO.
+      value: Head to the SRO.
       type: 0
       typeString: CustomFieldType_Text
-    - title: Entry 2 State
+    - title: Entry 3 State
       value: unassigned
       type: 0
       typeString: CustomFieldType_QuestState
-    - title: Entry 2
+    - title: Entry 3
       value: Head to Apartment E9.
       type: 0
       typeString: CustomFieldType_Text
@@ -537,12 +653,20 @@ MonoBehaviour:
       value: 
       type: 0
       typeString: CustomFieldType_Text
-    - title: Entry 3 State
+    - title: Entry 4 State
       value: unassigned
       type: 0
       typeString: 
-    - title: Entry 3
+    - title: Entry 4
       value: Investigate Tenant's apartment.
+      type: 0
+      typeString: 
+    - title: Entry 2
+      value: Find another way to enter the building.
+      type: 0
+      typeString: 
+    - title: Entry 2 State
+      value: unassigned
       type: 0
       typeString: 
   - id: 7
@@ -578,7 +702,7 @@ MonoBehaviour:
   - id: 5
     fields:
     - title: Name
-      value: Delivery Fee
+      value: 'SQ: Delivery Fee'
       type: 0
       typeString: 
     - title: Pictures
@@ -613,7 +737,7 @@ MonoBehaviour:
   - id: 6
     fields:
     - title: Name
-      value: White Whales
+      value: 'SQ: White Whales'
       type: 0
       typeString: 
     - title: Pictures
@@ -1584,8 +1708,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 160
-        y: 30
+        x: 30
+        y: 20
         width: 160
         height: 30
     - id: 1
@@ -1639,8 +1763,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 160
-        y: 78.93617
+        x: 30
+        y: 70
         width: 160
         height: 30
     - id: 2
@@ -1694,8 +1818,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 160
-        y: 130
+        x: 30
+        y: 120
         width: 160
         height: 30
     - id: 3
@@ -1749,8 +1873,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 160
-        y: 180
+        x: 30
+        y: 170
         width: 160
         height: 30
     - id: 4
@@ -1804,8 +1928,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 160
-        y: 230
+        x: 30
+        y: 220
         width: 160
         height: 30
     - id: 5
@@ -1860,8 +1984,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 160
-        y: 280
+        x: 30
+        y: 270
         width: 160
         height: 30
     - id: 6
@@ -1917,8 +2041,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 160
-        y: 330
+        x: 30
+        y: 320
         width: 160
         height: 30
     - id: 7
@@ -1972,8 +2096,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 160
-        y: 380
+        x: 30
+        y: 370
         width: 160
         height: 30
     - id: 8
@@ -2027,8 +2151,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 160
-        y: 430
+        x: 30
+        y: 420
         width: 160
         height: 30
     - id: 9
@@ -2082,8 +2206,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 160
-        y: 480
+        x: 30
+        y: 470
         width: 160
         height: 30
     - id: 10
@@ -2110,8 +2234,7 @@ MonoBehaviour:
         typeString: 
       - title: Dialogue Text
         value: '875? You fucked me out of seven grand for 875 dollars? Tell me Curry,
-          was it worth it? You''re on your ass, sitting in garbage, pissing blood
-          all over yourself for fast food money. This what you wanted? '
+          was it worth it? '
         type: 0
         typeString: 
       - title: Sequence
@@ -2129,7 +2252,7 @@ MonoBehaviour:
       - originConversationID: 2
         originDialogueID: 10
         destinationConversationID: 2
-        destinationDialogueID: 11
+        destinationDialogueID: 16
         isConnector: 0
         priority: 2
       conditionsString: 
@@ -2139,8 +2262,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 161.03094
-        y: 530
+        x: 30
+        y: 520
         width: 160
         height: 30
     - id: 11
@@ -2196,8 +2319,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 160
-        y: 584.25525
+        x: 30
+        y: 620
         width: 160
         height: 30
     - id: 12
@@ -2253,8 +2376,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 156.80853
-        y: 687.44684
+        x: 30
+        y: 720
         width: 160
         height: 30
     - id: 13
@@ -2306,8 +2429,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 156.32413
-        y: 805.266
+        x: 30
+        y: 820
         width: 160
         height: 30
     - id: 14
@@ -2362,8 +2485,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 156.80852
-        y: 745.11127
+        x: 30
+        y: 770
         width: 160
         height: 30
     - id: 15
@@ -2417,12 +2540,68 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 160
-        y: 636.38293
+        x: 30
+        y: 670
+        width: 160
+        height: 30
+    - id: 16
+      fields:
+      - title: Title
+        value: 
+        type: 0
+        typeString: 
+      - title: Description
+        value: 
+        type: 0
+        typeString: 
+      - title: Actor
+        value: 3
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Conversant
+        value: 1
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Menu Text
+        value: 
+        type: 0
+        typeString: 
+      - title: Dialogue Text
+        value: 'You''re on your ass, sitting in garbage, pissing blood all over yourself
+          for fast food money. This what you wanted? '
+        type: 0
+        typeString: 
+      - title: Sequence
+        value: 
+        type: 0
+        typeString: 
+      conversationID: 2
+      isRoot: 0
+      isGroup: 0
+      nodeColor: 
+      delaySimStatus: 0
+      falseConditionAction: Block
+      conditionPriority: 2
+      outgoingLinks:
+      - originConversationID: 2
+        originDialogueID: 16
+        destinationConversationID: 2
+        destinationDialogueID: 11
+        isConnector: 0
+        priority: 2
+      conditionsString: 
+      userScript: 
+      onExecute:
+        m_PersistentCalls:
+          m_Calls: []
+      canvasRect:
+        serializedVersion: 2
+        x: 30
+        y: 570
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 0, y: 0}
+    canvasScrollPosition: {x: 0, y: 273.17072}
     canvasZoom: 0.8200002
   - id: 3
     fields:
@@ -9412,8 +9591,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Dialogue Text
-        value: You're asking for cash from a guy without his wallet man, the fuck
-          is this? I'm broke.
+        value: You're asking for cash from a guy who lost his wallet.
         type: 0
         typeString: 
       - title: Sequence
@@ -9468,9 +9646,9 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Dialogue Text
-        value: Just as well, won't be much longer before somebody comes aiming to
-          trade. Valid IDs are in high demand 'round these parts. I'm sitting on
-          a gold mine.
+        value: Just as well, won't be much longer before somebody comes willing to
+          pay. Valid IDs are in high demand 'round here. No chance anybody'll let
+          one go to waste. I'm sitting on a gold mine.
         type: 0
         typeString: 
       - title: Sequence
@@ -9499,7 +9677,7 @@ MonoBehaviour:
       canvasRect:
         serializedVersion: 2
         x: 162.33243
-        y: 995.0474
+        y: 996.54
         width: 160
         height: 30
     - id: 13
@@ -9547,7 +9725,7 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 162.99066
+        x: 161.49811
         y: 1177.2651
         width: 160
         height: 30
@@ -9631,8 +9809,8 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Dialogue Text
-        value: No, I'm telling you I've had shit evening and you're making it worse,
-          so hand over the wallet. This entrepreneurial shit isn't happening.
+        value: No, I'm telling you I've had shit evening and you've made it worse,
+          hand over the wallet. This entrepreneurial shit isn't happening.
         type: 0
         typeString: 
       - title: Sequence
@@ -10325,7 +10503,7 @@ MonoBehaviour:
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 0, y: 477.61176}
+    canvasScrollPosition: {x: 0, y: 394.02972}
     canvasZoom: 0.6700003
   - id: 8
     fields:
@@ -11029,7 +11207,7 @@ MonoBehaviour:
         height: 30
     entryGroups: []
     canvasScrollPosition: {x: 0, y: 0}
-    canvasZoom: 0.7000003
+    canvasZoom: 0.6700003
   - id: 9
     fields:
     - title: Title
@@ -11464,7 +11642,7 @@ MonoBehaviour:
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 222.36763, y: 0}
+    canvasScrollPosition: {x: 250.77675, y: 0}
     canvasZoom: 0.88000005
   - id: 10
     fields:
@@ -11666,8 +11844,9 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Dialogue Text
-        value: 'Hey. Actually, I uh, placed an order earlier this evening, but you
-          guys forgot something. Still got charged for it. '
+        value: Hey. Actually, I uh, placed an order earlier this evening, but looking
+          over the bill the math's not adding up. There's about $30 not accounted
+          for on the receipt. Some kind of overcharge.
         type: 0
         typeString: 
       - title: Sequence
@@ -11777,7 +11956,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Dialogue Text
-        value: 'What are you missing? Let me see the receipt. '
+        value: 'Hand the receipt over, let me see. '
         type: 0
         typeString: 
       - title: Sequence
@@ -11946,8 +12125,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Dialogue Text
-        value: 'Get a move on, I don''t like you guys standing front of house. And
-          take the food with you. '
+        value: 'Get a move on, I don''t like you guys standing front of house. '
         type: 0
         typeString: 
       - title: Sequence
@@ -12248,8 +12426,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 535.74115
-        y: 37.066086
+        x: 629.1622
+        y: 105.48709
         width: 160
         height: 30
     - id: 14
@@ -12303,8 +12481,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 535.74115
-        y: 87.066086
+        x: 629.1622
+        y: 155.48709
         width: 160
         height: 30
     - id: 15
@@ -12358,8 +12536,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 535.74115
-        y: 137.06609
+        x: 629.1622
+        y: 205.48709
         width: 160
         height: 30
     - id: 16
@@ -12413,8 +12591,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 535.74115
-        y: 187.06609
+        x: 629.1622
+        y: 255.48709
         width: 160
         height: 30
     - id: 17
@@ -12468,8 +12646,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 535.74115
-        y: 237.06612
+        x: 629.1622
+        y: 305.48737
         width: 160
         height: 30
     - id: 18
@@ -12523,8 +12701,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 535.74115
-        y: 287.06628
+        x: 629.1622
+        y: 355.48755
         width: 160
         height: 30
     - id: 19
@@ -12578,8 +12756,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 535.74115
-        y: 337.06628
+        x: 629.1622
+        y: 405.48755
         width: 160
         height: 30
     - id: 20
@@ -12627,8 +12805,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 535.74115
-        y: 387.06628
+        x: 629.1622
+        y: 455.48755
         width: 160
         height: 30
     - id: 21
@@ -12819,7 +12997,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Dialogue Text
-        value: Just take 'em. I don't want your damn money.
+        value: Just take them. I don't want your damn money.
         type: 0
         typeString: 
       - title: Sequence
@@ -12896,7 +13074,7 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 408.91733
+        x: 410.23312
         y: 737.7447
         width: 160
         height: 30
@@ -12923,7 +13101,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Dialogue Text
-        value: Whoa, shit. You good man?
+        value: Whoa, shit. You good over there?
         type: 0
         typeString: 
       - title: Sequence
@@ -13092,6 +13270,232 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Sequence
+        value: Continue()@3;
+        type: 0
+        typeString: 
+      conversationID: 10
+      isRoot: 0
+      isGroup: 0
+      nodeColor: 
+      delaySimStatus: 0
+      falseConditionAction: Block
+      conditionPriority: 2
+      outgoingLinks:
+      - originConversationID: 10
+        originDialogueID: 29
+        destinationConversationID: 10
+        destinationDialogueID: 30
+        isConnector: 0
+        priority: 2
+      - originConversationID: 10
+        originDialogueID: 29
+        destinationConversationID: 10
+        destinationDialogueID: 31
+        isConnector: 0
+        priority: 2
+      conditionsString: 
+      userScript: 
+      onExecute:
+        m_PersistentCalls:
+          m_Calls: []
+      canvasRect:
+        serializedVersion: 2
+        x: 1238.1703
+        y: 201.30505
+        width: 160
+        height: 30
+    - id: 30
+      fields:
+      - title: Title
+        value: 
+        type: 0
+        typeString: 
+      - title: Description
+        value: 
+        type: 0
+        typeString: 
+      - title: Actor
+        value: 1
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Conversant
+        value: 6
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Menu Text
+        value: 
+        type: 0
+        typeString: 
+      - title: Dialogue Text
+        value: Have 'em...I d-don't...ergh
+        type: 0
+        typeString: 
+      - title: Sequence
+        value: 
+        type: 0
+        typeString: 
+      conversationID: 10
+      isRoot: 0
+      isGroup: 0
+      nodeColor: 
+      delaySimStatus: 0
+      falseConditionAction: Block
+      conditionPriority: 2
+      outgoingLinks:
+      - originConversationID: 10
+        originDialogueID: 30
+        destinationConversationID: 10
+        destinationDialogueID: 32
+        isConnector: 0
+        priority: 2
+      conditionsString: CheckForStandardItem("Ruby Palace Egg Rolls")  == true
+      userScript: 
+      onExecute:
+        m_PersistentCalls:
+          m_Calls: []
+      canvasRect:
+        serializedVersion: 2
+        x: 1036.6779
+        y: 342.3498
+        width: 160
+        height: 30
+    - id: 31
+      fields:
+      - title: Title
+        value: 
+        type: 0
+        typeString: 
+      - title: Description
+        value: 
+        type: 0
+        typeString: 
+      - title: Actor
+        value: 1
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Conversant
+        value: 6
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Menu Text
+        value: 
+        type: 0
+        typeString: 
+      - title: Dialogue Text
+        value: I'm f-f-fine
+        type: 0
+        typeString: 
+      - title: Sequence
+        value: 
+        type: 0
+        typeString: 
+      conversationID: 10
+      isRoot: 0
+      isGroup: 0
+      nodeColor: 
+      delaySimStatus: 0
+      falseConditionAction: Block
+      conditionPriority: 2
+      outgoingLinks:
+      - originConversationID: 10
+        originDialogueID: 31
+        destinationConversationID: 10
+        destinationDialogueID: 34
+        isConnector: 0
+        priority: 2
+      conditionsString: CheckForStandardItem("Ruby Palace Egg Rolls")  == false
+      userScript: 
+      onExecute:
+        m_PersistentCalls:
+          m_Calls: []
+      canvasRect:
+        serializedVersion: 2
+        x: 1236.6779
+        y: 342.3498
+        width: 160
+        height: 30
+    - id: 32
+      fields:
+      - title: Title
+        value: 
+        type: 0
+        typeString: 
+      - title: Description
+        value: 
+        type: 0
+        typeString: 
+      - title: Actor
+        value: 6
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Conversant
+        value: 1
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Menu Text
+        value: 
+        type: 0
+        typeString: 
+      - title: Dialogue Text
+        value: 'Thanks? You uh, gonna be alright? '
+        type: 0
+        typeString: 
+      - title: Sequence
+        value: 
+        type: 0
+        typeString: 
+      conversationID: 10
+      isRoot: 0
+      isGroup: 0
+      nodeColor: 
+      delaySimStatus: 0
+      falseConditionAction: Block
+      conditionPriority: 2
+      outgoingLinks:
+      - originConversationID: 10
+        originDialogueID: 32
+        destinationConversationID: 10
+        destinationDialogueID: 33
+        isConnector: 0
+        priority: 2
+      conditionsString: 
+      userScript: 
+      onExecute:
+        m_PersistentCalls:
+          m_Calls: []
+      canvasRect:
+        serializedVersion: 2
+        x: 1036.6779
+        y: 392.3498
+        width: 160
+        height: 30
+    - id: 33
+      fields:
+      - title: Title
+        value: 
+        type: 0
+        typeString: 
+      - title: Description
+        value: 
+        type: 0
+        typeString: 
+      - title: Actor
+        value: 1
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Conversant
+        value: 6
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Menu Text
+        value: 
+        type: 0
+        typeString: 
+      - title: Dialogue Text
+        value: Leave me alone.
+        type: 0
+        typeString: 
+      - title: Sequence
         value: 
         type: 0
         typeString: 
@@ -13110,13 +13514,62 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 1238.1703
-        y: 201.30505
+        x: 1036.6779
+        y: 442.3498
+        width: 160
+        height: 30
+    - id: 34
+      fields:
+      - title: Title
+        value: 
+        type: 0
+        typeString: 
+      - title: Description
+        value: 
+        type: 0
+        typeString: 
+      - title: Actor
+        value: 1
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Conversant
+        value: 6
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Menu Text
+        value: 
+        type: 0
+        typeString: 
+      - title: Dialogue Text
+        value: Quit f-fucking staring.
+        type: 0
+        typeString: 
+      - title: Sequence
+        value: 
+        type: 0
+        typeString: 
+      conversationID: 10
+      isRoot: 0
+      isGroup: 0
+      nodeColor: 
+      delaySimStatus: 0
+      falseConditionAction: Block
+      conditionPriority: 2
+      outgoingLinks: []
+      conditionsString: 
+      userScript: 
+      onExecute:
+        m_PersistentCalls:
+          m_Calls: []
+      canvasRect:
+        serializedVersion: 2
+        x: 1236.6779
+        y: 392.3498
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 0, y: 0}
-    canvasZoom: 0.6700003
+    canvasScrollPosition: {x: 39.473694, y: 0}
+    canvasZoom: 0.7600002
   - id: 11
     fields:
     - title: Title
@@ -15910,7 +16363,7 @@ MonoBehaviour:
         isConnector: 0
         priority: 2
       conditionsString: 
-      userScript: 
+      userScript: AddItemToInventoryThroughDialogue("Ibuprofen")
       onExecute:
         m_PersistentCalls:
           m_Calls: []
@@ -16307,8 +16760,8 @@ MonoBehaviour:
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 14.557882, y: 138.95523}
-    canvasZoom: 0.6700003
+    canvasScrollPosition: {x: 0, y: 0}
+    canvasZoom: 0.49000046
   - id: 12
     fields:
     - title: Title
