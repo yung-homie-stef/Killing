@@ -16,6 +16,7 @@ public class UIManager : MonoBehaviour
     /*[HideInInspector]*/ public ShopUI _shopMenu;
     /*[HideInInspector]*/ public InventoryUI _inventoryMenu;
     /*[HideInInspector]*/ public HUD _hudMenu;
+    public TransitUI _transitMenu;
     public CustomUIQuestLogWindow _questLogMenu;
 
     void Start()
@@ -33,6 +34,7 @@ public class UIManager : MonoBehaviour
         _shopMenu = GetComponentInChildren<ShopUI>();
         _inventoryMenu = GetComponentInChildren<InventoryUI>();
         _hudMenu = GetComponentInChildren<HUD>();
+        _transitMenu = GetComponentInChildren<TransitUI>();
         //_questLogMenu = (CustomUIQuestLogWindow)PixelCrushers.GameObjectUtility.FindFirstObjectByType<QuestLogWindow>();
     }
 
