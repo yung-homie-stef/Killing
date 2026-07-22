@@ -47,7 +47,6 @@ public class ShopUI : MonoBehaviour
 
     public void ShopToggle(bool flag)
     {
-
         if (flag)
         {
             ShowOrHideShopUI(true, CursorLockMode.None);

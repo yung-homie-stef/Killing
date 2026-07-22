@@ -10,20 +10,28 @@ public class BusStopButton : MonoBehaviour, IPointerEnterHandler
 {
     [SerializeField] private TextMeshProUGUI _name = null;
     [SerializeField] private RectTransform _iconLocation;
-    [SerializeField] private Image _previewThumbnail;
+    [SerializeField] private Sprite _previewThumbnail;
 
 
     public void Initialize(BusStop info)
     {
         _name.text = info.stopName;
         _iconLocation = info.stopMapIconLocation;
-       // _previewThumbnail = info.stopPreviewThumbnailImage;
+        _previewThumbnail = info.stopPreviewThumbnailImage;
     }
 
     public void OnPointerEnter(PointerEventData eventData)
     {
-        UIManager.instance._transitMenu.UpdateMapInformation(_iconLocation);
-        Debug.Log("transit button has been triggered");
+        UIManager.instance._transitMenu.UpdateMapInformation(_iconLocation, _previewThumbnail);
     }
 
+    public void InitiateTravelPrompt()
+    {
+        UIManager.instance._transitMenu.PopUpTravelPrompt(this);
+    }
+
+    public string GetStopName()
+    {
+        return _name.text;
+    }
 }

@@ -16,7 +16,8 @@ public abstract class Interactable : MonoBehaviour
         EntryDoor,
         ExitDoor,
         Character,
-        Item
+        Item,
+        BusStop
     }
 
     public virtual void Awake()

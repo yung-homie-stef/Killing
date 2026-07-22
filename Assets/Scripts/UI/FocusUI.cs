@@ -39,6 +39,9 @@ public class FocusUI : MonoBehaviour
                 case Interactable.InteractableType.Item:
                     _interactableTypeText.text = "PICK UP";
                     break;
+                case Interactable.InteractableType.BusStop:
+                    _interactableTypeText.text = "TRAVEL";
+                    break;
             }
         }
 
