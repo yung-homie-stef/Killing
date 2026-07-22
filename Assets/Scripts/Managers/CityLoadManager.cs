@@ -12,10 +12,15 @@ public class CityLoadManager : MonoBehaviour
     private void Awake()
     {
         if (instance != null)
-            Debug.LogError("Found more than one Game Events Manager in the scene.");
+            Debug.LogError("Found more than one City Load Manager in the scene.");
         instance = this;
 
-        GameEventsManager.instance.playerEvents.onPlayerTeleportation += LoadUnloadCity;
+        GameEventsManager.instance.playerEvents.onPlayerEnterIndoorOutdoor += LoadUnloadCity;
+    }
+
+    private void OnDisable()
+    {
+        GameEventsManager.instance.playerEvents.onPlayerEnterIndoorOutdoor -= LoadUnloadCity;
     }
 
     public void PrepareTeleportation(GameObject prefab, Transform tPos)

@@ -8,7 +8,8 @@ public class PlayerEvents
     public event Action onDisablePlayerMovement;
     public event Action onEnablePlayerMovement;
     public event Action onBeginPlayerTeleportation;
-    public event Action<bool> onPlayerTeleportation;
+    public event Action onPlayerFastTravel;
+    public event Action<bool> onPlayerEnterIndoorOutdoor;
 
     public event Action<LocationTrigger, bool> onPlayerEnterAreaBox;
     private bool _isExterior = true;
@@ -36,10 +37,24 @@ public class PlayerEvents
         Debug.Log(_isExterior); 
     }
 
+    public void PlayerFastTravel()
+    {
+        if (onPlayerFastTravel != null)
+            onPlayerFastTravel();
+    }
+
+    public void BeginPlayerTeleportation()
+    {
+        if (onBeginPlayerTeleportation != null)
+            onBeginPlayerTeleportation();
+
+        DisablePlayerMovement();
+    }
+
     public void TeleportPlayer()
     {
-        if (onPlayerTeleportation != null)
-            onPlayerTeleportation(_isExterior);
+        if (onPlayerEnterIndoorOutdoor != null)
+            onPlayerEnterIndoorOutdoor(_isExterior);
     }
 
     public void PlayerEnterAreaBox(LocationTrigger triggerArea, bool flag)

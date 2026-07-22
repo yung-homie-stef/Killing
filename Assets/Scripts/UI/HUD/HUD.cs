@@ -41,7 +41,8 @@ public class HUD : MonoBehaviour
     {
         GameEventsManager.instance.moneyEvents.onMoneyAmountChanged += UpdateHUDPlayerFunds;
         GameEventsManager.instance.playerEvents.onBeginPlayerTeleportation += FadeToBlack;
-        GameEventsManager.instance.playerEvents.onPlayerTeleportation += HUDTween;
+        GameEventsManager.instance.playerEvents.onPlayerEnterIndoorOutdoor += HUDTween;
+        GameEventsManager.instance.playerEvents.onPlayerFastTravel += HUDTween;
 
         Lua.RegisterFunction("ShowDialogueVisualPopup", this, SymbolExtensions.GetMethodInfo(() => ShowDialogueVisualPopup()));
         Lua.RegisterFunction("HideDialogueVisualPopup", this, SymbolExtensions.GetMethodInfo(() => HideDialogueVisualPopup()));
@@ -51,7 +52,8 @@ public class HUD : MonoBehaviour
     {
         GameEventsManager.instance.moneyEvents.onMoneyAmountChanged -= UpdateHUDPlayerFunds;
         GameEventsManager.instance.playerEvents.onBeginPlayerTeleportation -= FadeToBlack;
-        GameEventsManager.instance.playerEvents.onPlayerTeleportation -= HUDTween;
+        GameEventsManager.instance.playerEvents.onPlayerEnterIndoorOutdoor -= HUDTween;
+        GameEventsManager.instance.playerEvents.onPlayerFastTravel -= HUDTween;
     }
 
     public void HUDTween(bool flag)
@@ -66,6 +68,14 @@ public class HUD : MonoBehaviour
             _playerFundsBanner.anchoredPosition = new Vector2(60.0f, -10.0f); ;
             _minimap.gameObject.SetActive(true);
         }
+
+        FadeToWhite();
+    }
+
+    public void HUDTween()
+    {
+        _playerFundsBanner.anchoredPosition = new Vector2(60.0f, -10.0f); ;
+        _minimap.gameObject.SetActive(true);
 
         FadeToWhite();
     }

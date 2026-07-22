@@ -30,6 +30,7 @@ public class TransitUI : MonoBehaviour
     [Header("Travel Prompt")]
     [SerializeField] private GameObject _travelPromptPanel;
     [SerializeField] private TextMeshProUGUI _travelPromptText;
+    private string _targetStop = string.Empty;
 
     public void TransitToggle(bool flag)
     {
@@ -77,6 +78,7 @@ public class TransitUI : MonoBehaviour
     {
         _travelPromptPanel.SetActive(true);
         _travelPromptText.text = "Travel to " + btn.GetStopName() + " ?";
+        _targetStop = btn.GetStopName();
         _busStopCanvasGroup.blocksRaycasts = false;
     }
 
@@ -85,9 +87,19 @@ public class TransitUI : MonoBehaviour
         if (flag)
         {
             _content.SetActive(false);
+            TransitManager.instance.PrepareTeleportation(_targetStop);
+            GameEventsManager.instance.playerEvents.BeginPlayerTeleportation();
+            StartCoroutine(FastTravel());
         }
             _travelPromptPanel.SetActive(false);
             _busStopCanvasGroup.blocksRaycasts = true;
-        
+    }
+
+    private IEnumerator FastTravel()
+    {
+        yield return new WaitForSeconds(2.0f);
+        GameEventsManager.instance.playerEvents.PlayerFastTravel();
+        GameEventsManager.instance.playerEvents.EnablePlayerMovement();
+        UIManager.instance.focusUI.SetCanFocus(true);
     }
 }

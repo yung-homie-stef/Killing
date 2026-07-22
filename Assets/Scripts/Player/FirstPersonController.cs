@@ -76,7 +76,8 @@ public class FirstPersonController : MonoBehaviour
 
         GameEventsManager.instance.playerEvents.onEnablePlayerMovement += EnablePlayerMovement;
         GameEventsManager.instance.playerEvents.onDisablePlayerMovement += DisablePlayerMovement;
-        GameEventsManager.instance.playerEvents.onPlayerTeleportation += Teleport;
+        GameEventsManager.instance.playerEvents.onPlayerEnterIndoorOutdoor += TeleportIndoorsOutdoors;
+        GameEventsManager.instance.playerEvents.onPlayerFastTravel += FastTravel;
         DialogueManager.instance.conversationEnded += OnConversationEnded;
     }
 
@@ -84,7 +85,8 @@ public class FirstPersonController : MonoBehaviour
     {
         GameEventsManager.instance.playerEvents.onEnablePlayerMovement -= EnablePlayerMovement;
         GameEventsManager.instance.playerEvents.onDisablePlayerMovement -= DisablePlayerMovement;
-        GameEventsManager.instance.playerEvents.onPlayerTeleportation -= Teleport;
+        GameEventsManager.instance.playerEvents.onPlayerEnterIndoorOutdoor -= TeleportIndoorsOutdoors;
+        GameEventsManager.instance.playerEvents.onPlayerFastTravel -= FastTravel;
         //DialogueManager.instance.conversationEnded -= OnConversationEnded;
     }
 
@@ -220,10 +222,16 @@ public class FirstPersonController : MonoBehaviour
         _characterControllerComponent.enabled = false;
     }
 
-    private void Teleport(bool exterior)
+    private void TeleportIndoorsOutdoors(bool exterior)
     {
        transform.position = CityLoadManager.instance.GetTeleportLocation().position;
        transform.rotation = CityLoadManager.instance.GetTeleportLocation().rotation;
+    }
+
+    private void FastTravel()
+    {
+        transform.position = TransitManager.instance.GetFastTravelLocation().position;
+        transform.rotation = TransitManager.instance.GetFastTravelLocation().rotation;
     }
 
     private void OnConversationEnded(Transform t)
