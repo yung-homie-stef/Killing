@@ -15,6 +15,7 @@ public class BusStopButton : MonoBehaviour, IPointerEnterHandler
 
     public void Initialize(BusStop info)
     {
+        name = "Stop Button " + info.stopName;
         _name.text = info.stopName;
         _iconLocation = info.stopMapIconLocation;
         _previewThumbnail = info.stopPreviewThumbnailImage;

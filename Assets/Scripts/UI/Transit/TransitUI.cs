@@ -21,6 +21,7 @@ public class TransitUI : MonoBehaviour
     [SerializeField] private CanvasGroup _busStopCanvasGroup;
     [SerializeField] private TextMeshProUGUI _stopName;
     [SerializeField] private TextMeshProUGUI _stopArea;
+    [SerializeField] private List<BusStopButton> _busStopButtons;
 
     [Header("Visual Map Components")]
     [SerializeField] private GameObject _content;
@@ -64,13 +65,18 @@ public class TransitUI : MonoBehaviour
 
     void GenerateBusStopListButtons(BusStop stopInfo)
     {
+
+        // TODO: Rework this to just have all the bus stop buttons already instantiated at runtime by being made in the editor
+        // instead of creating a new list of stops and clearing them every time a bus station is used
+        // i will instead cycle through all the buttons at and set whichever one belongs to the station to inactive
         BusStopButton _busStopButton = Instantiate(_busStopListButtonPrefab, _verticalLayoutGroup.transform).GetComponent<BusStopButton>();
         _busStopButton.Initialize(stopInfo);
+        _busStopButtons.Add(_busStopButton);
     }
 
     public void UpdateMapInformation(RectTransform rTrans, Sprite sprite)
     {
-        _busStopLocationIcon.anchoredPosition = rTrans.anchoredPosition;
+        _busStopLocationIcon.anchoredPosition = rTrans.anchoredPosition + new Vector2(0.0f, 50.0f);
         _locationPreviewThumbnail.sprite = sprite;
     }
 
