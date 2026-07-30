@@ -6,8 +6,8 @@ using UnityEngine;
 [ExecuteInEditMode]
 public class WindowPiece : MonoBehaviour
 {
-    [SerializeField] private Texture2D _mainTexture = null;
-    [SerializeField] private Texture2D _specularMap = null;
+    [SerializeField] private Texture2D _windowTexture = null;
+    [SerializeField] private float _glassOpacity = 1.0f;
     private MaterialPropertyBlock _materialPropertyBlock = null;
 
     // Start is called before the first frame update
@@ -23,11 +23,12 @@ public class WindowPiece : MonoBehaviour
 
         Renderer renderer = GetComponent<Renderer>();
 
-        if ((_mainTexture!=null) && (_specularMap!=null))
-                {
-          _materialPropertyBlock.SetTexture("_Main_Texture", _mainTexture);
-          _materialPropertyBlock.SetTexture("_Specular_Map", _specularMap);
+        if (_windowTexture!=null) 
+        {
+          _materialPropertyBlock.SetTexture("_Main_Texture", _windowTexture);
         }
+
+        _materialPropertyBlock.SetFloat("_Glass_Opacity", _glassOpacity);
 
         renderer.SetPropertyBlock(_materialPropertyBlock);
     }
