@@ -23,6 +23,7 @@ public class MoneyManager : MonoBehaviour
             PlayerPrefs.SetInt(_moneyVariableString, 0);
 
         Lua.RegisterFunction("UpdateMoneyFromDialogue", this, SymbolExtensions.GetMethodInfo(() => UpdateMoneyFromDialogue(0)));
+        Lua.RegisterFunction("CheckIfPlayerHasEnoughMoney", this, SymbolExtensions.GetMethodInfo(() => CheckIfPlayerHasEnoughMoney(0)));
     }
 
     public void UpdatePlayerMoney(int amount)
@@ -39,6 +40,14 @@ public class MoneyManager : MonoBehaviour
     public void UpdateMoneyFromDialogue(double amount)
     {
         UpdatePlayerMoney((int)amount);
+    }
+
+    public bool CheckIfPlayerHasEnoughMoney(double amount)
+    {
+        if (GetCurrentPlayerMoney() >= amount)
+            return true;
+
+        return false;
     }
 
     public int GetCurrentPlayerMoney()
