@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!114 &-1617331127731789453
+--- !u!114 &-7514529066305123132
 MonoBehaviour:
   m_ObjectHideFlags: 11
   m_CorrespondingSourceObject: {fileID: 0}
@@ -20,14 +20,14 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: sidewalk
-  m_Shader: {fileID: -6465566751694194690, guid: 28b053f10b9968845812d60fd8e76e3f, type: 3}
+  m_Name: New Material
+  m_Shader: {fileID: -6465566751694194690, guid: de1af9ce465a65e4598b85a5096b456b, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords: []
   m_InvalidKeywords: []
   m_LightmapFlags: 4
-  m_EnableInstancingVariants: 1
+  m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
   m_CustomRenderQueue: -1
   stringTagMap: {}
@@ -36,10 +36,6 @@ Material:
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs:
-    - _Asphalt_Texture:
-        m_Texture: {fileID: 2800000, guid: 77e9f59e612439c4c95a69c1b7ba4146, type: 3}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
     - _BaseMap:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
@@ -49,7 +45,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _Curb_Texture:
-        m_Texture: {fileID: 0}
+        m_Texture: {fileID: 2800000, guid: 3c11d937b8979194f873789de10366f4, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _DetailAlbedoMap:
@@ -76,32 +72,36 @@ Material:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
-    - _Noise_Offset_Texture:
-        m_Texture: {fileID: 2800000, guid: 6900f3b45e7ee3c41a57ada35240ee81, type: 3}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
     - _OcclusionMap:
         m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _Opacity_Texture:
+        m_Texture: {fileID: 2800000, guid: 7da1762526f38484cb8656f547611fa9, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _ParallaxMap:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
-    - _Road_Decal_Array:
-        m_Texture: {fileID: 18700000, guid: 41355456a0535b14ab8d159f9e790f8a, type: 2}
+    - _Pavement_Texture:
+        m_Texture: {fileID: 2800000, guid: b5187992fccbdf54c9a63e969ab816e9, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
-    - _Road_Paint_Texture:
-        m_Texture: {fileID: 2800000, guid: f259fdf8a8b397042865e15ef1a9cd85, type: 3}
+    - _SampleTexture2D_5838d3c4679d43fea0c98649593cf232_Texture_1_Texture2D:
+        m_Texture: {fileID: 2800000, guid: 7e02b3fccb146824f8d1827407c7f800, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
-    - _SampleTexture2D_e5d420657f914087b05e8352457079d5_Texture_1_Texture2D:
-        m_Texture: {fileID: 0}
+    - _SampleTexture2D_774b42498656403c939a1e41b9356f2c_Texture_1_Texture2D:
+        m_Texture: {fileID: 2800000, guid: a9901fd1686190f4a8afb6d51fb57be2, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
-    - _Sidewalk_Tile_Texture:
-        m_Texture: {fileID: 2800000, guid: 3ff86928407f5134a992a7d08e07079f, type: 3}
+    - _SampleTexture2D_cc6f078b161b415c869c1b2896db9f10_Texture_1_Texture2D:
+        m_Texture: {fileID: 2800000, guid: 6674c573f1537cd4abee0589444bfdd9, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _SampleTexture2D_dd3ffc90ccdb46b88b4984cfe3be550b_Texture_1_Texture2D:
+        m_Texture: {fileID: 2800000, guid: 455224aeaef43134987de7127bab5b95, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _SpecGlossMap:
@@ -130,6 +130,7 @@ Material:
     - _ClearCoatMask: 0
     - _ClearCoatSmoothness: 0
     - _Cull: 2
+    - _Curb_X_Offset: 0
     - _Cutoff: 0.5
     - _DetailAlbedoMapScale: 1
     - _DetailNormalMapScale: 1
@@ -139,32 +140,22 @@ Material:
     - _GlossMapScale: 0
     - _Glossiness: 0
     - _GlossyReflections: 0
-    - _Manual_Offset: 0
     - _Metallic: 0
-    - _Noise_Scale: 0.5
     - _OcclusionStrength: 1
     - _Parallax: 0.005
+    - _Pavement_X_Offset: 0
+    - _Pavement_Y_Offset: 0
     - _QueueControl: 0
     - _QueueOffset: 0
     - _ReceiveShadows: 1
-    - _Road_Detail_Subdivision: 2
-    - _Road_Line_Subdivision: 4
-    - _Sidewalk_Tile_Subdivision: 2
     - _Smoothness: 0.5
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
     - _SrcBlend: 1
     - _SrcBlendAlpha: 1
     - _Surface: 0
-    - _Texture_Array_Index: 22
-    - _Texture_Array_Size: 22
     - _WorkflowMode: 1
-    - _X_Offset: 0
-    - _Y_Offset: 0
     - _ZWrite: 1
-    - _flippedUV: 0
-    - _xOffset: 1
-    - _yOffset: 1
     m_Colors:
     - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
