@@ -1,3 +1,4 @@
+using PixelCrushers;
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
@@ -7,18 +8,20 @@ using UnityEngine;
 [ExecuteInEditMode]
 public class SidewalkPieces : MonoBehaviour
 {
-    [SerializeField] private bool _isUsingManualOffset = false;
-    [Range(1, 2 )]
-    [SerializeField] private float _offsetX = 0.0f;
-    [Range(1, 2)]
-    [SerializeField] private float _offsetY = 0.0f;
-    private float _flippedUV = 0.0f;
+    [SerializeField] private bool _usesCurbUVs = false;
+    [ShowIf("_usesCurbUVs")]
+    [Range(0, 3)]
+    [SerializeField] private float _curbOffsetX = 0.0f;
+    [Range(0, 2)]
+    [SerializeField] private float _pavementOffsetX = 0.0f;
+    [Range(0, 3)]
+    [SerializeField] private float _pavementOffsetY = 0.0f;
 
     private MaterialPropertyBlock _materialPropertyBlock = null;
 
     private void Start()
     {
-        _flippedUV = Random.Range(0.0f, 1.0f);  
+         
     }
 
 
@@ -29,10 +32,9 @@ public class SidewalkPieces : MonoBehaviour
 
         Renderer renderer = GetComponent<Renderer>();
 
-        _materialPropertyBlock.SetFloat("_Manual_Offset", _isUsingManualOffset ? 1.0f : 0.0f);
-        _materialPropertyBlock.SetFloat("_xOffset", _offsetX);
-        _materialPropertyBlock.SetFloat("_yOffset", _offsetY);
-        _materialPropertyBlock.SetFloat("_flippedUV", _flippedUV);
+        _materialPropertyBlock.SetFloat("_xOffset", _pavementOffsetX);
+        _materialPropertyBlock.SetFloat("_yOffset", _pavementOffsetY);
+        _materialPropertyBlock.SetFloat("_xCurbOffset", _curbOffsetX);
 
         renderer.SetPropertyBlock( _materialPropertyBlock );
     }
