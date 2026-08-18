@@ -14,6 +14,7 @@ public class SideStreetPiece : MonoBehaviour
     [ShowIf("_isUsingTextureArray")][Range(0, 22)][SerializeField] private int _textureArrayIndex = 0;
     [ShowIf("_isUsingTextureArray")][Range(-0.5f, 0.5f)][SerializeField] private float _decalOffsetX = 0.0f;
     [ShowIf("_isUsingTextureArray")][Range(-0.5f, 0.5f)][SerializeField] private float _decalOffsetY = 0.0f;
+    [ShowIf("_isUsingTextureArray")][Range(0.0f, 360.0f)][SerializeField] private float _decalRotation = 0.0f;
 
     private MaterialPropertyBlock _materialPropertyBlock = null;
 
@@ -30,6 +31,7 @@ public class SideStreetPiece : MonoBehaviour
         _materialPropertyBlock.SetFloat("_textureArrayIndex", _textureArrayIndex);
         _materialPropertyBlock.SetFloat("_decalOffsetX", _decalOffsetX);
         _materialPropertyBlock.SetFloat("_decalOffsetY", _decalOffsetY);
+        _materialPropertyBlock.SetFloat("_decalRotation", _decalRotation * (Mathf.PI / 180.0f));
 
         renderer.SetPropertyBlock(_materialPropertyBlock);
     }
