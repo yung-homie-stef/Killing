@@ -1,3 +1,4 @@
+using PixelCrushers;
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
@@ -9,6 +10,8 @@ public class RoadPiece : MonoBehaviour
 {
     [SerializeField] private bool _isUsingManualOffset = false;
     [SerializeField] private bool _isUsingTextureArray = false;
+    [SerializeField] private Texture2D _roadLineTexture;
+    [SerializeField] private Texture2D _roadAsphaltTexture;
     [Range(1, 4 )]
     [SerializeField] private float _offsetX = 0.0f;
     [Range(1, 4)]
@@ -36,6 +39,11 @@ public class RoadPiece : MonoBehaviour
         _materialPropertyBlock.SetFloat("_xOffset", _offsetX);
         _materialPropertyBlock.SetFloat("_yOffset", _offsetY);
         _materialPropertyBlock.SetFloat("_textureIndex", _textureArrayIndex);
+
+        if (_roadLineTexture != null)
+        _materialPropertyBlock.SetTexture("_roadPaintTexture", _roadLineTexture);
+        if (_roadAsphaltTexture != null)
+            _materialPropertyBlock.SetTexture("_roadAsphaltTexture", _roadAsphaltTexture);
 
         renderer.SetPropertyBlock( _materialPropertyBlock );
     }
