@@ -28,7 +28,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _Base_Layer_Texture:
-        m_Texture: {fileID: 2800000, guid: fc7042fd8491e4c4d8d89d17078a75ec, type: 3}
+        m_Texture: {fileID: 2800000, guid: 224e5971081cb974e900552b03938c0d, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _BumpMap:
@@ -92,7 +92,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _Second_Layer_Texture:
-        m_Texture: {fileID: 2800000, guid: 224e5971081cb974e900552b03938c0d, type: 3}
+        m_Texture: {fileID: 2800000, guid: fc7042fd8491e4c4d8d89d17078a75ec, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _Side_Paving_Texture:
@@ -139,10 +139,11 @@ Material:
     - _GlossMapScale: 0
     - _Glossiness: 0
     - _GlossyReflections: 0
+    - _Is_Using_Texture_Array: 0
     - _Metallic: 0
-    - _Noise_Contrast: 7.23
-    - _Noise_Power: 1.34
-    - _Noise_Scale: 2.58
+    - _Noise_Contrast: 2.5
+    - _Noise_Power: 1.75
+    - _Noise_Scale: 2
     - _OcclusionStrength: 1
     - _Parallax: 0.005
     - _Paving_Rotation: 0.15
@@ -169,7 +170,8 @@ Material:
     - _decalRotation: 0
     - _isEndPiece: 0
     - _isShadedAtBottom: 0
-    - _textureArrayIndex: 0
+    - _isUsingTextureArray: 0
+    - _textureArrayIndex: 4.85
     m_Colors:
     - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
     - _Color: {r: 1, g: 1, b: 1, a: 1}

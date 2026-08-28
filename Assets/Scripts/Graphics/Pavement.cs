@@ -25,6 +25,7 @@ public class Pavement : MonoBehaviour
 
         Renderer renderer = GetComponent<Renderer>();
 
+        _materialPropertyBlock.SetFloat("_isUsingTextureArray", _isUsingTextureArray ? 1.0f : 0.0f);
         _materialPropertyBlock.SetFloat("_isEndPiece", _isEndPiece ? 1.0f : 0.0f);
         _materialPropertyBlock.SetFloat("_isShadedAtBottom", _isShadedAtBottom ? 1.0f : 0.0f);
         _materialPropertyBlock.SetFloat("_textureArrayIndex", _textureArrayIndex);
