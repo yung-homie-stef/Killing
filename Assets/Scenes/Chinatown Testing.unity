@@ -374,7 +374,7 @@ Transform:
   m_GameObject: {fileID: 71982909}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 695.0602, y: 439.475, z: -61.217476}
+  m_LocalPosition: {x: 694.25, y: 437.29, z: -63.16}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1121,9 +1121,6 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: -1384479216595842322, guid: 53fdf0461e84d624086aef89263f8f1a, type: 3}
       insertIndex: -1
       addedObject: {fileID: 429707335}
-    - targetCorrespondingSourceObject: {fileID: -1384479216595842322, guid: 53fdf0461e84d624086aef89263f8f1a, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 429707338}
     - targetCorrespondingSourceObject: {fileID: 4525827362732636277, guid: 53fdf0461e84d624086aef89263f8f1a, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1781467660}
@@ -1322,25 +1319,6 @@ MonoBehaviour:
   _decalOffsetX: 0.1
   _decalOffsetY: -0.021
   _decalRotation: 8
---- !u!114 &429707338
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 429707333}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e5b26b0c1df39884bb37435a97e3b29b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _isEndPiece: 1
-  _isShadedAtBottom: 1
-  _isUsingTextureArray: 1
-  _textureArrayIndex: 2
-  _decalOffsetX: 0.045
-  _decalOffsetY: 0.074
-  _decalRotation: 10
 --- !u!1 &438049810 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -9218444684122020008, guid: e821913a1b1ba7d40ac99b06c52617a8, type: 3}
@@ -3371,7 +3349,7 @@ MonoBehaviour:
   _roadLineTexture: {fileID: 2800000, guid: f259fdf8a8b397042865e15ef1a9cd85, type: 3}
   _roadAsphaltTexture: {fileID: 0}
   _offsetX: 4
-  _offsetY: 3.23
+  _offsetY: 3.19
   _textureArrayIndex: 0
 --- !u!1001 &718673680
 PrefabInstance:
