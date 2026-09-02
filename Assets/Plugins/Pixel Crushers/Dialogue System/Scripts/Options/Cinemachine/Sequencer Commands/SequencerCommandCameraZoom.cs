@@ -2,7 +2,7 @@
 using UnityEngine;
 using System.Collections;
 using PixelCrushers.DialogueSystem;
-using Cinemachine;
+using Unity.Cinemachine;
 
 namespace PixelCrushers.DialogueSystem.SequencerCommands
 {
@@ -13,18 +13,18 @@ public class SequencerCommandCameraZoom : SequencerCommand
         protected virtual IEnumerator Start()
         {
             var _camGameObject = GetSubject(0);
-            var _cam = _camGameObject.GetComponent<CinemachineVirtualCamera>();
+            var _cam = _camGameObject.GetComponent<CinemachineCamera>();
             var _zoomAmount = GetParameterAsFloat(1);
             var _zoomLength = GetParameterAsFloat(2);
 
 
             // Zoom
-            var _originalZoom = _cam.m_Lens.FieldOfView;
+            var _originalZoom = _cam.Lens.FieldOfView;
             float elapsed = 0.0f;
 
             while (elapsed < _zoomLength)
             {
-                _cam.m_Lens.FieldOfView = Mathf.Lerp(_originalZoom, _zoomAmount, elapsed / _zoomLength);
+                _cam.Lens.FieldOfView = Mathf.Lerp(_originalZoom, _zoomAmount, elapsed / _zoomLength);
                 yield return null;
                 elapsed += DialogueTime.deltaTime;
             }

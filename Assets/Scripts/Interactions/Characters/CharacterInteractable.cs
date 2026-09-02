@@ -1,4 +1,4 @@
-using Cinemachine;
+using Unity.Cinemachine;
 using PixelCrushers.DialogueSystem;
 using System.Collections;
 using System.Collections.Generic;

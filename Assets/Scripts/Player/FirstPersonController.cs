@@ -1,4 +1,4 @@
-using Cinemachine;
+using Unity.Cinemachine;
 using System.Collections;
 using System.Collections.Generic;
 using System.Runtime.Remoting.Messaging;
@@ -55,7 +55,7 @@ public class FirstPersonController : MonoBehaviour
     private bool _isInteracting = false;
 
     private Camera _cameraComponent;
-    private CinemachineVirtualCamera _virtualCameraComponent;
+    private CinemachineCamera _virtualCameraComponent;
     private CharacterController _characterControllerComponent;
 
     private Vector3 _moveDirection;
@@ -68,7 +68,7 @@ public class FirstPersonController : MonoBehaviour
     void Awake()
     {
         _cameraComponent = GetComponentInChildren<Camera>();
-        _virtualCameraComponent = GetComponentInChildren<CinemachineVirtualCamera>();
+        _virtualCameraComponent = GetComponentInChildren<CinemachineCamera>();
         _characterControllerComponent = GetComponent<CharacterController>();
 
         Cursor.lockState = CursorLockMode.Locked;

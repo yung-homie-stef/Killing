@@ -1,8 +1,8 @@
 #if USE_CINEMACHINE || USE_CINEMACHINE_3
 using UnityEngine;
 #if USE_CINEMACHINE
-using Cinemachine;
-using CinemachineCam = Cinemachine.CinemachineVirtualCamera;
+using Unity.Cinemachine;
+using CinemachineCam = Unity.Cinemachine.CinemachineCamera;
 #elif USE_CINEMACHINE_3
 using Unity.Cinemachine;
 using CinemachineCam = Unity.Cinemachine.CinemachineCamera;

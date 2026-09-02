@@ -1,5 +1,5 @@
 #if USE_CINEMACHINE
-using Cinemachine;
+using Unity.Cinemachine;
 using PixelCrushers.DialogueSystem;
 using System.Collections;
 using System.Runtime.Remoting.Metadata.W3cXsd2001;
@@ -23,17 +23,17 @@ public class SequencerCommandCameraShake : SequencerCommand
         {
             elapsed = 0.0f;
             var _camGameObject = GetSubject(0);
-            var _cam = _camGameObject.GetComponent<CinemachineVirtualCamera>();
+            var _cam = _camGameObject.GetComponent<CinemachineCamera>();
             var _amplitude = GetParameterAsFloat(1);
             var _frequency = GetParameterAsFloat(2);
             var _shakeLength = GetParameterAsFloat(3);
 
 
             // Shake
-            noise = _cam.GetCinemachineComponent<CinemachineBasicMultiChannelPerlin>();
-            amplitudeOG = noise.m_AmplitudeGain;
+            // TO-DO: noise = _cam.GetCinemachineComponent<CinemachineBasicMultiChannelPerlin>();
+            amplitudeOG = noise.AmplitudeGain;
             amplitudeNew = _amplitude;
-            frequencyOG = noise.m_FrequencyGain;
+            frequencyOG = noise.FrequencyGain;
             frequencyNew = _frequency;
             shakeLength = _shakeLength;
             
@@ -57,15 +57,15 @@ public class SequencerCommandCameraShake : SequencerCommand
         {
             if (elapsed <= shakeLength)
             {
-                noise.m_AmplitudeGain = amplitudeNew;
-                noise.m_FrequencyGain = frequencyNew;
+                noise.AmplitudeGain = amplitudeNew;
+                noise.FrequencyGain = frequencyNew;
                 elapsed += Time.deltaTime;
                 //Debug.Log(elapsed);
             }
             else
             {
-                noise.m_AmplitudeGain = amplitudeOG;
-                noise.m_FrequencyGain = frequencyOG;
+                noise.AmplitudeGain = amplitudeOG;
+                noise.FrequencyGain = frequencyOG;
 
                 elapsed = 0.0f;
                 Stop();

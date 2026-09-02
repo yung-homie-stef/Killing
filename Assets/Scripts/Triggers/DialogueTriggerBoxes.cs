@@ -1,6 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
-using Cinemachine;
+using Unity.Cinemachine;
 using PixelCrushers.DialogueSystem;
 using UnityEngine;
 
@@ -16,7 +16,7 @@ public class DialogueTriggerBoxes : MonoBehaviour
     [SerializeField] private TriggerType _type;
     [SerializeField] private DialogueSystemTrigger _DS_Trigger;
     [SerializeField] private bool _selfDestruct = false;
-    [SerializeField] private CinemachineVirtualCamera _cinemachineVirtualCamera;
+    [SerializeField] private CinemachineCamera _cinemachineVirtualCamera;
 
     private void OnTriggerEnter(Collider other)
     {
