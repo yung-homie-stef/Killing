@@ -13,10 +13,10 @@ public class RoadPiece : MonoBehaviour
     [SerializeField] private Texture2D _roadLineTexture;
     [SerializeField] private Texture2D _roadAsphaltTexture;
     [Range(1, 4 )]
-    [SerializeField] private float _offsetX = 0.0f;
+    [SerializeField] private int _offsetX = 0;
     [Range(1, 4)]
-    [SerializeField] private float _offsetY = 0.0f;
-    [Range(1, 22)]
+    [SerializeField] private int _offsetY = 0;
+    [Range(0, 22)]
     [SerializeField] private int _textureArrayIndex = 0;
 
     private MaterialPropertyBlock _materialPropertyBlock = null;

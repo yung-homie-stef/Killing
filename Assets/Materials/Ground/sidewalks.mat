@@ -88,6 +88,10 @@ Material:
         m_Texture: {fileID: 2800000, guid: 45f3d491429038941b89364d9dd9f600, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    - _Pavement_Texture_Array:
+        m_Texture: {fileID: 18700000, guid: c7ed8d995fe0aac49ad1be13eca7be33, type: 2}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - _SampleTexture2D_5838d3c4679d43fea0c98649593cf232_Texture_1_Texture2D:
         m_Texture: {fileID: 2800000, guid: 7e02b3fccb146824f8d1827407c7f800, type: 3}
         m_Scale: {x: 1, y: 1}
@@ -105,6 +109,10 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _SpecGlossMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _Texture2DAsset_fb46cc79ca7c4b6c97b28ab275a168d8_Out_0_Texture2D:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
@@ -145,6 +153,7 @@ Material:
     - _Parallax: 0.005
     - _Pavement_Angle: 0
     - _Pavement_Subdivision: 4
+    - _Pavement_Texture_Array_Index: 0
     - _Pavement_X_Offset: 0
     - _Pavement_Y_Offset: 2
     - _QueueControl: 0
@@ -158,6 +167,7 @@ Material:
     - _Surface: 0
     - _WorkflowMode: 1
     - _ZWrite: 1
+    - _textureArrayIndex: 0
     - _xCurbOffset: 0
     - _xOffset: 0.13
     - _yOffset: 3

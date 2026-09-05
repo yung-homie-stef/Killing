@@ -1,13 +1,28 @@
 fileFormatVersion: 2
-guid: 8a00ad2d151aa024597e57e4f414a538
+guid: 648670a8a11cbd24fb9d2219d418ae70
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: kennys_diner
+    second: {fileID: 2100000, guid: 0b82936983c5fd94ca25163ba63334d8, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: kennys_diner_2
+    second: {fileID: 2100000, guid: 9f9427f238f73ea4db731ac0e935ddd2, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: window_glass
+    second: {fileID: 2100000, guid: 204407828b4cb9047b4e54d721ed8339, type: 2}
   materials:
     materialImportMode: 2
-    materialName: 0
-    materialSearch: 1
+    materialName: 1
+    materialSearch: 2
     materialLocation: 1
   animations:
     legacyGenerateAnimations: 4
