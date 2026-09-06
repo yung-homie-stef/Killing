@@ -7,6 +7,7 @@ using PrimeTween;
 using PixelCrushers.DialogueSystem;
 using System;
 using System.Text.RegularExpressions;
+using UnityEngine.Playables;
 
 public class HUD : MonoBehaviour
 {
@@ -42,7 +43,7 @@ public class HUD : MonoBehaviour
         GameEventsManager.instance.moneyEvents.onMoneyAmountChanged += UpdateHUDPlayerFunds;
         GameEventsManager.instance.playerEvents.onBeginPlayerTeleportation += FadeToBlack;
         GameEventsManager.instance.playerEvents.onPlayerEnterIndoorOutdoor += HUDTween;
-        GameEventsManager.instance.playerEvents.onPlayerFastTravel += HUDTween;
+        GameEventsManager.instance.playerEvents.onPlayerFastTravel += HUDTweenWithBlackout;
 
         Lua.RegisterFunction("ShowDialogueVisualPopup", this, SymbolExtensions.GetMethodInfo(() => ShowDialogueVisualPopup()));
         Lua.RegisterFunction("HideDialogueVisualPopup", this, SymbolExtensions.GetMethodInfo(() => HideDialogueVisualPopup()));
@@ -53,7 +54,7 @@ public class HUD : MonoBehaviour
         GameEventsManager.instance.moneyEvents.onMoneyAmountChanged -= UpdateHUDPlayerFunds;
         GameEventsManager.instance.playerEvents.onBeginPlayerTeleportation -= FadeToBlack;
         GameEventsManager.instance.playerEvents.onPlayerEnterIndoorOutdoor -= HUDTween;
-        GameEventsManager.instance.playerEvents.onPlayerFastTravel -= HUDTween;
+        GameEventsManager.instance.playerEvents.onPlayerFastTravel -= HUDTweenWithBlackout;
     }
 
     public void HUDTween(bool flag)
@@ -72,7 +73,7 @@ public class HUD : MonoBehaviour
         FadeToWhite();
     }
 
-    public void HUDTween()
+    public void HUDTweenWithBlackout()
     {
         _playerFundsBanner.anchoredPosition = new Vector2(60.0f, -10.0f); ;
         _minimap.gameObject.SetActive(true);

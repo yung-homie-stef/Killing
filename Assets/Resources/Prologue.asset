@@ -470,7 +470,7 @@ MonoBehaviour:
   - id: 3
     fields:
     - title: Name
-      value: Cold Night on Earth
+      value: Black Christmas
       type: 0
       typeString: CustomFieldType_Text
     - title: Pictures
@@ -1877,7 +1877,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Sequence
-        value: 
+        value: Timeline(speed, CutsceneManager, 0)
         type: 0
         typeString: 
       conversationID: 2
@@ -2265,7 +2265,9 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Sequence
-        value: 
+        value: 'SetContinueMode(false);
+
+          Continue()@Message(Typed)'
         type: 0
         typeString: 
       conversationID: 2
@@ -2316,11 +2318,11 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Dialogue Text
-        value: Shut the fuck up. Here. Seems that's all of it.
+        value: Shut the fuck up.
         type: 0
         typeString: 
       - title: Sequence
-        value: 
+        value: SetContinueMode(true)
         type: 0
         typeString: 
       conversationID: 2
@@ -2334,11 +2336,11 @@ MonoBehaviour:
       - originConversationID: 2
         originDialogueID: 9
         destinationConversationID: 2
-        destinationDialogueID: 10
+        destinationDialogueID: 17
         isConnector: 0
         priority: 2
       conditionsString: 
-      userScript: UpdateMoneyFromDialogue(-875)
+      userScript: 
       onExecute:
         m_PersistentCalls:
           m_Calls: []
@@ -2401,7 +2403,7 @@ MonoBehaviour:
       canvasRect:
         serializedVersion: 2
         x: 30
-        y: 520
+        y: 579.2105
         width: 160
         height: 30
     - id: 11
@@ -2458,7 +2460,7 @@ MonoBehaviour:
       canvasRect:
         serializedVersion: 2
         x: 30
-        y: 620
+        y: 679.2105
         width: 160
         height: 30
     - id: 12
@@ -2515,7 +2517,7 @@ MonoBehaviour:
       canvasRect:
         serializedVersion: 2
         x: 30
-        y: 720
+        y: 779.2105
         width: 160
         height: 30
     - id: 13
@@ -2545,7 +2547,7 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Sequence
-        value: 
+        value: required Timeline(speed, CutsceneManager, 1)@Message(Continued);
         type: 0
         typeString: CustomFieldType_Text
       - title: EventGuid
@@ -2561,14 +2563,17 @@ MonoBehaviour:
       conditionPriority: 2
       outgoingLinks: []
       conditionsString: 
-      userScript: 
+      userScript: 'SetQuestState("Black Christmas", "active");
+
+        SetQuestEntryState("Black
+        Christmas", 1, "active")'
       onExecute:
         m_PersistentCalls:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
         x: 30
-        y: 820
+        y: 879.2105
         width: 160
         height: 30
     - id: 14
@@ -2624,7 +2629,7 @@ MonoBehaviour:
       canvasRect:
         serializedVersion: 2
         x: 30
-        y: 770
+        y: 829.2105
         width: 160
         height: 30
     - id: 15
@@ -2679,7 +2684,7 @@ MonoBehaviour:
       canvasRect:
         serializedVersion: 2
         x: 30
-        y: 670
+        y: 729.2105
         width: 160
         height: 30
     - id: 16
@@ -2735,12 +2740,67 @@ MonoBehaviour:
       canvasRect:
         serializedVersion: 2
         x: 30
-        y: 570
+        y: 629.2105
+        width: 160
+        height: 30
+    - id: 17
+      fields:
+      - title: Title
+        value: 
+        type: 0
+        typeString: 
+      - title: Description
+        value: 
+        type: 0
+        typeString: 
+      - title: Actor
+        value: 4
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Conversant
+        value: 3
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Menu Text
+        value: 
+        type: 0
+        typeString: 
+      - title: Dialogue Text
+        value: Here. Seems that's all of it.
+        type: 0
+        typeString: 
+      - title: Sequence
+        value: UpdateMoneyFromDialogue(-875)
+        type: 0
+        typeString: 
+      conversationID: 2
+      isRoot: 0
+      isGroup: 0
+      nodeColor: 
+      delaySimStatus: 0
+      falseConditionAction: Block
+      conditionPriority: 2
+      outgoingLinks:
+      - originConversationID: 2
+        originDialogueID: 17
+        destinationConversationID: 2
+        destinationDialogueID: 10
+        isConnector: 0
+        priority: 2
+      conditionsString: 
+      userScript: 
+      onExecute:
+        m_PersistentCalls:
+          m_Calls: []
+      canvasRect:
+        serializedVersion: 2
+        x: 29.999985
+        y: 521.3158
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 0, y: 0}
-    canvasZoom: 0.8200002
+    canvasScrollPosition: {x: 22.857147, y: 205.71417}
+    canvasZoom: 0.7000003
   - id: 3
     fields:
     - title: Title

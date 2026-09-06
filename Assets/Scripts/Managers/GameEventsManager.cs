@@ -7,6 +7,7 @@ public class GameEventsManager : MonoBehaviour
     public PlayerEvents playerEvents;
     public InputEvents inputEvents;
     public MoneyEvents moneyEvents;
+    public CutsceneEvents cutsceneEvents;
 
     private void Awake()
     {
@@ -17,5 +18,6 @@ public class GameEventsManager : MonoBehaviour
         playerEvents = new PlayerEvents();
         inputEvents = new InputEvents();
         moneyEvents = new MoneyEvents();
+        cutsceneEvents = new CutsceneEvents();
     }
 }

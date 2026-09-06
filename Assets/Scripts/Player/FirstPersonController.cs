@@ -79,6 +79,7 @@ public class FirstPersonController : MonoBehaviour
         GameEventsManager.instance.playerEvents.onPlayerEnterIndoorOutdoor += TeleportIndoorsOutdoors;
         GameEventsManager.instance.playerEvents.onPlayerFastTravel += FastTravel;
         DialogueManager.instance.conversationEnded += OnConversationEnded;
+        DialogueManager.instance.conversationStarted += OnConversationStarted;
     }
 
     private void OnDisable()
@@ -87,6 +88,7 @@ public class FirstPersonController : MonoBehaviour
         GameEventsManager.instance.playerEvents.onDisablePlayerMovement -= DisablePlayerMovement;
         GameEventsManager.instance.playerEvents.onPlayerEnterIndoorOutdoor -= TeleportIndoorsOutdoors;
         GameEventsManager.instance.playerEvents.onPlayerFastTravel -= FastTravel;
+        //DialogueManager.instance.conversationStarted -= OnConversationStarted;
         //DialogueManager.instance.conversationEnded -= OnConversationEnded;
     }
 
@@ -239,5 +241,10 @@ public class FirstPersonController : MonoBehaviour
         EnablePlayerMovement();
         UIManager.instance.focusUI.SetCanFocus(true);
         _canInteract = true;
+    }
+
+    private void OnConversationStarted(Transform t)
+    {
+        DisablePlayerMovement();
     }
 }
