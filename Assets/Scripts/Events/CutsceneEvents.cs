@@ -12,11 +12,15 @@ public class CutsceneEvents
     {
         if (onCutsceneBegin != null)
             onCutsceneBegin();
+
+        Debug.Log("cutscene is playing");
     }
 
     public void OnCutsceneEnd()
     {
-        if (onCutsceneBegin != null)
+        if (onCutsceneEnd != null)
             onCutsceneEnd();
+
+        Debug.Log("cutscene is finished");
     }
 }

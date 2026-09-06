@@ -20,7 +20,7 @@ public class MoneyManager : MonoBehaviour
         if (PlayerPrefs.HasKey(_moneyVariableString))
             _currentPlayerMoney = PlayerPrefs.GetInt(_moneyVariableString);
         else
-            PlayerPrefs.SetInt(_moneyVariableString, 0);
+            PlayerPrefs.SetInt(_moneyVariableString, 1000);
 
         Lua.RegisterFunction("UpdateMoneyFromDialogue", this, SymbolExtensions.GetMethodInfo(() => UpdateMoneyFromDialogue(0)));
         Lua.RegisterFunction("CheckIfPlayerHasEnoughMoney", this, SymbolExtensions.GetMethodInfo(() => CheckIfPlayerHasEnoughMoney(0)));

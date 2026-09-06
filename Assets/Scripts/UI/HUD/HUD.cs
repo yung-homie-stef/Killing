@@ -11,7 +11,6 @@ using UnityEngine.Playables;
 
 public class HUD : MonoBehaviour
 {
-
     [Header("Player Funds")]
     [SerializeField] private TextMeshProUGUI _playerFundsText;
     [SerializeField] private RectTransform _playerFundsBanner;
@@ -23,6 +22,7 @@ public class HUD : MonoBehaviour
     [SerializeField] private RectTransform _minimap;
 
     [Header("Location")]
+    [SerializeField] private RectTransform _locationBanner;
     [SerializeField] private TextMeshProUGUI _locationName;
 
     [Header("Alerts")]
@@ -31,6 +31,9 @@ public class HUD : MonoBehaviour
 
     [Header("Blackout")]
     [SerializeField] private CanvasGroup _blackoutCanvasGroup;
+
+    private float _offScreenUIPosX = 360.0f;
+    private float _onScreenUIPosX = 60.0f;
 
     private void Awake()
     {
@@ -42,8 +45,10 @@ public class HUD : MonoBehaviour
     {
         GameEventsManager.instance.moneyEvents.onMoneyAmountChanged += UpdateHUDPlayerFunds;
         GameEventsManager.instance.playerEvents.onBeginPlayerTeleportation += FadeToBlack;
-        GameEventsManager.instance.playerEvents.onPlayerEnterIndoorOutdoor += HUDTween;
-        GameEventsManager.instance.playerEvents.onPlayerFastTravel += HUDTweenWithBlackout;
+        GameEventsManager.instance.playerEvents.onPlayerEnterIndoorOutdoor += HUDTweenIndoorOutdoor;
+        GameEventsManager.instance.playerEvents.onPlayerFastTravel += FadeToWhite;
+        GameEventsManager.instance.cutsceneEvents.onCutsceneBegin += HideHUDDuringCutscene;
+        GameEventsManager.instance.cutsceneEvents.onCutsceneEnd += RevealHUDAfterCutscene;
 
         Lua.RegisterFunction("ShowDialogueVisualPopup", this, SymbolExtensions.GetMethodInfo(() => ShowDialogueVisualPopup()));
         Lua.RegisterFunction("HideDialogueVisualPopup", this, SymbolExtensions.GetMethodInfo(() => HideDialogueVisualPopup()));
@@ -53,11 +58,14 @@ public class HUD : MonoBehaviour
     {
         GameEventsManager.instance.moneyEvents.onMoneyAmountChanged -= UpdateHUDPlayerFunds;
         GameEventsManager.instance.playerEvents.onBeginPlayerTeleportation -= FadeToBlack;
-        GameEventsManager.instance.playerEvents.onPlayerEnterIndoorOutdoor -= HUDTween;
-        GameEventsManager.instance.playerEvents.onPlayerFastTravel -= HUDTweenWithBlackout;
+        GameEventsManager.instance.playerEvents.onPlayerEnterIndoorOutdoor -= HUDTweenIndoorOutdoor;
+        GameEventsManager.instance.playerEvents.onPlayerFastTravel -= FadeToWhite;
+        GameEventsManager.instance.cutsceneEvents.onCutsceneBegin -= HideHUDDuringCutscene;
     }
 
-    public void HUDTween(bool flag)
+    // This is to hide the minimap but move the player funds to
+    // just above the banner with the name of the player location
+    public void HUDTweenIndoorOutdoor(bool flag)
     {
         if (flag)
         {
@@ -73,12 +81,22 @@ public class HUD : MonoBehaviour
         FadeToWhite();
     }
 
-    public void HUDTweenWithBlackout()
+    // moving the HUD off the screen whenever a cutscene plays
+    private void HideHUDDuringCutscene()
     {
-        _playerFundsBanner.anchoredPosition = new Vector2(60.0f, -10.0f); ;
-        _minimap.gameObject.SetActive(true);
+        Sequence.Create()
+            .Group(Tween.UIAnchoredPosition(target: _locationBanner, startValue: _locationBanner.anchoredPosition, endValue: new Vector2(-_offScreenUIPosX, _locationBanner.anchoredPosition.y), duration: 0.25f))
+            .Group(Tween.UIAnchoredPosition(target: _playerFundsBanner, startValue: _playerFundsBanner.anchoredPosition, endValue: new Vector2(-_offScreenUIPosX, _playerFundsBanner.anchoredPosition.y), duration: 0.25f))
+            .Group(Tween.UIAnchoredPosition(target: _minimap, startValue: _minimap.anchoredPosition, endValue: new Vector2(-_offScreenUIPosX, _minimap.anchoredPosition.y), duration: 0.25f));
+    }
 
-        FadeToWhite();
+    // bringing the HUD back onto the screen whenever a cutscene ends
+    private void RevealHUDAfterCutscene()
+    {
+        Sequence.Create()
+           .Group(Tween.UIAnchoredPosition(target: _locationBanner, startValue: _locationBanner.anchoredPosition, endValue: new Vector2(_onScreenUIPosX, _locationBanner.anchoredPosition.y), duration: 0.25f))
+           .Group(Tween.UIAnchoredPosition(target: _playerFundsBanner, startValue: _playerFundsBanner.anchoredPosition, endValue: new Vector2(_onScreenUIPosX, _playerFundsBanner.anchoredPosition.y), duration: 0.25f))
+           .Group(Tween.UIAnchoredPosition(target: _minimap, startValue: _minimap.anchoredPosition, endValue: new Vector2(_onScreenUIPosX, _minimap.anchoredPosition.y), duration: 0.25f));
     }
 
     public void TriggerItemCollectPopup(ItemObject itemObj, bool acquired)
@@ -120,6 +138,7 @@ public class HUD : MonoBehaviour
             
     }
 
+    #region Blackout Screen
     private void FadeToBlack()
     {
         Tween.Custom(startValue:  0.0f, endValue: 1.0f, duration: 0.35f, onValueChange: newVal => _blackoutCanvasGroup.alpha = newVal, startDelay: 0.25f);
@@ -129,5 +148,6 @@ public class HUD : MonoBehaviour
     {
         Tween.Custom(startValue: 1.0f, endValue: 0.0f, duration: 0.35f, onValueChange: newVal => _blackoutCanvasGroup.alpha = newVal, startDelay: 0.25f);
     }
-
+    
+    #endregion
 }
