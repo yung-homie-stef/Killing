@@ -216,9 +216,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Take Out
-
-'
+  m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: a3a82c113b573b94e9174ea7f7323430, type: 2}
   m_sharedMaterial: {fileID: -8295073694903874356, guid: a3a82c113b573b94e9174ea7f7323430, type: 2}
@@ -372,7 +370,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2855429885528118997}
   - component: {fileID: 2367040437203337082}
-  - component: {fileID: 3408287006729262971}
+  - component: {fileID: 4734542394187008412}
   m_Layer: 5
   m_Name: QuestTracker
   m_TagString: Untagged
@@ -409,7 +407,7 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5032876769255242180}
   m_CullTransparentMesh: 1
---- !u!114 &3408287006729262971
+--- !u!114 &4734542394187008412
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -426,8 +424,8 @@ MonoBehaviour:
   showContainerIfEmpty: 0
   questTrackTemplate: {fileID: 5270510310234430737}
   showActiveQuests: 1
-  showCompletedQuests: 1
-  showCompletedEntryText: 1
+  showCompletedQuests: 0
+  showCompletedEntryText: 0
   questDescriptionSource: 0
   visibleOnStart: 1
 --- !u!1 &5362931198980974851
