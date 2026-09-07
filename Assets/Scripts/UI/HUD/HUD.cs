@@ -34,6 +34,7 @@ public class HUD : MonoBehaviour
 
     private float _offScreenUIPosX = 360.0f;
     private float _onScreenUIPosX = 60.0f;
+    [SerializeField] private bool _inCutscene = false;
 
     private void Awake()
     {
@@ -84,6 +85,8 @@ public class HUD : MonoBehaviour
     // moving the HUD off the screen whenever a cutscene plays
     private void HideHUDDuringCutscene()
     {
+        _inCutscene = true;
+
         Sequence.Create()
             .Group(Tween.UIAnchoredPosition(target: _locationBanner, startValue: _locationBanner.anchoredPosition, endValue: new Vector2(-_offScreenUIPosX, _locationBanner.anchoredPosition.y), duration: 0.25f))
             .Group(Tween.UIAnchoredPosition(target: _playerFundsBanner, startValue: _playerFundsBanner.anchoredPosition, endValue: new Vector2(-_offScreenUIPosX, _playerFundsBanner.anchoredPosition.y), duration: 0.25f))
@@ -93,6 +96,8 @@ public class HUD : MonoBehaviour
     // bringing the HUD back onto the screen whenever a cutscene ends
     private void RevealHUDAfterCutscene()
     {
+        _inCutscene = false;
+
         Sequence.Create()
            .Group(Tween.UIAnchoredPosition(target: _locationBanner, startValue: _locationBanner.anchoredPosition, endValue: new Vector2(_onScreenUIPosX, _locationBanner.anchoredPosition.y), duration: 0.25f))
            .Group(Tween.UIAnchoredPosition(target: _playerFundsBanner, startValue: _playerFundsBanner.anchoredPosition, endValue: new Vector2(_onScreenUIPosX, _playerFundsBanner.anchoredPosition.y), duration: 0.25f))
@@ -106,16 +111,32 @@ public class HUD : MonoBehaviour
 
     private void UpdateHUDPlayerFunds(int previousBalance, int newBalance, int dollarAmount)
     {
+        if (_inCutscene)
+        {
+            Sequence.Create()
+                .Group(Tween.UIAnchoredPosition(target: _playerFundsBanner, startValue: _playerFundsBanner.anchoredPosition, endValue: new Vector2(_onScreenUIPosX, _playerFundsBanner.anchoredPosition.y), duration: 0.5f))
+                .Chain(Tween.UIAnchoredPosition(target: _playerFundsBanner, startValue: _playerFundsBanner.anchoredPosition, endValue: new Vector2(-_offScreenUIPosX, _playerFundsBanner.anchoredPosition.y), duration: 0.5f, startDelay: 5.0f));
+
+            StartCoroutine(PrintPlayerFunds(0.5f, dollarAmount));
+        }  
+        else
+            StartCoroutine(PrintPlayerFunds(0.0f, dollarAmount));
+   
+        // tweening for "+-$$$ amount" popup above the player funds banner
+        Sequence.Create().Group(Tween.TextFontSize(target: _amountPopUp, startValue: 20, endValue: 25, duration: 1.0f, startDelay: 0.5f))
+                .Group(Tween.UIAnchoredPosition(target: _amountPopUp.rectTransform, startValue: new Vector2(0, 20), endValue: new Vector2(0, 45), duration: 2.0f, startDelay: 0.5f)
+                .Group(Tween.Alpha(target: _amountPopUpCG, startValue: 1.0f, endValue: 0.0f, duration: 1.5f, startDelay: 0.5f)));
+
+        _moneyCounter.UpdateBeforeCounting(previousBalance, newBalance);
+    }
+
+    private IEnumerator PrintPlayerFunds(float waitTime, int dollarAmount)
+    {
+        yield return new WaitForSeconds(waitTime);
         if (dollarAmount > 0)
             _amountPopUp.text = "+" + dollarAmount;
         else
             _amountPopUp.text = dollarAmount.ToString();
-
-            Sequence.Create().Group(Tween.TextFontSize(target: _amountPopUp, startValue: 20, endValue: 25, duration: 1.0f))
-                .Group(Tween.UIAnchoredPosition(target: _amountPopUp.rectTransform, startValue: new Vector2(0, 20), endValue: new Vector2(0, 45), duration: 2.0f)
-                .Group(Tween.Alpha(target: _amountPopUpCG, startValue: 1.0f, endValue: 0.0f, duration: 1.5f)));
-
-        _moneyCounter.UpdateBeforeCounting(previousBalance, newBalance);
     }
 
     public void ShowDialogueVisualPopup()

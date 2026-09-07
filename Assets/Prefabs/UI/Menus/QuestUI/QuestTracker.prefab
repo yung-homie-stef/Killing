@@ -370,7 +370,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2855429885528118997}
   - component: {fileID: 2367040437203337082}
-  - component: {fileID: 4734542394187008412}
+  - component: {fileID: 2391261841025541725}
   m_Layer: 5
   m_Name: QuestTracker
   m_TagString: Untagged
@@ -407,7 +407,7 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5032876769255242180}
   m_CullTransparentMesh: 1
---- !u!114 &4734542394187008412
+--- !u!114 &2391261841025541725
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -416,7 +416,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 5032876769255242180}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2168d38d221b35c4ba543877f39e93ae, type: 3}
+  m_Script: {fileID: 11500000, guid: eb39832257d53aa4baca56dbf42f0f52, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   playerPrefsToggleKey: QuestTracker
@@ -428,6 +428,7 @@ MonoBehaviour:
   showCompletedEntryText: 0
   questDescriptionSource: 0
   visibleOnStart: 1
+  _questBanner: {fileID: 1342002014219374942}
 --- !u!1 &5362931198980974851
 GameObject:
   m_ObjectHideFlags: 0

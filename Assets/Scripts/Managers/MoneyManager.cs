@@ -31,8 +31,8 @@ public class MoneyManager : MonoBehaviour
         _previousPlayerMoney = _currentPlayerMoney;
         _currentPlayerMoney += amount;
 
-        Debug.Log("Had: " + _previousPlayerMoney);
-        Debug.Log("Have: " + _currentPlayerMoney);
+        //Debug.Log("Had: " + _previousPlayerMoney);
+        //Debug.Log("Have: " + _currentPlayerMoney);
         PlayerPrefs.SetInt(_moneyVariableString, _currentPlayerMoney);
         GameEventsManager.instance.moneyEvents.MoneyAmountChanged(_previousPlayerMoney, _currentPlayerMoney, amount);
     }

@@ -22,6 +22,8 @@ public class MoneyCounter : MonoBehaviour
 
     private IEnumerator CountMoney(int previousAmount, int newValue)
     {
+        yield return new WaitForSeconds(0.5f);
+
         WaitForSeconds wait = new WaitForSeconds(1f / _FPS);
         int previousValue = previousAmount;
         int stepAmount;
