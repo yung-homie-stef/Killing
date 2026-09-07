@@ -6,7 +6,16 @@ using UnityEngine.Timeline;
 
 public class CutsceneManager : MonoBehaviour
 {
-    [SerializeField] private PlayableDirector _cutscenePlayer;
+    private PlayableDirector _cutscenePlayer;
+    public static CutsceneManager instance { get; private set; }
+
+    private void Awake()
+    {
+        if (instance != null && instance != this)
+            Destroy(this);
+        else
+            instance = this;
+    }
 
     private void OnEnable()
     {
@@ -23,6 +32,7 @@ public class CutsceneManager : MonoBehaviour
 
     public void InitializeCutscene(TimelineAsset cutscene)
     {
+        _cutscenePlayer.playableAsset = cutscene;
         _cutscenePlayer.Play(cutscene);
     }
 

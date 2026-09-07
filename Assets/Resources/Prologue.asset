@@ -150,6 +150,10 @@ MonoBehaviour:
       value: False
       type: 2
       typeString: CustomFieldType_Boolean
+    - title: Display Name
+      value: Cst. Savino
+      type: 0
+      typeString: 
     portrait: {fileID: 0}
     spritePortrait: {fileID: 0}
     alternatePortraits: []
@@ -1053,7 +1057,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Sequence
-        value: Timeline(speed, CutscenePlayer, 0)
+        value: Timeline(speed, CutsceneManager, 0)
         type: 0
         typeString: 
       conversationID: 1
@@ -1609,7 +1613,7 @@ MonoBehaviour:
       - title: Sequence
         value: 'SetDialoguePanel(true);
 
-          Timeline(speed, CutscenePlayer,
+          Timeline(speed, CutsceneManager,
           0)'
         type: 0
         typeString: CustomFieldType_Text
@@ -1665,7 +1669,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Sequence
-        value: required Timeline(speed, CutscenePlayer, 1)@Message(Continued);
+        value: required Timeline(speed, CutsceneManager, 1)@Message(Continued);
         type: 0
         typeString: 
       conversationID: 1
@@ -1717,7 +1721,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Sequence
-        value: 'required Timeline(speed, CutscenePlayer, 1);
+        value: 'required Timeline(speed, CutsceneManager, 1);
 
           SetDialoguePanel(false);'
         type: 0
@@ -1748,7 +1752,7 @@ MonoBehaviour:
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 0, y: 170.4917}
+    canvasScrollPosition: {x: 0, y: 0}
     canvasZoom: 0.6100004
   - id: 2
     fields:
@@ -2566,10 +2570,7 @@ MonoBehaviour:
       conditionPriority: 2
       outgoingLinks: []
       conditionsString: 
-      userScript: 'SetQuestState("Black Christmas", "active");
-
-        SetQuestEntryState("Black
-        Christmas", 1, "active")'
+      userScript: 
       onExecute:
         m_PersistentCalls:
           m_Calls: []
@@ -2802,7 +2803,7 @@ MonoBehaviour:
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 5.7142944, y: 332.85706}
+    canvasScrollPosition: {x: 0, y: 202.85706}
     canvasZoom: 0.7000003
   - id: 3
     fields:
