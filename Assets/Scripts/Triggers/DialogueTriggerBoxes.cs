@@ -3,31 +3,30 @@ using System.Collections.Generic;
 using Unity.Cinemachine;
 using PixelCrushers.DialogueSystem;
 using UnityEngine;
+using UnityEngine.Events;
 using PixelCrushers;
 
+[RequireComponent(typeof(DialogueSystemTrigger))]
 public class DialogueTriggerBoxes : MonoBehaviour
 {
-    public enum TriggerType
-    {
-        None,
-        Cutscene,
-        Conversation
-    }
-
     [SerializeField] private DialogueSystemTrigger _DS_Trigger;
-    [SerializeField] private bool _selfDestruct = false;
-    [SerializeField] private bool _usesCamera = false;
-    [SerializeField][ShowIf("_usesCamera")] private CinemachineCamera _cinemachineVirtualCamera;
+    [SerializeField] private bool _selfDestruct = true;
+    [SerializeField] private UnityEvent _onTriggerEnter;
+    private Collider _collider;
+    private void Awake()
+    {
+        _collider = GetComponent<Collider>();
+    }
 
     private void OnTriggerEnter(Collider other)
     {
-        if (_cinemachineVirtualCamera != null)
-            _cinemachineVirtualCamera.Priority = 1;
-
+        _onTriggerEnter.Invoke();
         _DS_Trigger.OnUse();
         GameEventsManager.instance.playerEvents.DisablePlayerMovement();
+        _collider.enabled = false;
 
         if (_selfDestruct)
-            Destroy(this.gameObject);
+            Destroy(gameObject);
     }
+
 }

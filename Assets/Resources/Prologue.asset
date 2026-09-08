@@ -54,10 +54,6 @@ MonoBehaviour:
       value: True
       type: 2
       typeString: CustomFieldType_Boolean
-    - title: Display Name
-      value: Baker
-      type: 0
-      typeString: 
     portrait: {fileID: 0}
     spritePortrait: {fileID: 0}
     alternatePortraits: []
@@ -73,7 +69,7 @@ MonoBehaviour:
       type: 3
       typeString: CustomFieldType_Files
     - title: Description
-      value: Girlfriend of player character.
+      value: Girlfriend of player character. Photographer.
       type: 0
       typeString: CustomFieldType_Text
     - title: IsPlayer
@@ -1647,11 +1643,11 @@ MonoBehaviour:
       - title: Title
         value: 
         type: 0
-        typeString: 
+        typeString: CustomFieldType_Text
       - title: Description
         value: 
         type: 0
-        typeString: 
+        typeString: CustomFieldType_Text
       - title: Actor
         value: 1
         type: 5
@@ -1663,15 +1659,15 @@ MonoBehaviour:
       - title: Menu Text
         value: 
         type: 0
-        typeString: 
+        typeString: CustomFieldType_Text
       - title: Dialogue Text
         value: Excuse me.
         type: 0
-        typeString: 
+        typeString: CustomFieldType_Text
       - title: Sequence
         value: required Timeline(speed, CutsceneManager, 1)@Message(Continued);
         type: 0
-        typeString: 
+        typeString: CustomFieldType_Text
       conversationID: 1
       isRoot: 0
       isGroup: 0
@@ -2909,6 +2905,12 @@ MonoBehaviour:
         destinationDialogueID: 30
         isConnector: 0
         priority: 2
+      - originConversationID: 3
+        originDialogueID: 0
+        destinationConversationID: 3
+        destinationDialogueID: 5
+        isConnector: 0
+        priority: 2
       conditionsString: 
       userScript: 
       onExecute:
@@ -3076,8 +3078,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 378
-        y: 162
+        x: 454.92313
+        y: 137
         width: 160
         height: 30
     - id: 4
@@ -3107,10 +3109,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Sequence
-        value: 'CameraZoom(CAM_GF1, 50, 0.25);
-
-          CameraShake(CAM_GF1, 2,
-          20, 0.25);'
+        value: CameraZoom(CAM_Clarissa1, 50, 0.25);
         type: 0
         typeString: 
       - title: Response Menu Sequence
@@ -3138,8 +3137,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 378
-        y: 212
+        x: 454.92313
+        y: 187
         width: 160
         height: 30
     - id: 5
@@ -3165,8 +3164,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Dialogue Text
-        value: I'm alright Riss, I'll live. Take it easy. Nothing to get worked up
-          over.
+        value: I'm good Riss, I'll live. Take it easy. Nothing to get worked up over.
         type: 0
         typeString: 
       - title: Sequence
@@ -3187,15 +3185,15 @@ MonoBehaviour:
         destinationDialogueID: 6
         isConnector: 0
         priority: 2
-      conditionsString: 
+      conditionsString: Variable["GirlfriendConvoIndex"] == 2
       userScript: 
       onExecute:
         m_PersistentCalls:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 377.0563
-        y: 397.7891
+        x: 407.82553
+        y: 340.0968
         width: 160
         height: 30
     - id: 6
@@ -3250,8 +3248,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 377.0563
-        y: 447.7891
+        x: 409.7486
+        y: 386.25067
         width: 160
         height: 30
     - id: 7
@@ -3305,8 +3303,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 377.0563
-        y: 497.7891
+        x: 409.7486
+        y: 436.25067
         width: 160
         height: 30
     - id: 8
@@ -3360,8 +3358,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 377.0563
-        y: 548.9656
+        x: 409.7486
+        y: 487.42715
         width: 160
         height: 30
     - id: 9
@@ -3415,8 +3413,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 377.0563
-        y: 597.78906
+        x: 409.7486
+        y: 536.2506
         width: 160
         height: 30
     - id: 10
@@ -3470,8 +3468,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 378.23276
-        y: 708.0985
+        x: 410.92505
+        y: 646.56006
         width: 160
         height: 30
     - id: 11
@@ -3526,8 +3524,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 377.0563
-        y: 771.31836
+        x: 409.7486
+        y: 709.7799
         width: 160
         height: 30
     - id: 12
@@ -3582,8 +3580,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 377.0563
-        y: 906.2498
+        x: 422.95792
+        y: 842.31537
         width: 160
         height: 30
     - id: 13
@@ -3637,8 +3635,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 377.0563
-        y: 956.2498
+        x: 422.95792
+        y: 892.31537
         width: 160
         height: 30
     - id: 14
@@ -3692,68 +3690,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 377.0563
-        y: 1006.2498
-        width: 160
-        height: 30
-    - id: 15
-      fields:
-      - title: Title
-        value: 
-        type: 0
-        typeString: 
-      - title: Description
-        value: 
-        type: 0
-        typeString: 
-      - title: Actor
-        value: 1
-        type: 5
-        typeString: CustomFieldType_Actor
-      - title: Conversant
-        value: 2
-        type: 5
-        typeString: CustomFieldType_Actor
-      - title: Menu Text
-        value: 
-        type: 0
-        typeString: 
-      - title: Dialogue Text
-        value: 
-        type: 0
-        typeString: 
-      - title: Sequence
-        value: 'Continue()@3;
-
-          CinemachinePriority(CAM_GF2);
-
-          CinemachinePriority(CAM_GF1,
-          0);'
-        type: 0
-        typeString: 
-      conversationID: 3
-      isRoot: 0
-      isGroup: 0
-      nodeColor: 
-      delaySimStatus: 0
-      falseConditionAction: Block
-      conditionPriority: 2
-      outgoingLinks:
-      - originConversationID: 3
-        originDialogueID: 15
-        destinationConversationID: 3
-        destinationDialogueID: 5
-        isConnector: 0
-        priority: 2
-      conditionsString: 
-      userScript: 
-      onExecute:
-        m_PersistentCalls:
-          m_Calls: []
-      canvasRect:
-        serializedVersion: 2
-        x: 592.84576
-        y: 339.29105
+        x: 422.95792
+        y: 942.31537
         width: 160
         height: 30
     - id: 16
@@ -3779,11 +3717,11 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Dialogue Text
-        value: Are you alright? Come here, sit down. Jesus
+        value: 'Oh my god. Are you alright? Come here... come on, sit down. '
         type: 0
         typeString: 
       - title: Sequence
-        value: CameraZoom(CAM_GF1, 60, 0.25);
+        value: CameraZoom(CAM_Clarissa1, 60, 0.25);
         type: 0
         typeString: 
       conversationID: 3
@@ -3793,22 +3731,17 @@ MonoBehaviour:
       delaySimStatus: 0
       falseConditionAction: Block
       conditionPriority: 2
-      outgoingLinks:
-      - originConversationID: 3
-        originDialogueID: 16
-        destinationConversationID: 3
-        destinationDialogueID: 15
-        isConnector: 0
-        priority: 2
+      outgoingLinks: []
       conditionsString: 
-      userScript: 
+      userScript: Variable["GirlfriendConvoIndex"] = Variable["GirlfriendConvoIndex"]
+        + 1;
       onExecute:
         m_PersistentCalls:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 380.1978
-        y: 272.98904
+        x: 455.69235
+        y: 237.98904
         width: 160
         height: 30
     - id: 17
@@ -3862,8 +3795,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 379.90475
-        y: 1166.4895
+        x: 425.80637
+        y: 1102.5537
         width: 160
         height: 30
     - id: 18
@@ -3918,8 +3851,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 378.80585
-        y: 1217.5885
+        x: 424.70746
+        y: 1153.6528
         width: 160
         height: 30
     - id: 19
@@ -3974,8 +3907,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 378.80585
-        y: 1267.589
+        x: 424.70746
+        y: 1203.6533
         width: 160
         height: 30
     - id: 22
@@ -4001,7 +3934,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Dialogue Text
-        value: 'You''re an asshole you know that? Nevermind you. What about me? '
+        value: 'You''re an asshole you know that? Nevermind you, what about me? '
         type: 0
         typeString: 
       - title: Sequence
@@ -4171,7 +4104,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Sequence
-        value: Continue()@3;
+        value: Continue()@5;
         type: 0
         typeString: 
       conversationID: 3
@@ -4195,8 +4128,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 625.74054
-        y: 837.58624
+        x: 671.64215
+        y: 773.6518
         width: 160
         height: 30
     - id: 28
@@ -4250,8 +4183,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 378.37204
-        y: 1057.5654
+        x: 424.27365
+        y: 993.6305
         width: 160
         height: 30
     - id: 29
@@ -4306,8 +4239,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 378.37204
-        y: 1112.8284
+        x: 424.27365
+        y: 1048.8926
         width: 160
         height: 30
     - id: 30
@@ -4354,7 +4287,7 @@ MonoBehaviour:
         destinationDialogueID: 31
         isConnector: 0
         priority: 2
-      conditionsString: Variable["GirlfriendConvoIndex"] == 2
+      conditionsString: Variable["GirlfriendConvoIndex"] == 3
       userScript: 
       onExecute:
         m_PersistentCalls:
@@ -5751,8 +5684,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 379.6879
-        y: 651.7365
+        x: 412.3802
+        y: 590.198
         width: 160
         height: 30
     - id: 57
@@ -5863,8 +5796,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 376.27417
-        y: 1317.8549
+        x: 422.17578
+        y: 1253.9192
         width: 160
         height: 30
     - id: 59
@@ -5919,8 +5852,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 376.27417
-        y: 1368.8549
+        x: 422.17578
+        y: 1304.9192
         width: 160
         height: 30
     - id: 60
@@ -5974,8 +5907,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 376.27417
-        y: 1418.8549
+        x: 422.17578
+        y: 1354.9192
         width: 160
         height: 30
     - id: 61
@@ -6023,13 +5956,13 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 376.27417
-        y: 1468.8549
+        x: 422.17578
+        y: 1404.9192
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 771.7238, y: 879.3826}
-    canvasZoom: 0.8499999
+    canvasScrollPosition: {x: 63.26526, y: 0}
+    canvasZoom: 0.49000022
   - id: 4
     fields:
     - title: Title
