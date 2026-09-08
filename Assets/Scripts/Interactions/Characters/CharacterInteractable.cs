@@ -12,6 +12,7 @@ public class CharacterInteractable : Interactable
     public override void Awake()
     {
         //DialogueManager.instance.conversationEnded += OnConversationEnded;
+        type = InteractableType.Character;
     }
 
     private void OnDisable()

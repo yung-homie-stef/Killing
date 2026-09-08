@@ -43,7 +43,6 @@ public class ShopItemButton : MonoBehaviour, IPointerEnterHandler
     public void TryPurchasing()
     {
         UIManager.instance._shopMenu.PurchaseFromShop(this, _price);
-        Debug.Log("bought");
     }
 
 }

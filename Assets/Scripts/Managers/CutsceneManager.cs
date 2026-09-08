@@ -1,3 +1,4 @@
+using PixelCrushers.DialogueSystem;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -46,5 +47,10 @@ public class CutsceneManager : MonoBehaviour
     {
         if (_cutscenePlayer == director)
             GameEventsManager.instance.cutsceneEvents.OnCutsceneEnd();
+    }
+
+    public void StartCutsceneFromDialogue(TimelineAsset cutscene)
+    {
+        InitializeCutscene(cutscene);
     }
 }
