@@ -159,6 +159,11 @@ public class HUD : MonoBehaviour
             
     }
 
+    public void SetLocationBannerText(string locationName)
+    {
+        _locationName.text = locationName;  
+    }
+
     #region Blackout Screen
     private void FadeToBlack()
     {

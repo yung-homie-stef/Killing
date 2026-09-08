@@ -6,11 +6,13 @@ using UnityEngine.Events;
 
 public abstract class Interactable : MonoBehaviour
 {
+    [SerializeField] private UnityEvent _onInteract;
+    [Space(15)]
     [Header("Base Parameters")]
     public string label;
-    public InteractableType type;
-    [Space(15)]
-    [SerializeField] private UnityEvent _onInteract;
+    [HideInInspector] public InteractableType type;
+    
+    
     public enum InteractableType
     {
         EntryDoor,

@@ -2965,7 +2965,7 @@ MonoBehaviour:
         isConnector: 0
         priority: 2
       conditionsString: Variable["GirlfriendConvoIndex"] == 0
-      userScript: 
+      userScript: SetQuestEntryState("Black Christmas", 1, "success")
       onExecute:
         m_PersistentCalls:
           m_Calls: []
@@ -3015,7 +3015,7 @@ MonoBehaviour:
       outgoingLinks: []
       conditionsString: 
       userScript: Variable["GirlfriendConvoIndex"] = Variable["GirlfriendConvoIndex"]
-        + 1
+        + 1;
       onExecute:
         m_PersistentCalls:
           m_Calls: []
@@ -5447,8 +5447,8 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Dialogue Text
-        value: 'I''m sorry, I gotta step out again, see if I can find it. Now that
-          it''s empty maybe nobody will bother with it. '
+        value: '...I gotta step out again, see if I can find it. Now that it''s empty
+          maybe nobody will bother with it. '
         type: 0
         typeString: 
       - title: Sequence
@@ -5566,6 +5566,10 @@ MonoBehaviour:
         value: 
         type: 0
         typeString: 
+      - title: EventGuid
+        value: b3d3296e-1d8e-4227-a942-f8624aac213f
+        type: 0
+        typeString: 
       conversationID: 3
       isRoot: 0
       isGroup: 0
@@ -5578,7 +5582,8 @@ MonoBehaviour:
       userScript: 'Variable["GirlfriendConvoIndex"] = Variable["GirlfriendConvoIndex"]
         + 1;
 
-        SetQuestEntryState("Long Day''s Journey Into Night", 2, "active")'
+
+        SetQuestEntryState("Black Christmas", 2, "active")'
       onExecute:
         m_PersistentCalls:
           m_Calls: []
@@ -5773,7 +5778,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Dialogue Text
-        value: Did you ever think what would've happened if those men followed you
+        value: Did you ever think what could've happened if those men followed you
           here instead?
         type: 0
         typeString: 
@@ -6023,8 +6028,8 @@ MonoBehaviour:
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 404.05728, y: 679.4506}
-    canvasZoom: 0.73
+    canvasScrollPosition: {x: 771.7238, y: 879.3826}
+    canvasZoom: 0.8499999
   - id: 4
     fields:
     - title: Title
