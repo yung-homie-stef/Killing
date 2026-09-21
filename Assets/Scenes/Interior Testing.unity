@@ -291,33 +291,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 560011eec6eb8e44b8cc5ebbe5de8acb, type: 3}
---- !u!1 &398149945 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: -2877101951150064357, guid: c1a5d7d0a113e44488c7d8c7492dc1ad, type: 3}
-  m_PrefabInstance: {fileID: 1211487423}
-  m_PrefabAsset: {fileID: 0}
---- !u!64 &398149949
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 398149945}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 5
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: -880343821955439842, guid: c1a5d7d0a113e44488c7d8c7492dc1ad, type: 3}
 --- !u!1001 &491606697
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -617,6 +590,33 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 560011eec6eb8e44b8cc5ebbe5de8acb, type: 3}
+--- !u!1 &632523386 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: -5711052370896006010, guid: c1a5d7d0a113e44488c7d8c7492dc1ad, type: 3}
+  m_PrefabInstance: {fileID: 1211487423}
+  m_PrefabAsset: {fileID: 0}
+--- !u!64 &632523388
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 632523386}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -7513297493162946847, guid: c1a5d7d0a113e44488c7d8c7492dc1ad, type: 3}
 --- !u!1001 &643725089
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -799,33 +799,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0db6e836b8a6f3b4d9a496dfbca7095a, type: 3}
---- !u!1 &1023527302 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: -4920792617382416724, guid: c1a5d7d0a113e44488c7d8c7492dc1ad, type: 3}
-  m_PrefabInstance: {fileID: 1211487423}
-  m_PrefabAsset: {fileID: 0}
---- !u!64 &1023527306
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1023527302}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 5
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: -8168935606421218418, guid: c1a5d7d0a113e44488c7d8c7492dc1ad, type: 3}
 --- !u!1001 &1065366122
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1206,12 +1179,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: -9045948046644676443, guid: c1a5d7d0a113e44488c7d8c7492dc1ad, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1284508177}
-    - targetCorrespondingSourceObject: {fileID: -2877101951150064357, guid: c1a5d7d0a113e44488c7d8c7492dc1ad, type: 3}
+    - targetCorrespondingSourceObject: {fileID: -5711052370896006010, guid: c1a5d7d0a113e44488c7d8c7492dc1ad, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 398149949}
-    - targetCorrespondingSourceObject: {fileID: -4920792617382416724, guid: c1a5d7d0a113e44488c7d8c7492dc1ad, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1023527306}
+      addedObject: {fileID: 632523388}
     - targetCorrespondingSourceObject: {fileID: 5367745576112391326, guid: c1a5d7d0a113e44488c7d8c7492dc1ad, type: 3}
       insertIndex: -1
       addedObject: {fileID: 850582892}
