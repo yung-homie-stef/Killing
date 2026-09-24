@@ -1,13 +1,33 @@
 fileFormatVersion: 2
-guid: dccda07f8ef76524b800d180b3f720dc
+guid: c1a5d7d0a113e44488c7d8c7492dc1ad
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: ruby_palace
+    second: {fileID: 2100000, guid: 519bce345109b8b4bb5b823c1d4a51cf, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: ruby_palace_base
+    second: {fileID: 2100000, guid: c4b94b582c2e4684a8dcff12477dff53, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: ruby_palace_furnishings
+    second: {fileID: 2100000, guid: ff67c092632311a42b0cc6c8b3eab740, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: window_glass
+    second: {fileID: 2100000, guid: 204407828b4cb9047b4e54d721ed8339, type: 2}
   materials:
     materialImportMode: 2
-    materialName: 0
-    materialSearch: 1
+    materialName: 1
+    materialSearch: 2
     materialLocation: 1
   animations:
     legacyGenerateAnimations: 4
