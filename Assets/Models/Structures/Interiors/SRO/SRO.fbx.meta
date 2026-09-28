@@ -3,11 +3,26 @@ guid: 35e6b3bf691a6044ab6ea057e515b922
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: SRO_base
+    second: {fileID: 2100000, guid: 6d7fa6f44ad7f1242b557a451841964b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: SRO_doors
+    second: {fileID: 2100000, guid: 3e8cc8914147cfe42843452431eb8ff3, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: SRO_floor
+    second: {fileID: 2100000, guid: a304db3d054333a42a1d990e79867d03, type: 2}
   materials:
     materialImportMode: 2
-    materialName: 0
-    materialSearch: 1
+    materialName: 1
+    materialSearch: 2
     materialLocation: 1
   animations:
     legacyGenerateAnimations: 4
