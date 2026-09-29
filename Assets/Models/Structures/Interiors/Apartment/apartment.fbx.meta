@@ -1,13 +1,28 @@
 fileFormatVersion: 2
-guid: e7a7e211a6fb9d9478a1336b7b2a5fb8
+guid: 3d867e980554bda45881c4dc9559ed0f
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: apartment_balcony
+    second: {fileID: 2100000, guid: 5e508557143c0464d90615278c193542, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: apartment_base
+    second: {fileID: 2100000, guid: 20adf1dd9b68faf4a9d639e188253d42, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: apartment_floor
+    second: {fileID: 2100000, guid: 81d98e8fe7dba9a498ff3305fd9671c6, type: 2}
   materials:
     materialImportMode: 2
-    materialName: 0
-    materialSearch: 1
+    materialName: 1
+    materialSearch: 2
     materialLocation: 1
   animations:
     legacyGenerateAnimations: 4
