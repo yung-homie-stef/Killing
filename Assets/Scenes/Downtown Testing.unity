@@ -695,6 +695,63 @@ MonoBehaviour:
   _decalOffsetX: 0
   _decalOffsetY: 0
   _decalRotation: 0
+--- !u!1001 &256485088
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 613610899}
+    m_Modifications:
+    - target: {fileID: -8679921383154817045, guid: 45298650ba3d4724b8d964d841e2b30d, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -4.2082148
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 45298650ba3d4724b8d964d841e2b30d, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.0034589767
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 45298650ba3d4724b8d964d841e2b30d, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -6.2816772
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 45298650ba3d4724b8d964d841e2b30d, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: -0.00000004371139
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 45298650ba3d4724b8d964d841e2b30d, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -1.0165751e-15
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 45298650ba3d4724b8d964d841e2b30d, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 45298650ba3d4724b8d964d841e2b30d, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0.000000021855694
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 45298650ba3d4724b8d964d841e2b30d, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 45298650ba3d4724b8d964d841e2b30d, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 45298650ba3d4724b8d964d841e2b30d, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 45298650ba3d4724b8d964d841e2b30d, type: 3}
+      propertyPath: m_Name
+      value: paint_store
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 45298650ba3d4724b8d964d841e2b30d, type: 3}
 --- !u!1 &276455213 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4086549153378485103, guid: 99eff8fc4623a7f4095c7c882e97b145, type: 3}
@@ -1999,6 +2056,7 @@ Transform:
   - {fileID: 1743420685}
   - {fileID: 1334642733}
   - {fileID: 363118065}
+  - {fileID: 1627871980}
   m_Father: {fileID: 1736286922}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &643725089
@@ -3663,6 +3721,11 @@ MonoBehaviour:
   _decalOffsetX: 0
   _decalOffsetY: 0
   _decalRotation: 0
+--- !u!4 &1627871980 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 45298650ba3d4724b8d964d841e2b30d, type: 3}
+  m_PrefabInstance: {fileID: 256485088}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1658466579 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -2210296339009936394, guid: c9d69742abefa914785739c88c7a771f, type: 3}
