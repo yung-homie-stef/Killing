@@ -1,13 +1,23 @@
 fileFormatVersion: 2
-guid: c07f2c87130b4f24fa72b52c4f4d9b50
+guid: b61f4f6be213bb94b8e6a3685e9661ae
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: travel_agency
+    second: {fileID: 2100000, guid: 29253b3af16a77d48bd20968d2e70c53, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: window_glass
+    second: {fileID: 2100000, guid: 204407828b4cb9047b4e54d721ed8339, type: 2}
   materials:
     materialImportMode: 2
-    materialName: 0
-    materialSearch: 1
+    materialName: 1
+    materialSearch: 2
     materialLocation: 1
   animations:
     legacyGenerateAnimations: 4
